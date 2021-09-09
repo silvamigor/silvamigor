@@ -1,4 +1,4 @@
-## Igor Silva
+## Igor Martins Silva
 
 Olá! Bem-vindo ao meu canal!
 
