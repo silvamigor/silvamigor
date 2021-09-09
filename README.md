@@ -1,7 +1,3 @@
----
-title: Introduction
----
-
 ## Igor Martins Silva 
 
 Olá! Bem-vindo ao meu canal!
