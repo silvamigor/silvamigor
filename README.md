@@ -1,6 +1,6 @@
-## Igor Martins Silva 
+# Igor Martins Silva 
 
-Olá! Bem-vindo ao meu canal!
+Olá! Bem-vindo ao meu canal 1!
 
 ### Markdown
 
