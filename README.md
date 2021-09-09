@@ -1,6 +1,6 @@
 <h1> Igor Martins Silva </h1>
 
-## Igor Martins Silva
+## Igor Silva 
 
 Olá! Bem-vindo ao meu canal!
 
