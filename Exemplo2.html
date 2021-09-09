@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Minha página teste </title>
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+      messageStyle: "none"
+    });
+    </script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  </head>
+  <body>
+    <img src="Imagens/CAM2020.png" alt="Time do Galo campeão mineiro de 2020" width="500">
+    <p> Clube Atlético Mineiro campeão mineiro de 2020. Veja o site do clube, clicando <a href="https://atletico.com.br/" target="_blank"> aqui. </a> </p>
+    <p> Vamos testar, agora, como usar o MathJax. para isso, vamos fazer algumas equações: \(x^2\), $\int_1^2\frac{x}{2}dx$, \[x_n &rArr; x\] </p>
+    \[
+      \begin{array}{rl}
+        f: X &\to Y \\
+        x &\mapsto f(x)
+      \end{array}
+    \]
+    &#8658;
+    <span style='font-size:100px;'>&#8658;</span>
+    \[
+      \begin{pmatrix}
+        1 & 1 \\
+        1 & 1
+      \end{pmatrix}
+    \]
+  </body>
+</html>
