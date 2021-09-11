@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title> Onde está a raiz quadrada de 2? </title>
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+      messageStyle: "none"
+    });
+    </script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+    <style>
+      body{
+        font-size: 14pt;
+        font-family: "Helvetica", sans-serif;
+        line-height: 1.5;
+      }
+      
+      h1{
+        background-color: rgb(255,223,0);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div style="text-align:center"><h1>$\sqrt{2} \not\in \mathbb{Q}$. Onde ela está, então?</h1></div>
+    
+    <p>Pensei em nomear essa seção por "quem é $\sqrt{2}$?". Contudo, essa é uma pergunta cuja resposta sabemos: $\sqrt{2}$ é o número não negativo tal que seu quadrado é igual a 2, isto é, $a = \sqrt{2}$ se, e somente se, $a \ge 0$ e $a^2 = 2$. A questão interessante aqui é: existe algum número $a \ge 0$ tal que $a^2 = 2$? Se sim, existem mais do um número assim? Onde está $\sqrt{2}$? Veremos que o conjunto dos números reais, $\mathbb{R}$, tem, dentre as propriedades que o caracterizam, uma que nos garante a existência e a unicidade de raiz quadrada de dois como um elemento dentro de si, quer dizer, se considerarmos $\mathbb{R}$ como o universo dos números que estamos tratando, então $\sqrt{2}$ existe e é única. Veja a importância de sabermos onde nós estamos, isto é, qual conjunto estamos considerando. Se, por exemplo, estivermos considerando o conjunto dos números racionais, $\mathbb{Q}$, então mostraremos que $\sqrt{2} \not\in \mathbb{Q}$. Esse é um tipo de problema que você, provavelmente, já deve ter se deparado ao resolver uma equação do segundo grau. Por exemplo, qual ou quais são os números que solucionam a equação $x^2 + 1 = 0$? Se considerarmos o conjunto dos números reais, então tal solução não existe. Contudo, se passarmos a considerar o conjunto dos números complexos, $\mathbb{C}$, teremos que o conjunto solução é $\{-i, i\}$, onde $i$ é o número imaginário.</p>
+    
+    <div style="text-align:center"><img src="equSegGrauSemSolNosReais.png" alt="Não existe um número real tal que seu quadrado somando a um resulte em zero" width="400"></div>
+    
+    <p></p>
+  </body>
+  
+</html>
