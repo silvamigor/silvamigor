@@ -23,10 +23,57 @@
         font-size: 14pt;
         font-family: "Helvetica", sans-serif;
         line-height: 1.5;
+        counter-reset: teor;
+        counter-reset: prop;
+        counter-reset: corol;
+        counter-reset: lema;
+        counter-reset: def;
+        counter-reset: obs;
       }
       
       h1{
         background-color: rgb(255,223,0);
+      }
+      
+      .teor:before{
+        counter-increment: teor;
+        font-weight: bold;
+        content: "Teorema " counter(teor) ". ";
+      }
+      
+      .prop:before{
+        counter-increment: prop;
+        font-weight: bold;
+        content: "Proposição " counter(prop) ". ";
+      }
+      
+      .corol:before{
+        counter-increment: corol;
+        font-weight: bold;
+        content: "Corolário " counter(corol) ". ";
+      }
+      
+      .lema:before{
+        counter-increment: lema;
+        font-weight: bold;
+        content: "Lema " counter(lema) ". ";
+      }
+      
+      .def:before{
+        counter-increment: def;
+        font-weight: bold;
+        content: "Definição " counter(def) ". ";
+      }
+      
+      .obs:before{
+        counter-increment: obs;
+        font-weight: bold;
+        content: "Observação " counter(obs) ". ";
+      }
+      
+      .demonst:before{
+        font-weight: bold;
+        content: "Demonstração. ";
       }
     </style>
   </head>
@@ -38,7 +85,12 @@
     
     <div style="text-align:center"><img src="equSegGrauSemSolNosReais.png" alt="Não existe um número real tal que seu quadrado somando a um resulte em zero" width="400"></div>
     
-    <p></p>
+    <p>Antes de mostrarmos que $\sqrt{2}$ existe e é única em $\mathbb{R}$, tarefa que nos exigirá entender um pouco melhor quem é esse conjunto ao qual comparamos a uma reta, vamos, primeiro, mostrar que não existe um número em $\mathbb{Q}$ cujo quadrado é igual a dois.</p>
+    
+    <p class="prop" id="raizDeDoisNPerQ">Não existe $r \in \mathbb{Q}$ tal que $r^2 = 2$.</p>
+    <p class="demonst">
+      Suponha, por absurdo, que existe $r \in \mathbb{Q}$ tal que $r^2 = 2$. Lembre-se de que o conjunto dos números racionais é definido como sendo o conjunto de todos os quocientes entre números inteiros cujo denominador é diferente de zero, isto é, $\mathbb{Q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},$ com $q \neq 0\}$. Assim, escreva $r$ como o quociente $\frac{p}{q}$, onde $p$ e $q$ são números inteiros e $q \neq 0$. Note que, nesse caso, temos também que $p \neq 0$, pois, caso contrário, teríamos $r = \frac{p}{q} = \frac{0}{q} = 0$ e, por conseguinte, $r^2 = 0$, o que contradiz a nossa hipótese de que $r^2 = 2$. Assim, uma vez que $r^2 = 2$, temos que $\frac{p^2}{q^2} = 2$, o que implica que $p^2 = 2q^2$. Vamos, agora, usar o Teorema Fundamental da Aritmética para concluir a demonstração. Antes disso, observe que se um número $n$ tem em sua decomposição uma quantidade qualquer de fatores primos iguais a $2$, então $n^2$ tem, necessariamente, uma quantidade par de fatores iguais a $2$. Por exemplo, considere $10 = 2\times 5$. Ele tem uma quantidade ímpar de fatores iguais a $2$. Mas $100 = 10^2 = 2\times 2 \times 5 \times 5$ tem uma quantidade par. Dessa forma, usando o Teorema Fundamental da Aritmética, decompondo $p$ e $q$ como produto de fatores primos, observamos que $p^2$ e $q^2$ têm uma quantidade par de fatores iguais a $2$. Logo, $2q^2$ tem uma quantidade ímpar de fatores iguais a $2$. Portanto, não é possível que $p^2$ seja igual a $2q^2$, já que por um lado temos uma quantidade par de fatores iguais a $2$, mas, por outro, uma quantidade ímpar. Esse absurdo, decorreu da hipótese de que existe $r \in \mathbb{Q}$ tal que $r^2 = 2$. Assim, tal número não pode existir, o que conclui a demonstração.
+    $\bullet$</p>
   </body>
   
 </html>
