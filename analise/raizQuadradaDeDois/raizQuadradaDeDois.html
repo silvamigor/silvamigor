@@ -23,59 +23,26 @@
         font-family: "Helvetica", sans-serif;
         line-height: 1.5;
       }
-      div{
-        counter-reset: teor;
-        counter-reset: prop;
-        counter-reset: corol;
-        counter-reset: lema;
-        counter-reset: def;
-        counter-reset: obs;
-      }
-      
+
       h1{
         background-color: rgb(255,223,0);
       }
       
-      .teor:before{
-        counter-increment: teor;
-        font-weight: bold;
-        content: "Teorema " counter(teor) ". ";
-      }
-      
-      .prop:before{
-        counter-increment: prop;
-        font-weight: bold;
-        content: "Proposição " counter(prop) ". ";
-      }
-      
-      .corol:before{
-        counter-increment: corol;
-        font-weight: bold;
-        content: "Corolário " counter(corol) ". ";
-      }
-      
-      .lema:before{
-        counter-increment: lema;
-        font-weight: bold;
-        content: "Lema " counter(lema) ". ";
-      }
-      
       .def::before{
-        counter-increment: Def;
         font-weight: bold;
-        content: "Definição " counter(Def) ". ";
+        content: "Definição. ";
       }
       
-      .obs:before{
-        counter-increment: obs;
+      .teor::before{
         font-weight: bold;
-        content: "Observação " counter(obs) ". ";
+        content: "Teorema. ";
       }
       
-      .demonst:before{
+      .prop::before{
         font-weight: bold;
-        content: "Demonstração. ";
+        content: "Proposição. ";
       }
+      
     </style>
   </head>
   
@@ -97,15 +64,43 @@
     
     <p>Sem mais delongas, sucintamente, temos que:</p>
     
-    <p class="def" id="defConjReais">O conjunto dos números reais, $\mathbb{R}$, é um corpo ordenado completo.</p>
+    <p class="def" id="defConjReais">O conjunto dos números reais, $\mathbb{R}$, é um corpo ordenado completo.$\Box$</p>
     
     <p>Essa definição, apresentada assim, não nos diz nada, porque não sabemos o que é um corpo ordenado completo. É isso que vamos fazer agora. </p>
     
-    <p class="def" id="defCorpo">Um <b>corpo</b> é um conjunto $F$ munido de duas operações adição, $+$, e multiplicação, $\cdot$, que satisfazem as seguintes propriedades:</p>
+    Considere um conjunto $F$ onde podemos somar e multiplicar seus elementos, isto é, um conjunto munido de duas operações: <em>adição</em>, $+$, e <em>multiplicação</em>, $\cdot$.
+    \[
+      \begin{array}{ccc}
+        \begin{array}{rl}
+          +: F \times F & \to F \\
+          (x, y) & \mapsto x + y
+        \end{array}
+        & &
+        \begin{array}{rl}
+          \cdot: F \times F & \to F \\
+          (x, y) & \mapsto x \cdot y
+        \end{array}
+      \end{array}
+    \]
+    </p>
     
+    <p>Por exemplo, $\mathbb{Q}$ é um conjunto onde podemos somar e multiplicar seus elementos. Considere ainda que a adição e a multiplicação em $F$ satisfazem as seguintes propriedades:</p>
     
+    <ol>
+      <p><li><em>comutatividade da adição:</em> para todo $x, y \in F$, temos que $x + y = y + x$;</li></p>
+      <p><li><em>associatividade da adição:</em> para todo $x, y, z \in F$, temos que $(x + y) + z = x + (y + z)$;</li></p>
+      <p><li><em>existência do elemento neutro para a adição:</em> existe $0 \in F$ tal que, para todo $x \in F$, temos que $x + 0 = x$;</li></p>
+      <p><li><em>existência do inverso em relação a adição:</em> para todo $x \in F$, existe $-x \in F$ tal que $x + (-x) = 0$;</li></p>
+      <p><li><em>comutatividade da multiplicação:</em> para todo $x, y \in F$, temos que $x \cdot y = y \cdot x$;</li></p>
+      <p><li><em>associatividade da multiplicação:</em> para todo $x, y, z \in F$, temos que $(x \cdot y) \cdot z = x \cdot (y \cdot z)$;</li></p>
+      <p><li><em>existência do elemento neutro para a multiplicação:</em> existe $1 \in F$ tal que, para todo $x \in F$, vale que $x \cdot 1 = x$;</li></p>
+      <p><li><em>existência do inverso em relação a multiplicação:</em> para todo $x \in F$, existe $\frac{1}{x} \in F$ tal que $x \cdot \frac{1}{x} = 1$;</li></p>
+      <p><li><em>Distributividade da multiplicação em relação a adição:</em> para todo $x, y, z \in F$, temos que $x \cdot (y + z) = x \cdot y + x \cdot z$.</li></p>
+    </ol>
+    
+    <p>Observe que $\mathbb{Q}$ é um exemplo de conjunto cujas operações adição e multiplicação satisfazem as $9$ propriedades acima. Mas isso não acontece quando consideramos $\mathbb{Z}$, conjunto dos números inteiros, pois se tomarmos o elemento $2$, não existe nenhum inteiro $n$ tal que $2\cdot n = 1$. Esse elementos é, precisamente, $\frac{1}{2} \in \mathbb{Q}$. Um conjunto $F$ munido de adição e multiplicação satisfazendo as $9$ propriedades acima é chamado de <strong>corpo</strong>. Assim, $\mathbb{Q}$ é um corpo, mas $\mathbb{Z}$ não é um corpo.</p>
 
-    <p><b>Referências bibliográficas</b></p>
+    <p><strong>Referências bibliográficas</strong></p>
   
     <ol>
       <li>FIGUEIREDO, Djairo G. <i>Análise I.</i> 2ed. Rio de Janeiro: LTC, 2013.</li>
