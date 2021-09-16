@@ -43,6 +43,11 @@
         content: "Proposição. ";
       }
       
+      .demonst::before{
+        font-weight: bold;
+        content: "Demonstração. ";
+      }
+      
     </style>
   </head>
   
@@ -51,14 +56,15 @@
     
     <p>Pensei em nomear essa seção por "quem é $\sqrt{2}$?". Contudo, essa é uma pergunta cuja resposta sabemos: $\sqrt{2}$ é o número não negativo tal que seu quadrado é igual a 2, isto é, $a = \sqrt{2}$ se, e somente se, $a \ge 0$ e $a^2 = 2$. A questão interessante aqui é: existe algum número $a \ge 0$ tal que $a^2 = 2$? Se sim, existem mais do um número assim? Onde está $\sqrt{2}$? Motivado por essas questões, nosso objetivo principal, nesse texto, é apresentar a definição formal do conjunto dos números reais, $\mathbb{R}$. De posse dessa definição, mostraremos que o conjunto dos números racionais, $\mathbb{Q}$, está contido propriamente em $\mathbb{R}$, ou seja, todo número racional é um número real, mas nem todo número real é um número racional. Um exemplo de número real que não é racional é, exatamente, $\sqrt{2}$.</p>
     
-    <div style="text-align:center"><img src="racionPertReais.jpg" alt="Inclusão própria dos racionais nos reais" width="400"></div>
+    <div style="text-align:center"><img src="racionContReais.jpg" alt="Inclusão própria dos racionais nos reais" width="400"></div>
     
     <p>Antes de apresentarmos tal definição e disso concluir que $\sqrt{2}$ existe e é única em $\mathbb{R}$, vamos, primeiro, mostrar que não existe um número em $\mathbb{Q}$ cujo quadrado é igual a dois.</p>
     
     <p class="prop" id="raizDeDoisNPerQ">Não existe $r \in \mathbb{Q}$ tal que $r^2 = 2$.</p>
     <p class="demonst">
       Suponha, por absurdo, que existe $r \in \mathbb{Q}$ tal que $r^2 = 2$. Lembre-se de que o conjunto dos números racionais é definido como sendo o conjunto de todos os quocientes entre números inteiros cujo denominador é diferente de zero, isto é, $\mathbb{Q} = \{\frac{p}{q} \mid p, q \in \mathbb{Z},$ com $q \neq 0\}$. Assim, escreva $r$ como o quociente $\frac{p}{q}$, onde $p$ e $q$ são números inteiros e $q \neq 0$. Note que, nesse caso, temos também que $p \neq 0$, pois, caso contrário, teríamos $r = \frac{p}{q} = \frac{0}{q} = 0$ e, por conseguinte, $r^2 = 0$, o que contradiz a nossa hipótese de que $r^2 = 2$. Assim, uma vez que $r^2 = 2$, temos que $\frac{p^2}{q^2} = 2$, o que implica que $p^2 = 2q^2$. Vamos, agora, usar o Teorema Fundamental da Aritmética para concluir a demonstração. Antes disso, observe que se um número $n$ tem em sua decomposição uma quantidade qualquer de fatores primos iguais a $2$, então $n^2$ tem, necessariamente, uma quantidade par de fatores iguais a $2$, pois ao elevarmos $n$ a potência $2$, dobramos cada fator que decompõe $n$ (por exemplo, considere $10 = 2\times 5$; ele tem uma quantidade ímpar de fatores iguais a $2$, mas $100 = 10^2 = 2\times 2 \times 5 \times 5$ tem uma quantidade par). Dessa forma, usando o Teorema Fundamental da Aritmética, decompondo $p$ e $q$ como produto de fatores primos, observamos que $p^2$ e $q^2$ têm uma quantidade par de fatores iguais a $2$. Logo, $2q^2$ tem uma quantidade ímpar de fatores iguais a $2$. Portanto, não é possível que $p^2$ seja igual a $2q^2$, já que por um lado temos uma quantidade par de fatores iguais a $2$, mas, por outro, uma quantidade ímpar. Esse absurdo, decorreu da hipótese de que existe $r \in \mathbb{Q}$ tal que $r^2 = 2$. Assim, tal número não pode existir, o que conclui a demonstração.
-    $\boxtimes$</p>
+      $\boxtimes$
+    </p>
     
     <p>Agora que sabemos que raiz quadrada de dois não pertence ao conjunto dos números racionais, vamos mostrar que tal número pertence ao conjunto dos números reais. Para isso, precisamos entender, precisamente, quem é esse conjunto. Tal compreensão só foi atingida no século XIX, principalmente, devido a inquietação causada na comunidade matemática diante das várias questões que surgiram após o desenvolvimento do cálculo diferencial e integral, por Issac Newton (1643-1727) e por Gottfried Leibniz (1646-1716), no século XVII. Observe que a compreensão de $\mathbb{R}$ é relativamente recente, o que mostra que entender os reais não é algo trivial. Vários matemáticos trabalharam para que chegássemos até a definição de $\mathbb{R}$ que apresentaremos aqui, como, por exemplo, Georg Cantor (1845-1918), Giussepe Peano (1858-1932), Richard Dedeking (1831-1916) e Karl Weierstrass (1815-1897).</p>
     
@@ -94,12 +100,55 @@
       <p><li><em>comutatividade da multiplicação:</em> para todo $x, y \in F$, temos que $x \cdot y = y \cdot x$;</li></p>
       <p><li><em>associatividade da multiplicação:</em> para todo $x, y, z \in F$, temos que $(x \cdot y) \cdot z = x \cdot (y \cdot z)$;</li></p>
       <p><li><em>existência do elemento neutro para a multiplicação:</em> existe $1 \in F$ tal que, para todo $x \in F$, vale que $x \cdot 1 = x$;</li></p>
-      <p><li><em>existência do inverso em relação a multiplicação:</em> para todo $x \in F$, existe $\frac{1}{x} \in F$ tal que $x \cdot \frac{1}{x} = 1$;</li></p>
+      <p><li><em>existência do inverso em relação a multiplicação:</em> para todo $x \in F$, com $x \neq 0$, existe $\frac{1}{x} \in F$ tal que $x \cdot \frac{1}{x} = 1$;</li></p>
       <p><li><em>Distributividade da multiplicação em relação a adição:</em> para todo $x, y, z \in F$, temos que $x \cdot (y + z) = x \cdot y + x \cdot z$.</li></p>
     </ol>
     
     <p>Observe que $\mathbb{Q}$ é um exemplo de conjunto cujas operações adição e multiplicação satisfazem as $9$ propriedades acima. Mas isso não acontece quando consideramos $\mathbb{Z}$, conjunto dos números inteiros, pois se tomarmos o elemento $2$, não existe nenhum inteiro $n$ tal que $2\cdot n = 1$. Esse elementos é, precisamente, $\frac{1}{2} \in \mathbb{Q}$. Um conjunto $F$ munido de adição e multiplicação satisfazendo as $9$ propriedades acima é chamado de <strong>corpo</strong>. Assim, $\mathbb{Q}$ é um corpo, mas $\mathbb{Z}$ não é um corpo.</p>
-
+    
+    <p>Um corpo $F$ é dito <strong>corpo ordenado</strong>, se existe um subconjunto $P \subseteq F$, com as seguintes propriedades:</p>
+    
+    <ol>
+      <li id="corpoOrd1">se $x, y \in P$, então $x + y \in P$ e $x\cdot y \in P$,</li>
+      <li id="corpoOrd2">dado $x \in F$, então apenas uma das três seguintes possibilidades ocorre: $x \in P$, $-x \in P$ ou $x = 0$.</li>
+    </ol>
+    
+    <p>Os elementos do conjunto $P$ são chamados de <em>positivos</em>. Observe, novamente, que $\mathbb{Q}$ é um corpo ordenado, onde $P$ é o subconjunto dos racionais positivos, isto é, $\mathbb{Q}^+ = \{r \in \mathbb{Q} \mid r > 0\}$.</p>
+    
+    <p>Dados dois elementos, $x$ e $y$, em um corpo ordenado, dizemos que $x$ é <em>menor do que</em> $y$, fato que denotamos por $x < y$, se $y - x \in P$ e dizemos que $x$ é <em>menor do que ou igual a</em> $y$, se $x < y$ ou $x = y$, fato denotado por $x \le y$. Pode parecer um pouco estranho essa definição. Você pode estar se perguntando: "por que definimos um corpo ordenado como sendo um corpo onde destacamos um subconjunto $P$ satisfazendo certas propriedades e só a partir de $P$ definimos a desigualdade acima? Em $\mathbb{Q}$ eu já sabia dizer quando um número era menor do que outro, sem precisar pensar em $P$". Acontece que o que estamos fazendo, aqui, é algo comum na matemática: estudar uma teoria onde, dado um conceito ou objeto que conhecemos intuitivamente, vemos um formalismo que o extrapola e atinge vários outros conceitos ou objetos, de modo a nos dar um ponto de partida preciso para conseguimos demonstrar com segurança nossas afirmações. Se alguém te perguntasse, o porquê, em $\mathbb{N}$, de $1 < 2$, você talvez encontrasse dificuldade para responder (veja sobre isso <a href="../../algebra/comoProvarQue1Menor2/comoProvarQue1Menor2.html" target="_blank">aqui</a>). Isso se deve ao fato dos conceitos ou objetos, quando estamos sendo introduzidos à matemática, ainda terem uma concepção vaga. Lembre-se de que queremos mostrar que $\sqrt{2} \in \mathbb{R}$. Para isso, precisamos de todo um formalismo para descrever com precisão que é $\mathbb{R}$. Até agora vimos o que é um corpo ordenado, falta ver o que é um corpo ordenado completo. É aí que $\mathbb{R}$ se diferencia de $\mathbb{Q}$. Contudo, antes de avançarmos no entendimento da definição de $\mathbb{R}$, vamos mostrar que podemos considerar $\mathbb{Q}$ como sendo um subconjunto de qualquer corpo ordenado.</p>
+    
+    <p>Considere $F$ um corpo ordenado e tome $a \in F$ diferente de zero. Pela <a href="#corpoOrd2">segunda propriedade</a> da definição de corpo ordenado, temos que $a \in P$ ou $-a \in P$. No primeiro caso, temos, pela <a href="#corpoOra2">primeira propriedade</a> da definição de corpo ordenado, que $a^2 = a \cdot a \in P$. No segundo caso, pela mesma razão, $a^2 = (-a) \cdot (-a) \in P$. Logo, em um corpo ordenado, o quadrado de qualquer elemento é sempre um elemento positivo. Assim, em particular, $1 = 1 \cdot 1 \in P$. Uma vez que $1 - 0 = 1 \in P$, então, qualquer que seja o corpo ordenado, $0 < 1$. Note que $1 = 1 + 1 - 1 \in P$. Logo, $1 < 1 + 1$. Seguindo esse raciocínio, temos que $1 < 1 + 1 < 1 + 1 + 1 < \cdots$. Portanto, disso podemos concluir que $\mathbb{N} = \{1, 2, 3, \dots\} \subseteq F$. Como $F$ é um corpo, então $0 \in F$ e, para cada $n \in \mathbb{N}$, temos que $-n \in F$. Disso segue que $\mathbb{Z} = \{0, 1, -1, 2, -2, \dots\} \subseteq F$. Novamente, por $F$ ser um corpo, dados $m, n \in \mathbb{Z}$, com $n \neq 0$, temos que $\frac{1}{n} \in F$ e, consequentemente, $m \cdot \frac{1}{n} = \frac{m}{n} \in F$. Portanto, $\mathbb{Q} \subseteq F$.</p>
+    
+    <p>Dando sequência ao nosso objetivo, vamos entender o que seja um corpo ordenado completa. Para isso, precisamos de alguns novos conceitos. Vejamos. Seja $F$ um corpo ordenado e $X \subseteq F$ um subconjunto. Dizemos que $X$ é <em>limitado superiormente</em>, se existe $a \in F$ tal que, para todo $x \in X$, temos que $x \le a$. Cada elemento $a \in F$ com essa propriedade é dito <em>cota superior</em> de $X$. O elemento que é a menor das cotas superiores é chamado <em>supremo</em> de $X$, fato denotado por $\sup(X)$, ou seja, as condições que caracterizam o supremo são:</p>
+    
+    <ul>
+      <li>se $x \in X$, então $x \le \sup(X)$,</li>
+      <li>se $x \le b$, para todo $x \in X$, então $\sup(X) \le b$.</li>
+    </ul>
+    
+    <p>Acontece que nem sempre existe um supremo para um conjunto superiormente limitado. Um <strong>corpo ordenado completo</strong> é um corpo ordenado, onde todo subconjunto limitado superiormente, possui um supremo. Esse é o grande ponto que diferencia $\mathbb{Q}$ de $\mathbb{R}$. O conjunto dos números racionais, embora seja um corpo ordenado, não é um corpo ordenado completo. É justamente essa diferença que nos garante a existência de $\sqrt{2}$ em $\mathbb{R}$. Para mostrar esse fato, veremos que $\sqrt{2}$ é o supremo do conjunto $\{r \in \mathbb{Q} \mid r \ge 0$ e $r^2 < 2\}$.</p>
+    
+    <p class="prop" id="raizDeDoisPerR">Seja $X = \{r \in \mathbb{Q} \mid r \ge 0$ e $r^2 < 2\}$. Então $\sup(X) = \sqrt{2}$.</p>
+    <p class="demonst">
+      Primeiramente, observe que se tomarmos qualquer $r \in \mathbb{Q}$, tal que $r > 2$, então $r^2 > 2^2 = 4$, isso implica que $r \not\in X$, pois para pertencer a $X$ seu quadrado teria que ser menor do que dois. Logo, $X$ é um conjunto limitado superiormente. Vamos mostrar que, dado $x \in X$, sempre existe algum elemento nesse conjunto maior do que $x$. Assim, seja $r = \frac{p}{q} \in X$. Como $r \ge 0$, então $p \ge 0$ e $q > 0$ (lembre-se de que o denominador nunca é zero). Uma vez que $r^2 < 2$, temos que $\frac{p^2}{q^2} < 2$, ou seja, $p^2 - 2q^2 < 0$. Note que para todo $n \in \mathbb{N}$, temos que $\frac{p}{q} < \frac{np}{nq} + \frac{1}{nq} = \frac{np + 1}{nq}$, já que $\frac{1}{nq} > 0$. Mas veja que precisamos encontrar um elemento maior do que $\frac{p}{q}$ e pertença a $X$. Assim, basta mostrarmos que existe $n \in \mathbb{N}$ tal que $\frac{np + 1}{nq} \in X$. Observe que $\frac{np + 1}{nq} \ge 0$, pois $n \in \mathbb{N}$, $p \ge 0$ e $q > 0$. Dessa forma, basta encontrarmos $n \in \mathbb{N}$ de modo que $\frac{(np + 1)^2}{(nq)^2} < 2$. Veja que
+      \[
+        \begin{split}
+          \frac{(np + 1)^2}{(nq)^2} < 2 &\;\Leftrightarrow\; \frac{n^2p^2 + 2np + 1}{n^2q^2} < 2 \;\Leftrightarrow\; n^2p^2 + 2np + 1 - 2n^2q^2 < 0 \;\Leftrightarrow\; \\
+          &\;\Leftrightarrow\; \underbrace{(p^2 - 2q^2)}_{< 0}n^2 + 2pn + 1 < 0
+        \end{split}
+      \]
+      Portanto, basta encontrarmos um número natural $n$ tal que a parábola $(p^2 - 2q^2)n^2 + 2pn + 1$ assuma um valor negativo. Uma vez que $p^2 - 2q^2 < 0$, então tal parábola tem concavidade para baixo. Assim, existe algum número natural, grande o suficiente, tal que a parábola $(p^2 - 2q^2)n^2 + 2pn + 1$ assuma um valor negativo (clique <a href="geogebra-ConjXNaoPossuiElemMax.html" target="_blank">aqui</a> para ver alguns exemplos no Geogebra). Para tal número $n$, temos que $\frac{p}{q} < \frac{np + 1}{nq}$ e que $\frac{np + 1}{nq} \in X$. Isso mostra que $X$ não possui um elemento que é maior do que todos: dado qualquer $x \in X$, sempre encontramos alguém, no próprio $X$, maior do que $x$.
+    </p>
+    <p>
+      Se considerarmos, agora, o conjunto $Y = \{r \in \mathbb{Q} \mid y > 0$ e $y^2 > 2\}$, podemos mostrar, usando o mesmo raciocínio acima, que dado qualquer $r = \frac{p}{q} \in Y$, existe um natural $n$ tal que $\frac{np - 1}{nq} < \frac{p}{q}$ e que $\frac{np - 1}{nq} \in Y$, ou seja, $Y$ não possui um elemento que é menor do que todos. Vamos mostrar, agora, que se $x \in X$ e $y \in Y$, então $x < y$. Assim, como $x \in X$ e $y \in Y$, então $x^2 < 2 < y^2$, ou seja, $x^2 < y^2$. Uma vez que $x \ge 0$ e $y > 0$, então $x < y$.
+    </p>
+    <p>
+      Finalmente, vamos mostrar que $\sup(X) = \sqrt{2}$, provando que $\sup(X) \ge 0$ e que $\sup(X)^2 = 2$. A estratégia para mostrar que o quadrado do supremo de $X$ é igual a dois será provar que seu quadrado não pode ser menor do dois e também não pode ser maior do que dois, restando, portanto a única possibilidade que é a igualdade. Para simplificar a escrita, denote por $s$ o supremo de $X$. Note que $1 \in X$, pois $1 \ge 0$ e $1^2 = 1 < 2$. Logo, como o supremo de um conjunto é uma cota superior, então $s \ge 1 \ge 0$. Se $s^2 < 2$, então teríamos que $s \in X$. Mas isso nos leva a um absurdo, pois provamos que $X$ não admite um elemento maior do que todos e, por definição, $s$ é uma cota superior de $X$. Logo, $s^2 \ge 2$. Suponha que $s^2 > 2$. Então $s \in Y$. Uma vez que $Y$ não admite um elemento menor do que todos, então existe $b \in Y$ tal que $b < s$. Uma vez que, dado $x \in X$ e $y \in Y$, temos que $x < y$, então $x < b < s$, para todo $x \in X$. Disso concluímos que $b$ é uma cota superior de $X$ menor do que $s$. Isso é um absurdo, pois $s$ é a menor das cotas superiores. Portanto, não pode acontecer de $s^2 > 2$. Como também não pode acontecer de $s^2 < 2$, só resta a possibilidade de $s^2 = 2$, ou seja, $s = \sup(X) = \sqrt{2}$.
+      $\boxtimes$
+    </p>
+    
+    <p>Observe que o conjunto $X$ da proposição acima é um subconjunto de $\mathbb{R}$, pois mostramos que $\mathbb{Q} \subseteq \mathbb{R}$. Uma vez que $\mathbb{R}$ é um corpo ordenado completo, temos que o supremo de $X$ é um número real, ou seja, $\sqrt{2} \in \mathbb{R}$. Com isso garantimos a existência de raiz quadrada de dois como um elemento do conjunto dos números reais. Falta ainda responder a questão da unicidade, isto é, que só existe um número $a \ge 0$ tal que $a^2 = 2$. Felizmente, esse é um problema mais simples do que o da existência. Suponha que existam dois números $a \ge 0$ e $b \ge 0$ tais que $a^2 = 2 = b^2$. Isso nos leva a concluir que $0 = a^2 - b^2 = (a + b)(a - b)$. Observe que $a \neq 0$ e que $b \neq 0$, já que o quadrado de ambos é igual a dois. Assim, como $a \ge 0$, $b \ge 0$ e ambos são diferentes de zero, temos que $a > 0$ e $b > 0$. Disso segue que $a + b > 0$. Veja que o produto de dois números diferente de zero é diferente de zero. Logo, da igualdade $(a + b)(a - b) = 0$, temos que $a + b = 0$ ou $a - b = 0$. Contudo, como $a + b > 0$, concluímos que $a - b = 0$, ou seja, $a = b$. Portanto, se dois números satisfazem a condição de não serem negativos e de terem o quadrado igual a dois, eles têm que ser iguais. Dessa forma, concluímos que $\sqrt{2}$ existe e é única em $\mathbb{R}$, o que responde as questões que motivaram a escrita desse texto.</p>
+    
     <p><strong>Referências bibliográficas</strong></p>
   
     <ol>
