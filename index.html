@@ -5,30 +5,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title> Igor Martins Silva </title>
-    <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX", "output/HTML-CSS"],
-      extensions: ["tex2jax.js"],
-      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
-      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
-      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
-      messageStyle: "none"
-    });
-    </script>    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { fonts: ["TeX"] }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
     <style>
       body{
         font-size: 14pt;
         font-family: "Helvetica", sans-serif;
         line-height: 1.5;
       }
-      
+
       h1{
         background-color: rgb(255,223,0);
       }
+      
+      .def::before{
+        font-weight: bold;
+        content: "Definição. ";
+      }
+      
+      .teor::before{
+        font-weight: bold;
+        content: "Teorema. ";
+      }
+      
+      .prop::before{
+        font-weight: bold;
+        content: "Proposição. ";
+      }
+      
+      .lema::before{
+        font-weight: bold;
+        content: "Lema. ";
+      }
+      
+      .demonst::before{
+        font-weight: bold;
+        content: "Demonstração. ";
+      }
+      
+      .obs::before{
+        font-weight: bold;
+        content: "Observação. ";
+      }
+      
     </style>
   </head>
   
