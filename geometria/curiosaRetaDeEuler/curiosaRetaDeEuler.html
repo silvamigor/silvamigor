@@ -4,37 +4,60 @@
   <head>
     <meta charset="utf-8">
     <title> A curiosa reta de Euler </title>
-    <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX", "output/HTML-CSS"],
-      extensions: ["tex2jax.js"],
-      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
-      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
-      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
-      messageStyle: "none"
-    });
-    </script>    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { fonts: ["TeX"] }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
     <style>
       body{
         font-size: 14pt;
         font-family: "Helvetica", sans-serif;
         line-height: 1.5;
       }
-      
+
       h1{
         background-color: rgb(255,223,0);
       }
+      
+      .def::before{
+        font-weight: bold;
+        content: "Definição. ";
+      }
+      
+      .teor::before{
+        font-weight: bold;
+        content: "Teorema. ";
+      }
+      
+      .prop::before{
+        font-weight: bold;
+        content: "Proposição. ";
+      }
+      
+      .demonst::before{
+        font-weight: bold;
+        content: "Demonstração. ";
+      }
+      
     </style>
   </head>
   
   <body>
     <div style="text-align:center"><h1>A curiosa reta de Euler</h1></div>
     
+    <p>É altamente improvável que, dados três pontos aleatórios no plano, eles estejam alinhados. Pense que, dois dos três pontos formam uma reta. Então o terceiro ponto pertencerá a própria reta ou pertencerá ao plano sem essa reta. Como o plano é muito mais vasto do que a reta, é bem mais provável o terceiro ponto não estar na reta. Agora, imagine que em um triângulo qualquer, você desenhe o <em>baricentro</em>, o <em>ortocentro</em> e o <em>circuncentro</em>. Pergunta: esses pontos estão alinhados? A resposta é sim. Esses três pontos pertencem a mesma reta, chamada de <strong>reta de Euler</strong>, e é isso que vamos provar nessa seção. Antes de provarmos esse fato, vamos relembrar algumas definições e resultados da geometria euclidiana.</p>
+    
+    <p></p>
+    
   </body>
   
 </html>
-
