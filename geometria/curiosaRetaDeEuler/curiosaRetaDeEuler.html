@@ -3,7 +3,6 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title> A curiosa reta de Euler </title>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
@@ -44,19 +43,9 @@
         content: "Proposição. ";
       }
       
-      .lema::before{
-        font-weight: bold;
-        content: "Lema. ";
-      }
-      
       .demonst::before{
         font-weight: bold;
         content: "Demonstração. ";
-      }
-      
-      .obs::before{
-        font-weight: bold;
-        content: "Observação. ";
       }
       
     </style>
@@ -67,7 +56,35 @@
     
     <p>É altamente improvável que, dados três pontos aleatórios no plano, eles estejam alinhados. Pense que, dois dos três pontos formam uma reta. Então o terceiro ponto pertencerá a própria reta ou pertencerá ao plano sem essa reta. Como o plano é muito mais vasto do que a reta, é bem mais provável o terceiro ponto não estar na reta. Agora, imagine que em um triângulo qualquer, você desenhe o <em>baricentro</em>, o <em>ortocentro</em> e o <em>circuncentro</em>. Pergunta: esses pontos estão alinhados? A resposta é sim. Esses três pontos pertencem a mesma reta, chamada de <strong>reta de Euler</strong>, e é isso que vamos provar nessa seção. Antes de provarmos esse fato, vamos relembrar algumas definições e resultados da geometria euclidiana.</p>
     
-    <p></p>
+    <p>Considere o triângulo $ABC$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC.png" alt="Triângulo ABC" width="350"></div>
+    
+    <p>Uma <em>mediana</em> de um triângulo é o segmento cujas extremidades são um vértice do triângulo e o ponto médio do lado oposto. Assim, cada triângulo tem três medianas. Um fato importante sobre as medianas de um triângulo é que elas se interceptam em um único ponto. Tal ponto é chamado de <strong>baricentro</strong> do triângulo. Para o triângulo $ABC$ dado, o baricentro é o ponto $G$, visto na figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-baric.png" alt="Baricentro do triângulo ABC" width="350"></div>
+    
+    <p>Um fato importante sobre o baricentro é que, dada uma mediana, ele se posiciona em um ponto tal que a distância entre ele e um vértice do triângulo contido nessa mediana vale dois terços da distância desse vértice ao ponto médio do lado oposto. Assim, considerando a mediana $AM_A$ do triângulo $ABC$, temos que $\overline{AG} = \frac{2}{3}\overline{AM_A}$.</p>
+    
+    <p>A <em>mediatriz</em> de um segmento é a reta perpendicular ao segmento que contém seu ponto médio. Da mesma forma como as medianas de um triângulo, são três as mediatrizes de um triângulo, uma para cada lado de um triângulo, e elas também se interceptam em um único ponto, chamado <strong>circuncentro</strong> do triângulo. A figura abaixo mostra o circuncentro do triângulo $ABC$, denotado por $O$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-circunc.png" alt="Circuncentro do triângulo ABC" width="350"></div>
+    
+    <p>Uma <em>altura</em> de um triângulo é o segmento perpendicular que une um vértice do triângulo à reta que contém o lado oposto. As três alturas de um triângulo também se interceptam em um único ponto, chamado <strong>ortocentro</strong> do triângulo. O ortocentro do triângulo $ABC$ está indicado pela letra $H$ na figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-ortoc.png" alt="Ortocentro do triângulo ABC" width="350"></div>
+    
+    <p>O que vamos provar é que o baricentro, o circuncentro e o ortocentro pertencem a mesma reta, a reta de Euler. Veja na figura abaixo a reta de Euler do triângulo $ABC$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-retaDeEuler.png" alt="Reta de Euler para o triângulo ABC" width="350"></div>
+    
+    <p>Antes, porém, vamos a mais alguns resultados.</p>
+    
+    <p><strong>Referência bibliográfica</strong></p>
+  
+    <ol>
+      <li>REZENDE, Eliane Q. F.; QUEIROZ, Maria L. B. <i>Geometria euclidiana plana e construções geométricas.</i> 2ed. Campinas: Editora da Unicamp, 2008.</li>
+    <ol>
     
   </body>
   
