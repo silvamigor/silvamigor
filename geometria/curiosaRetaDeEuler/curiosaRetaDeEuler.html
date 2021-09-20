@@ -68,7 +68,7 @@
     
     <div style="text-align:center"><img src="geogebra-triangABC-baric.png" alt="Baricentro do triângulo ABC"></div>
     
-    <p>Um fato importante sobre o baricentro é que, dada uma mediana, ele se posiciona em um ponto tal que a distância entre ele e um vértice do triângulo contido nessa mediana vale dois terços da distância desse vértice ao ponto médio do lado oposto. Assim, considerando a mediana $AM_A$ do triângulo $ABC$, temos que $\overline{AG} = \frac{2}{3}\overline{AM_A}$.</p>
+    <p>Um fato importante sobre o baricentro é que, dada uma mediana, ele se posiciona em um ponto tal que a distância entre ele e o vértice do triângulo contido nessa mediana vale dois terços da distância desse vértice ao ponto médio do lado oposto. Assim, considerando a mediana $AM_A$ do triângulo $ABC$, temos que $\overline{AG} = \frac{2}{3}\overline{AM_A}$. Uma vez que $\overline{AG} + \overline{GM_A} = \overline{AM_A}$, então $\overline{GM_A} = \frac{1}{3}\overline{AM_A}$. Portanto, temos que $\overline{AG} = 2\overline{GM_A}$. Esse fato se aplica às outras medianas, ou seja, $\overline{BG} = 2\overline{GM_B}$ e $\overline{CG} = 2\overline{GM_C}$.</p>
     
     <p>A <em>mediatriz</em> de um segmento é a reta perpendicular ao segmento que contém seu ponto médio. Da mesma forma como as medianas de um triângulo, são três as mediatrizes de um triângulo, uma para cada lado de um triângulo, e elas também se interceptam em um único ponto, chamado <strong>circuncentro</strong> do triângulo. A figura abaixo mostra o circuncentro do triângulo $ABC$, denotado por $O$.</p>
     
@@ -84,29 +84,35 @@
     
     <p>Antes, porém, vamos relembrar mais alguns resultados.</p>
     
-    <p id="teoBaseMedia"> <strong>Proposição</strong> (Teorema da base média do triângulo)<strong>.</strong> O segmento com extremidades nos pontos médios de dois lados de um triângulo é paralelo ao terceiro lado e tem a metade de seu comprimento.</p>
+    <p id="teoBaseMedia"> <strong>Proposição 1</strong> (Teorema da base média do triângulo)<strong>.</strong> O segmento com extremidades nos pontos médios de dois lados de um triângulo é paralelo ao terceiro lado e tem a metade de seu comprimento. $\Box$</p>
     
     <p>Considere, novamente, o triângulo $ABC$ que estamos trabalhando. Nele, temos que $\overline{M_AM_B} = \frac{1}{2}\overline{AB}$, $\overline{M_AM_C} = \frac{1}{2}\overline{AC}$ e $\overline{M_BM_C} = \frac{1}{2}\overline{BC}$.</p>
     
     <div style="text-align:center"><img src="geogebra-triangABC-baseMedia.png" alt="Teorema da base média do triângulo."></div>
     
-    <p id="teoSemLLL"> <strong>Proposição</strong> (Teorema da semelhança L.L.L.)<strong>.</strong> Se dois triângulo $ABC$ e $DEF$ são tais que seus lados satisfazem a relação $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}} = \frac{\overline{BC}}{\overline{EF}}$, então tais triângulos são semelhantes, o que denotamos por ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$.</p>
+    <p id="teoSemLLL"> <strong>Proposição 2</strong> (Teorema da semelhança L.L.L.)<strong>.</strong> Se dois triângulo $ABC$ e $DEF$ são tais que seus lados satisfazem a relação $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}} = \frac{\overline{BC}}{\overline{EF}}$, então tais triângulos são semelhantes, o que denotamos por ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$. $\Box$</p>
     
-    <p>Lembre-se de que dois triângulos são semelhantes se podemos corresponder um vértice do primeiro triângulo com um do segundo triângulo, de modo a obter ângulos opostos congruentes e lados correspondentes proporcionais. Por exemplo, na figura abaixo, temos que ${\bigtriangleup}ABC \sim {\bigtriangleup}A'B'C'$, onde a proporção entre os lados é dada pelo número $\frac{1}{2}$.</p>
+    <p>Lembre-se de que dois triângulos são semelhantes se podemos corresponder cada vértice do primeiro triângulo com um do segundo triângulo, de modo a obter ângulos correspondentes congruentes (ou seja, com a mesma medida) e lados correspondentes proporcionais. Por exemplo, na figura abaixo, temos que ${\bigtriangleup}ABC \sim {\bigtriangleup}A'B'C'$, onde a proporção entre os lados é dada pelo número $\frac{1}{2}$.</p>
     
     <div style="text-align:center"><img src="geogebra-semelhTriang.png" alt="Semelhança de triângulo."></div>
+    
+    <p id="teoSemLLL"> <strong>Proposição 3</strong> (Teorema da semelhança L.A.L.)<strong>.</strong> Dados dois triângulos, $ABC$ e $DEF$, se os ângulos $\widehat{BAC}$ e $\widehat{EDF}$ são congruentes e $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}}$, então ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$. $\Box$</p>
+    
+    <div style="text-align:center"><img src="geogebra-teorSemLAL.png" alt="Teorema da semelhança L.A.L."></div>
     
     <p>Para o próximo resultado, lembremos um conceito. Seja $r$ uma reta transversal às retas $s$ e $t$, interceptando-as nos pontos $P$ e $Q$, respectivamente. Sejam $A$ um ponto em $s$ e $B$ um ponto em $t$, tais que $A$ e $B$ estejam em lados opostos de $r$. Veja a figura abaixo.</p>
     
     <div style="text-align:center"><img src="geogebra-altInternos.png" alt="Ângulos alternos internos."></div>
     
-    <p>Os ângulos $\hat{APQ}$ e $\hat{BQP}$ são chamados de <em>ângulos alternos internos</em>.</p>
+    <p>Os ângulos $\widehat{APQ}$ e $\widehat{BQP}$ são chamados de <em>ângulos alternos internos</em>.</p>
     
-    <p id="altIntRetasPar"><strong>Proposição.</strong> Se duas retas cortadas por uma transversal formam dois ângulos alternos internos congruentes, então as retas são paralelas. Reciprocamente, se duas retas paralelas são cortadas por uma transversal, então os ângulos alternos internos são congruentes.</p>
+    <p id="altIntRetasPar"><strong>Proposição 4.</strong> Se duas retas cortadas por uma transversal formam dois ângulos alternos internos congruentes, então as retas são paralelas. Reciprocamente, se duas retas paralelas são cortadas por uma transversal, então os ângulos alternos internos são congruentes. $\Box$</p>
     
     <div style="text-align:center"><img src="geogebra-altIntParalelas.png" alt="Reciprocidade entre retas paralelas e ângulos alternos internos congruentes."></div>
     
-    <p>Lembre-se, por último, de que um <em>paralelogramo</em> é um quadrilátero em que os lados opostos são paralelos. Em um quadrilátero, entre outras propriedades, vale que as diagonais se bisseccionam, isto é, interceptam-se em um ponto tal que divide cada diagonal em duas partes iguais.</p>
+    <p>Lembre-se, por último, de que um <em>paralelogramo</em> é um quadrilátero em que os lados opostos são paralelos.</p>
+    
+    <p id="paralelogDiagBisec"><strong>Proposição 5.</strong> Em um paralelogramo as diagonais se bisseccionam, isto é, interceptam-se em um ponto tal que divide cada diagonal em duas partes iguais. $\Box$</p>
     
     <div style="text-align:center"><img src="geogebra-diagParalBissec.png" alt="As diagonais de um paralelogramo se bisseccionam."></div>
     
@@ -115,7 +121,52 @@
     <p class="teor" id="retaDeEuler">O baricentro, o circuncentro e o ortocentro de um triângulo são colineares.</p>
     
     <p class="demonst">
-      
+      Considere no triângulo arbitrário $ABC$, que estamos trabalhando, os pontos médios dos lados, $M_A$, $M_B$ e $M_C$. Pela <a href="#teoBaseMedia">Proposição 1</a>, temos que os segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ são paralelos, respectivamente, aos lados $AB$, $AC$ e $BC$. 
+    </p>
+    <div style="text-align:center"><img src="geogebra-demonstFig1.png" alt="Figura 1 da demonstração."></div>
+    
+    <p>
+      Note que o quadrilátero $AM_CM_AM_B$ é um paralelogramo, pois os lados opostos são paralelos, conforme observado no parágrafo anterior. Assim, pela <a href="#paralelogDiagBisec">Proposição 5</a>, temos que as diagonais se interceptam no ponto médio delas, o qual denotaremos por $Q_1$. Logo, a mediada $AM_A$, do triângulo $ABC$, é uma extensão da mediana $M_AQ_1$, do triângulo $M_AM_BM_C$. O mesmo raciocínio pode ser aplicado aos paralelogramos $BM_AM_BM_C$ e $CM_BM_CM_A$. Veja as figuras abaixo.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig2.png" alt="Figura 2 da demonstração."></div>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig3.png" alt="Figura 3 da demonstração."></div>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig4.png" alt="Figura 4 da demonstração."></div>
+    
+    <p>
+      Dessa forma, uma vez que as medianas se interceptam em um mesmo ponto, concluímos que os triângulos $ABC$ e $M_AM_BM_C$ possuem o mesmo baricentro $G$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig5.png" alt="Figura 5 da demonstração."></div>
+    
+    <p>
+      Lembre-se de que uma mediatriz de um lado de um triângulo é a reta perpendicular a esse lado que contém seu ponto médio. Assim, pelo paralelismo dos segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ com relação, respectivamente, aos lados $AB$, $AC$ e $BC$, conforme discutido no início dessa demonstração, temos que as mediatrizes do triângulo $ABC$, com relação aos lados $AB$, $AC$ e $BC$ são perpendiculares, respectivamente, aos lados $M_AM_B$, $M_AM_C$ e $M_BM_C$, do triângulo $M_AM_BM_C$. Disso segue que as mediatrizes do triângulo $ABC$ coincidem com as alturas do triângulo $M_AM_BM_C$. Logo, o circuncentro de $ABC$, denotado por $O$, coincide com o ortocentro de $M_AM_BM_C$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig6.png" alt="Figura 6 da demonstração."></div>
+    
+    <p>
+      Usando outra vez a <a href="#teoBaseMedia">Proposição 1</a>, aplicada ao triângulo $ABC$, temos que os segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ têm como medida a metade do valor dos lados em que são paralelos, ou seja, $\frac{\overline{M_AM_B}}{\overline{AB}} = \frac{\overline{M_AM_C}}{\overline{AC}} = \frac{\overline{M_BM_C}}{\overline{BC}} = \frac{1}{2}$. Assim, pela <a href="#teoSemLLL">Proposição 2</a>, temos que ${\bigtriangleup}M_AM_BM_C \sim {\bigtriangleup}ABC$, ou seja, qualquer par de segmentos correspondentes nesses dois triângulos estão na mesma razão $\frac{1}{2}$. Considere $H$ o ortocentro do triângulo $ABC$. Uma vez que o circuncentro de $ABC$ coincide com o ortocentro de $M_AM_BM_C$, temos que os segmentos $AH$ e $M_AO$ são perpendiculares ao lado $AB$, portanto são segmentos paralelos.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig7.png" alt="Figura 7 da demonstração."></div>
+    
+    <p>
+      Traçando o segmento $AM_A$, que contém o baricentro $G$, pela <a href="#altIntRetasPar">Proposição 4</a>, os ângulos alternos internos $\widehat{HAG}$ e $\widehat{GM_AO}$ são congruentes, pois $AH$ e $M_AO$ são paralelas.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig8.png" alt="Figura 8 da demonstração."></div>
+    
+    <p>
+      Usando a semelhança dos triângulos $ABC$ e $M_AM_BM_C$, cuja razão é $\frac{1}{2}$, como $H$ é o ortocentro de ${\bigtriangleup}ABC$ e $O$ é o ortocentro de ${\bigtriangleup}M_AM_BM_C$, chegamos que $\overline{AH} = 2\overline{M_AO}$. Pela propriedade de baricentro, conforme comentado no início dessa seção, $\overline{AG} = 2\overline{GM_A}$. Portanto, pela <a href="#teoSemLLL">Proposição 3</a>, temos que ${\bigtriangleup}AGH \sim {\bigtriangleup}M_AGO$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig9.png" alt="Figura 9 da demonstração."></div>
+    
+    <p>
+      Dessa forma, concluímos que $\widehat{AGH}$ é congruente a $\widehat{M_AGO}$. Assim, sabendo que o $ 180^{\circ} = \widehat{AGM_A} = \widehat{M_AGO} + \widehat{OGA}$, temos que $\widehat{OGA} = 180^{\circ} - \widehat{M_AGO}$. Agora, note que $\widehat{OGH} = \widehat{OGA} + \widehat{AGH} = 180^{\circ} - \widehat{M_AGO} + \widehat{AGH}$. Como $\widehat{AGH} = \widehat{M_AGO}$, então $\widehat{OGH} = 180^{\circ} - \widehat{M_AGO} + \widehat{M_AGO} = 180^{\circ}$. Portanto, o ângulo do segmento $OGH$ é $180^{\circ}$, ou seja, o baricentro, o circuncentro e o ortocentro de um triângulo são colineares.
       $\boxtimes$
     </p>
     
