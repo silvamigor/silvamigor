@@ -55,16 +55,16 @@
     </style>
   </head>
   
-  <body>
+  <body width = "device-width">
     <div style="text-align:center"><h1>A curiosa reta de Euler</h1></div>
     
-    <p>É altamente improvável que, dados três pontos aleatórios no plano, eles estejam alinhados. Pense que, dois dos três pontos formam uma reta. Então o terceiro ponto pertencerá a própria reta ou pertencerá ao plano sem essa reta. Como o plano é muito mais vasto do que a reta, é bem mais provável o terceiro ponto não estar na reta. Agora, imagine que em um triângulo qualquer, você desenhe o <em>baricentro</em>, o <em>ortocentro</em> e o <em>circuncentro</em>. Pergunta: esses pontos estão alinhados? A resposta é sim. Esses três pontos pertencem a mesma reta, chamada de <strong>reta de Euler</strong>, e é isso que vamos provar nessa seção. Antes de provarmos esse fato, vamos relembrar algumas definições e resultados da geometria euclidiana.</p>
+    <p>É altamente improvável que, dados três pontos aleatórios no plano, eles estejam alinhados. Pense que, dois dos três pontos formam uma reta. Então o terceiro ponto pertencerá a própria reta ou pertencerá ao plano sem essa reta. Como o plano é muito mais vasto do que a reta, é bem mais provável o terceiro ponto não estar na reta. Agora, imagine que em um triângulo qualquer, você desenhe o <em>baricentro</em>, o <em>circuncentro</em> e o <em>ortocentro</em>. Pergunta: esses pontos estão alinhados? A resposta é sim. Esses três pontos pertencem a mesma reta, chamada de <strong>reta de Euler</strong>, e é isso que vamos provar nessa seção. Antes de provarmos esse fato, vamos relembrar algumas definições e resultados da geometria euclidiana.</p>
     
     <p>Considere o triângulo $ABC$.</p>
     
     <div style="text-align:center"><img src="geogebra-triangABC.png" alt="Triângulo ABC"></div>
     
-    <p>Uma <em>mediana</em> de um triângulo é o segmento cujas extremidades são um vértice do triângulo e o ponto médio do lado oposto. Assim, cada triângulo tem três medianas. Um fato importante sobre as medianas de um triângulo é que elas se interceptam em um único ponto. Tal ponto é chamado de <strong>baricentro</strong> do triângulo. Para o triângulo $ABC$ dado, o baricentro é o ponto $G$, visto na figura abaixo.</p>
+    <p>Uma <em>mediana</em> de um triângulo é o segmento cujas extremidades são um vértice do triângulo e o ponto médio do lado oposto. Assim, cada triângulo tem três medianas. Um fato interessante sobre as medianas de um triângulo é que elas se interceptam em um único ponto. Observe que dadas três retas (ou segmentos), nem sempre eles se interceptam em um único ponto. O que sabemos é que duas retas não paralelas sempre se interceptam em um único ponto, mas não podemos dizer o mesmo para três retas (ou segmentos). Daí o fato das medianas de um triângulo se encontrarem em um ponto só ser algo interessante. Tal ponto é chamado de <strong>baricentro</strong> do triângulo. Para o triângulo $ABC$ dado, o baricentro é o ponto $G$, visto na figura abaixo.</p>
     
     <div style="text-align:center"><img src="geogebra-triangABC-baric.png" alt="Baricentro do triângulo ABC"></div>
     
@@ -82,7 +82,42 @@
     
     <div style="text-align:center"><img src="geogebra-triangABC-retaDeEuler.png" alt="Reta de Euler para o triângulo ABC"></div>
     
-    <p>Antes, porém, vamos a mais alguns resultados.</p>
+    <p>Antes, porém, vamos relembrar mais alguns resultados.</p>
+    
+    <p id="teoBaseMedia"> <strong>Proposição</strong> (Teorema da base média do triângulo)<strong>.</strong> O segmento com extremidades nos pontos médios de dois lados de um triângulo é paralelo ao terceiro lado e tem a metade de seu comprimento.</p>
+    
+    <p>Considere, novamente, o triângulo $ABC$ que estamos trabalhando. Nele, temos que $\overline{M_AM_B} = \frac{1}{2}\overline{AB}$, $\overline{M_AM_C} = \frac{1}{2}\overline{AC}$ e $\overline{M_BM_C} = \frac{1}{2}\overline{BC}$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-baseMedia.png" alt="Teorema da base média do triângulo."></div>
+    
+    <p id="teoSemLLL"> <strong>Proposição</strong> (Teorema da semelhança L.L.L.)<strong>.</strong> Se dois triângulo $ABC$ e $DEF$ são tais que seus lados satisfazem a relação $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}} = \frac{\overline{BC}}{\overline{EF}}$, então tais triângulos são semelhantes, o que denotamos por ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$.</p>
+    
+    <p>Lembre-se de que dois triângulos são semelhantes se podemos corresponder um vértice do primeiro triângulo com um do segundo triângulo, de modo a obter ângulos opostos congruentes e lados correspondentes proporcionais. Por exemplo, na figura abaixo, temos que ${\bigtriangleup}ABC \sim {\bigtriangleup}A'B'C'$, onde a proporção entre os lados é dada pelo número $\frac{1}{2}$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-semelhTriang.png" alt="Semelhança de triângulo."></div>
+    
+    <p>Para o próximo resultado, lembremos um conceito. Seja $r$ uma reta transversal às retas $s$ e $t$, interceptando-as nos pontos $P$ e $Q$, respectivamente. Sejam $A$ um ponto em $s$ e $B$ um ponto em $t$, tais que $A$ e $B$ estejam em lados opostos de $r$. Veja a figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-altInternos.png" alt="Ângulos alternos internos."></div>
+    
+    <p>Os ângulos $\hat{APQ}$ e $\hat{BQP}$ são chamados de <em>ângulos alternos internos</em>.</p>
+    
+    <p id="altIntRetasPar"><strong>Proposição.</strong> Se duas retas cortadas por uma transversal formam dois ângulos alternos internos congruentes, então as retas são paralelas. Reciprocamente, se duas retas paralelas são cortadas por uma transversal, então os ângulos alternos internos são congruentes.</p>
+    
+    <div style="text-align:center"><img src="geogebra-altIntParalelas.png" alt="Reciprocidade entre retas paralelas e ângulos alternos internos congruentes."></div>
+    
+    <p>Lembre-se, por último, de que um <em>paralelogramo</em> é um quadrilátero em que os lados opostos são paralelos. Em um quadrilátero, entre outras propriedades, vale que as diagonais se bisseccionam, isto é, interceptam-se em um ponto tal que divide cada diagonal em duas partes iguais.</p>
+    
+    <div style="text-align:center"><img src="geogebra-diagParalBissec.png" alt="As diagonais de um paralelogramo se bisseccionam."></div>
+    
+    <p>Finalmente, estamos prontos para provar provar o resultado almejado nessa seção.</p>
+    
+    <p class="teor" id="retaDeEuler">O baricentro, o circuncentro e o ortocentro de um triângulo são colineares.</p>
+    
+    <p class="demonst">
+      
+      $\boxtimes$
+    </p>
     
     <p><strong>Referência bibliográfica</strong></p>
   
