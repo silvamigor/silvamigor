@@ -29,6 +29,10 @@
       h1{
         background-color: rgb(213,113,0);
       }
+      
+      img{
+        max-width: 50%;
+      }
     </style>
   </head>
   
@@ -44,7 +48,11 @@
     
     <p>Dizemos que uma afirmação matemática tem o valor lógico <em>verdade</em>, designado pela letra $\mathcal{V}$, se ela é verdadeira, e dizemos que uma afirmação matemática tem o valor lógico <em>falsidade</em>, designado pela letra $\mathcal{F}$, se ela é falsa. Assim, podemos resumir os dois princípios acima, dizendo: <em>toda afirmação matemática tem um, e só um, dos valores $\mathcal{V}$ e $\mathcal{F}$</em>.</p>
     
-    <p>Uma vez que os conectivos lógicos formam novas afirmações matemáticas, a partir de afirmações matemáticas, considerando os dois princípios acima, podemos pensar que os conectivos lógicos são funções de uma ou duas variáveis, onde as variáveis são os valores lógicos e a resposta da função é também um valor lógico. Vamos estudar os conectivos <em>negação</em>, <em>conjunção</em>, <em>disjunção</em>, <em>implicação</em> e <em>biimplicação</em> e ver como eles se comportam, quando analisados os valores lógicos das afirmações que eles combinam, usando para isso um dispositivo chamado <strong>tabela verdade</strong>, que é uma tabela onde se apresenta todos os possíveis valores lógicos da afirmação gerada pelo conectivo, dado os valores lógicos das afirmações que o conectivo combina.</p>
+    <p>Uma vez que os conectivos lógicos formam novas afirmações matemáticas, a partir de afirmações matemáticas, considerando os dois princípios acima, podemos pensar que os conectivos lógicos são funções de uma ou duas variáveis, onde as variáveis são os valores lógicos e a resposta da função é também um valor lógico, ou seja, os conectivos lógicos podem ser vistos como transformações que ao ser passado um ou dois valores lógicos, entrega também um valor lógico.</p>
+    
+    <div style="text-align:center"><img src="geogebra-conectivoFuncao.png" alt="Conectivos lógicos entendidos como funções de valores lógicos"></div>
+    
+    <p>Vamos estudar os conectivos <em>negação</em>, <em>conjunção</em>, <em>disjunção</em>, <em>implicação</em> e <em>biimplicação</em> e ver como eles se comportam, quando analisados os valores lógicos das afirmações que eles combinam. Para isso, usaremos um dispositivo chamado <strong>tabela verdade</strong>, que é uma tabela onde se apresenta todos os possíveis valores lógicos da afirmação gerada pelo conectivo lógico, dado os valores lógicos das afirmações que o conectivo combina. Em outras palavras, vamos estudar os conectivos lógicos enxergando-os, conforme já observado acima, como funções de valores lógicos, explicitando todos os valores lógicos obtidos como saída dessa função, ao se variar todas as possibilidades dos valores lógicos dados como entrada dessa mesma função.</p>
     
     <h2 id="neg">Negação</h2>
     
@@ -63,7 +71,7 @@
     
     <h2 id="conj">Conjunção</h2>
     
-    <p>A <em>conjunção</em> de duas afirmações matemáticas $P$ e $Q$, denotada por $P \wedge Q$, é a afirmação matemática cujo valor lógico da é verdade, quando o valor lógico de $P$ e $Q$ são ambos verdade, e é falsidade nos demais casos. Lemos $P \wedge Q$ como "$P$ e $Q$". Considere o exemplo, onde $P$ é a afirmação matemática "$2$ é par" e $Q$ é a afirmação "$4$ é par". Então a afirmação matemática $P \wedge Q$ é "$2$ é par e $4$ é par". Veja a tabela verdade da conjunção abaixo.</p>
+    <p>A <em>conjunção</em> de duas afirmações matemáticas $P$ e $Q$, denotada por $P \wedge Q$, é a afirmação matemática cujo valor lógico é verdade, quando o valor lógico de $P$ e $Q$ são ambos verdade, e é falsidade nos demais casos. Lemos $P \wedge Q$ como "$P$ e $Q$". Considere o exemplo, onde $P$ é a afirmação matemática "$2$ é par" e $Q$ é a afirmação "$4$ é par". Então a afirmação matemática $P \wedge Q$ é "$2$ é par e $4$ é par". Veja a tabela verdade da conjunção abaixo.</p>
     
     \[
       \begin{array}{|c|c|c|}
@@ -80,7 +88,7 @@
     
     <h2 id="disj">Disjunção</h2>
     
-    <p>A <em>disjunção</em> de duas afirmações matemáticas $P$ e $Q$, denotada por $P \vee Q$, é a afirmação matemática cujo valor lógico da afirmação é verdade, quando ao menos uma das afirmações $P$ e $Q$ é verdadeira, e é falsidade quando ambas forem falsas. A afirmação $P \vee Q$ é lida como "$P$ ou $Q$". Um exemplo: se $P$ é a afirmação matemática "$2$ é par" e $Q$ é a afirmação "$4$ é ímpar", então a afirmação matemática $P \vee Q$ é "$2$ é par ou $4$ é ímpar". O  Segue abaixo a tabela verdade da disjunção.</p>
+    <p>A <em>disjunção</em> de duas afirmações matemáticas $P$ e $Q$, denotada por $P \vee Q$, é a afirmação matemática cujo valor lógico é verdade, quando ao menos uma das afirmações $P$ e $Q$ é verdadeira, e é falsidade quando ambas forem falsas. A afirmação $P \vee Q$ é lida como "$P$ ou $Q$". Um exemplo: se $P$ é a afirmação matemática "$2$ é par" e $Q$ é a afirmação "$4$ é ímpar", então a afirmação matemática $P \vee Q$ é "$2$ é par ou $4$ é ímpar". Segue abaixo a tabela verdade da disjunção.</p>
     
     \[
       \begin{array}{|c|c|c|}
