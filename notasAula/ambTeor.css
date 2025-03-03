@@ -1,0 +1,44 @@
+.teor:before{
+  counter-increment: contTeor;
+  font-weight: bold;
+  content: "Teorema " counter(contSec)"."counter(contTeor) ". ";
+}
+    
+.teor[text]:before {
+  counter-increment: contTeor;
+  content: "Teorema " counter(contSec)"."counter(contTeor) " (" attr(text) "). ";
+}
+      
+.prop:before{
+  counter-increment: contProp;
+  font-weight: bold;
+  content: "Proposição " counter(contSec)"."counter(contProp) ". ";
+}
+      
+.prop[text]:before {
+  counter-increment: contProp;
+  content: "Proposição " counter(contSec)"."counter(contProp) " (" attr(text)"). ";
+}
+      
+.lema:before{
+  counter-increment: contLema;
+  font-weight: bold;
+  content: "Lema " counter(contSec)"."counter(contLema) ". ";
+}
+      
+.lema[text]:before {
+  counter-increment: contLema;
+  content: "Lema " counter(contSec)"."counter(contLema) " (" attr(text)"). ";
+}
+      
+.obs:before{
+  counter-increment: contObs;
+  font-weight: bold;
+  content: "Observação " counter(contSec)"."counter(contObs) ". ";
+}
+      
+.def:before{
+  counter-increment: contDef;
+  font-weight: bold;
+  content: "Definição " counter(contSec)"."counter(contDef) ". ";
+}

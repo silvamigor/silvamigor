@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>O que é um algoritmo?</title>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Register.StartupHook("TeX Jax Ready",function (){
+                 MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+                    cancel: ["Extension","cancel"],
+                    bcancel: ["Extension","cancel"],
+                    xcancel: ["Extension","cancel"],
+                    cancelto: ["Extension","cancel"]
+                });
+            });
+            MathJax.Hub.Config({
+                extensions: ["https://lomath.in/doc/xyjax/xypic.js","tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true
+                },
+                "HTML-CSS": { fonts: ["TeX"] },
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    Macros: {
+                        fraka: ["\\mathfrak{a}"],
+                        frakb: ["\\mathfrak{b}"],
+                        frakc: ["\\mathfrak{c}"],
+                        frakd: ["\\mathfrak{d}"],
+                        frake: ["\\mathfrak{e}"],
+                        frakf: ["\\mathfrak{f}"],
+                        frakg: ["\\mathfrak{g}"],
+                        frakh: ["\\mathfrak{h}"],
+                        fraki: ["\\mathfrak{i}"],
+                        frakj: ["\\mathfrak{j}"],
+                        frakk: ["\\mathfrak{k}"],
+                        frakl: ["\\mathfrak{l}"],
+                        frakm: ["\\mathfrak{m}"],
+                        frakn: ["\\mathfrak{n}"],
+                        frako: ["\\mathfrak{o}"],
+                        frakp: ["\\mathfrak{p}"],
+                        frakq: ["\\mathfrak{q}"],
+                        frakr: ["\\mathfrak{r}"],
+                        fraks: ["\\mathfrak{s}"],
+                        frakt: ["\\mathfrak{t}"],
+                        fraku: ["\\mathfrak{u}"],
+                        frakv: ["\\mathfrak{v}"],
+                        frakx: ["\\mathfrak{x}"],
+                        frakw: ["\\mathfrak{w}"],
+                        fraky: ["\\mathfrak{y}"],
+                        frakz: ["\\mathfrak{z}"],
+                        frakA: ["\\mathfrak{A}"],
+                        frakB: ["\\mathfrak{B}"],
+                        frakC: ["\\mathfrak{C}"],
+                        frakD: ["\\mathfrak{D}"],
+                        frakE: ["\\mathfrak{E}"],
+                        frakF: ["\\mathfrak{F}"],
+                        frakG: ["\\mathfrak{G}"],
+                        frakH: ["\\mathfrak{H}"],
+                        frakI: ["\\mathfrak{I}"],
+                        frakJ: ["\\mathfrak{J}"],
+                        frakK: ["\\mathfrak{K}"],
+                        frakL: ["\\mathfrak{L}"],
+                        frakM: ["\\mathfrak{M}"],
+                        frakN: ["\\mathfrak{N}"],
+                        frakO: ["\\mathfrak{O}"],
+                        frakP: ["\\mathfrak{P}"],
+                        frakQ: ["\\mathfrak{Q}"],
+                        frakR: ["\\mathfrak{R}"],
+                        frakS: ["\\mathfrak{S}"],
+                        frakT: ["\\mathfrak{T}"],
+                        frakU: ["\\mathfrak{U}"],
+                        frakV: ["\\mathfrak{V}"],
+                        frakX: ["\\mathfrak{X}"],
+                        frakW: ["\\mathfrak{W}"],
+                        frakY: ["\\mathfrak{Y}"],
+                        frakZ: ["\\mathfrak{Z}"],
+                        frakgl: ["\\mathfrak{gl}"],
+                        fraksl: ["\\mathfrak{sl}"],
+                        frakso: ["\\mathfrak{so}"],
+                        fraksp: ["\\mathfrak{sp}"],
+                        bba: ["\\mathbb{a}"],
+                        bbb: ["\\mathbb{b}"],
+                        bbc: ["\\mathbb{c}"],
+                        bbd: ["\\mathbb{d}"],
+                        bbe: ["\\mathbb{e}"],
+                        bbf: ["\\mathbb{f}"],
+                        bbg: ["\\mathbb{g}"],
+                        bbh: ["\\mathbb{h}"],
+                        bbi: ["\\mathbb{i}"],
+                        bbj: ["\\mathbb{j}"],
+                        bbk: ["\\mathbb{k}"],
+                        bbl: ["\\mathbb{l}"],
+                        bbm: ["\\mathbb{m}"],
+                        bbn: ["\\mathbb{n}"],
+                        bbo: ["\\mathbb{o}"],
+                        bbp: ["\\mathbb{p}"],
+                        bbq: ["\\mathbb{q}"],
+                        bbr: ["\\mathbb{r}"],
+                        bbs: ["\\mathbb{s}"],
+                        bbt: ["\\mathbb{t}"],
+                        bbu: ["\\mathbb{u}"],
+                        bbv: ["\\mathbb{v}"],
+                        bbx: ["\\mathbb{x}"],
+                        bbw: ["\\mathbb{w}"],
+                        bby: ["\\mathbb{y}"],
+                        bbz: ["\\mathbb{z}"],
+                        bbA: ["\\mathbb{A}"],
+                        bbB: ["\\mathbb{B}"],
+                        bbC: ["\\mathbb{C}"],
+                        bbD: ["\\mathbb{D}"],
+                        bbE: ["\\mathbb{E}"],
+                        bbF: ["\\mathbb{F}"],
+                        bbG: ["\\mathbb{G}"],
+                        bbH: ["\\mathbb{H}"],
+                        bbI: ["\\mathbb{I}"],
+                        bbJ: ["\\mathbb{J}"],
+                        bbK: ["\\mathbb{K}"],
+                        bbL: ["\\mathbb{L}"],
+                        bbM: ["\\mathbb{M}"],
+                        bbN: ["\\mathbb{N}"],
+                        bbO: ["\\mathbb{O}"],
+                        bbP: ["\\mathbb{P}"],
+                        bbQ: ["\\mathbb{Q}"],
+                        bbR: ["\\mathbb{R}"],
+                        bbS: ["\\mathbb{S}"],
+                        bbT: ["\\mathbb{T}"],
+                        bbU: ["\\mathbb{U}"],
+                        bbV: ["\\mathbb{V}"],
+                        bbX: ["\\mathbb{X}"],
+                        bbW: ["\\mathbb{W}"],
+                        bbY: ["\\mathbb{Y}"],
+                        bbZ: ["\\mathbb{Z}"],
+                        cala: ["\\mathcal{a}"],
+                        calb: ["\\mathcal{b}"],
+                        calc: ["\\mathcal{c}"],
+                        cald: ["\\mathcal{d}"],
+                        cale: ["\\mathcal{e}"],
+                        calf: ["\\mathcal{f}"],
+                        calg: ["\\mathcal{g}"],
+                        calh: ["\\mathcal{h}"],
+                        cali: ["\\mathcal{i}"],
+                        calj: ["\\mathcal{j}"],
+                        calk: ["\\mathcal{k}"],
+                        call: ["\\mathcal{l}"],
+                        calm: ["\\mathcal{m}"],
+                        caln: ["\\mathcal{n}"],
+                        calo: ["\\mathcal{o}"],
+                        calp: ["\\mathcal{p}"],
+                        calq: ["\\mathcal{q}"],
+                        calr: ["\\mathcal{r}"],
+                        cals: ["\\mathcal{s}"],
+                        calt: ["\\mathcal{t}"],
+                        calu: ["\\mathcal{u}"],
+                        calv: ["\\mathcal{v}"],
+                        calx: ["\\mathcal{x}"],
+                        calw: ["\\mathcal{w}"],
+                        caly: ["\\mathcal{y}"],
+                        calz: ["\\mathcal{z}"],
+                        calA: ["\\mathcal{A}"],
+                        calB: ["\\mathcal{B}"],
+                        calC: ["\\mathcal{C}"],
+                        calD: ["\\mathcal{D}"],
+                        calE: ["\\mathcal{E}"],
+                        calF: ["\\mathcal{F}"],
+                        calG: ["\\mathcal{G}"],
+                        calH: ["\\mathcal{H}"],
+                        calI: ["\\mathcal{I}"],
+                        calJ: ["\\mathcal{J}"],
+                        calK: ["\\mathcal{K}"],
+                        calL: ["\\mathcal{L}"],
+                        calM: ["\\mathcal{M}"],
+                        calN: ["\\mathcal{N}"],
+                        calO: ["\\mathcal{O}"],
+                        calP: ["\\mathcal{P}"],
+                        calQ: ["\\mathcal{Q}"],
+                        calR: ["\\mathcal{R}"],
+                        calS: ["\\mathcal{S}"],
+                        calT: ["\\mathcal{T}"],
+                        calU: ["\\mathcal{U}"],
+                        calV: ["\\mathcal{V}"],
+                        calX: ["\\mathcal{X}"],
+                        calW: ["\\mathcal{W}"],
+                        calY: ["\\mathcal{Y}"],
+                        calZ: ["\\mathcal{Z}"],
+                        bfa: ["\\mathbf{a}"],
+                        bfb: ["\\mathbf{b}"],
+                        bfc: ["\\mathbf{c}"],
+                        bfd: ["\\mathbf{d}"],
+                        bfe: ["\\mathbf{e}"],
+                        bff: ["\\mathbf{f}"],
+                        bfg: ["\\mathbf{g}"],
+                        bfh: ["\\mathbf{h}"],
+                        bfi: ["\\mathbf{i}"],
+                        bfj: ["\\mathbf{j}"],
+                        bfk: ["\\mathbf{k}"],
+                        bfl: ["\\mathbf{l}"],
+                        bfm: ["\\mathbf{m}"],
+                        bfn: ["\\mathbf{n}"],
+                        bfo: ["\\mathbf{o}"],
+                        bfp: ["\\mathbf{p}"],
+                        bfq: ["\\mathbf{q}"],
+                        bfr: ["\\mathbf{r}"],
+                        bfs: ["\\mathbf{s}"],
+                        bft: ["\\mathbf{t}"],
+                        bfu: ["\\mathbf{u}"],
+                        bfv: ["\\mathbf{v}"],
+                        bfx: ["\\mathbf{x}"],
+                        bfw: ["\\mathbf{w}"],
+                        bfy: ["\\mathbf{y}"],
+                        bfz: ["\\mathbf{z}"],
+                        bfA: ["\\mathbf{A}"],
+                        bfB: ["\\mathbf{B}"],
+                        bfC: ["\\mathbf{C}"],
+                        bfD: ["\\mathbf{D}"],
+                        bfE: ["\\mathbf{E}"],
+                        bfF: ["\\mathbf{F}"],
+                        bfG: ["\\mathbf{G}"],
+                        bfH: ["\\mathbf{H}"],
+                        bfI: ["\\mathbf{I}"],
+                        bfJ: ["\\mathbf{J}"],
+                        bfK: ["\\mathbf{K}"],
+                        bfL: ["\\mathbf{L}"],
+                        bfM: ["\\mathbf{M}"],
+                        bfN: ["\\mathbf{N}"],
+                        bfO: ["\\mathbf{O}"],
+                        bfP: ["\\mathbf{P}"],
+                        bfQ: ["\\mathbf{Q}"],
+                        bfR: ["\\mathbf{R}"],
+                        bfS: ["\\mathbf{S}"],
+                        bfT: ["\\mathbf{T}"],
+                        bfU: ["\\mathbf{U}"],
+                        bfV: ["\\mathbf{V}"],
+                        bfX: ["\\mathbf{X}"],
+                        bfW: ["\\mathbf{W}"],
+                        bfY: ["\\mathbf{Y}"],
+                        bfZ: ["\\mathbf{Z}"],
+                        bfad: ["\\mathbf{ad}"],
+                        zero: ["\\{0\\}"],
+                        id: ["\\operatorname\{id\}"],
+                        sen: ["\\operatorname\{sen\}"],
+                        tg: ["\\operatorname\{tg\}"],
+                        ad: ["\\operatorname\{ad\}"],
+                        mdc: ["\\operatorname\{mdc\}"],
+                        im: ["\\operatorname\{im\}"],
+                        Quat: ["\\operatorname\{Quat\}"],
+                        Aut: ["\\operatorname\{Aut\}"],
+                        Inn: ["\\operatorname\{Inn\}"],
+                        orb: ["\\operatorname\{orb\}"],
+                        stab: ["\\operatorname\{stab\}"],
+                        Rep: ["\\operatorname\{Rep\}"],
+                        Hom: ["\\operatorname\{Hom\}"],
+                        End: ["\\operatorname\{End\}"],
+                        Obj: ["\\operatorname\{Obj\}"],
+                        tr: ["\\operatorname\{tr\}"],
+                        diam: ["\\operatorname\{diam\}"],
+                        diag: ["\\operatorname\{diag\}"],
+                        Ind: ["\\operatorname\{Ind\}"],
+                        Res: ["\\operatorname\{Res\}"],
+                        Set: ["\\operatorname\{Set\}"],
+                        coker: ["\\operatorname\{coker\}"],
+                        supp: ["\\operatorname\{supp\}"],
+                        Tor: ["\\operatorname\{Tor\}"],
+                        vspan: ["\\operatorname\{vspan\}"],
+                        char: ["\\operatorname\{char\}"],
+                        Ann: ["\\operatorname\{Ann\}"],
+                        Der: ["\\operatorname\{Der\}"],
+                        pint: ["{ \\langle #1,#2 \\rangle }",2],
+                        rfrac: ["{ {}^{#1}\\!/_{#2} }",2],
+                        norma: ["{ \\Vert #1 \\Vert }",1],
+                    },
+                },
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+        <script src="http://www.w3schools.com/lib/w3data.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../itemParenteses.css" />
+        <link rel="stylesheet" type="text/css" href="../../ambTeor.css" />
+        <script>
+            function closeDetail(detailsElement) {
+                detailsElement.removeAttribute("open");
+                window.location = '#' + detailsElement.scrollIntoView({block: "nearest", behavior: "smooth"});
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+        <style>
+            body{
+                font-size: 16pt;
+                font-family: "Helvetica", sans-serif;
+                line-height: 1.5;
+                background-color: rgb(233,227,206);
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+            }
+            h1{
+                background-color: rgb(213,113,0);
+            }
+            .hifscor { 
+                text-decoration:none;
+                color: inherit;
+            }
+            details > summary {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: 0.15s background linear;
+            }  
+            details > summary:hover {
+                background: #d4d1ec;
+            }
+            details > p{
+                border: solid;
+            }
+            .equationCenter {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .buttonDetails {
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+            .button {
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: rgb(233,227,206); 
+                color: black; 
+                border: 2px solid rgb(213,113,0);
+            }
+            .button1:hover {
+                background-color: rgb(213,113,0);
+                color: black;
+            }
+        </style>
+    </head>
+  
+  <body>
+    <div style="text-align:center"><h1>O que é um algoritmo?</h1></div>
+    
+    <p>O que é um algoritmo? Intuitivamente e de maneira informal, um algoritmo é um procedimento mecânico e determinístico, isto é, um procedimento que pode ser realizado por uma máquina e sem depender do acaso. Ainda informalmente, em um algoritmo temos uma configuração inicial e uma lista de instruções claras, que <em>não requerem engenhosidade</em> para as executar e nenhuma fonte externa de informação, de maneira que a pessoa ou máquina que segue as instruções seja conduzida, passo a passo, de <em>maneira única</em>, a uma configuração posterior e intermediária até a configuração final, ou seja, a tarefa a ser realizada pelo algoritmo, de modo a se concluir o procedimento em um <em>intervalo finito de tempo</em>, por mais demorado que seja. O processo de dada uma configuração anterior e dada uma instrução, determinar uma configuração posterior, chamamos de <em>computação</em>. Observe que nossa ideia de algoritmo, não exige praticidade. Existem algoritmos que são impossíveis de serem realizados na prática, seja por exigir um tempo muito grande, seja por necessitar, antes de se atingir o resultado final, de um espaço para armazenar resultados intermediários que superam a capacidade de nossas memórias virtuais ou físicas. Contudo, mesmo que não seja executável na prática, um algoritmo ainda é um procedimento claro e fácil de seguir e certamente conseguiríamos executá-lo se superássemos essas limitações.</p>
+    
+    <div style="text-align:center"><img src="geogebra-algoritmo.png" alt="Diagrama que descreve a sucessão de configurações em um algoritmo até a configuração final" width="1000px"></div>
+    
+    <p>Um exemplo ilustrativo para se entender o que é um algoritmo, embora não corresponda, de fato, a um algoritmo, é seguir uma receita de bolo. Digamos que um rapaz tenha decidido fazer um bolo de cenoura para impressionar sua namorada. Mesmo ele nunca tendo feito um bolo em sua vida e tendo ainda pouco conhecimento sobre cozinhar, ele estava confiante, pois tinha em suas mãos uma lista de quais ingredientes comprar e uma receita que o instruía como proceder, passo a passo, no preparo do bolo. Dessa forma, partindo dos ingredientes iniciais e seguindo as instruções na receita, o rapaz obteve sucesso e o bolo ficou uma delícia, ampliando, ainda mais, o amor de sua namorada. O que esse rapaz de nossa história fez foi seguir, grosseiramente falando, um algoritmo ao preparar o bolo para sua namorada. Note que, segundo a ideia de algoritmo, dada no parágrafo anterior, fazer um bolo não é, propriamente falando, seguir um algoritmo, porque, por mais que sigamos as regras dadas na receita, tendo todos os ingredientes pedidos, um bolo feito por João não é igual a um bolo feito por Maria. Lembre-se de que em um algoritmo, cada configuração intermediária é atingida da configuração anterior de maneira única, através da lista de instruções. Além disso, ao se fazer um bolo, fatalmente, é preciso algo a mais que somente o modo de preparo descrito na receita. Por exemplo, saber quando o bolo está pronto vai exigir uma vigilância e um olhar acurado, já que, por exemplo, o forno de quem idealizou a receita pode ser diferente do forno de quem está executando a receita. Não é simplesmente seguir a lista de instruções. Mas, como foi dito, esse exemplo teve como finalidade pura e simplesmente nos dar uma primeira imagem de um algoritmo. Sem mas detalhes, por enquanto, um exemplo preciso de algoritmo é executar uma divisão entre dois números inteiros. Qualquer um que souber o <em>algoritmo da divisão de Euclides</em> saberá dizer que \(7\) dividido por \(3\) tem como quociente \(2\) e resto \(1\), ou seja, \(7 = 2 \times 3 + 1\). Não interessa onde nem quem, esse resultado é igualmente alcançado por todos em um tempo finito, exatamente como um algoritmo, descrito informalmente no parágrafo anterior, deve ser. Daqui a pouco vamos detalhar um pouco mais o algoritmo da divisão de Euclides.</p>
+    
+    <p>Veja que até agora não demos uma definição precisa do que seja um algoritmo. Tudo o que demos até então foram características do que nossa intuição atribui a um algoritmo. Ter uma definição precisa para isso da a nós a vantagem de dizer o que é e o que não é algoritmo, sem que haja protestos ou reivindicações. Vários matemáticos no século XX, independente uns dos outros, desenvolveram formalismos diferentes que tentavam capturar a nossa noção intuitiva de algoritmo. Contudo, apesar de diferentes entre si, todos eles se mostraram equivalentes, ou seja, todo procedimento dito ser um algoritmo segundo um deles, também o é segundo os outros. Provar que todos esses formalismos de fato correspondem ao que julgamos ser algoritmo não é possível, uma vez que não se consegue mostrar que um conceito da intuição é equivalente a um conceito formal. Se admitirmos que  esses formalismos capturam por inteiro a nossa noção intuitiva de algoritmo, ou seja, tudo que for algoritmo em nosso senso comum, informal, é algoritmo por algum dos formalismos e vice-versa, então teremos definido o que é algoritmo de maneira formal: <em>ele é todo procedimento que um dos formalismos afirma que é</em>. Aceitar esse fato é aceitar a chamada <strong>tese de Church-Turing</strong>, que afirma exatamente isso, ou seja, um procedimento é um algoritmo se, e somente se, algum desses formalismos diz que esse procedimento é um algoritmo. Vamos apresentar, agora, um formalismo, chamado <em>máquina de Turing</em>. Com isso, considerando a tese de Church-Turing, temos a definição precisa do que é um algoritmo</p>
+    
+    <p><strong>Definição.</strong> Um procedimento é chamado de algoritmo <strong>algoritmo</strong>, se ele pode ser realizado por uma máquina de Turing.</p>
+    
+    <p>Assim, para entender o que é um algoritmo, precisamos entender o que é uma máquina de Turing.</p>
+    
+    <h2>Máquina de Turing</h2>
+    
+    <p>Em uma máquina de Turing, computações são executadas em uma fita infinita dividida em partes iguais que chamamos de <em>células</em>, através de um agente de computação, isto é, uma pessoa ou máquina. Nas células, são escritos símbolos que pertencem à um determinado conjunto finito, digamos \(S = \{S_0, S_1, \dots, S_n\}\), onde algum desses símbolos, por exemplo, o símbolo \(S_0\) vai designar que a célula está vazia. O símbolo que designa que a célula está vazia está escrito em todas as células, menos em um número finito de exceções, onde estão escritos os outros símbolos, que variam de acordo com o problema a ser resolvido. O agente percorre a fita, movendo-se ora para a direita ora para a esquerda, lendo e escrevendo símbolos nas células. Suas ações não são aleatórias, elas dependem de uma lista de instruções e do símbolo lido na célula em que ele está posicionado.</p>
+
+    <p>Uma máquina de Turing funciona da seguinte maneira: dada uma fita preenchida por símbolos, o agente começa inspecionando-a em uma célula inicial pronto para seguir a primeira instrução da lista de instruções, ou seja, o estado inicial; dependendo do símbolo que o agente ler na célula inicial, a instrução que ele segue o mandará:</p>
+
+    <ol>
+        <li>escrever no lugar do símbolo lido um certo símbolo do conjunto \(S = \{S_0, S_1, \dots, S_n\}\) (pode ser que escreva o mesmo símbolo);</li>
+        <li>tomar determinada direção, ou para a direita ou para a esquerda;</li>
+        <li>seguir determinada instrução da lista (pode ser a mesma instrução).</li>
+    </ol>
+
+    <p>O agente continua seguindo as instruções até que alguma o diga para parar. Pode ser o caso que nenhuma instrução o mande parar, de forma que ele continue indefinidamente.</p>
+
+    <p>Portanto, formalmente, uma máquina de Turing é descrita como um conjunto d quádruplas da forma: \((q_i, S_i, R_i, q_j)\), onde \(q_i\) é um estado; \(S_i\) é o símbolo da célula que o agente está examinando; $R_i$ descreve o que o agente deve fazer na célula, podendo ser escrever algum outro símbolo na célula ou direcionar-se para a esquerda ou para a direita; e, por fim, $q_j$, o estado a ser assumido depois da execução de $R_i$.</p>
+    
+        <p>Para ficar mais claro como funciona uma máquina de Turing, considere o exemplo onde queremos determinar o sucessor de um número natural. </p>
+    
+        <h2>Algoritmo da divisão de Euclides</h2>
+    
+        <p></p>
+    
+        <p><div>
+            <a href="../principal_fundamentosMatematica.html">
+                    <button class="button button1">Fundamentos de matemática</button>
+            </a>
+        </div></p>
+    </body>
+
+</html>
+

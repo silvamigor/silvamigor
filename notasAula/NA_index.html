@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title> Igor Martins Silva </title>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+              processEscapes: true
+            },
+            "HTML-CSS": { fonts: ["TeX"] }
+          });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+        <style>
+            body{
+            font-size: 16pt;
+            font-family: "Helvetica", sans-serif;
+            line-height: 1.5;
+            background-color: rgb(233,227,206);
+            }
+          
+            h1{
+                background-color: rgb(213,113,0);
+            }
+            .hifscor { 
+                text-decoration:none;
+                color: inherit;
+            }
+            details > summary {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: 0.15s background linear;
+            }  
+            details > summary:hover {
+                background: #d4d1ec;
+            }
+            details > p{
+                border: solid;
+            }
+            .equationCenter {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .buttonDetails {
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+            .button {
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: rgb(233,227,206); 
+                color: black; 
+                border: 2px solid rgb(213,113,0);
+            }
+            .button1:hover {
+                background-color: rgb(213,113,0);
+                color: black;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div style="text-align:center"><h1>Notas de Aula e Materiais Didáticos</h1></div>
+        
+        <p>Este espaço é dedicado ao meu projeto "Notas de Aula e Materiais Didáticos", onde compartilho minhas anotações e materiais de aula de diversas disciplinas de Matemática, com o objetivo de auxiliar no aprendizado e no ensino dessa área do conhecimento.</p>
+        
+        <p>
+            <ul>
+                <span title="Notas de aula de ALGA &#10;">
+                    <li><a href="ALGA/principal_ALGA.html">Álgebra Linear e Geometria Analítica</a> (em construção)</li>
+                </span>
+            </ul>
+        </p>
+        <a href="../index.html">
+            <button class="button button1">Página principal</button>
+        </a> 
+    </body>
+</html>

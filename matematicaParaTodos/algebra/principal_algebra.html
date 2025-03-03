@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Álgebra </title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { fonts: ["TeX"] }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+    <style>
+      body{
+                font-size: 16pt;
+                font-family: "Helvetica", sans-serif;
+                line-height: 1.5;
+                background-color: rgb(233,227,206);
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+            }
+            h1{
+                background-color: rgb(213,113,0);
+            }
+            .hifscor { 
+                text-decoration:none;
+                color: inherit;
+            }
+            details > summary {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: 0.15s background linear;
+            }  
+            details > summary:hover {
+                background: #d4d1ec;
+            }
+            details > p{
+                border: solid;
+            }
+            .equationCenter {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .buttonDetails {
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+            .button {
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: rgb(233,227,206); 
+                color: black; 
+                border: 2px solid rgb(213,113,0);
+            }
+            .button1:hover {
+                background-color: rgb(213,113,0);
+                color: black;
+            }
+    </style>
+  </head>
+  
+  <body>
+    <div style="text-align:center"><h1>Álgebra</h1></div>
+    <p>Seguem abaixo alguns temas relativos à álgebra.</p>
+    <ul>
+        <li><a href="comoProvarQue1Menor2/comoProvarQue1Menor2.html">Como mostrar que $1 < 2$ em $\mathbb{N}$?</a></li>
+        <li><a href="equacoesDiofantinasLineares/equacoesDiofantinasLineares.html">Equações diofantinas lineares</a></li>
+        <li><a href="representacaoInteiro/representacaoInteiro.html">Representação de um número inteiro</a></li>
+        <li><a href="simetriasQuadrado/simetriasQuadrado.html">Simetrias de um quadrado</a></li>
+    </ul>
+    <div>
+        <a href="../MPT_index.html">
+            <button class="button button1">Matemática para Todos</button>
+        </a>
+    </div>
+  </body>
+  
+</html>
+

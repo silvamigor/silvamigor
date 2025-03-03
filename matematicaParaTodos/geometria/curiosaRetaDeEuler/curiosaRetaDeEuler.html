@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A curiosa reta de Euler</title>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Register.StartupHook("TeX Jax Ready",function (){
+                 MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+                    cancel: ["Extension","cancel"],
+                    bcancel: ["Extension","cancel"],
+                    xcancel: ["Extension","cancel"],
+                    cancelto: ["Extension","cancel"]
+                });
+            });
+            MathJax.Hub.Config({
+                extensions: ["https://lomath.in/doc/xyjax/xypic.js","tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true
+                },
+                "HTML-CSS": { fonts: ["TeX"] },
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    Macros: {
+                        fraka: ["\\mathfrak{a}"],
+                        frakb: ["\\mathfrak{b}"],
+                        frakc: ["\\mathfrak{c}"],
+                        frakd: ["\\mathfrak{d}"],
+                        frake: ["\\mathfrak{e}"],
+                        frakf: ["\\mathfrak{f}"],
+                        frakg: ["\\mathfrak{g}"],
+                        frakh: ["\\mathfrak{h}"],
+                        fraki: ["\\mathfrak{i}"],
+                        frakj: ["\\mathfrak{j}"],
+                        frakk: ["\\mathfrak{k}"],
+                        frakl: ["\\mathfrak{l}"],
+                        frakm: ["\\mathfrak{m}"],
+                        frakn: ["\\mathfrak{n}"],
+                        frako: ["\\mathfrak{o}"],
+                        frakp: ["\\mathfrak{p}"],
+                        frakq: ["\\mathfrak{q}"],
+                        frakr: ["\\mathfrak{r}"],
+                        fraks: ["\\mathfrak{s}"],
+                        frakt: ["\\mathfrak{t}"],
+                        fraku: ["\\mathfrak{u}"],
+                        frakv: ["\\mathfrak{v}"],
+                        frakx: ["\\mathfrak{x}"],
+                        frakw: ["\\mathfrak{w}"],
+                        fraky: ["\\mathfrak{y}"],
+                        frakz: ["\\mathfrak{z}"],
+                        frakA: ["\\mathfrak{A}"],
+                        frakB: ["\\mathfrak{B}"],
+                        frakC: ["\\mathfrak{C}"],
+                        frakD: ["\\mathfrak{D}"],
+                        frakE: ["\\mathfrak{E}"],
+                        frakF: ["\\mathfrak{F}"],
+                        frakG: ["\\mathfrak{G}"],
+                        frakH: ["\\mathfrak{H}"],
+                        frakI: ["\\mathfrak{I}"],
+                        frakJ: ["\\mathfrak{J}"],
+                        frakK: ["\\mathfrak{K}"],
+                        frakL: ["\\mathfrak{L}"],
+                        frakM: ["\\mathfrak{M}"],
+                        frakN: ["\\mathfrak{N}"],
+                        frakO: ["\\mathfrak{O}"],
+                        frakP: ["\\mathfrak{P}"],
+                        frakQ: ["\\mathfrak{Q}"],
+                        frakR: ["\\mathfrak{R}"],
+                        frakS: ["\\mathfrak{S}"],
+                        frakT: ["\\mathfrak{T}"],
+                        frakU: ["\\mathfrak{U}"],
+                        frakV: ["\\mathfrak{V}"],
+                        frakX: ["\\mathfrak{X}"],
+                        frakW: ["\\mathfrak{W}"],
+                        frakY: ["\\mathfrak{Y}"],
+                        frakZ: ["\\mathfrak{Z}"],
+                        frakgl: ["\\mathfrak{gl}"],
+                        fraksl: ["\\mathfrak{sl}"],
+                        frakso: ["\\mathfrak{so}"],
+                        fraksp: ["\\mathfrak{sp}"],
+                        bba: ["\\mathbb{a}"],
+                        bbb: ["\\mathbb{b}"],
+                        bbc: ["\\mathbb{c}"],
+                        bbd: ["\\mathbb{d}"],
+                        bbe: ["\\mathbb{e}"],
+                        bbf: ["\\mathbb{f}"],
+                        bbg: ["\\mathbb{g}"],
+                        bbh: ["\\mathbb{h}"],
+                        bbi: ["\\mathbb{i}"],
+                        bbj: ["\\mathbb{j}"],
+                        bbk: ["\\mathbb{k}"],
+                        bbl: ["\\mathbb{l}"],
+                        bbm: ["\\mathbb{m}"],
+                        bbn: ["\\mathbb{n}"],
+                        bbo: ["\\mathbb{o}"],
+                        bbp: ["\\mathbb{p}"],
+                        bbq: ["\\mathbb{q}"],
+                        bbr: ["\\mathbb{r}"],
+                        bbs: ["\\mathbb{s}"],
+                        bbt: ["\\mathbb{t}"],
+                        bbu: ["\\mathbb{u}"],
+                        bbv: ["\\mathbb{v}"],
+                        bbx: ["\\mathbb{x}"],
+                        bbw: ["\\mathbb{w}"],
+                        bby: ["\\mathbb{y}"],
+                        bbz: ["\\mathbb{z}"],
+                        bbA: ["\\mathbb{A}"],
+                        bbB: ["\\mathbb{B}"],
+                        bbC: ["\\mathbb{C}"],
+                        bbD: ["\\mathbb{D}"],
+                        bbE: ["\\mathbb{E}"],
+                        bbF: ["\\mathbb{F}"],
+                        bbG: ["\\mathbb{G}"],
+                        bbH: ["\\mathbb{H}"],
+                        bbI: ["\\mathbb{I}"],
+                        bbJ: ["\\mathbb{J}"],
+                        bbK: ["\\mathbb{K}"],
+                        bbL: ["\\mathbb{L}"],
+                        bbM: ["\\mathbb{M}"],
+                        bbN: ["\\mathbb{N}"],
+                        bbO: ["\\mathbb{O}"],
+                        bbP: ["\\mathbb{P}"],
+                        bbQ: ["\\mathbb{Q}"],
+                        bbR: ["\\mathbb{R}"],
+                        bbS: ["\\mathbb{S}"],
+                        bbT: ["\\mathbb{T}"],
+                        bbU: ["\\mathbb{U}"],
+                        bbV: ["\\mathbb{V}"],
+                        bbX: ["\\mathbb{X}"],
+                        bbW: ["\\mathbb{W}"],
+                        bbY: ["\\mathbb{Y}"],
+                        bbZ: ["\\mathbb{Z}"],
+                        cala: ["\\mathcal{a}"],
+                        calb: ["\\mathcal{b}"],
+                        calc: ["\\mathcal{c}"],
+                        cald: ["\\mathcal{d}"],
+                        cale: ["\\mathcal{e}"],
+                        calf: ["\\mathcal{f}"],
+                        calg: ["\\mathcal{g}"],
+                        calh: ["\\mathcal{h}"],
+                        cali: ["\\mathcal{i}"],
+                        calj: ["\\mathcal{j}"],
+                        calk: ["\\mathcal{k}"],
+                        call: ["\\mathcal{l}"],
+                        calm: ["\\mathcal{m}"],
+                        caln: ["\\mathcal{n}"],
+                        calo: ["\\mathcal{o}"],
+                        calp: ["\\mathcal{p}"],
+                        calq: ["\\mathcal{q}"],
+                        calr: ["\\mathcal{r}"],
+                        cals: ["\\mathcal{s}"],
+                        calt: ["\\mathcal{t}"],
+                        calu: ["\\mathcal{u}"],
+                        calv: ["\\mathcal{v}"],
+                        calx: ["\\mathcal{x}"],
+                        calw: ["\\mathcal{w}"],
+                        caly: ["\\mathcal{y}"],
+                        calz: ["\\mathcal{z}"],
+                        calA: ["\\mathcal{A}"],
+                        calB: ["\\mathcal{B}"],
+                        calC: ["\\mathcal{C}"],
+                        calD: ["\\mathcal{D}"],
+                        calE: ["\\mathcal{E}"],
+                        calF: ["\\mathcal{F}"],
+                        calG: ["\\mathcal{G}"],
+                        calH: ["\\mathcal{H}"],
+                        calI: ["\\mathcal{I}"],
+                        calJ: ["\\mathcal{J}"],
+                        calK: ["\\mathcal{K}"],
+                        calL: ["\\mathcal{L}"],
+                        calM: ["\\mathcal{M}"],
+                        calN: ["\\mathcal{N}"],
+                        calO: ["\\mathcal{O}"],
+                        calP: ["\\mathcal{P}"],
+                        calQ: ["\\mathcal{Q}"],
+                        calR: ["\\mathcal{R}"],
+                        calS: ["\\mathcal{S}"],
+                        calT: ["\\mathcal{T}"],
+                        calU: ["\\mathcal{U}"],
+                        calV: ["\\mathcal{V}"],
+                        calX: ["\\mathcal{X}"],
+                        calW: ["\\mathcal{W}"],
+                        calY: ["\\mathcal{Y}"],
+                        calZ: ["\\mathcal{Z}"],
+                        bfa: ["\\mathbf{a}"],
+                        bfb: ["\\mathbf{b}"],
+                        bfc: ["\\mathbf{c}"],
+                        bfd: ["\\mathbf{d}"],
+                        bfe: ["\\mathbf{e}"],
+                        bff: ["\\mathbf{f}"],
+                        bfg: ["\\mathbf{g}"],
+                        bfh: ["\\mathbf{h}"],
+                        bfi: ["\\mathbf{i}"],
+                        bfj: ["\\mathbf{j}"],
+                        bfk: ["\\mathbf{k}"],
+                        bfl: ["\\mathbf{l}"],
+                        bfm: ["\\mathbf{m}"],
+                        bfn: ["\\mathbf{n}"],
+                        bfo: ["\\mathbf{o}"],
+                        bfp: ["\\mathbf{p}"],
+                        bfq: ["\\mathbf{q}"],
+                        bfr: ["\\mathbf{r}"],
+                        bfs: ["\\mathbf{s}"],
+                        bft: ["\\mathbf{t}"],
+                        bfu: ["\\mathbf{u}"],
+                        bfv: ["\\mathbf{v}"],
+                        bfx: ["\\mathbf{x}"],
+                        bfw: ["\\mathbf{w}"],
+                        bfy: ["\\mathbf{y}"],
+                        bfz: ["\\mathbf{z}"],
+                        bfA: ["\\mathbf{A}"],
+                        bfB: ["\\mathbf{B}"],
+                        bfC: ["\\mathbf{C}"],
+                        bfD: ["\\mathbf{D}"],
+                        bfE: ["\\mathbf{E}"],
+                        bfF: ["\\mathbf{F}"],
+                        bfG: ["\\mathbf{G}"],
+                        bfH: ["\\mathbf{H}"],
+                        bfI: ["\\mathbf{I}"],
+                        bfJ: ["\\mathbf{J}"],
+                        bfK: ["\\mathbf{K}"],
+                        bfL: ["\\mathbf{L}"],
+                        bfM: ["\\mathbf{M}"],
+                        bfN: ["\\mathbf{N}"],
+                        bfO: ["\\mathbf{O}"],
+                        bfP: ["\\mathbf{P}"],
+                        bfQ: ["\\mathbf{Q}"],
+                        bfR: ["\\mathbf{R}"],
+                        bfS: ["\\mathbf{S}"],
+                        bfT: ["\\mathbf{T}"],
+                        bfU: ["\\mathbf{U}"],
+                        bfV: ["\\mathbf{V}"],
+                        bfX: ["\\mathbf{X}"],
+                        bfW: ["\\mathbf{W}"],
+                        bfY: ["\\mathbf{Y}"],
+                        bfZ: ["\\mathbf{Z}"],
+                        bfad: ["\\mathbf{ad}"],
+                        zero: ["\\{0\\}"],
+                        id: ["\\operatorname\{id\}"],
+                        sen: ["\\operatorname\{sen\}"],
+                        tg: ["\\operatorname\{tg\}"],
+                        ad: ["\\operatorname\{ad\}"],
+                        mdc: ["\\operatorname\{mdc\}"],
+                        im: ["\\operatorname\{im\}"],
+                        Quat: ["\\operatorname\{Quat\}"],
+                        Aut: ["\\operatorname\{Aut\}"],
+                        Inn: ["\\operatorname\{Inn\}"],
+                        orb: ["\\operatorname\{orb\}"],
+                        stab: ["\\operatorname\{stab\}"],
+                        Rep: ["\\operatorname\{Rep\}"],
+                        Hom: ["\\operatorname\{Hom\}"],
+                        End: ["\\operatorname\{End\}"],
+                        Obj: ["\\operatorname\{Obj\}"],
+                        tr: ["\\operatorname\{tr\}"],
+                        diam: ["\\operatorname\{diam\}"],
+                        diag: ["\\operatorname\{diag\}"],
+                        Ind: ["\\operatorname\{Ind\}"],
+                        Res: ["\\operatorname\{Res\}"],
+                        Set: ["\\operatorname\{Set\}"],
+                        coker: ["\\operatorname\{coker\}"],
+                        supp: ["\\operatorname\{supp\}"],
+                        Tor: ["\\operatorname\{Tor\}"],
+                        vspan: ["\\operatorname\{vspan\}"],
+                        char: ["\\operatorname\{char\}"],
+                        Ann: ["\\operatorname\{Ann\}"],
+                        Der: ["\\operatorname\{Der\}"],
+                        pint: ["{ \\langle #1,#2 \\rangle }",2],
+                        rfrac: ["{ {}^{#1}\\!/_{#2} }",2],
+                        norma: ["{ \\Vert #1 \\Vert }",1],
+                    },
+                },
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+        <script src="http://www.w3schools.com/lib/w3data.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../itemParenteses.css" />
+        <link rel="stylesheet" type="text/css" href="../../ambTeor.css" />
+        <script>
+            function closeDetail(detailsElement) {
+                detailsElement.removeAttribute("open");
+                window.location = '#' + detailsElement.scrollIntoView({block: "nearest", behavior: "smooth"});
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+        <style>
+            body{
+                font-size: 16pt;
+                font-family: "Helvetica", sans-serif;
+                line-height: 1.5;
+                background-color: rgb(233,227,206);
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+            }
+            h1{
+                background-color: rgb(213,113,0);
+            }
+            .hifscor { 
+                text-decoration:none;
+                color: inherit;
+            }
+            details > summary {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: 0.15s background linear;
+            }  
+            details > summary:hover {
+                background: #d4d1ec;
+            }
+            details > p{
+                border: solid;
+            }
+            .equationCenter {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .buttonDetails {
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+            .button {
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: rgb(233,227,206); 
+                color: black; 
+                border: 2px solid rgb(213,113,0);
+            }
+            .button1:hover {
+                background-color: rgb(213,113,0);
+                color: black;
+            }
+            img{
+                max-width: 50%;
+            }
+        </style>
+    </head>
+  
+  <body>
+    <div style="text-align:center"><h1>A curiosa reta de Euler</h1></div>
+    
+    <p>É altamente improvável que, dados três pontos aleatórios no plano, eles estejam alinhados. Pense que, dois dos três pontos formam uma reta. Então o terceiro ponto pertencerá a própria reta ou pertencerá ao plano sem essa reta. Como o plano é muito mais vasto do que a reta, é bem mais provável o terceiro ponto não estar na reta. Agora, imagine que em um triângulo qualquer, você desenhe o <em>baricentro</em>, o <em>circuncentro</em> e o <em>ortocentro</em>. Pergunta: esses pontos estão alinhados? A resposta é sim. Esses três pontos pertencem a mesma reta, chamada de <strong>reta de Euler</strong>, e é isso que vamos provar nessa seção. Antes de provarmos esse fato, vamos relembrar algumas definições e resultados da geometria euclidiana.</p>
+    
+    <p>Considere o triângulo $ABC$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC.png" alt="Triângulo ABC"></div>
+    
+    <p>Uma <em>mediana</em> de um triângulo é o segmento cujas extremidades são um vértice do triângulo e o ponto médio do lado oposto. Assim, cada triângulo tem três medianas. Um fato interessante sobre as medianas de um triângulo é que elas se interceptam em um único ponto. Observe que dadas três retas (ou segmentos), nem sempre eles se interceptam em um único ponto. O que sabemos é que duas retas não paralelas sempre se interceptam em um único ponto, mas não podemos dizer o mesmo para três retas (ou segmentos). Daí o fato das medianas de um triângulo se encontrarem em um ponto só ser algo interessante. Tal ponto é chamado de <strong>baricentro</strong> do triângulo. Para o triângulo $ABC$ dado, o baricentro é o ponto $G$, visto na figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-baric.png" alt="Baricentro do triângulo ABC"></div>
+    
+    <p>Um fato importante sobre o baricentro é que, dada uma mediana, ele se posiciona em um ponto tal que a distância entre ele e o vértice do triângulo contido nessa mediana vale dois terços da distância desse vértice ao ponto médio do lado oposto. Assim, considerando a mediana $AM_A$ do triângulo $ABC$, temos que $\overline{AG} = \frac{2}{3}\overline{AM_A}$. Uma vez que $\overline{AG} + \overline{GM_A} = \overline{AM_A}$, então $\overline{GM_A} = \frac{1}{3}\overline{AM_A}$. Portanto, temos que $\overline{AG} = 2\overline{GM_A}$. Esse fato se aplica às outras medianas, ou seja, $\overline{BG} = 2\overline{GM_B}$ e $\overline{CG} = 2\overline{GM_C}$.</p>
+    
+    <p>A <em>mediatriz</em> de um segmento é a reta perpendicular ao segmento que contém seu ponto médio. Da mesma forma como as medianas de um triângulo, são três as mediatrizes de um triângulo, uma para cada lado de um triângulo, e elas também se interceptam em um único ponto, chamado <strong>circuncentro</strong> do triângulo. A figura abaixo mostra o circuncentro do triângulo $ABC$, denotado por $O$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-circunc.png" alt="Circuncentro do triângulo ABC"></div>
+    
+    <p>Uma <em>altura</em> de um triângulo é o segmento perpendicular que une um vértice do triângulo à reta que contém o lado oposto. As três alturas de um triângulo também se interceptam em um único ponto, chamado <strong>ortocentro</strong> do triângulo. O ortocentro do triângulo $ABC$ está indicado pela letra $H$ na figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-ortoc.png" alt="Ortocentro do triângulo ABC"></div>
+    
+    <p>O que vamos provar é que o baricentro, o circuncentro e o ortocentro pertencem a mesma reta, a reta de Euler. Veja na figura abaixo a reta de Euler do triângulo $ABC$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-retaDeEuler.png" alt="Reta de Euler para o triângulo ABC"></div>
+    
+    <p>Antes, porém, vamos relembrar mais alguns resultados.</p>
+    
+    <p id="teoBaseMedia"> <strong>Proposição 1</strong> (Teorema da base média do triângulo)<strong>.</strong> O segmento com extremidades nos pontos médios de dois lados de um triângulo é paralelo ao terceiro lado e tem a metade de seu comprimento. $\Box$</p>
+    
+    <p>Considere, novamente, o triângulo $ABC$ que estamos trabalhando. Nele, temos que $\overline{M_AM_B} = \frac{1}{2}\overline{AB}$, $\overline{M_AM_C} = \frac{1}{2}\overline{AC}$ e $\overline{M_BM_C} = \frac{1}{2}\overline{BC}$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-triangABC-baseMedia.png" alt="Teorema da base média do triângulo."></div>
+    
+    <p id="teoSemLLL"> <strong>Proposição 2</strong> (Teorema da semelhança L.L.L.)<strong>.</strong> Se dois triângulo $ABC$ e $DEF$ são tais que seus lados satisfazem a relação $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}} = \frac{\overline{BC}}{\overline{EF}}$, então tais triângulos são semelhantes, o que denotamos por ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$. $\Box$</p>
+    
+    <p>Lembre-se de que dois triângulos são semelhantes se podemos corresponder cada vértice do primeiro triângulo com um do segundo triângulo, de modo a obter ângulos correspondentes congruentes (ou seja, com a mesma medida) e lados correspondentes proporcionais. Por exemplo, na figura abaixo, temos que ${\bigtriangleup}ABC \sim {\bigtriangleup}A'B'C'$, onde a proporção entre os lados é dada pelo número $\frac{1}{2}$.</p>
+    
+    <div style="text-align:center"><img src="geogebra-semelhTriang.png" alt="Semelhança de triângulo."></div>
+    
+    <p id="teoSemLAL"> <strong>Proposição 3</strong> (Teorema da semelhança L.A.L.)<strong>.</strong> Dados dois triângulos, $ABC$ e $DEF$, se os ângulos $\widehat{BAC}$ e $\widehat{EDF}$ são congruentes e $\frac{\overline{AB}}{\overline{DE}} = \frac{\overline{AC}}{\overline{DF}}$, então ${\bigtriangleup}ABC \sim {\bigtriangleup}DEF$. $\Box$</p>
+    
+    <div style="text-align:center"><img src="geogebra-teorSemLAL.png" alt="Teorema da semelhança L.A.L."></div>
+    
+    <p>Para o próximo resultado, lembremos um conceito. Seja $r$ uma reta transversal às retas $s$ e $t$, interceptando-as nos pontos $P$ e $Q$, respectivamente. Sejam $A$ um ponto em $s$ e $B$ um ponto em $t$, tais que $A$ e $B$ estejam em lados opostos de $r$. Veja a figura abaixo.</p>
+    
+    <div style="text-align:center"><img src="geogebra-altInternos.png" alt="Ângulos alternos internos."></div>
+    
+    <p>Os ângulos $\widehat{APQ}$ e $\widehat{BQP}$ são chamados de <em>ângulos alternos internos</em>.</p>
+    
+    <p id="altIntRetasPar"><strong>Proposição 4.</strong> Se duas retas cortadas por uma transversal formam dois ângulos alternos internos congruentes, então as retas são paralelas. Reciprocamente, se duas retas paralelas são cortadas por uma transversal, então os ângulos alternos internos são congruentes. $\Box$</p>
+    
+    <div style="text-align:center"><img src="geogebra-altIntParalelas.png" alt="Reciprocidade entre retas paralelas e ângulos alternos internos congruentes."></div>
+    
+    <p>Lembre-se, por último, de que um <em>paralelogramo</em> é um quadrilátero em que os lados opostos são paralelos.</p>
+    
+    <p id="paralelogDiagBisec"><strong>Proposição 5.</strong> Em um paralelogramo as diagonais se bisseccionam, isto é, interceptam-se em um ponto tal que divide cada diagonal em duas partes iguais. $\Box$</p>
+    
+    <div style="text-align:center"><img src="geogebra-diagParalBissec.png" alt="As diagonais de um paralelogramo se bisseccionam."></div>
+    
+    <p>Finalmente, estamos prontos para provar provar o resultado almejado nessa seção.</p>
+    
+    <p class="teor" id="retaDeEuler">O baricentro, o circuncentro e o ortocentro de um triângulo são colineares.</p>
+    
+    <p class="demonst">
+      Considere no triângulo arbitrário $ABC$, que estamos trabalhando, os pontos médios dos lados, $M_A$, $M_B$ e $M_C$. Pela <a href="#teoBaseMedia">Proposição 1</a>, temos que os segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ são paralelos, respectivamente, aos lados $AB$, $AC$ e $BC$. 
+    </p>
+    <div style="text-align:center"><img src="geogebra-demonstFig1.png" alt="Figura 1 da demonstração."></div>
+    
+    <p>
+      Note que o quadrilátero $AM_CM_AM_B$ é um paralelogramo, pois os lados opostos são paralelos, conforme observado no parágrafo anterior. Assim, pela <a href="#paralelogDiagBisec">Proposição 5</a>, temos que as diagonais se interceptam no ponto médio delas, o qual denotaremos por $Q_1$. Logo, a mediada $AM_A$, do triângulo $ABC$, é uma extensão da mediana $M_AQ_1$, do triângulo $M_AM_BM_C$. O mesmo raciocínio pode ser aplicado aos paralelogramos $BM_AM_BM_C$ e $CM_BM_CM_A$. Veja as figuras abaixo.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig2.png" alt="Figura 2 da demonstração."></div>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig3.png" alt="Figura 3 da demonstração."></div>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig4.png" alt="Figura 4 da demonstração."></div>
+    
+    <p>
+      Dessa forma, uma vez que as medianas se interceptam em um mesmo ponto, concluímos que os triângulos $ABC$ e $M_AM_BM_C$ possuem o mesmo baricentro $G$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig5.png" alt="Figura 5 da demonstração."></div>
+    
+    <p>
+      Lembre-se de que uma mediatriz de um lado de um triângulo é a reta perpendicular a esse lado que contém seu ponto médio. Assim, pelo paralelismo dos segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ com relação, respectivamente, aos lados $AB$, $AC$ e $BC$, conforme discutido no início dessa demonstração, temos que as mediatrizes do triângulo $ABC$, com relação aos lados $AB$, $AC$ e $BC$ são perpendiculares, respectivamente, aos lados $M_AM_B$, $M_AM_C$ e $M_BM_C$, do triângulo $M_AM_BM_C$. Disso segue que as mediatrizes do triângulo $ABC$ coincidem com as alturas do triângulo $M_AM_BM_C$. Logo, o circuncentro de $ABC$, denotado por $O$, coincide com o ortocentro de $M_AM_BM_C$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig6.png" alt="Figura 6 da demonstração."></div>
+    
+    <p>
+      Usando outra vez a <a href="#teoBaseMedia">Proposição 1</a>, aplicada ao triângulo $ABC$, temos que os segmentos $M_AM_B$, $M_AM_C$ e $M_BM_C$ têm como medida a metade do valor dos lados em que são paralelos, ou seja, $\frac{\overline{M_AM_B}}{\overline{AB}} = \frac{\overline{M_AM_C}}{\overline{AC}} = \frac{\overline{M_BM_C}}{\overline{BC}} = \frac{1}{2}$. Assim, pela <a href="#teoSemLLL">Proposição 2</a>, temos que ${\bigtriangleup}M_AM_BM_C \sim {\bigtriangleup}ABC$, ou seja, qualquer par de segmentos correspondentes nesses dois triângulos estão na mesma razão $\frac{1}{2}$. Considere $H$ o ortocentro do triângulo $ABC$. Uma vez que o circuncentro de $ABC$ coincide com o ortocentro de $M_AM_BM_C$, temos que os segmentos $AH$ e $M_AO$ são perpendiculares ao lado $AB$, portanto são segmentos paralelos.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig7.png" alt="Figura 7 da demonstração."></div>
+    
+    <p>
+      Traçando o segmento $AM_A$, que contém o baricentro $G$, pela <a href="#altIntRetasPar">Proposição 4</a>, os ângulos alternos internos $\widehat{HAG}$ e $\widehat{GM_AO}$ são congruentes, pois $AH$ e $M_AO$ são paralelas.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig8.png" alt="Figura 8 da demonstração."></div>
+    
+    <p>
+      Usando a semelhança dos triângulos $ABC$ e $M_AM_BM_C$, cuja razão é $\frac{1}{2}$, como $H$ é o ortocentro de ${\bigtriangleup}ABC$ e $O$ é o ortocentro de ${\bigtriangleup}M_AM_BM_C$, chegamos que $\overline{AH} = 2\overline{M_AO}$. Pela propriedade de baricentro, conforme comentado no início dessa seção, $\overline{AG} = 2\overline{GM_A}$. Portanto, pela <a href="#teoSemLAL">Proposição 3</a>, temos que ${\bigtriangleup}AGH \sim {\bigtriangleup}M_AGO$.
+    </p>
+    
+    <div style="text-align:center"><img src="geogebra-demonstFig9.png" alt="Figura 9 da demonstração."></div>
+    
+    <p>
+      Dessa forma, concluímos que $\widehat{AGH}$ é congruente a $\widehat{M_AGO}$. Assim, sabendo que $ 180^{\circ} = \widehat{AGM_A} = \widehat{M_AGO} + \widehat{OGA}$, temos que $\widehat{OGA} = 180^{\circ} - \widehat{M_AGO}$. Agora, note que $\widehat{OGH} = \widehat{OGA} + \widehat{AGH} = $ $180^{\circ} - \widehat{M_AGO} + \widehat{AGH}$. Como $\widehat{AGH} = \widehat{M_AGO}$, então $\widehat{OGH} = 180^{\circ} - \widehat{M_AGO} + $ $\widehat{M_AGO} = 180^{\circ}$. Portanto, o ângulo do segmento $OGH$ é $180^{\circ}$, ou seja, o baricentro, o circuncentro e o ortocentro de um triângulo são colineares.
+      $\boxtimes$
+    </p>
+    
+    <p><strong>Referência bibliográfica</strong></p>
+  
+    <ol>
+      <li>REZENDE, Eliane Q. F.; QUEIROZ, Maria L. B. <i>Geometria euclidiana plana e construções geométricas.</i> 2ed. Campinas: Editora da Unicamp, 2008.</li>
+    </ol>
+    
+        <p><div>
+            <a href="../principal_geometria.html">
+                    <button class="button button1">Geometria</button>
+            </a>
+        </div></p>
+  </body>
+  
+</html>
+
