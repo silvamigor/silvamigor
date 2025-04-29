@@ -378,56 +378,58 @@
             }
             
             .diagram {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+              font-family: sans-serif;
+              display: flex;
+              justify-content: center;
+              margin-top: 20px;
+              overflow-y: hidden;
+              overflow-x: auto;
+            }
 
-    .box {
-      border: 2px solid #555;
-      border-radius: 10px;
-      padding: 15px 20px;
-      margin: 10px;
-      text-align: center;
-      background-color: #f0f0f0;
-      min-width: 150px;
-      position: relative;
-    }
+            .box {
+              border: 2px solid #555;
+              border-radius: 10px;
+              padding: 15px 20px;
+              margin: 10px;
+              text-align: center;
+              background-color: #f0f0f0;
+              min-width: 150px;
+              position: relative;
+            }
 
-    .arrow-down::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 15px solid #555;
-    }
+            .arrow-down::after {
+              content: "";
+              position: absolute;
+              bottom: -20px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 15px solid #555;
+            }
 
-    .column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+            .column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
 
-    .subcolumns {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-    }
+            .subcolumns {
+              display: flex;
+              justify-content: center;
+              gap: 40px;
+              margin-top: 30px;
+            }
 
-    .title {
-      font-weight: bold;
-      font-size: 18px;
-    }
+            .title {
+              font-weight: bold;
+              font-size: 18px;
+            }
 
-    .subtitle {
-      font-size: 14px;
-      color: #333;
-    }
+            .subtitle {
+              font-size: 14px;
+              color: #333;
+            }
         </style>
     </head>
     <body>
