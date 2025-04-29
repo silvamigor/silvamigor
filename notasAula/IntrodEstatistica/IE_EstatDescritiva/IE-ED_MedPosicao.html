@@ -277,8 +277,8 @@
         </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
         <script src="http://www.w3schools.com/lib/w3data.js"></script>
-        <link rel="stylesheet" type="text/css" href="itemParenteses.css" />
-        <link rel="stylesheet" type="text/css" href="ambTeor.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
         <script>
             function closeDetail(detailsElement) {
                 detailsElement.removeAttribute("open");
@@ -347,56 +347,34 @@
                 background-color: rgb(213,113,0);
                 color: black;
             }
-            ol.vet {
-                counter-reset: contVet;
+            table {
+              border-collapse: collapse;
+              width: 100%;
+              height: 300px; /* Altura fixa para a tabela */
+              overflow-y: auto;
+              display: block;
             }
-            ol.vet > li {
-                list-style: none;
-                position: relative;
+
+            th {
+              position: sticky;
+              top: 0;
+              background-color: #f1f1f1; /* Cor de fundo do cabeçalho */
+              z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo da tabela */
+              border: 1px solid #ddd;
+              padding: 8px;
             }
-            ol.vet > li:before {
-                counter-increment: contVet;
-                content:"(V" counter(contVet)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
+
+            td {
+              border: 1px solid #ddd;
+              padding: 8px;
             }
-            ol.vet2 {
-                counter-reset: contVet2 4;
+
+            thead {
+              background-color: #f2f2f2;
             }
-            ol.vet2 > li {
-                list-style: none;
-                position: relative;
-            }
-            ol.vet2 > li:before {
-                counter-increment: contVet2;
-                content:"(V" counter(contVet2)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
-            }
-            ol.corpo {
-                counter-reset: contCorpo;
-            }
-            ol.corpo > li {
-                list-style: none;
-                position: relative;
-            }
-            ol.corpo > li:before {
-                counter-increment: contCorpo;
-                content:"(C" counter(contCorpo)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
+            
+            tbody tr:nth-child(even) {
+              background-color: #f9f9f9;
             }
         </style>
     </head>
@@ -407,6 +385,839 @@
         
         <p>
             Teste
+        </p>
+        
+        <p>
+            O conjunto das informações extraídas do preenchimento do questionário, apresentado na <a href="IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a> pode ser organizado na seguinte tabela:
+        </p>
+        
+        <div class="equationCenter">
+            <table border="1">
+              <thead>
+                <tr style="text-align: center">
+                  <th></th>
+                  <th>Turma</th>
+                  <th>Sexo</th>
+                  <th>Idade</th>
+                  <th>Altura</th>
+                  <th>Peso</th>
+                  <th>Filho</th>
+                  <th>Fumante</th>
+                  <th>Tolerante</th>
+                  <th>Exercício</th>
+                  <th>Cinema</th>
+                  <th>OpCine</th>
+                  <th>TV</th>
+                  <th>OpTV</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.60</td>
+                  <td>60.5</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>16</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.69</td>
+                  <td>55.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>7</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>A</td>
+                  <td>M</td>
+                  <td>18</td>
+                  <td>1.85</td>
+                  <td>72.9</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>15</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.60</td>
+                  <td>60.5</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>16</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>19</td>
+                  <td>1.58</td>
+                  <td>55.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>A</td>
+                  <td>M</td>
+                  <td>19</td>
+                  <td>1.76</td>
+                  <td>60.0</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>2</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>20</td>
+                  <td>1.60</td>
+                  <td>58.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>7</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.64</td>
+                  <td>47.0</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.62</td>
+                  <td>67.8</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>M</td>
+                  <td>12</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.64</td>
+                  <td>58.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.72</td>
+                  <td>70.0</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>10</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>8</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.66</td>
+                  <td>54.0</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>0</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>21</td>
+                  <td>1.70</td>
+                  <td>58.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>6</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>30</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>A</td>
+                  <td>M</td>
+                  <td>19</td>
+                  <td>1.78</td>
+                  <td>68.5</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.65</td>
+                  <td>63.5</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>I</td>
+                  <td>4</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>19</td>
+                  <td>1.63</td>
+                  <td>47.4</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>18</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.82</td>
+                  <td>66.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>A</td>
+                  <td>M</td>
+                  <td>18</td>
+                  <td>1.80</td>
+                  <td>85.2</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>20</td>
+                  <td>1.60</td>
+                  <td>54.5</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>3</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.68</td>
+                  <td>52.5</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>7</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>14</td>
+                  <td>M</td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>21</td>
+                  <td>1.70</td>
+                  <td>60.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>8</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.65</td>
+                  <td>58.5</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>0</td>
+                  <td>3</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.57</td>
+                  <td>49.2</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>5</td>
+                  <td>4</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>20</td>
+                  <td>1.55</td>
+                  <td>48.0</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>28</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>20</td>
+                  <td>1.69</td>
+                  <td>51.6</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>8</td>
+                  <td>5</td>
+                  <td>M</td>
+                  <td>4</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>19</td>
+                  <td>1.54</td>
+                  <td>57.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>I</td>
+                  <td>6</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>23</td>
+                  <td>1.62</td>
+                  <td>63.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>8</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.62</td>
+                  <td>52.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.57</td>
+                  <td>49.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>12</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>25</td>
+                  <td>1.65</td>
+                  <td>59.0</td>
+                  <td>4</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.61</td>
+                  <td>52.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>6</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>32</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>17</td>
+                  <td>1.71</td>
+                  <td>73.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>20</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>33</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.65</td>
+                  <td>56.0</td>
+                  <td>3</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>14</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.67</td>
+                  <td>58.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>35</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>18</td>
+                  <td>1.73</td>
+                  <td>87.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>7</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>25</td>
+                  <td>B</td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.60</td>
+                  <td>47.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>14</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>37</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>17</td>
+                  <td>1.70</td>
+                  <td>95.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>10</td>
+                  <td>2</td>
+                  <td>M</td>
+                  <td>12</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>38</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>21</td>
+                  <td>1.85</td>
+                  <td>84.0</td>
+                  <td>1</td>
+                  <td>sim</td>
+                  <td>I</td>
+                  <td>6</td>
+                  <td>4</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>39</td>
+                  <td>A</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.70</td>
+                  <td>60.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>12</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>18</td>
+                  <td>1.73</td>
+                  <td>73.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>4</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>2</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>41</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>17</td>
+                  <td>1.70</td>
+                  <td>55.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>I</td>
+                  <td>5</td>
+                  <td>4</td>
+                  <td>B</td>
+                  <td>10</td>
+                  <td>B</td>
+                </tr>
+                <tr>
+                  <td>42</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>23</td>
+                  <td>1.45</td>
+                  <td>44.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>B</td>
+                  <td>25</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>43</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>24</td>
+                  <td>1.76</td>
+                  <td>75.0</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>I</td>
+                  <td>7</td>
+                  <td>0</td>
+                  <td>M</td>
+                  <td>14</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>44</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.68</td>
+                  <td>55.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>8</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>45</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.55</td>
+                  <td>49.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>M</td>
+                  <td>10</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>46</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>19</td>
+                  <td>1.70</td>
+                  <td>50.0</td>
+                  <td>7</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>8</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>47</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>19</td>
+                  <td>1.55</td>
+                  <td>54.5</td>
+                  <td>2</td>
+                  <td>não</td>
+                  <td>M</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>B</td>
+                  <td>3</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>48</td>
+                  <td>B</td>
+                  <td>F</td>
+                  <td>18</td>
+                  <td>1.60</td>
+                  <td>50.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>B</td>
+                  <td>5</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>49</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>17</td>
+                  <td>1.80</td>
+                  <td>71.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>7</td>
+                  <td>0</td>
+                  <td>M</td>
+                  <td>14</td>
+                  <td>R</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td>B</td>
+                  <td>M</td>
+                  <td>18</td>
+                  <td>1.83</td>
+                  <td>86.0</td>
+                  <td>1</td>
+                  <td>não</td>
+                  <td>P</td>
+                  <td>7</td>
+                  <td>0</td>
+                  <td>M</td>
+                  <td>20</td>
+                  <td>B</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        <p>
+            Observe a quantidade de informação apresentada nessa tabela.
         </p>
         
         <div>
