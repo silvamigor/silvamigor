@@ -1290,16 +1290,19 @@ Quando todos os valores aparecem apenas uma vez, dizemos que o conjunto não pos
         
         <p>
             Ao longo dessas notas, vou apresentar alguns comandos para se usar no software <a href="https://www.r-project.org/">R</a>. Por exemplo, você pode baixar o arquivo de extensão .csv que contém as informações da <a href="#tab_questPre">tabela</a> do início da seção, clicando <a href="exemplo.csv">aqui</a>. Depois, dentro de R, usar o comando
+            <div style="overflow-x: auto; max-width: 100%;">
             <pre><code>dados &lt;- read.csv("CAMINHO_COMPLETO/exemplo.csv", sep = ",")</code></pre>
+            </div>
             para importar a tabela para o R.
         </p>
 
         <p>
-            Observação: no lugar de <code>CAMINHO_COMPLETO</code>, coloque o caminho onde o arquivo <code>exemplo.csv</code> está salvo no seu computador, como por exemplo: <code>"C:/Usuários/seunome/Documentos/..."</code>.
+            Observação: no lugar de <code>CAMINHO_COMPLETO</code>, coloque o caminho onde o arquivo <code>exemplo.csv</code> está salvo no seu computador, como por exemplo: <div style="overflow-x: auto; max-width: 100%;"><code>"C:/Usuários/seunome/Documentos/..."</code></div>.
         </p>
         
         <p>
             Depois disso, use os comandos
+            <div style="overflow-x: auto; max-width: 100%;">
             <pre><code>Turma &lt;- dados$Turma
 Sexo &lt;- dados$Sexo
 Idade &lt;- dados$Idade
@@ -1312,16 +1315,17 @@ Cinema &lt;- dados$Cinema
 OpCine &lt;- dados$OpCine
 TV &lt;- dados$TV
 OpTV &lt;- dados$OpTV</code></pre>
+</div>
                 para atribuir cada coluna a uma variável.
         </p>
         
         <p>
-            Feito isso, podemos usar o comando <pre><code>mean(Altura)</code></pre> para determinar a média das alturas e <pre><code>median(Altura)</code></pre> para determinar a mediana das alturas, obtendo, respectivamente, 1.667 e 1.655. Para a moda, é preciso usar os comandos <pre><code>library(modeest)
-mfv(Altura)</code></pre> Nesse caso, obtemos como resposta 1.6 e 1.7, ou seja, a variável "Altura" tem duas modas.
+            Feito isso, podemos usar o comando <div style="overflow-x: auto; max-width: 100%;"><pre><code>mean(Altura)</code></pre></div> para determinar a média das alturas e <div style="overflow-x: auto; max-width: 100%;"><pre><code>median(Altura)</code></pre></div> para determinar a mediana das alturas, obtendo, respectivamente, 1.667 e 1.655. Para a moda, é preciso usar os comandos <div style="overflow-x: auto; max-width: 100%;"><pre><code>library(modeest)
+mfv(Altura)</code></pre></div> Nesse caso, obtemos como resposta 1.6 e 1.7, ou seja, a variável "Altura" tem duas modas.
         </p>
         
         <p>
-            Por fim, para determinar o primeiro e o terceiro quartis basta fazer <pre><code>quartile(Altura)</code></pre> e obter 1.6 e 1.7075, respectivamente.
+            Por fim, para determinar o primeiro e o terceiro quartis basta fazer <div style="overflow-x: auto; max-width: 100%;"><pre><code>quartile(Altura)</code></pre></div> e obter 1.6 e 1.7075, respectivamente.
         </p>
         
         <div>
