@@ -293,7 +293,7 @@
                 font-family: "Helvetica", sans-serif;
                 line-height: 1.5;
                 background-color: rgb(233,227,206);
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 1 contSec 2;
             }
             h1{
                 background-color: rgb(213,113,0);
@@ -376,6 +376,17 @@
             tbody tr:nth-child(even) {
               background-color: #f9f9f9;
             }
+            .bloco-codigo {
+                background-color: #f5f5f5;
+                padding: 10px;
+                border-left: 4px solid #009688;
+                font-family: monospace;
+                font-size: 14px;
+                white-space: pre-wrap;    /* permite quebra de linha */
+                overflow-y: auto;         /* rolagem vertical */
+                overflow-x: auto;         /* rolagem horizontal, se necessário */
+                max-height: 200px;        /* limite de altura do bloco */
+              }
         </style>
     </head>
     <body>
@@ -384,15 +395,11 @@
         <h3>Seção 2 - Medidas de posição</h3>
         
         <p>
-            Teste
-        </p>
-        
-        <p>
-            O conjunto das informações extraídas do preenchimento do questionário, apresentado na <a href="IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a> pode ser organizado na seguinte tabela:
+            Considere o exemplo do <a href="IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a>, onde um questionário foi aplicado a uma turma de 50 alunos. Suponha que tal questionário tenha sido respondido e o conjunto das informações extraídas de seu preenchimento esteja organizado na seguinte tabela:
         </p>
         
         <div class="equationCenter">
-            <table border="1">
+            <table id="tab_questPre" border="1">
               <thead>
                 <tr style="text-align: center">
                   <th></th>
@@ -1217,7 +1224,91 @@
         </div>
         
         <p>
-            Observe a quantidade de informação apresentada nessa tabela.
+            Observe a quantidade de informação apresentada nessa tabela. Vamos apresentar, nessa seção, medidas que resumem um conjunto de dados por meio de valores que representam esses dados em termos de centralidade ou tendência comum. As três medidas que veremos são: média, mediana e moda.
+        </p>
+        
+        <p class="def", id="def_media">
+            Considere o conjunto numérico \(\{x_{1}, \dots, x_{n}\}\). A <strong>média</strong> desse conjunto é a soma de todos os seus valores dividida pela quantidade de elementos, isto é,
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \dfrac{x_{1} + \cdots + x_{n}}{n}
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p>
+            A média representa o valor que cada elemento do conjunto teria se todos os valores fossem iguais, mas a soma total permanecesse a mesma. É como redistribuir igualmente tudo o que temos, de forma que cada um fique com a mesma quantidade
+        </p>
+        
+        <p class="def", id="def_mediana">
+            Seja \(\{x_{1}, \dots, x_{n}\}\) um conjunto numérico ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). A <strong>mediana</strong> é definida como sendo
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \left\{
+                        \begin{array}{}
+                            \dfrac{x_{\frac{n}{2}} + x_{\frac{n}{2} + 1}}{2}, & \text{se } n \text{ é par}, \\
+                            x_{\frac{n-1}{2}+1}, & \text{se } n \text{ é ímpar}.
+                        \end{array}
+                        \right.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p>
+            Em outros termos, a mediana representa um valor de referência que separa a metade inferior da metade superior dos dados.
+        </p>
+        
+        <p class="def", id="def_moda">
+            A <strong>moda</strong> de um conjunto de dados é o valor - ou os valores - que ocorrem com maior frequência, desde que essa frequência seja superior a 1.
+Quando todos os valores aparecem apenas uma vez, dizemos que o conjunto não possui moda.
+        </p>
+        
+        <p>
+            A moda representa o valor mais típico ou mais popular em um conjunto de dados - aquele que aparece mais vezes. Note que, diferentemente das outras medidas, a moda pode ser aplicada a variáveis qualitativas. Note também que um conjunto de dados pode ter mais de uma moda, caso dois ou mais valores apareçam com a mesma frequência, desde que essa frequência seja a maior entre todos os valores.
+        </p>
+        
+        <p class="exemplo">
+            Considere o conjunto \(\{2, 3, 4, 5, 5, 5, 7, 7, 8, 9\}\). A média, a mediana e a moda são, respectivamente, 5.5, 5 e 5 (faça as contas).
+        <span class="fim2"></span></p>
+        
+        <p>
+            No exemplo acima, é relativamente fácil calcular as medidas de posição, pois a quantidade de dados é pequena. Mas se considerarmos a <a href="#tab_questPre">tabela</a> apresentada no início da seção? Por exemplo, qual é a média, a mediana e a moda da altura dos 50 alunos avaliados? Nesses casos, a utilização de software voltados para estatística é muito proveitoso.
+        </p>
+        
+        <p>
+            Ao longo dessas notas, vou apresentar alguns comandos para se usar no software <a href="https://www.r-project.org/">R</a>. Por exemplo, você pode baixar o arquivo de extensão .csv que contém as informações da <a href="#tab_questPre">tabela</a> do início da seção, clicando <a href="exemplo.csv">aqui</a>. Depois, dentro de R, usar o comando
+            <pre><code>dados &lt;- read.csv("CAMINHO_COMPLETO/exemplo.csv", sep = ",")</code></pre>
+            para importar a tabela para o R.
+        </p>
+
+        <p>
+            Observação: no lugar de <code>CAMINHO_COMPLETO</code>, coloque o caminho onde o arquivo <code>exemplo.csv</code> está salvo no seu computador, como por exemplo: <code>"C:/Usuários/seunome/Documentos/..."</code>.
+        </p>
+        
+        <p>
+            Depois disso, use os comandos
+            <pre><code>Turma &lt;- dados$Turma
+Sexo &lt;- dados$Sexo
+Idade &lt;- dados$Idade
+Altura &lt;- dados$Altura
+Peso &lt;- dados$Peso
+Filho &lt;- dados$Filho
+Fumante &lt;- dados$Fumante
+Tolerante &lt;- dados$Tolerante
+Cinema &lt;- dados$Cinema
+OpCine &lt;- dados$OpCine
+TV &lt;- dados$TV
+OpTV &lt;- dados$OpTV</code></pre>
+                para atribuir cada coluna a uma variável.
+        </p>
+        
+        <p>
+            Feito isso, podemos usar o comando <pre><code>mean(Altura)</code></pre> para determinar a média das alturas e <pre><code>median(Altura)</code></pre> para determinar a mediana das alturas, obtendo, respectivamente, 1.667 e 1.655. Para a moda, é preciso usar os comandos <pre><code>library(modeest)
+mfv(Altura)</code></pre> Nesse caso, obtemos como resposta 1.6 e 1.7, ou seja, a variável "Altura" tem duas modas.
         </p>
         
         <div>
