@@ -1,0 +1,63 @@
+ol.vazio {
+  list-style: none;
+}
+
+ol.numerico {
+  counter-reset: contNumerico;
+}
+      
+ol.romano {
+  counter-reset: contRomano;
+}
+      
+ol.alfa {
+  counter-reset: contAlfa;
+}
+      
+ol.numerico > li {
+  list-style: none;
+  position: relative;
+}
+      
+ol.romano > li {
+  list-style: none;
+  position: relative;
+}
+      
+ol.alfa > li {
+  list-style: none;
+  position: relative;
+}
+      
+ol.numerico > li:before {
+  counter-increment: contNumerico;
+  content:"(" counter(contNumerico)") ";
+  position: relative;
+  left: -5px;
+  margin-left: -25px;
+  padding-right: 5px;
+  text-align: center;
+  width: 40px;
+}
+      
+ol.romano > li:before {
+  counter-increment: contRomano;
+  content:"(" counter(contRomano, lower-roman)") ";
+  position: relative;
+  left: -5px;
+  margin-left: -25px;
+  padding-right: 5px;
+  text-align: center;
+  width: 40px;
+}
+      
+ol.alfa > li:before {
+  counter-increment: contAlfa;
+  content:"(" counter(contAlfa, lower-alpha)")";
+  position: relative;
+  left: -5px;
+  margin-left: -25px;
+  padding-right: 5px;
+  text-align: center;
+  width: 40px;
+}
