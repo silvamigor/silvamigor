@@ -1224,7 +1224,7 @@
         </div>
         
         <p>
-            Observe a quantidade de informação apresentada nessa tabela. Vamos apresentar, nessa seção, medidas que resumem um conjunto de dados por meio de valores que representam esses dados em termos de centralidade ou tendência comum. As três medidas que veremos são: média, mediana e moda.
+            Observe a quantidade de informação apresentada nessa tabela. Vamos apresentar, nessa seção, medidas que resumem um conjunto de dados por meio de valores que representam esses dados em termos de centralidade ou tendência comum. As cinco medidas que veremos são: média, mediana, moda, primeiro quartil e terceiro quartil.
         </p>
         
         <p class="def", id="def_media">
@@ -1259,7 +1259,7 @@
         </p>
         
         <p>
-            Em outros termos, a mediana representa um valor de referência que separa a metade inferior da metade superior dos dados.
+            Em outros termos, a mediana é o valor que divide o conjunto de dados ordenados em duas partes iguais, de modo que a metade dos valores está abaixo dela e a outra metade está acima. Em conjuntos com número ímpar de elementos, a mediana é o valor central. Em conjuntos com número par, a mediana é a média dos dois valores centrais.
         </p>
         
         <p class="def", id="def_moda">
@@ -1271,8 +1271,17 @@ Quando todos os valores aparecem apenas uma vez, dizemos que o conjunto não pos
             A moda representa o valor mais típico ou mais popular em um conjunto de dados - aquele que aparece mais vezes. Note que, diferentemente das outras medidas, a moda pode ser aplicada a variáveis qualitativas. Note também que um conjunto de dados pode ter mais de uma moda, caso dois ou mais valores apareçam com a mesma frequência, desde que essa frequência seja a maior entre todos os valores.
         </p>
         
+        <p class="def", id="def_quartil">Seja <span class="math">\(\{x_{1}, \dots, x_{n}\}\)</span> um conjunto numérico ordenado de forma que <span class="math">\(x_{1} \le \cdots \le x_{n}\)</span>. Dividimos esse conjunto em dois subconjuntos:
+        <ul>
+            <li>A metade inferior, que contém os elementos menores que a mediana;</li>
+            <li>A metade superior, que contém os elementos maiores que a mediana.</li>
+        </ul>
+        O <strong>primeiro quartil</strong> é a mediana da metade inferior, e o <strong>terceiro quartil</strong> é a mediana da metade superior.
+        <span class="fim2"></span></p>
+
+        
         <p class="exemplo">
-            Considere o conjunto \(\{2, 3, 4, 5, 5, 5, 7, 7, 8, 9\}\). A média, a mediana e a moda são, respectivamente, 5.5, 5 e 5 (faça as contas).
+            Considere o conjunto \(\{2, 3, 4, 5, 5, 5, 7, 7, 8, 9\}\). A média, a mediana, a moda, o primeiro e o terceiro quartil são, respectivamente, 5.5, 5, 5, 4 e 7 (faça as contas).
         <span class="fim2"></span></p>
         
         <p>
@@ -1309,6 +1318,10 @@ OpTV &lt;- dados$OpTV</code></pre>
         <p>
             Feito isso, podemos usar o comando <pre><code>mean(Altura)</code></pre> para determinar a média das alturas e <pre><code>median(Altura)</code></pre> para determinar a mediana das alturas, obtendo, respectivamente, 1.667 e 1.655. Para a moda, é preciso usar os comandos <pre><code>library(modeest)
 mfv(Altura)</code></pre> Nesse caso, obtemos como resposta 1.6 e 1.7, ou seja, a variável "Altura" tem duas modas.
+        </p>
+        
+        <p>
+            Por fim, para determinar o primeiro e o terceiro quartis basta fazer <pre><code>quartile(Altura)</code></pre> e obter 1.6 e 1.7075, respectivamente.
         </p>
         
         <div>

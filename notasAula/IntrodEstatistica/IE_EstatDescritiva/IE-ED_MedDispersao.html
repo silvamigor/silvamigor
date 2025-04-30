@@ -293,7 +293,7 @@
                 font-family: "Helvetica", sans-serif;
                 line-height: 1.5;
                 background-color: rgb(233,227,206);
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 1 contSec 3;
             }
             h1{
                 background-color: rgb(213,113,0);
@@ -347,57 +347,46 @@
                 background-color: rgb(213,113,0);
                 color: black;
             }
-            ol.vet {
-                counter-reset: contVet;
+            table {
+              border-collapse: collapse;
+              width: 100%;
+              height: 300px; /* Altura fixa para a tabela */
+              overflow-y: auto;
+              display: block;
             }
-            ol.vet > li {
-                list-style: none;
-                position: relative;
+
+            th {
+              position: sticky;
+              top: 0;
+              background-color: #f1f1f1; /* Cor de fundo do cabeçalho */
+              z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo da tabela */
+              border: 1px solid #ddd;
+              padding: 8px;
             }
-            ol.vet > li:before {
-                counter-increment: contVet;
-                content:"(V" counter(contVet)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
+
+            td {
+              border: 1px solid #ddd;
+              padding: 8px;
             }
-            ol.vet2 {
-                counter-reset: contVet2 4;
+
+            thead {
+              background-color: #f2f2f2;
             }
-            ol.vet2 > li {
-                list-style: none;
-                position: relative;
+            
+            tbody tr:nth-child(even) {
+              background-color: #f9f9f9;
             }
-            ol.vet2 > li:before {
-                counter-increment: contVet2;
-                content:"(V" counter(contVet2)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
-            }
-            ol.corpo {
-                counter-reset: contCorpo;
-            }
-            ol.corpo > li {
-                list-style: none;
-                position: relative;
-            }
-            ol.corpo > li:before {
-                counter-increment: contCorpo;
-                content:"(C" counter(contCorpo)") ";
-                position: relative;
-                left: -5px;
-                margin-left: -25px;
-                padding-right: 5px;
-                text-align: center;
-                width: 40px;
-            }
+            .bloco-codigo {
+                background-color: #f5f5f5;
+                padding: 10px;
+                border-left: 4px solid #009688;
+                font-family: monospace;
+                font-size: 14px;
+                white-space: pre-wrap;    /* permite quebra de linha */
+                overflow-y: auto;         /* rolagem vertical */
+                overflow-x: auto;         /* rolagem horizontal, se necessário */
+                max-height: 200px;        /* limite de altura do bloco */
+              }
         </style>
     </head>
     <body>
@@ -406,7 +395,50 @@
         <h3>Seção 3 - Medidas de dispersão</h3>
         
         <p>
-            Teste
+            Na seção anterior, discutimos as medidas de posição central, que indicam onde os dados tendem a se concentrar. Agora, vamos explorar as medidas de dispersão, que nos ajudam a compreender o quão dispersos os dados estão. Nesta seção, trataremos de três medidas: a amplitude total, o intervalo interquartil e o desvio padrão.
+        </p>
+        
+        <p class="def", id="def_amplTotal">
+            A <strong>amplitude total</strong> é a diferença entre o maior e o menor valor de um conjunto de dados.
+        <span class="fim2"></span></p>
+        
+        <p>
+            Essa medida dá a “extensão” bruta dos dados, mas é sensível a valores extremos.
+        </p>
+        
+        <p class="def", id="def_intIntQ">
+            O <strong>intervalo interquantil</strong> é a diferença entre o terceiro e o primeiro quartis.
+        <span class="fim2"></span></p>
+        
+        <p>
+            O intervalo interquartil concentra-se nos 50% centrais dos dados, sendo mais resistente a distorções causadas por outliers do que a amplitude total.
+        </p>
+        
+        <p class="def", id="def_desPadrao">
+            
+        <span class="fim2"></span></p>
+        
+        <p>
+            Essa medida mostra o quão distantes os valores estão da média, em média.
+        </p>
+        
+        <p>
+            Considerando a <a href="#tab_questPre">tabela</a> de dados da seção anterior, para calcular a amplitude total, o intervalo interquartil e o desvio padrão da variável "Altura", basta usar os comandos <pre><code>max(Altura) - min(Altura)
+IQR(Altura)
+sqrt(mean((Altura - mean(Altura))^2))</code></pre>
+            e obter 0.4, 0.1075 e 0.08653901, respectivamente.
+        </p>
+        
+        <p>
+            Observação: o comando <pre><code>sd(Altura)</code></pre> tem como base a fórmula
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \sqrt{\dfrac{1}{n-1}\sum_{i=1}^{n}(x_{i} - \overline{x})^{2}},
+                    \]
+                </span>
+            </div>
+            dito <i>desvio padrão amostral</i>, conforme veremos adiante. 
         </p>
         
         <div>
