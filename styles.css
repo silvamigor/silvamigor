@@ -1,0 +1,164 @@
+/* styles.css */
+body {
+    font-size: 16pt;
+    font-family: "Helvetica", sans-serif;
+    line-height: 1.5;
+    background-color: rgb(233,227,206);
+    counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo
+}
+
+h1 {
+    background-color: rgb(213,113,0);
+}
+
+.hifscor {
+    text-decoration: none;
+    color: inherit;
+}
+
+details > summary {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: 0.15s background linear;
+}
+
+details > summary:hover {
+    background: #d4d1ec;
+}
+
+details > p {
+    border: solid;
+}
+
+.equationCenter {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.buttonDetails {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: rgb(233,227,206);
+    color: black;
+    border: 2px solid rgb(213,113,0);
+}
+
+.button1:hover {
+    background-color: rgb(213,113,0);
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 1;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.bloco-codigo {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-left: 4px solid #009688;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 200px;
+}
+
+.diagram {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box {
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    min-width: 150px;
+    position: relative;
+}
+
+.arrow-down::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #555;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subcolumns {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #333;
+}
