@@ -44,9 +44,12 @@
 }
 
 .equationWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 .math {
@@ -54,12 +57,6 @@
 }
 
 .fim::after {
-  content: "\25A2";
-  margin-left: 10px;
-  font-size: 1.2em;
-}
-
-.fim2:after{
   content: "\25A2";
   float:right;
 }
