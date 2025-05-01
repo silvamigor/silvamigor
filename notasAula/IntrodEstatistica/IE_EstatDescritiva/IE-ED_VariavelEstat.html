@@ -26,6 +26,58 @@
             body{
                 counter-reset: contCap 1 contSec 1;
             }
+    
+            .diagram {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .box {
+            border: 2px solid #555;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+            min-width: 150px;
+            position: relative;
+        }
+
+        .arrow-down::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #555;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subcolumns {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #333;
+        }
         </style>
     </head>
     
@@ -124,25 +176,28 @@
             <p>As variáveis quantitativas podem ser <i>discretas</i>, quando assumem valores inteiros, ou <i>contínuas</i>, caso onde seus valores pertencem ao conjuntos dos números reais. As variáveis qualitativas, por sua vez, podem ser <i>ordinais</i>, quando é possível definir uma ordem natural entre os valores possíveis, ou <i>nominais</i>, caso contrário. Por exemplo, "OpCine" e "OpTV", são ordinais e "turma", "sexo" e "fumante" são nominais.
         </p>
         
-        <div class="equationCenter">
+        <div class="equationWrapper">
         <div class="diagram">
+    <!-- Nível 1 -->
     <div class="column">
       <div class="box arrow-down">
-        <div class="title">Variáveis</div>
+        <div class="title">Variável</div>
       </div>
 
+      <!-- Nível 2 -->
       <div class="subcolumns">
         <!-- Qualitativa -->
         <div class="column">
           <div class="box arrow-down">
             <div class="title">Qualitativa</div>
           </div>
+          <!-- Nível 3 de Qualitativa -->
           <div class="subcolumns">
             <div class="box">
-              <div class="subtitle">Nominal</div>
+              <div class="title">Nominal</div>
             </div>
             <div class="box">
-              <div class="subtitle">Ordinal</div>
+              <div class="title">Ordinal</div>
             </div>
           </div>
         </div>
@@ -152,12 +207,13 @@
           <div class="box arrow-down">
             <div class="title">Quantitativa</div>
           </div>
+          <!-- Nível 3 de Quantitativa -->
           <div class="subcolumns">
             <div class="box">
-              <div class="subtitle">Discreta</div>
+              <div class="title">Discreta</div>
             </div>
             <div class="box">
-              <div class="subtitle">Contínua</div>
+              <div class="title">Contínua</div>
             </div>
           </div>
         </div>
