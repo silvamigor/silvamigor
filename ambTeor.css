@@ -43,19 +43,6 @@
   content: "Definição " counter(contCap)"."counter(contSec)"."counter(contDef) ". ";
 }
 
-.equationWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-
-.math {
-  flex-grow: 1;
-}
-
 .fim::after {
   content: "\25A2";
   float:right;

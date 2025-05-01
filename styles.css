@@ -31,10 +31,17 @@ details > p {
     border: solid;
 }
 
-.equationCenter {
+.equationWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
+}
+
+.math {
+  flex-grow: 1;
 }
 
 .buttonDetails {
