@@ -24,7 +24,7 @@
         <script type="module" src="../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contCap 1 contSec 3;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 1 contSec 3;
             }
         </style>
     </head>
@@ -39,7 +39,7 @@
         </p>
         
         <p class="def", id="def_amplTotal">
-            A <strong>amplitude total</strong> é a diferença entre o maior e o menor valor de um conjunto de dados.
+            A <strong>amplitude total populacional</strong> de uma variável quantitativa é a diferença entre o maior e o menor valor da variável.
         <span class="fim"></span></p>
         
         <p>
@@ -47,7 +47,7 @@
         </p>
         
         <p class="def", id="def_intIntQ">
-            O <strong>intervalo interquantil</strong>, denotado por \(IQR\), é a diferença entre o terceiro e o primeiro quartis.
+            O <strong>intervalo interquartil populacional</strong>, denotado por \(IQR\), é a diferença entre o terceiro e o primeiro quartis populacionais.
         <span class="fim"></span></p>
         
         <p>
@@ -55,7 +55,7 @@
         </p>
         
         <p class="def", id="def_desPadrao">
-            Seja <span class="math">\(\{x_{1}, \dots, x_{n}\}\)</span> um conjunto numérico, com média \(\mu\). Definimos a <strong>variância</strong> desse conjunto, denotada por \(\sigma^{2}\), como sendo
+            Seja <span class="math">\(\{x_{1}, \dots, x_{n}\}\)</span> um conjunto numérico dos valores de uma variável estatística quantitativa de uma população, com média populacional \(\mu\). Definimos a <strong>variância populacional</strong> dessa variável, denotada por \(\sigma^{2}\), como sendo
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -63,7 +63,7 @@
                     \]
                 </span>
             </div>
-            O <strong>desvio padrão</strong> desse conjunto é definido como sendo \(\sqrt{\sigma^{2}}\), denotado por \(\sigma\).
+            O <strong>desvio padrão populacional</strong> dessa variável é definido como sendo \(\sqrt{\sigma^{2}}\), denotado por \(\sigma\).
         <span class="fim"></span></p>
         
         <p>
@@ -71,7 +71,7 @@
         </p>
         
         <p>
-            Considerando a <a href="#tab_questPre">tabela</a> de dados da seção anterior, para calcular a amplitude total, o intervalo interquartil e o desvio padrão da variável "Altura", basta usar os comandos <div style="overflow-x: auto; max-width: 100%;"><pre><code>max(Altura) - min(Altura)
+            Considerando a <a href="IE-ED_MedPosicao.html#tab_questPre">tabela</a> de dados da seção anterior, para calcular a amplitude total, o intervalo interquartil e o desvio padrão da variável "Altura", basta usar os comandos <div style="overflow-x: auto; max-width: 100%;"><pre><code>max(Altura) - min(Altura)
 IQR(Altura)
 sqrt(mean((Altura - mean(Altura))^2))</code></pre></div>
             e obter 0.4, 0.1075 e 0.08653901, respectivamente.

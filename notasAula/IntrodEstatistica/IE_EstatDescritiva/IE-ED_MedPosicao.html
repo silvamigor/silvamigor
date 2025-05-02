@@ -24,7 +24,7 @@
         <script type="module" src="../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contCap 1 contSec 2;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 1 contSec 2;
             }
         </style>
     </head>
@@ -38,11 +38,11 @@
             Considere o exemplo do <a href="IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a>, onde um questionário foi aplicado a uma turma de 50 alunos. Suponha que tal questionário tenha sido respondido e o conjunto das informações extraídas de seu preenchimento esteja organizado na seguinte tabela:
         </p>
         
-        <div class="equationCenter">
+        <div class="equationWrapper">
             <table id="tab_questPre" border="1">
               <thead>
                 <tr style="text-align: center">
-                  <th></th>
+                  <th>Aluno</th>
                   <th>Turma</th>
                   <th>Sexo</th>
                   <th>Idade</th>
@@ -867,8 +867,8 @@
             Observe a quantidade de informação apresentada nessa tabela. Vamos apresentar, nessa seção, medidas que resumem um conjunto de dados por meio de valores que representam esses dados em termos de centralidade ou tendência comum. As cinco medidas que veremos são: média, mediana, moda, primeiro quartil e terceiro quartil.
         </p>
         
-        <p class="def", id="def_media">
-            Considere o conjunto numérico \(\{x_{1}, \dots, x_{n}\}\). A <strong>média</strong> desse conjunto, denotada por \(\mu\), é a soma de todos os seus valores dividida pela quantidade de elementos, isto é,
+        <p class="def", id="def_mediaPop">
+            Considere uma variável estatística quantitativa associada a uma população, descrita pelo conjunto numérico \(\{x_1, \dots, x_n\}\). A <strong>média populacional</strong> dessa variável, denotada por \(\mu\), é dada por:
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -882,8 +882,8 @@
             A média representa o valor que cada elemento do conjunto teria se todos os valores fossem iguais, mas a soma total permanecesse a mesma. É como redistribuir igualmente tudo o que temos, de forma que cada um fique com a mesma quantidade
         </p>
         
-        <p class="def", id="def_mediana">
-            Seja \(\{x_{1}, \dots, x_{n}\}\) um conjunto numérico ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). A <strong>mediana</strong>, denotada por \(\theta\), é definida como sendo
+        <p class="def", id="def_medianaPop">
+            Seja \(\{x_{1}, \dots, x_{n}\}\) um conjunto numérico dos valores de uma variável estatística quantitativa de uma população. Suponha que os valores estejam ordenados de forma que \(x_{1} \le \cdots \le x_{n}\). A <strong>mediana populacional</strong> dessa variável, denotada por \(\theta\), é definida como sendo
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -902,26 +902,25 @@
             Em outros termos, a mediana é o valor que divide o conjunto de dados ordenados em duas partes iguais, de modo que a metade dos valores está abaixo dela e a outra metade está acima. Em conjuntos com número ímpar de elementos, a mediana é o valor central. Em conjuntos com número par, a mediana é a média dos dois valores centrais.
         </p>
         
-        <p class="def", id="def_moda">
-            A <strong>moda</strong> de um conjunto de dados é o valor - ou os valores - que ocorrem com maior frequência, desde que essa frequência seja superior a 1.
-Quando todos os valores aparecem apenas uma vez, dizemos que o conjunto não possui moda.
-        <span class="fim"></p>
+        <p class="def", id="def_modaPop">
+            A <strong>moda populacional</strong> de uma variável estatística é o valor - ou os valores - que ocorrem com maior frequência, desde que essa frequência seja superior a 1. Quando todos os valores aparecem apenas uma vez, dizemos que tal variável não possui moda.
+        <span class="fim"></span></p>
         
         <p>
             A moda representa o valor mais típico ou mais popular em um conjunto de dados - aquele que aparece mais vezes. Note que, diferentemente das outras medidas, a moda pode ser aplicada a variáveis qualitativas. Note também que um conjunto de dados pode ter mais de uma moda, caso dois ou mais valores apareçam com a mesma frequência, desde que essa frequência seja a maior entre todos os valores.
         </p>
         
-        <p class="def", id="def_quartil">Seja <span class="math">\(\{x_{1}, \dots, x_{n}\}\)</span> um conjunto numérico ordenado de forma que <span class="math">\(x_{1} \le \cdots \le x_{n}\)</span>. Dividimos esse conjunto em dois subconjuntos:
+        <p class="def", id="def_quartilPop">Seja <span class="math">\(\{x_{1}, \dots, x_{n}\}\)</span> um conjunto numérico dos valores de uma variável estatística quantitativa de uma população, ordenado de forma que <span class="math">\(x_{1} \le \cdots \le x_{n}\)</span>. Dividimos esse conjunto em dois subconjuntos:
         <ul>
             <li>A metade inferior, que contém os elementos menores que a mediana;</li>
             <li>A metade superior, que contém os elementos maiores que a mediana.</li>
         </ul>
-        O <strong>primeiro quartil</strong>, denotado por \(Q_{1}\), é a mediana da metade inferior, e o <strong>terceiro quartil</strong>, denotado por \(Q_{3}\), é a mediana da metade superior.
+        O <strong>primeiro quartil populacional</strong>, denotado por \(Q_{1}\), é a mediana da metade inferior, e o <strong>terceiro quartil populacional</strong>, denotado por \(Q_{3}\), é a mediana da metade superior.
         <span class="fim"></span></p>
 
         
         <p class="exemplo">
-            Considere o conjunto \(\{2, 3, 4, 5, 5, 5, 7, 7, 8, 9\}\). A média, a mediana, a moda, o primeiro e o terceiro quartil são, respectivamente, 5.5, 5, 5, 4 e 7 (faça as contas).
+            Considere o conjunto \(\{2, 3, 4, 5, 5, 5, 7, 7, 8, 9\}\). A média, a mediana, a moda, o primeiro e o terceiro quartil são, respectivamente, 5.5, 5, 5, 4 e 7 (faça as contas, se achar necessário).
         <span class="fim"></span></p>
         
         <p>
