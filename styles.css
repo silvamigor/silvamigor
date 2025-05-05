@@ -16,7 +16,8 @@ h1 {
 }
 
 details > summary {
-    font-weight: bold;
+    font-style: italic;
+    color: blue;
     cursor: pointer;
     position: relative;
     transition: 0.15s background linear;
@@ -26,7 +27,7 @@ details > summary:hover {
     background: #d4d1ec;
 }
 
-details > p {
+details > .caixa {
     border: solid;
 }
 

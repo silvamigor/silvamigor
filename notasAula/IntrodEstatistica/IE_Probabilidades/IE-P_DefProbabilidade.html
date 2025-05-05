@@ -24,7 +24,7 @@
         <script type="module" src="../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contCap 2 contSec 1;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 2 contSec 1;
             }
         </style>
     </head>
@@ -35,8 +35,84 @@
         <h3>Seção 1 - Definição de probabilidade</h3>
         
         <p>
-            Teste
+            Suponha que você lance um dado para cima e observe a face voltada para cima quando ele se estabiliza no chão. Note que, a cada vez que o dado é lançado, o resultado é incerto - <em>não sabemos exatamente qual número sairá</em> -, mas sabemos que ele será um dos números do conjunto \(\{1, 2, 3, 4, 5, 6\}\).
         </p>
+
+        <p>
+          Esse é um exemplo de um <strong>experimento aleatório</strong>: uma situação em que o resultado não pode ser previsto com certeza, mesmo que o conjunto de resultados possíveis seja conhecido.
+        </p>
+
+        <p>
+            O conjunto de todos os resultados possíveis de um experimento aleatório é chamado de <strong>espaço amostral</strong>. Se chamarmos esse espaço de \(\Omega\), então o conjunto \(\wp(\Omega)\), chamado de <i>conjunto potência</i> de \(\Omega\), representa todos os subconjuntos possíveis de \(\Omega\). Um elemento de \(\wp(\Omega)\) é chamado de <strong>evento</strong>. Por exemplo, no lançamento do dado, o espaço amostral é \(\Omega = \{1,2,3,4,5,6\}\), e o conjunto \(A = \{2,4,6\}\) representa o evento “sair um número par”.
+        </p>
+
+        <p>
+            A <i>probabilidade</i> é a ferramenta que usamos para atribuir um valor numérico a esses eventos - medindo o quão provável é que eles aconteçam. É justamente essa formalização que permite tomar decisões informadas em contextos de incerteza, como jogos, previsões do tempo, diagnósticos médicos ou modelos estatísticos.
+        </p>
+
+        
+        <p class="def", id="def_prob">
+            Chamamos de <strong>probabilidade</strong> uma função
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P: \wp(\Omega) \to \bbR
+                    \]
+                </span>
+            </div>
+            satisfazendo
+            <ul>
+                <li>\(P(A) \ge 0\), para todo \(A \in\) <span style="font-size: 1.2em; vertical-align: 0.15em;">℘</span>\((\Omega)\);</li>
+                <li>\(P(\Omega) = 1\);</li>
+                <li>se \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) são disjuntos, então \(P(\cup_{i=1}^{n}A_{i}) = \sum_{i=1}^{n}P(A_{i})\).<span class="fim"></span></li>
+            </ul>
+        </p>
+        
+        <p class="exemplo">
+            Considere o experimento aleatório do lançamento de um dado, conforme apresentado no início da seção. Vimos que seu espaço amostral é \(\Omega = \{1, 2, 3, 4, 5, 6\}\). Dado um evento \(A\), denote por \(\#A\) a cardinalidade de \(A\), isto é, a quantidade de elementos em \(A\). As seguintes funções são probabilidades:
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \begin{array}{ccc}
+                            \begin{array}{rcl}
+                                P: \wp(\Omega) & \to & \bbR \\
+                                A & \mapsto & \dfrac{\#A}{6}
+                            \end{array}
+                            & \hspace{20pt} &
+                            \begin{array}{rcl}
+                                P: \wp(\Omega) & \to & \bbR \\
+                                A & \mapsto & 
+                                \left\{
+                                    \begin{array}{cl}
+                                        1, & \text{se } 5 \in A, \\
+                                        0, & \text{se } 5 \not\in A.
+                                    \end{array}
+                                \right.
+                            \end{array}
+                        \end{array}
+                    \]
+                </span>
+            </div>
+            onde a primeira supõe-se equiprobabilidade e a segunda modela um dado viciado em 5.
+        <span class="fim"></span></p>
+        
+        <p class="lema" id="lema_consProb">
+            <ol class="numerico">
+                <li>Se \(A \subseteq B\), então \(P(A) \le P(B)\).</li>
+                <li>Seja \(A^{\complement}\) o complementar de \(A\). Então \(P(A^{\complement}) = 1 - P(A)\).<span class="fim"></span></li>
+            </ol>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                <p>
+                 Teste
+                </p>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
         
         <div>
             <a href="IE_Probabilidades.html">
@@ -45,8 +121,8 @@
         </div>
         
         <div>
-            <a href="../IE_InferenciaEst/IE_InferenciaEst.html">
-                <button class="button button1">Capítulo 3 - Inferência estatística</button>
+            <a href="IE-P_VariavelAleatoria.html">
+                <button class="button button1">Capítulo 2 - Seção 2 - Variável aleatória</button>
             </a>
         </div>
     </body>  
