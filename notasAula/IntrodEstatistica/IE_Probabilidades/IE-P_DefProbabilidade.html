@@ -100,7 +100,14 @@
             <ol class="numerico">
                 <li>Se \(A \subseteq B\), então \(P(A) \le P(B)\). Em particular, \(P(A) \le 1\), para todo \(A \in \wp(\Omega)\).</li>
                 <li>Seja \(A^{\complement}\) o complementar de \(A\). Então \(P(A^{\complement}) = 1 - P(A)\).</li>
-                <li>Sejam \(A\) e \(B\) eventos de \(\Omega\). Então \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).<span class="fim"></span></li>
+                <li>Sejam \(A\) e \(B\) eventos de \(\Omega\). Então 
+                    <div class="equationWrapper">
+                        <span class="math">
+                            \[
+                                1 = P(\Omega) = P(A) + P(A^{\complement}).
+                            \]
+                        </span>
+                    </div>.<span class="fim"></span></li>
             </ol>
         </div>
         
@@ -136,9 +143,9 @@
                         </div>
                         e note que \(A = (A\setminus B) \cup (A \cap B)\) e \(B = (B\setminus A) \cup (A \cap B)\), onde todas as uniões são disjuntas. Assim, temos que
                         <ul>
-                            <li>\(P(A \cup B) = P(A\setminus B) + P(B\setminus A) + P(A \cap B)\),</li>
-                            <li>\(P(A) = P(A\setminus B) + P(A \cap B)\),</li>
-                            <li>\(P(B) = P(B\setminus A) + P(A \cap B)\).</li>
+                            <li><div class="equationWrapper">\(P(A \cup B) = P(A\setminus B) + P(B\setminus A) + P(A \cap B)\),</div></li>
+                            <li><div class="equationWrapper">\(P(A) = P(A\setminus B) + P(A \cap B)\),</div></li>
+                            <li><div class="equationWrapper">\(P(B) = P(B\setminus A) + P(A \cap B)\).</div></li>
                         </ul>
                         Juntando essas três equações chegamos ao resultado.
                     </li>
