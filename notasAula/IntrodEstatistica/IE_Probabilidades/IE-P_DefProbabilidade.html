@@ -21,7 +21,7 @@
         <!-- Ambiente de teorema -->
         <link rel="stylesheet" type="text/css" href="../../../ambTeor.css" />
         <!-- Plugin TikZ do MathJax v3 -->
-        <script type="module" src="../../../scripts.js"></script>
+        <script src="../../../scripts.js"></script>
         <style>
             body{
                 counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 2 contSec 1;
@@ -62,7 +62,7 @@
             </div>
             satisfazendo
             <ul>
-                <li>\(P(A) \ge 0\), para todo \(A \in\) <span style="font-size: 1.2em; vertical-align: 0.15em;">℘</span>\((\Omega)\);</li>
+                <li>\(P(A) \ge 0\), para todo \(A \in \wp(\Omega)\);</li>
                 <li>\(P(\Omega) = 1\);</li>
                 <li>se \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) são disjuntos, então \(P(\cup_{i=1}^{n}A_{i}) = \sum_{i=1}^{n}P(A_{i})\).<span class="fim"></span></li>
             </ul>
@@ -96,19 +96,53 @@
             onde a primeira supõe-se equiprobabilidade e a segunda modela um dado viciado em 5.
         <span class="fim"></span></p>
         
-        <p class="lema" id="lema_consProb">
+        <div class="lema" id="lema_consProb">
             <ol class="numerico">
-                <li>Se \(A \subseteq B\), então \(P(A) \le P(B)\).</li>
-                <li>Seja \(A^{\complement}\) o complementar de \(A\). Então \(P(A^{\complement}) = 1 - P(A)\).<span class="fim"></span></li>
+                <li>Se \(A \subseteq B\), então \(P(A) \le P(B)\). Em particular, \(P(A) \le 1\), para todo \(A \in \wp(\Omega)\).</li>
+                <li>Seja \(A^{\complement}\) o complementar de \(A\). Então \(P(A^{\complement}) = 1 - P(A)\).</li>
+                <li>Sejam \(A\) e \(B\) eventos de \(\Omega\). Então \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\).<span class="fim"></span></li>
             </ol>
-        </p>
+        </div>
         
         <details>
             <summary>Demonstração</summary>
             <div class="caixa">
-                <p>
-                 Teste
-                </p>
+                <ol class="numerico">
+                    <li>Note que \(B = A \cup (B\setminus A)\) é uma união disjunta. Logo
+                        <div class="equationWrapper">
+                            <span class="math">
+                                \[
+                                    P(B) = P\big(A \cup (B\setminus A)\big) = P(A) + P(B\setminus A) \ge P(A).
+                                \]
+                            </span>
+                        </div>
+                    </li>
+                    <li>Observe que \(\Omega = A \cup A^{\complement}\) é uma união disjunta. Logo, 
+                        <div class="equationWrapper">
+                            <span class="math">
+                                \[
+                                    1 = P(\Omega) = P(A) + P(A^{\complement}).
+                                \]
+                            </span>
+                        </div>
+                    </li>
+                    <li>Escreva
+                        <div class="equationWrapper">
+                            <span class="math">
+                                \[
+                                    A \cup B = (A\setminus B) \cup (B\setminus A) \cup (A \cap B)
+                                \]
+                            </span>
+                        </div>
+                        e note que \(A = (A\setminus B) \cup (A \cap B)\) e \(B = (B\setminus A) \cup (A \cap B)\), onde todas as uniões são disjuntas. Assim, temos que
+                        <ul>
+                            <li>\(P(A \cup B) = P(A\setminus B) + P(B\setminus A) + P(A \cap B)\),</li>
+                            <li>\(P(A) = P(A\setminus B) + P(A \cap B)\),</li>
+                            <li>\(P(B) = P(B\setminus A) + P(A \cap B)\).</li>
+                        </ul>
+                        Juntando essas três equações chegamos ao resultado.
+                    </li>
+                </ol>
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
