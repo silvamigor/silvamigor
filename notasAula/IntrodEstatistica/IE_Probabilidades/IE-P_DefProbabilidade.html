@@ -106,8 +106,8 @@
                             \[
                                 1 = P(\Omega) = P(A) + P(A^{\complement}).
                             \]
-                        </span>
-                    </div><span class="fim"></span></li>
+                        </span><span class="fim"></span>
+                    </div></li>
             </ol>
         </div>
         
@@ -144,7 +144,7 @@
                         e note que \(A = (A\setminus B) \cup (A \cap B)\) e \(B = (B\setminus A) \cup (A \cap B)\), onde todas as uniões são disjuntas. Assim, temos que
                         <div class="equationWrapper">
                         <ul>
-                            <li>\(P(A \cup B) = P(A\setminus B) + P(B\setminus A) + P(A \cap B)\),</li>
+                            <li>\(P(A \cup B) = P(A\setminus B) + P(B\setminus A) + P(A \cap B),\)</li>
                             <li>\(P(A) = P(A\setminus B) + P(A \cap B)\),</li>
                             <li>\(P(B) = P(B\setminus A) + P(A \cap B)\).</li>
                         </ul>
@@ -152,6 +152,125 @@
                         Juntando essas três equações chegamos ao resultado.
                     </li>
                 </ol>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p>
+            Em algumas situações, um experimento aleatório pode ser decomposto em etapas. O conhecimento do resultado de uma etapa pode influenciar a probabilidade dos eventos nas etapas seguintes. Para descrever esse tipo de situação, utilizamos o conceito de <i>probabilidade condicional</i>.
+        </p>
+        
+        <p class="def" id="def_probCond">
+            Sejam \(A\) e \(B\) eventos. A <strong>probabilidade condicional</strong> de \(A\) dado \(B\), denotado por \(P(A\mid B)\), é definido como
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid B) \coloneqq \left\{
+                        \begin{array}{cr}
+                            \dfrac{P(A \cap B)}{P(B)}, & \text{se } P(B) > 0, \\
+                            P(A), & \text{se } P(B) = 0.
+                        \end{array}
+                        \right.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p class="exemplo">
+            Considere um casal com dois filhos, cujo sexo é desconhecido. Podemos modelar esse caso como um experimento aleatório, em que cada filho tem, independentemente, a mesma chance de ser menino (M) ou menina (F). O espaço amostral para os sexos dos dois filhos (em ordem do mais velho para o mais novo) é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \Omega = \{(M,M), (M,F), (F,M), (F,F)\}.
+                    \]
+                </span>
+            </div>
+            Assim a probabilidade a ser considerada é a função
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \begin{array}{rcl}
+                            P: \wp(\Omega) & \to & \bbR \\
+                            A & \mapsto & \dfrac{\#A}{4}.
+                        \end{array}
+                    \]
+                </span>
+            </div>
+            Suponha que o mais velho seja menino. Isso é descrito pelo evento \(B = \{(M,M), (M,F)\}\). O evento onde ambos são meninos é \(A = \{(M,M)\}\). Assim, a probabilidade de ambos serem meninos dado que o mais velho é menino é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid B) = \dfrac{P(A \cap B)}{P(B)} = \dfrac{1}{2}.
+                    \]
+                </span>
+            </div>
+            Agora, suponha que pelo menos um deles é menino, evento descrito por \(C = \{(M,M), (M,F), (F,M)\}\). Dessa forma, a probabilidade de ambos serem meninos dado que pelo menos um é menino é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid C) = \dfrac{P(A \cap C)}{P(C)} = \dfrac{1}{3}.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p class="teor" text="Teorema da multiplicação" id="teor_mult">
+            Sejam \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) eventos com probabilidade positiva. Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(\cap_{i=1}^{n}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{n}\mid \cap_{i=1}^{n-1}A_{i}).
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Demonstrar.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="def" id="def_evenInd">
+            Definição independência de eventos
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_partEsp">
+            Definição partição do espaço amostral
+        <span class="fim"></span></p>
+        
+        <p class="teor" text="Teorema da probabilidade total" id="teor_probTotal">
+            Seja \((A_{i})_{i=1}^{n}\) uma partição de \(\Omega\), onde \(P(A_{i}) > 0\), para todo \(i = 1, \ldots, n\). Seja \(B\) um evento. Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(B) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i}).
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Demonstrar.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="teor" text="Teorema de Bayes" id="teor_bayes">
+            
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Demonstrar.
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
