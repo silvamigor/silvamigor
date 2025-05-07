@@ -333,6 +333,37 @@
             <br>
         </details>
         
+        <p>
+            O Teorema de Bayes nos permite atualizar uma probabilidade à luz de novas evidências. Em muitas situações do mundo real, não sabemos diretamente a probabilidade de um evento \(A\), mas temos informações sobre a probabilidade de um outro evento \(B\), condicionado a \(A\), e queremos inverter essa relação.
+        </p>
+        
+        <p>
+            Por exemplo, suponha que queremos saber a probabilidade de uma pessoa estar doente \(A\), dado que o teste deu positivo \(B\). Sabemos, geralmente, qual é a sensibilidade do teste (a probabilidade de testar positivo, dado que a pessoa está doente), mas o que realmente queremos é o inverso: qual a chance de estar doente, dado o teste positivo?
+        </p>
+        
+        <p>
+            Esse processo de inverter a condição é exatamente o que o Teorema de Bayes permite fazer.
+        </p>
+        
+        <p class="exemplo">
+            Considere o espaço amostral
+             <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \Omega = \{(d, +), (d, -), (d^{\complement}, +), (d^{\complement}, -)\},
+                    \]
+                </span>
+            </div>
+            onde \(d\) e \(d^{\complement}\) indicam, respectivamente, que o indivíduo está doente ou não está doente, e os símbolos \(+\) e \(-\) representam, respectivamente, um resultado positivo (o exame acusa a doença) ou negativo (o exame não acusa a doença). Sejam \(D = \{(d, +), (d, -)\}\), \(S = \{(d, +), (d^{\complement}, +)\}\) e \(N = \{(d, -), (d^{\complement}, -)\}\). Suponha que \(P(S\mid D)= 0,8\), \(P(N\mid D^{\complement})= 0,9\) e \(P(D) = 0,06\). Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(D^{\complement}\mid S) = \dfrac{P(D^{\complement} \cap S)}{P(S)} = \dfrac{P(D^{\complement})P(S \mid D^{\complement})}{P(D)P(S\mid D) + P(D^{\complement})P(S\mid D^{\complement})} = \dfrac{(1-0,06)(1-0,9)}{0,06\times 0,8 + (1-0,06)(1-0,9)} = \dfrac{0,094}{0,142} \approx 0,662.
+                    \]
+                </span>
+            </div>
+        <span class="fim"></span></p>
+        
         <div>
             <a href="IE_Probabilidades.html">
                 <button class="button button1">Capítulo 2 - Probabilidades</button>

@@ -51,7 +51,7 @@
             <div class="equationWrapper">
                 <span class="math">
                     \[
-                        n_{j} \coloneqq \big|\{i \mid x_{i} \in I_{j}\}\big|,
+                        n_{j} \coloneqq \#\{i \mid x_{i} \in I_{j}\},
                     \]
                 </span>
             </div>
@@ -197,7 +197,7 @@ text(x = h$mids,
             <ul>
                 <li>Desenha-se uma caixa cujo limite inferior é \(Q_{1}\)​ e limite superior é \(Q_{3}\);</li>
                 <li>Dentro da caixa, traça-se uma linha na posição de \(\theta\)​;</li>
-                <li>Traçam-se dois segmentos de retas, chamados de <i>bigodes</i>, um partindo do limite inferior da caixa e terminando no ponte de corte inferior e outro partindo do limite superior da caixa e terminando no ponte de corte superior;</li>
+                <li>Traçam-se dois segmentos de retas, chamados de <i>bigodes</i>, um partindo do limite inferior da caixa e terminando em uma linha indicando o corte inferior e outro partindo do limite superior da caixa e terminando em uma linha indicando o corte superior;</li>
                 <li>Desenha-se pontos isolados representando os valores extremos.<span class="fim"></span></li>
             </ul>
         </p>
@@ -210,7 +210,7 @@ text(x = h$mids,
         <p>
             Para fazer esse gráfico em R, pode-se utilizar os seguintes comandos
             <div style="overflow-x: auto; max-width: 100%;">
-                <pre><code>quartis &lt;- quantile(Peso)
+                <pre><code>quartis &lt;- quantile(Peso, type=1)
 boxplot(Peso,
     ylab = "Peso",
     col = "salmon",
