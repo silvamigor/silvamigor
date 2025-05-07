@@ -216,7 +216,7 @@
         </p>
         
         <p class="teor" text="Teorema da multiplicação" id="teor_mult">
-            Sejam \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) eventos com probabilidade positiva. Então
+            Sejam \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) eventos com probabilidade positiva, com \(n \ge 2\). Então
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -229,19 +229,47 @@
         <details>
             <summary>Demonstração</summary>
             <div class="caixa">
-                Demonstrar.
+                A demonstração é feita por indução sobre \(n\). O caso base para a indução é \(n = 2\). Nesse caso, basta usar a definição de probabilidade condicional para chegar que \(P(A_{1}\cap A_{2}) = P(A_{1})P(A_{2}\mid A_{1})\). Suponha, por indução, que o resultado vale para algum número \(k > 2\), isto é, suponha que vale
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(\cap_{i=1}^{k}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{k}\mid \cap_{i=1}^{k-1}A_{i}). \tag*{\((\ast)\)}
+                        \]
+                    </span>
+                </div>
+                Temos que mostrar que o resultado vale para \(k+1\), isto é, temos que mostrar que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(\cap_{i=1}^{k+1}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{k}\mid \cap_{i=1}^{k}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Defina \(B = \cap_{i=1}^{k}A_{i}\). Pela definição de probabilidade condicional, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(A_{k+1}\mid B) = \dfrac{P(B \cap A_{k+1})}{P(B)} = \dfrac{P(\cap_{i=1}^{k+1}A_{i})}{P(B)} \; \Rightarrow \; P(\cap_{i=1}^{k+1}A_{i}) = P(A_{k+1}\mid B)P(B) = P(A_{k+1}\mid \cap_{i=1}^{k}A_{i})P(\cap_{i=1}^{k}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Usando a hipótese de indução, apresentada na Equação \((\ast)\), obtemos o resultado.
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
         </details>
         
         <p class="def" id="def_evenInd">
-            Definição independência de eventos
+            Sejam \(A\) e \(B\) eventos. Dizemos que \(A\) e \(B\) são eventos independentes, se \(P(A \cap B) = P(A)P(B)\).
         <span class="fim"></span></p>
         
         <p class="def" id="def_partEsp">
-            Definição partição do espaço amostral
-        <span class="fim"></span></p>
+            Dizemos que uma sequência \((A_{i})_{i=1}^{n}\) de eventos é uma partição de um espaço amostral \(\Omega\), se 
+            <ol class="numerico">
+                <li>\(\cup_{i=1}^{n}A_{i} = \Omega\),</li>
+                <li>\(A_{i} \cap A_{j} = \varnothing\), para todo \(i\) e para todo \(j\), com \(i \neq j\).<span class="fim"></span></li>
+            </ol>
+        </p>
         
         <p class="teor" text="Teorema da probabilidade total" id="teor_probTotal">
             Seja \((A_{i})_{i=1}^{n}\) uma partição de \(\Omega\), onde \(P(A_{i}) > 0\), para todo \(i = 1, \ldots, n\). Seja \(B\) um evento. Então
@@ -257,20 +285,49 @@
         <details>
             <summary>Demonstração</summary>
             <div class="caixa">
-                Demonstrar.
+                Como \((A_{i})_{i=1}^{n}\) é uma partição de \(\Omega\), então \(\cup_{i=1}^{n}A_{i} = \Omega\). Disso, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            B = B \cap \Omega = B \cap (\cup_{i=1}^{n}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Como a união é disjunta, então \(B = \cup_{i=1}^{n}(B \cap A_{i})\). Daí,
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(B) = P(\cup_{i=1}^{n}(B \cap A_{i}))= \sum_{i=1}^{n}P(B \cap A_{i}) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i}).
+                        \]
+                    </span>
+                </div>
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
         </details>
         
         <p class="teor" text="Teorema de Bayes" id="teor_bayes">
-            
+            Seja \((A_{i})_{i=1}^{n}\) uma partição de \(\Omega\), onde \(P(A_{i}) > 0\), para todo \(i = 1, \ldots, n\). Seja \(B\) um evento. Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A_{i}\mid B) = \dfrac{P(A_{i})P(B\mid A_{i})}{\sum_{j=1}^{n}P(A_{j})P(B\mid A_{j})}.
+                    \]
+                </span><span class="fim"></span>
+            </div>
         </p>
         
         <details>
             <summary>Demonstração</summary>
             <div class="caixa">
-                Demonstrar.
+                Do <a href="#teor_probTotal">Teorema da probabilidade total</a>, temos que \(P(B) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i})\). Disso e da definição de probabilidade condicional, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(A_{i}\mid B) = \dfrac{P(B\mid A_{i})}{P(B)} = \dfrac{P(A_{i})P(B\mid A_{i})}{\sum_{i=1}^{n}P(A_{i})P(B\mid A_{i})},
+                        \]
+                    </span>
+                </div>
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
