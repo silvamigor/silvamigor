@@ -76,11 +76,55 @@ details > .caixa {
     color: black;
 }
 
+.table-containerX {
+      overflow-x: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+    }
+
 table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+    }
+
+th, td {
+      border: 1px solid #ddd;
+      padding: 12px 20px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+
+.sticky-col {
+      position: sticky;
+      left: 0;
+      background-color: #f9f9f9;
+      z-index: 1;
+}
+
+.sticky-header {
+      background-color: #e0e0e0;
+}
+
+table.alturaFixa {
     border-collapse: collapse;
     height: 300px;
     overflow-y: auto;
     display: block;
+}
+
+table.tabela-flexivel {
+    height: auto;
+    overflow-y: auto;
+    display: table;
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
 }
 
 th {
@@ -103,6 +147,13 @@ thead {
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background-color: #f1f1f1; /* igual ao cabeçalho */
+    z-index: 1;
 }
 
 .bloco-codigo {

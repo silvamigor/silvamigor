@@ -138,8 +138,118 @@
         </div>
         
         <p class="exemplo">
-            
-        <span class="fim"></span></p>
+            Considere um conjunto de 1000 crianças alérgicas que estão em tratamento para essa doença que consiste no seguinte: inicialmente, todas tomam uma dose de vacina; depois de 1 mês, aquelas que ainda apresentam alergia, tomam mais uma dose; depois de mais 1 mês, aquelas ainda alérgicas, tomam mais um dose e segue assim até se curarem. O número de doses necessária para curar todas as crianças foi 5, conforme indica a tabela abaixo.
+        </p>
+        
+        <div class="equationWrapper tabela-flexivel">
+          <table id="tab_exemVarAleatDisc" border=1>
+              <thead>
+                <tr>
+                  <th class="sticky-col">Doses</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="sticky-col">Número de crianças</td>
+                  <td>245</td>
+                  <td>288</td>
+                  <td>256</td>
+                  <td>145</td>
+                  <td>66</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        <p>
+            Considere o experimento aleatória onde observa-se se uma criança se cura após cada dose, ou seja, queremos saber se houve sucesso após a primeira dose, ou se o sucesso veio após a segunda doses, ou assim até a quinta dose. Denotando 1 para sucesso e 0 para fracasso, podemos modelar o espaço amostral como
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \Omega = \{(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0), (0,0,0,1,0), (0,0,0,0,1)\},
+                \]
+            </span>
+        </div>
+        
+        <p>
+            onde, por exemplo, \((0,1,0,0,0)\) indica sucesso na segunda dose, isto é, a criança se curou com segunda dose. Considere a variável aleatória que indica o número de doses tomadas por uma criança, conforme descrito abaixo:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        X:\, \Omega & \to & \bbR \\
+                        \omega & \mapsto &
+                        \left\{
+                            \begin{array}{cl}
+                                1, & \text{ se } \omega = (1,0,0,0,0), \\
+                                2, & \text{ se } \omega = (0,1,0,0,0), \\
+                                3, & \text{ se } \omega = (0,0,1,0,0), \\
+                                4, & \text{ se } \omega = (0,0,0,1,0), \\
+                                5, & \text{ se } \omega = (0,0,0,0,1).
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Note que \(X(\Omega) = \{1, \dots, 5\}\). Considerando a tabela <a href="#tab_exemVarAleatDisc">acima</a>, que indica o número de doses por crianças, podemos definir a seguinte função de probabilidade
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        f_{X}:\, X(\Omega) & \to & [0,1] \\
+                        x_{i} & \mapsto & 
+                        \left\{
+                            \begin{array}{cl}
+                                0,245, & \text{ se } x_{i} = 1, \\
+                                0,288, & \text{ se } x_{i} = 2, \\
+                                0,256, & \text{ se } x_{i} = 3, \\
+                                0,145, & \text{ se } x_{i} = 4, \\
+                                0,066, & \text{ se } x_{i} = 5.
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Da função de probabilidade, chegamos na função de distribuição, conforme a seguir
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        F_{X}:\, \bbR & \to & [0,1] \\
+                        x & \mapsto & 
+                        \left\{
+                            \begin{array}{cl}
+                                0, & \text{ se } x < 1, \\
+                                0,245, & \text{ se } 1 \le x < 2, \\
+                                0,533, & \text{ se } 2 \le x < 3, \\
+                                0,789, & \text{ se } 3 \le x < 4, \\
+                                0,934, & \text{ se } 4 \le x < 5, \\
+                                1, & \text{ se } x \ge 5,
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span><span class="fim"></span>
+        </div>
 
         <p>
             Se \(X\) é uma variável aleatória <i>contínua</i>, então existe uma função
@@ -184,10 +294,6 @@
                 \]
             </span>
         </div>
-        
-        <p class="exemplo">
-            
-        <span class="fim"></span></p>
         
         <div>
             <a href="IE-P_DefProbabilidade.html">

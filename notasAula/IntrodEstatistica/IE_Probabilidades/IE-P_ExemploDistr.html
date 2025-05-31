@@ -35,8 +35,158 @@
         <h3>Seção 3 - Exemplos de distribuição</h3>
         
         <p>
-            Teste
+            Vamos ver agora os principais modelos de distribuição para uma variável aleatória.
         </p>
+        
+        <!-- ############################ -->
+        <h4>Modelos para variável aleatória discreta</h4>
+        
+        <p>
+            Seja \(X: \Omega \to \bbR\) uma variável aleatória, onde \(X(\Omega) = \{x_{1}, \dots, x_{n}\}\).
+        </p>
+        
+        <p class="def" id="def_uniformeDisc">
+            Dizemos que \(X\) segue um modelo <strong>uniforme discreto</strong>, se sua função de probabilidade é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(x_{i}) = \dfrac{1}{n}, \text{ para todo } i = 1, \dots, n.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Nesse caso, denotamos \(X \sim U(\{x_{1}, \dots, x_{n}\})\).
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_UnifDisc">
+            Considere o experimento aleatório que é observar a face superior de um dado lançado, cujo espaço amostral é \(\Omega = \{1, \dots, 6\}\). Seja \(X\) a variável aleatória que representa o número obtido no lançamento. Então \(X \sim U(\{1, \dots, 6\})\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_Bern">
+            Dizemos que \(X\) segue um modelo <strong>Bernoulli</strong>, se \(X(\Omega) = \{0,1\}\) e sua função de probabilidade é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(1) = p \in [0,1] \qquad \text{ e } \qquad f_{X}(0) = 1 - p.
+                \]
+            </span>
+        </div>
+        
+        </p>
+            Nesse caso, denotamos \(X \sim \text{Ber}(p)\).
+        <span class="fim"></span></p>
+        
+        <p>
+            Esse modelo descreve variáveis aleatórias que atribuem uma probabilidade \(p\) ao sucesso e \(1-p\) ao fracasso.
+        </p>
+        
+        <p class="exemplo" id="exem_Bern">
+            Suponha que nosso experimento aleatório seja observar a face de um lançamento de uma moeda. O espaço amostral é \(\Omega = \{\)"cara", "coroa"\(\}\). Seja \(X\) a variável aleatória que assume 1 se sair "cara" e 0 se sair "coroa". Então \(X \sim \text{Ber}(\frac{1}{2})\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_Bin">
+            Dizemos que \(X\) segue um modelo <strong>Binomial</strong>, se \(X(\Omega) = \{0,1, \dots, n\}\) e sua função de probabilidade é 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(k) = \binom{n}{k}p^{k}(1-p)^{n-k}, \text{ com } k = 0, \dots, n,
+                \]
+            </span>
+        </div>
+        
+        <p>
+            onde \(p \in [0,1]\). Nesse caso, denotamos \(X \sim \text{b}(n,p)\).
+        <span class="fim"></span></p>
+        
+        <p>
+           Nesse modelo, consideramos \(n\) experimentos de Bernoulli independentes, e \(X\) representa o número total de sucessos.
+        </p>
+        
+        <p class="exemplo" id="exem_Bin">
+           Defina como experimento aleatório a observação da face de uma moeda a cada um dos 10 lançamentos. O espaço amostral é o conjunto das 10-úplas ordenadas, em que cada componente é "cara" ou "coroa". Seja \(X\) a variável aleatória que conta o número de vezes que ocorre "cara". Então \(X \sim \text{b}(10,\frac{1}{2})\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_Geom">
+            Dizemos que \(X\) segue um modelo <strong>Geométrico</strong>, se \(X(\Omega) = \{1,\dots, n, \dots\} = \bbZ_{> 0}\) e sua função de probabilidade é 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(k) = p(1 - p)^{k-1}, \text{ com } k \in \bbZ_{> 0}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Nesse caso, denotamos \(X \sim \text{Geom}(p)\).
+        <span class="fim"></span></p>
+        
+        <p>
+            Esse modelo é usado para variáveis aleatórias que contam o número de tentativas até obter sucesso.
+        </p>
+        
+        <p class="exemplo" id="exem_Geom">
+            Considere o experimento aleatório de observar a face de uma moeda lançada até que "cara" saia. Seu espaço amostral é o conjunto
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \Omega = \{(\text{``cara''}), (\text{``coroa''}, \text{``cara''}), (\text{``coroa''}, \text{``coroa''}, \text{``cara''}), (\text{``coroa''}, \text{``coroa''}, \text{``coroa''}, \text{``cara''}), \dots\}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+        Seja \(X\) a variável aleatória que conta o número de tentativas até que saia a primeiro "cara". Então \(X \sim \text{Geom}(\frac{1}{2})\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_Pois">
+            Dizemos que \(X\) segue um modelo <strong>Poisson</strong>, se \(X(\Omega) = \bbZ_{\ge 0}\) e sua função de probabilidade é 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(k) = e^{-\lambda}\dfrac{\lambda^{k}}{k!}, \text{ com } k \in \bbZ_{\ge 0},
+                \]
+            </span>
+        </div>
+        
+        <p>
+            onde \(\lambda > 0\). Nesse caso, denotamos \(X \sim \pi(\lambda)\).
+        <span class="fim"></span></p>
+        
+        <p>
+            Esse modelo é usado para variáveis aleatórias que contam o número de ocorrências de um evento em um intervalo fixo de tempo ou espaço, assumindo que os eventos ocorram de forma independente e a uma taxa constante \(\lambda\).
+        </p>
+        
+        <p class="exemplo" id="exem_Pois">
+            Considere o experimento aleatório de observar quantas ligações são recebidas durante um intervalo de 1 minuto em uma central de atendimento que recebe em média 3 ligações por minuto. Seu espaço amostral é \(\Omega = \bbZ_{\ge 0}\). Seja \(X\) a variável aleatória que representa o número de ligações recebidas em um minuto. Então \(X \sim \pi(3)\).
+        <span class="fim"></span></p>
+        
+        <!-- ############################ -->
+        <h4>Modelos para variável aleatória contínua</h4>
+        
+        <p>
+        
+        </p>
+        
+        <p class="def" id="def_XXX">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_XXX">
+            
+        <span class="fim"></span></p>
         
         <div>
             <a href="IE-P_VariavelAleatoria.html">
