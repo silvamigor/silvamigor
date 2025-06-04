@@ -32,11 +32,39 @@
     <body>
         <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
         <h2><a class="hifscor" href="IE_Probabilidades.html">Capítulo 2 - Probabilidades</a></h2>
-        <h3>Seção 4 - Medidas de posição e de dispersão de uma variável aleatória</h3>
+        <h3>Seção 4 - Esperança e variância de uma variável aleatória</h3>
         
-        <p>
-            Teste
+        <p class="def" id="def_esperaX">
+            Seja \(X: \Omega \to \mathbb{R}\) uma variável aleatória. Definimos a <strong>esperança</strong> de \(X\) como
         </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    E(X) \coloneqq
+                    \begin{cases}
+                        \displaystyle\sum_{i=1}^{k} x_i f_X(x_i), & \text{se } X(\Omega) = \{x_1, \dots, x_k\}, \\[8pt]
+                        \displaystyle\int_{-\infty}^{\infty} x f_X(x) \, dx, & \text{se } X \text{ é contínua}.
+                    \end{cases}
+                \]
+            </span>
+        </div>
+
+        <p>
+            onde \(f_X\) é a função de probabilidade ou a função densidade de probabilidade de \(X\), conforme o caso.
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_varianciaX">
+            Seja \(X: \Omega \to \mathbb{R}\) uma variável aleatória. Definimos a <strong>variância</strong> de \(X\) como
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) \coloneqq E\Big(\big(X - E(X)\big)^{2}\Big)
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <div>
             <a href="IE-P_ExemploDistr.html">

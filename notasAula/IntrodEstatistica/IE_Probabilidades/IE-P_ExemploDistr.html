@@ -177,16 +177,148 @@
         <h4>Modelos para variável aleatória contínua</h4>
         
         <p>
-        
+            Seja \(X: \Omega \to \bbR\) uma variável aleatória, onde \(X(\Omega) \subseteq \bbR\) não é enumerável.
         </p>
         
-        <p class="def" id="def_XXX">
-            
+        <p class="def" id="def_uniformeCont">
+            Dizemos que \(X\) segue um modelo <strong>uniforme contínuo</strong>, se \(X(\Omega) = [a,b]\), com \(a < b\), e sua função densidade de probabilidade é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_{X}(x) = 
+                    \left\{
+                        \begin{array}{cl}
+                            \dfrac{1}{b-a}, & \text{ se } a \le x \le b; \\
+                            0, & \text{ caso contrário}.
+                        \end{array}
+                    \right.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Nesse caso, denotamos \(X \sim U[a,b]\).
         <span class="fim"></span></p>
         
-        <p class="exemplo" id="exem_XXX">
-            
+        <p>
+            A distribuição uniforme contínua é apropriada para modelar variáveis aleatórias contínuas cujos valores estão distribuídos de forma homogênea em um intervalo, isto é, com densidade constante ao longo desse intervalo.
+        </p>
+        
+        <p class="exemplo" id="exem_uniformeCont">
+            Considere o experimento aleatório em que observamos o tempo de espera de uma pessoa em um ponto de ônibus, supondo que o ônibus passa exatamente a cada 10 minutos e que a pessoa chega em um instante aleatório nesse intervalo. Seja \(X\) a variável aleatória que representa o tempo de espera dessa pessoa. Então, \(X \sim U[0,10]\). Nesse caso, podemos nos perguntar qual a probabilidade de essa pessoa esperar entre 2 e 5 minutos, cuja resposta será
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    F_{X}(2 \le X \le 5) = \int_{2}^{5}f_{X}(t)dt = \int_{2}^{5}\dfrac{1}{10}dt = \dfrac{5-2}{10} = 0,3.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p class="def" id="def_exponencial">
+            Dizemos que \(X\) segue um modelo <strong>exponencial</strong> com parâmetro \(\lambda > 0\) se sua função densidade de probabilidade é dada por
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_X(x) =
+                    \left\{
+                        \begin{array}{cl}
+                            \lambda e^{-\lambda x}, & \text{se } x \ge 0; \\
+                            0, & \text{caso contrário}.
+                        \end{array}
+                    \right.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Nesse caso, escrevemos \(X \sim \text{Exp}(\lambda)\).
         <span class="fim"></span></p>
+
+        <p>
+            A distribuição exponencial é frequentemente utilizada para modelar o tempo até a ocorrência de um evento aleatório, como o tempo de vida de um equipamento, ou o tempo entre chegadas sucessivas em um processo de Poisson.
+        </p>
+
+        <p class="exemplo" id="exem_exponencial">
+            Suponha o experimento aleatório em que observamos o tempo, em horas, de funcionamento de uma lâmpada até que ela se queime, sendo que o tempo médio de funcionamento, segundo o fabricante, é de 8000 horas. Seja \(X\) a variável aleatória que representa esse tempo. Então, \(X \sim \text{Exp}\left(\frac{1}{8000}\right)\). Assim, a probabilidade de a lâmpada durar menos de 3 horas é
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(X < 3) = \int_{0}^{3} \dfrac{1}{8000}\, e^{-\frac{1}{8000} t} dt = 1 - e^{-\frac{3}{8000}} \approx 0{,}000374.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p class="def" id="def_normal">
+            Dizemos que \(X\) segue um modelo <strong>normal</strong> com parâmetros \(\mu \in \mathbb{R}\) e \(\sigma > 0\), se sua função densidade de probabilidade é dada por
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_X(x) = \frac{1}{\sigma \sqrt{2\pi}} \, e^{-\frac{1}{2} \left(\frac{x - \mu}{\sigma}\right)^2}.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Nesse caso, escrevemos \(X \sim \mathcal{N}(\mu, \sigma^2)\).
+        <span class="fim"></span></p>
+
+        <p>
+            A distribuição normal é amplamente utilizada para modelar fenômenos naturais e sociais que apresentam variação aleatória em torno de uma média, como alturas, pesos e resultados de medições físicas.
+        </p>
+
+        <p>
+            Se \(X\) é uma variável aleatória com distribuição normal, então
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(a \le X \le b) = \int_{a}^{b}\frac{1}{\sigma \sqrt{2\pi}} \, e^{-\frac{1}{2} \left(\frac{t - \mu}{\sigma}\right)^2}dt.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Tal integral só pode ser resolvida aproximadamente por métodos numéricos, o que torna necessária a utilização de tabelas. Contudo, para que não seja preciso criar uma tabela para cada valor de \(\mu\) e \(\sigma\), fazemos uma transformação na variável para obter uma nova variável com distribuição normal padrão.
+        </p>
+
+        <p>
+            A ideia é: dada uma variável \(X \sim \mathcal{N}(\mu, \sigma^2)\), definimos outra variável \(Z = \dfrac{X - \mu}{\sigma}\). Pode-se provar que \(Z \sim \mathcal{N}(0,1)\). Assim,
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(a \le X \le b) = P\left(\dfrac{a - \mu}{\sigma} \le Z \le \dfrac{b - \mu}{\sigma}\right) = F_{Z}\left(\dfrac{b - \mu}{\sigma}\right) - F_{Z}\left(\dfrac{a - \mu}{\sigma}\right),
+                \]
+            </span>
+        </div>
+
+        <p>
+            onde \(F_{Z}\) é a função de distribuição acumulada de \(Z\). Portanto, tabelando os valores de \(F_{Z}\), podemos calcular probabilidades para qualquer variável normal com média \(\mu\) e desvio padrão \(\sigma\).
+        </p>
+
+        <p class="exemplo" id="exem_normal">
+            Assuma que a escolha aleatória de uma pessoa de certa população seja nosso experimento aleatório. Seja \(X\) a variável aleatória que representa o peso de uma pessoa dessa população, com média \(\mu = 70\) kg e desvio padrão \(\sigma = 10\). Então, \(X \sim \mathcal{N}(70, 100)\). A probabilidade de que uma pessoa dessa população pese entre 60 kg e 80 kg é dada por
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(60 \le X \le 80) = P\left(Z \le \frac{80 - 70}{10}\right) - P\left(Z \le \frac{60 - 70}{10}\right) = P(Z \le 1) - P(Z \le -1) \approx 0{,}8413 - 0{,}1587 = 0{,}6826.
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <div>
             <a href="IE-P_VariavelAleatoria.html">
@@ -196,7 +328,7 @@
         
         <div>
             <a href="IE-P_MedidasPosDisp.html">
-                <button class="button button1">Capítulo 2 - Seção 4 - Medidas de posição e de dispersão de uma variável aleatória</button>
+                <button class="button button1">Capítulo 2 - Seção 4 - Esperança e variância de uma variável aleatória</button>
             </a>
         </div>
     </body>  
