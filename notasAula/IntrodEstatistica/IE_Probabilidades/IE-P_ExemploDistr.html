@@ -307,6 +307,30 @@
         <p>
             onde \(F_{Z}\) é a função de distribuição acumulada de \(Z\). Portanto, tabelando os valores de \(F_{Z}\), podemos calcular probabilidades para qualquer variável normal com média \(\mu\) e desvio padrão \(\sigma\).
         </p>
+        
+        <p>
+            Uma observação importante é que a função densidade de probabilidade do modelo normal é simétrica em relação ao parâmetro \(\mu\). Assim, para a normal padrão temos que vale
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(Z \le -z) = P(Z \ge z).
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Além disso, como \(P(Z < 0) = P(Z > 0)\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(Z \ge z) = 0,5 - P(0 \le Z \le z).
+                \]
+            </span>
+        </div>
 
         <p class="exemplo" id="exem_normal">
             Assuma que a escolha aleatória de uma pessoa de certa população seja nosso experimento aleatório. Seja \(X\) a variável aleatória que representa o peso de uma pessoa dessa população, com média \(\mu = 70\) kg e desvio padrão \(\sigma = 10\). Então, \(X \sim \mathcal{N}(70, 100)\). A probabilidade de que uma pessoa dessa população pese entre 60 kg e 80 kg é dada por

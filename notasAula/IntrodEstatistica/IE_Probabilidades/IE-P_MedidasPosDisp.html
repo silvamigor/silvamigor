@@ -54,6 +54,29 @@
             onde \(f_X\) é a função de probabilidade ou a função densidade de probabilidade de \(X\), conforme o caso.
         <span class="fim"></span></p>
         
+        <p>
+            Das propriedades da soma e da integral, pode-se mostrar o seguinte resultado
+        </p>
+        
+        <p class="prop" id="prop_espX">
+            <ol class="alfa">
+                <li>Seja \(\varphi: \bbR \to \bbR\) uma função contínua e \(X: \Omega \to \bbR\) uma variável aleatória. Então a variável aleatória \(\varphi(X): \Omega \to \bbR\), \(\omega \mapsto \varphi\big(X(\omega)\big)\) é tal que</li>
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            E\big(\varphi(X)\big) =
+                            \begin{cases}
+                                \displaystyle\sum_{i=1}^{k} \varphi(x_i) f_X(x_i), & \text{se } X(\Omega) = \{x_1, \dots, x_k\}, \\[8pt]
+                                \displaystyle\int_{-\infty}^{\infty} \varphi(x) f_X(x) \, dx, & \text{se } X \text{ é contínua}.
+                            \end{cases}
+                        \]
+                    </span>
+                </div>
+                <li>Se \(X: \Omega \to \bbR\) é variável aleatória constate, isto é, se existe \(c \in \bbR\) tal que \(X(\Omega) = \{c\}\), então \(E(X) = c\).</li>
+                <li>Se \(X\) e \(Y\) são variáveis aleatórias e \(a, b \in \bbR\), então \(E(aX + bY) = aE(X) + bE(Y)\).<span class="fim"></span></li>
+            </ol>
+        </p>
+        
         <p class="def" id="def_varianciaX">
             Seja \(X: \Omega \to \mathbb{R}\) uma variável aleatória. Definimos a <strong>variância</strong> de \(X\) como
         </p>
@@ -61,10 +84,112 @@
         <div class="equationWrapper">
             <span class="math">
                 \[
-                    V(X) \coloneqq E\Big(\big(X - E(X)\big)^{2}\Big)
+                    V(X) \coloneqq E\Big(\big(X - E(X)\big)^{2}\Big).
                 \]
             </span><span class="fim"></span>
         </div>
+        
+        <p>
+            Das propriedades da esperança temos que 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math" id="eq_var">
+                \[
+                    V(X) \coloneqq E\Big(\big(X - E(X)\big)^{2}\Big) = E\Big(X^{2} - 2E(x) + E(X)^{2}\Big) = E(X^{2}) - 2E(X)E(X) + E(X)^{2} = E(X^{2}) - E(X)^{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Seja
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        \varphi:\; \bbR & \to & \bbR \\
+                        x & \mapsto & \big(x - E(X)\big)^{2}
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Da <a href=#prop_espX> Proposição 2.4.1</a>, temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) \coloneqq
+                    \begin{cases}
+                        \displaystyle\sum_{i=1}^{k} \big(x_i - E(X)\big)^{2} f_X(x_i) = \displaystyle\sum_{i=1}^{k} x_i^{2}f_X(x_i) - E(X)^{2}, & \text{se } X(\Omega) = \{x_1, \dots, x_k\}, \\[8pt]
+                        \displaystyle\int_{-\infty}^{\infty} \big(x - E(X)\big)^{2} f_X(x) \, dx = \displaystyle\int_{-\infty}^{\infty} x^{2} f_X(x) \, dx - E(X)^{2}, & \text{se } X \text{ é contínua}.
+                    \end{cases}
+                \]
+            </span>
+        </div>
+        
+        <p class="prop" id="prop_varX">
+            <ol class="alfa">
+                <li>Se \(X: \Omega \to \bbR\) é variável aleatória constate, isto é, se existe \(c \in \bbR\) tal que \(X(\Omega) = \{c\}\), então \(V(X) = 0\).</li>
+                <li>Se \(X\) é uma variável aleatórial e \(a, b \in \bbR\), então \(V(aX + b) = a^{2}V(X)\).<span class="fim"></span></li>
+            </ol>
+        </p>
+        
+        <p class="exemplo" id="exem_EspVarUniDis">
+            Suponha que \(X \sim U(\{x_{1}, \dots, x_{n}\})\) e sejam \(\mu\) e \(\sigma^{2}\) a média e a variância populacional de \(\{x_{1}, \dots, x_{n}\}\). Então
+        <span class="fim"></span></p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    E(X) = \displaystyle\sum_{i=1}^{n} x_i \dfrac{1}{n} = \mu 
+                \]
+            </span>
+        </div>
+        
+        <p>
+            e
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) = \displaystyle\sum_{i=1}^{k} \big(x_i^{2} - E(X)^{2}\big)\dfrac{1}{n} = \sum_{i=1}^{k} \big(x_i^{2} - \mu^{2}\big)\dfrac{1}{n} = \sigma^{2}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p class="exemplo" id="exem_EspVarBern">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarBin">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarGeom">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarPoisson">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarUniCon">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarExp">
+            
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="exem_EspVarNormal">
+            
+        <span class="fim"></span></p>
         
         <div>
             <a href="IE-P_ExemploDistr.html">
