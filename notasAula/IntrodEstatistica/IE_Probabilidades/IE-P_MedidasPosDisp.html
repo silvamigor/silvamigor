@@ -55,7 +55,38 @@
         <span class="fim"></span></p>
         
         <p>
-            Das propriedades da soma e da integral, pode-se mostrar o seguinte resultado
+            Antes de apresentarmos algumas propriedades da esperança, vamos a duas definições.
+        </p>
+        
+        <p class="def" id="def_probCondVarDis">
+            Sejam \(X\) e \(Y\) variáveis aleatórias discretas e \(x, y \in \bbR\). A <strong>probabilidade condicional</strong> de \((X = x)\) dado \((Y = y)\), denotado por \(P(X=x\mid Y=y)\), é definido como
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(X=x\mid Y=y) \coloneqq \left\{
+                        \begin{array}{cr}
+                            \dfrac{P\big((X = x) \cap (Y = y)\big)}{P(Y = y)}, & \text{se } P(Y = y) > 0, \\
+                            P(X = x), & \text{se } P(Y = y) = 0.
+                        \end{array}
+                        \right.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p class="def" id="def_probCondVarDis">
+            Sejam \(X\) e \(Y\) variáveis aleatórias discretas. Dizemos que elas são <strong>independentes</strong> se, para todo \(x, y \in \bbR\), vale que
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P\big((X = x) \cap (Y = y)\big) = P(X = x)P(Y = y).
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p>
+            Vamos ver, agora, algumas propriedades da esperança.
         </p>
         
         <p class="prop" id="prop_espX">
@@ -73,9 +104,19 @@
                     </span>
                 </div>
                 <li>Se \(X: \Omega \to \bbR\) é variável aleatória constate, isto é, se existe \(c \in \bbR\) tal que \(X(\Omega) = \{c\}\), então \(E(X) = c\).</li>
-                <li>Se \(X\) e \(Y\) são variáveis aleatórias e \(a, b \in \bbR\), então \(E(aX + bY) = aE(X) + bE(Y)\).<span class="fim"></span></li>
+                <li>Se \(X\) e \(Y\) são variáveis aleatórias e \(a, b \in \bbR\), então \(E(aX + bY) = aE(X) + bE(Y)\).</li>
+                <li>Se \(X\) e \(Y\) são variáveis aleatórias discretas independentes, então \(E(XY) = E(X)E(Y)\).<span class="fim"></span></li>
             </ol>
         </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                A SER FEITO!
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
         
         <p class="def" id="def_varianciaX">
             Seja \(X: \Omega \to \mathbb{R}\) uma variável aleatória. Definimos a <strong>variância</strong> de \(X\) como
@@ -135,18 +176,28 @@
         <p class="prop" id="prop_varX">
             <ol class="alfa">
                 <li>Se \(X: \Omega \to \bbR\) é variável aleatória constate, isto é, se existe \(c \in \bbR\) tal que \(X(\Omega) = \{c\}\), então \(V(X) = 0\).</li>
-                <li>Se \(X\) é uma variável aleatórial e \(a, b \in \bbR\), então \(V(aX + b) = a^{2}V(X)\).<span class="fim"></span></li>
+                <li>Se \(X\) é uma variável aleatórial e \(a, b \in \bbR\), então \(V(aX + b) = a^{2}V(X)\).</li>
+                <li>Se \(X\) e \(Y\) são variáveis aleatórias discretas independentes, então \(V(X + Y) = V(X) + V(Y)\).<span class="fim"></span></li>
             </ol>
         </p>
         
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                A SER FEITO!
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
         <p class="exemplo" id="exem_EspVarUniDis">
             Suponha que \(X \sim U(\{x_{1}, \dots, x_{n}\})\) e sejam \(\mu\) e \(\sigma^{2}\) a média e a variância populacional de \(\{x_{1}, \dots, x_{n}\}\). Então
-        <span class="fim"></span></p>
+        </p>
         
         <div class="equationWrapper">
             <span class="math">
                 \[
-                    E(X) = \displaystyle\sum_{i=1}^{n} x_i \dfrac{1}{n} = \mu 
+                    E(X) = \displaystyle\sum_{i=1}^{n} x_i f_{X}(x_{i}) = \displaystyle\sum_{i=1}^{n} x_i \dfrac{1}{n} = \mu 
                 \]
             </span>
         </div>
@@ -158,38 +209,177 @@
         <div class="equationWrapper">
             <span class="math">
                 \[
-                    V(X) = \displaystyle\sum_{i=1}^{k} \big(x_i^{2} - E(X)^{2}\big)\dfrac{1}{n} = \sum_{i=1}^{k} \big(x_i^{2} - \mu^{2}\big)\dfrac{1}{n} = \sigma^{2}.
+                    V(X) = \displaystyle\sum_{i=1}^{k} \big(x_i^{2} - E(X)^{2}\big)f_{X}(x_{i}) = \sum_{i=1}^{k} \big(x_i^{2} - \mu^{2}\big)\dfrac{1}{n} = \sigma^{2}.
                 \]
             </span><span class="fim"></span>
         </div>
         
         <p class="exemplo" id="exem_EspVarBern">
-            
-        <span class="fim"></span></p>
+            Suponha que \(X \sim \text{Ber}(p)\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{l}
+                        E(X) = \displaystyle\sum_{i=1}^{n} x_i f_{X}(x_{i}) = 1\cdot f_{X}(1) + 0 \cdot f_{X}(0) = p, \\[5pt]
+                        E(X^{2}) = \displaystyle\sum_{i=1}^{n} x_{i}^{2} f_{X}(x_{i}) = 1^{2}\cdot f_{X}(1) + 0^{2} \cdot f_{X}(0) = p
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            e
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) = E(X^{2}) - E(X) = p - p^{2} = p(1-p).
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarBin">
-            
-        <span class="fim"></span></p>
+            Suponha que \(X \sim \text{b}(n+1,p)\). Para calcularmos a esperança de \(X\), vamos usar duas igualdades:
+        </p>
+        
+        <ol class="alfa">
+            <li> a igualdade abaixo pode ser verificada, usando a definição de \(\binom{n}{k}\). Pode-se também pensar que tal equação resulta da solução de escolher um time com \(k\) integrantes de um total de \(n\) pessoas, onde um dos integrantes do time é o goleiro: do lado esquerdo da igualdade abaixo escolhemos \(k\) dos \(n\), depois escolhemos \(1\) dos \(k\); do lado direito, escolhemos primeiro o goleiro, ou seja, \(1\) dos \(n\), depois escolhemos o restante do time, isto é, escolhemos \(k-1\) dos \(n-1\):
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            k \binom{n}{k} = n \binom{n-1}{k-1}; \tag*{\((\ast)\)}
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li> a igualdade abaixo é consequência do teorema binomial, isto é, \((a+b)^{n-1} = \sum_{\ell=0}^{n-1}\binom{n-1}{\ell}a^{\ell}b^{n-1-\ell}\):
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                           \sum_{\ell=0}^{n-1} \binom{n-1}{\ell}p^{\ell}(1-p)^{n-1-\ell} = \big(p+(1-p)\big)^{n-1} = 1. \tag*{\((\ast\ast)\)}
+                        \]
+                    </span>
+                </div>
+            </li>
+        </ol>
+        
+        Assim, a esperança de \(X\) é
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    E(X) = \displaystyle\sum_{i=1}^{n+1} x_i f_{X}(x_{i}) = \sum_{k=0}^{n} k \binom{n}{k}p^{k}(1-p)^{n-k} \overset{(\ast)}{=} \sum_{k=1}^{n} n \binom{n-1}{k-1}p^{k}(1-p)^{n-k} = np \sum_{k=1}^{n} \binom{n-1}{k-1}p^{k-1}(1-p)^{n-k} \overset{(\ell = k -1)}{=} np \sum_{\ell=0}^{n-1} \binom{n-1}{\ell}p^{\ell}(1-p)^{n-1-\ell} \overset{(\ast\ast)}{=} np\big(p+(1-p)\big)^{n-1} = np.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Agora, para calcular a variância, basta notar que \(X = X_{1} + \cdots + X_{n+1}\), onde \(X_{i} \sim \text{Ber}(p)\) são independentes entre si. Assim, 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) = V(X_{1} + \cdots + X_{n+1}) = V(X_{1}) + \cdots + V(X_{n+1}) = \sum_{i=1}^{n+1}p(1-p) = (n+1)p(1-p).
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarGeom">
-            
-        <span class="fim"></span></p>
+            Suponha que \(X \sim \text{Geom}(p)\). Sabendo que \(\sum_{i=1}^{\infty}iq^{i-1} = \frac{1}{(1-q)^{2}}\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    E(X) = \displaystyle\sum_{i=1}^{\infty} x_i f_{X}(x_{i}) = \sum_{i=1}^{\infty} i p(1-p)^{i-1} = p\sum_{i=1}^{\infty} i(1-p)^{i-1} = \dfrac{p}{p^{2}} = \dfrac{1}{p}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Para a variância, usando que \(\sum_{i=1}^{\infty}i^{2}q^{i-1} = \frac{1+q}{(1-q)^{3}}\), temos que \(E(X^{2}) = \frac{2-p}{p^{2}}\). Logo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) = E(X^{2}) - E(X)^{2} = \dfrac{2-p}{p^{2}} - \dfrac{1}{p^{2}} = \dfrac{1-p}{p^{2}}
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarPoisson">
-            
-        <span class="fim"></span></p>
+            Seja \(X \sim \pi(\lambda)\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    E(X) = \displaystyle\sum_{i=1}^{\infty} x_i f_{X}(x_{i}) = \sum_{i=0}^{\infty} i e^{-\lambda}\dfrac{\lambda^{i}}{i!} = e^{-\lambda}\lambda\sum_{i=1}^{\infty} \dfrac{\lambda^{i-1}}{(i-1)!} = e^{-\lambda}\lambda\sum_{k=0}^{\infty} \dfrac{\lambda^{k}}{k!} = e^{-\lambda}\lambda e^{\lambda} = \lambda.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Pode-se mostrar que \(E(X^{2}) = \lambda^{2} + \lambda\), logo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    V(X) = E(X^{2}) - E(X)^{2} =  \lambda^{2} + \lambda - \lambda^{2} = \lambda.
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarUniCon">
-            
-        <span class="fim"></span></p>
+            Seja \(X \sim U[a,b]\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{l}
+                        E(X) = \dfrac{a+b}{2}, \\[5pt]
+                        V(X) = \dfrac{(b-a)^{2}}{12}.
+                    \end{array}
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarExp">
-            
-        <span class="fim"></span></p>
+            Seja \(X \sim \text{Exp}(\lambda)\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{l}
+                        E(X) = \dfrac{1}{\lambda}, \\[5pt]
+                        V(X) = \dfrac{1}{\lambda^{2}}
+                    \end{array}
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <p class="exemplo" id="exem_EspVarNormal">
-            
-        <span class="fim"></span></p>
+            Seja \(X \sim \mathcal{N}(\mu, \sigma^2)\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{l}
+                        E(X) = \mu, \\[5pt]
+                        V(X) = \sigma^{2}.
+                    \end{array}
+                \]
+            </span><span class="fim"></span>
+        </div>
         
         <div>
             <a href="IE-P_ExemploDistr.html">
