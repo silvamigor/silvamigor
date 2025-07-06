@@ -156,6 +156,70 @@
         <!--%%%%%%%%%%%%%-->
         <h4>Variância desconhecida</h4>
         
+        <p>
+            Suponha que uma amostra \( (X_1, \dots, X_n) \) seja formada por variáveis independentes, todas com distribuição \( \mathcal{N}(\mu, \sigma^2) \), onde \(\mu\) e \(\sigma\) são desconhecidos. Considere o estimador variância amostral, conforme apresentado no <a href="IE-IE_Estimador.html">Capítulo 3 - Seção 1</a>
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S^{2} = \displaystyle\dfrac{1}{n-1}\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Defina a variável
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    T \coloneqq \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Sabemos do <a href="IE-IE_DistribEstimMedia.html">Capítulo 3 - Seção 2</a> que \(\widehat{\mu}\) segue a distribuição normal. Contudo, o mesmo não ocorre com a variável \(T\), pois não conhecemos a distribuição da variável \(S\). Apesar disso, pode-se demonstrar que \(T\) segue outro modelo probabilístico, chamado <strong>distribuição \(t\)-Student</strong>, denotada por \(t_{(n-1)}\). O número \(n-1\) é chamado de <i>graus de liberdade</i> da distribuição. A curva da função densidade de probabilidade da distribuição \(t\)-Student tem formato de sino, assim como a normal padrão. A fórmula de sua função densidade é complexa, por isso, suas probabilidades são usualmente obtidas por meio de tabelas. Essas tabelas geralmente se limitam a graus de liberdade até 120, já que, para \(n\) muito grande, a distribuição \(t\)-Student converge para a normal padrão. Para valores superiores a 120, utiliza-se a tabela da normal padrão, sendo esses casos indicados por "\(\infty\)" na tabela da \(t\)-Student.
+        </p>
+        
+        <p>
+            Fixando um nível de confiança \( \gamma \in (0,1) \), existe um valor \( t_{\gamma/2} \) tal que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(-t_{\gamma/2} < \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}} < t_{\gamma/2}) = \gamma.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Assim, como fizemos para o intervalo de confiança quando a variância é conhecida, podemos definir um intervalo de confiança quando a variância é desconhecida, como
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, \gamma) = \left[\widehat{\mu} - t_{\gamma/2}\dfrac{\sigma}{\sqrt{n}},\ \widehat{\mu} + t_{\gamma/2}\dfrac{\sigma}{\sqrt{n}}\right].
+                \]
+            </span>
+        </div>
+        
+        <p class="exemplo" id="exem_8.6">
+            Um certo estudo quer saber o consumo de oxigênio dos rins de uma certa população. Tal característica é modelada pela distribuição normal, cuja média e a variância são desconhecidas. Sejam \((X_{1}, \dots, X_{5})\) uma amostra, cujos valores fornecidos foram \(14,4\); \(12,9\); \(15,0\); \(13,7\) e \(13,5\). Para essa amostra temos que \(\widehat{\mu}_{\text{obs}} = 13,90\) e \(S^{2}_{\text{obs}} = 0,67\). Assim, considerando um nível de confiança \(\gamma = 0,9\), temos, olhando na tabela da \(t\)-Student com grau de liberdade igual a 4, que \(t_{0,45} = 2,132\). Logo, o intervalo de confiança é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, 0,9) = \left[13,90 - 2,132\sqrt{\dfrac{0,67}{5}},\ 13,90 + 2,132\sqrt{\dfrac{0,67}{5}}\right] = [13,12; 14,68].
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
         <div>
             <a href="IE-IE_DistribEstimMedia.html">
                 <button class="button button1">Capítulo 3 - Seção 2 - Distribuição de \(\widehat{\mu}\)</button>
