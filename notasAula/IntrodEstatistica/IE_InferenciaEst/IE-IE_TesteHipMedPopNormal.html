@@ -35,7 +35,69 @@
         <h3>Seção 4 - Teste de hipóteses para a média de uma população normal</h3>
         
         <p>
-            Teste
+            Suponha que a concentração de certa substância no sangue, entre pessoas sadias, siga um modelo normal com média de 14 unidades/mL e desvio padrão de 6 unidades/mL. Entre indivíduos acometidos por uma determinada doença, a concentração dessa substância também segue uma distribuição normal com o mesmo desvio padrão, mas com média igual a 18 unidades/mL.
+        </p>
+
+        <p>
+            Para verificar se um tratamento é eficaz contra essa doença, selecionou-se uma amostra aleatória \((X_1, \dots, X_{30})\) de indivíduos doentes submetidos ao tratamento, onde cada \(X_i \sim \mathcal{N}(\mu, 36)\), sendo \(\mu\) a média da concentração na população tratada.
+        </p>
+
+        <p>
+            A ideia é comparar a média amostral \(\widehat{\mu}\) com o valor 18: se \(\widehat{\mu}\) estiver próxima de 18, isso sugere que o tratamento não teve efeito, pois a média continua compatível com a população doente. Por outro lado, se \(\widehat{\mu}\) estiver significativamente abaixo de 18 (e mais próxima de 14), isso constitui uma evidência de que o tratamento foi eficaz.
+        </p>
+        
+        <p>
+            Precisamos determinar o que significa estar "próximo" de 18 (ou de 14). Para isso, definimos um número chamado <strong>valor crítico</strong>, denotado por \(x_{c}\), tal que:
+            se \(\widehat{\mu}_{\text{obs}} > x_{c}\), concluímos que \(\mu = 18\); 
+            e se \(\widehat{\mu}_{\text{obs}} \le x_{c}\), concluímos que \(\mu = 14\).
+        </p>
+
+        <p>
+            Como \(\widehat{\mu}\) é uma variável aleatória, podemos cometer erros ao inferir que \(\mu = 14\) ou que \(\mu = 18\). Para entendermos esses possíveis erros, vamos chamar de <strong>hipótese nula</strong>, denotada por \(H_{0}\), a hipótese de que o tratamento <strong>não é eficaz</strong>, ou seja, \(\mu = 18\). A <strong>hipótese alternativa</strong>, denotada por \(H_{a}\), representa a hipótese de que o tratamento <strong>é eficaz</strong>, ou seja, \(\mu = 14\). Podemos escrever isso como:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    H_{0}: \mu = 18 \quad \text{versus} \quad H_{a}: \mu = 14.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Hipóteses formuladas dessa forma, sem desigualdades, são chamadas de <strong>hipóteses simples</strong>.
+        </p>
+
+        <p>
+            Já uma <strong>hipótese unilateral</strong> seria, por exemplo:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    H_{0}: \mu = 18 \quad \text{versus} \quad H_{a}: \mu &lt; 18,
+                \]
+            </span>
+        </div>
+
+        <p>
+            onde consideramos que o tratamento foi eficaz se a média populacional for menor do que 18.
+        </p>
+
+        <p>
+            Por outro lado, uma <strong>hipótese bilateral</strong> seria:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    H_{0}: \mu = 18 \quad \text{versus} \quad H_{a}: \mu \neq 18,
+                \]
+            </span>
+        </div>
+
+        <p>
+            onde a hipótese alternativa considera que o tratamento produziu algum efeito &#8212; seja benéfico, se a média se aproximar de 14, ou danoso, se ela for ainda maior que 18.
         </p>
         
         <div>
