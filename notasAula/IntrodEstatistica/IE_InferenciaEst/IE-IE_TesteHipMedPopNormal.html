@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Introdução à estatística</title>
         
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
          <!-- Carrega o arquivo de estilos customizados -->
         <link rel="stylesheet" href="../../../styles.css">
         <!-- Carrega o arquivo de configuração do MathJax -->
@@ -34,6 +36,9 @@
         <h2><a class="hifscor" href="IE_InferenciaEst.html">Capítulo 3 - Inferência estatística</a></h2>
         <h3>Seção 4 - Teste de hipóteses para a média de uma população normal</h3>
         
+        <!--%%%%%%%%%%%%%-->
+        <h4>Variância conhecida</h4>
+        
         <p>
             Suponha que a concentração de certa substância no sangue, entre pessoas sadias, siga um modelo normal com média de 14 unidades/mL e desvio padrão de 6 unidades/mL. Entre indivíduos acometidos por uma determinada doença, a concentração dessa substância também segue uma distribuição normal com o mesmo desvio padrão, mas com média igual a 18 unidades/mL.
         </p>
@@ -47,9 +52,9 @@
         </p>
         
         <p>
-            Precisamos determinar o que significa estar "próximo" de 18 (ou de 14). Para isso, definimos um número chamado <strong>valor crítico</strong>, denotado por \(x_{c}\), tal que:
-            se \(\widehat{\mu}_{\text{obs}} > x_{c}\), concluímos que \(\mu = 18\); 
-            e se \(\widehat{\mu}_{\text{obs}} \le x_{c}\), concluímos que \(\mu = 14\).
+            Precisamos determinar o que significa estar "próximo" de 18 (ou de 14). Para isso, definimos um número chamado <strong>valor crítico</strong>, denotado por \(x_{c}\), tal que: se \(\widehat{\mu}_{\text{obs}} > x_{c}\), concluímos que \(\mu = 18\); e se \(\widehat{\mu}_{\text{obs}} \le x_{c}\), concluímos que \(\mu = 14\). Antes de determinarmos esse valor, é importante analisar os possíveis erros que podemos cometer ao tomar uma decisão com base em \(\widehat{\mu}_{\text{obs}}\).
+        </p>
+
         </p>
 
         <p>
@@ -99,6 +104,218 @@
         <p>
             onde a hipótese alternativa considera que o tratamento produziu algum efeito &#8212; seja benéfico, se a média se aproximar de 14, ou danoso, se ela for ainda maior que 18.
         </p>
+        
+        <p>
+            Os dois erros que podem acontecer são
+        </p>
+        
+        <ol class="numerico">
+            <li>rejeita \(H_{0}\), quando \(H_{0}\) é verdadeira. Esse erro é denominado <strong>erro do tipo I</strong> e o valor da probabilidade de ele ocorrer é denotado por \(\alpha\):</li>
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \alpha = P(\text{erro tipo I}) = P(\text{rejeitar } H_{0} \text{ dado que } H_{0} \text{ é verdadeira}).
+                    \]
+                </span>
+            </div>
+            <li>não rejeita \(H_{0}\), quando \(H_{0}\) é falsa. Esse erro é denominado <strong>erro do tipo II</strong> e o valor da probabilidade de ele ocorrer é denotado por \(\beta\):</li>
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \beta = P(\text{erro tipo II}) = P(\text{não rejeitar } H_{0} \text{ dado que } H_{0} \text{ é falsa}).
+                    \]
+                </span>
+            </div>
+        </ol>
+        
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr>
+      <th rowspan="2">Decisão</th>
+      <th colspan="2">Situação</th>
+    </tr>
+    <tr>
+      <th><i>H<sub>0</sub></i> Verdadeira</th>
+      <th><i>H<sub>0</sub></i> Falsa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Rejeitar <i>H<sub>0</sub></i></b></td>
+      <td>Erro Tipo I</td>
+      <td>Sem erro</td>
+    </tr>
+    <tr>
+      <td><b>Não rejeitar <i>H<sub>0</sub></i></b></td>
+      <td>Sem erro</td>
+      <td>Erro Tipo II</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <p>
+            A situação ideal que tanto \(\alpha\), quanto \(\beta\) sejam próximos de zero, mas conforme observação da figura abaixo, quando uma aumenta, a outra diminui.
+        </p>
+        
+        <img src="IE-IE_THMPN_R_imagem1.png" alt="Gráfico de Teste de Hipóteses" style="width: 80%; display: block; margin: auto;">
+        
+        <p>
+            Assim, vamos controlar o erro tipo I, pois ele é mais importante. Chamamos de <strong>nível de significância</strong> do teste o valor de \(\alpha\).
+        </p>
+        
+        <p>
+            Para hipóteses simples ou unilateral, dado \(\alpha\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \alpha = P(\text{erro tipo I}) = P(\text{rejeitar } H_{0} \text{ dado que } H_{0} \text{ é verdadeira}) = P(\widehat{\mu} < x_{c} \text{ dado que } \mu = 18) = P\left(\dfrac{\widehat{\mu}-\mu}{\sigma/\sqrt{n}} < \dfrac{x_{c} - 18}{6/\sqrt{30}}\right) = P(Z < z_{c}).
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Daí temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    z_{c} = \dfrac{x_{c} - 18}{6/\sqrt{30}} \qquad \Rightarrow \qquad x_{c} = 18 + z_{c}\dfrac{6}{\sqrt{30}}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Por exemplo, se \(\alpha = 0,05\), então, pela tabela da normal padrão, \(z_{c} = -1,64\). Logo, \(x_{c} = 16,20\). O conjunto de todos os números menores do que \(x_{c}\) é dito <strong>região de rejeição</strong>:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    RC = \{x \in \mathbb{R} \mid x < x_{c}\}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Para hipótese bilateral a região de rejeição é dada por
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    RC = \{x \in \mathbb{R} \mid x < x_{c_{1}} \text{ ou } x > x_{c_{2}}\},
+                \]
+            </span>
+        </div>
+        
+        <p>
+            onde \(x_{c_{1}}\) e \(x_{c_{2}}\) são dois valores críticos. Nesse caso, dado \(\alpha\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(\widehat{\mu} < x_{x_{c_{1}}}) + P(\widehat{\mu} > x_{x_{c_{1}}}) = \alpha.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Dada a simetria da normal, temos que 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(\widehat{\mu} < x_{x_{c_{1}}}) = \dfrac{\alpha}{2} \qquad \text{e} \qquad P(\widehat{\mu} > x_{x_{c_{2}}}) = \dfrac{\alpha}{2}.
+                \]
+            </span>
+        </div>
+        
+        <p class="exemplo" id="exem_8.3">
+            Um estudante está curioso para saber se beber chá de camomila antes de dormir realmente afeta o tempo médio de sono das pessoas. Ele sabe, por experiências anteriores, que seus amigos geralmente dormem cerca de 7 horas por noite, com desvio padrão de 1 hora.
+        </p>
+
+        <p>
+            Para testar isso, ele convida 10 colegas a beberem chá de camomila antes de dormir durante uma semana e anota quantas horas cada um dormiu na primeira noite:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    7{,}2;\; 6{,}5;\; 7{,}8;\; 6{,}9;\; 8{,}1;\; 7{,}4;\; 6{,}8;\; 7{,}6;\; 7{,}0;\; 6{,}7.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Ele quer saber se essa bebida altera significativamente o tempo médio de sono. Para isso, ele considerou as seguintes hipóteses:
+        </p>
+
+        <ul>
+            <li>\(H_{0}\): o chá não altera o tempo médio de sono, ou seja, \(\mu = 7\).</li>
+            <li>\(H_{a}\): o chá altera o tempo médio de sono, ou seja, \(\mu \neq 7\).</li>
+        </ul>
+
+        <p>
+            Considerando \(\alpha = 0{,}06\), temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(\widehat{\mu} < x_{c_{1}}) = \dfrac{0{,}06}{2} \qquad \text{e} \qquad P(\widehat{\mu} > x_{c_{2}}) = \dfrac{0{,}06}{2},
+                \]
+            </span>
+        </div>
+
+        <p>
+            ou seja,
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P\left(\dfrac{\widehat{\mu} - 7}{1/\sqrt{10}} < \dfrac{x_{c_{1}} - 7}{1/\sqrt{10}}\right) = 0{,}03 \qquad \text{e} \qquad P\left(\dfrac{\widehat{\mu} - 7}{1/\sqrt{10}} > \dfrac{x_{c_{2}} - 7}{1/\sqrt{10}}\right) = 0{,}03.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Pela tabela da normal, temos que \(z_{c_{1}} = -1{,}88\) e \(z_{c_{2}} = 1{,}88\). Assim,
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    x_{c_{1}} = 7 - 1{,}88\dfrac{1}{\sqrt{10}} = 6{,}41 \qquad \text{e} \qquad x_{c_{2}} = 7 + 1{,}88\dfrac{1}{\sqrt{10}} = 7{,}59,
+                \]
+            </span>
+        </div>
+
+        <p>
+            ou seja, a região crítica, para \(\alpha = 0{,}06\), é:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    RC = \{x \in \mathbb{R} \mid x < 6{,}41 \text{ ou } x > 7{,}59\}.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Como \(\widehat{\mu}_{\text{obs}} = 7{,}1\) não pertence à região crítica, não rejeitamos a hipótese \(H_{0}\) ao nível de significância de 6%.
+            <span class="fim"></span>
+        </p>
+
+        
+        <!--%%%%%%%%%%%%%-->
+        <h4>Variância desconhecida</h4>
         
         <div>
             <a href="IE-IE_EstIntMedPopNormal.html">
