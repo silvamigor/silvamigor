@@ -218,7 +218,7 @@
         <div class="equationWrapper">
             <span class="math">
                 \[
-                    P(\widehat{\mu} < x_{x_{c_{1}}}) + P(\widehat{\mu} > x_{x_{c_{1}}}) = \alpha.
+                    P(\widehat{\mu} < x_{c_{1}}) + P(\widehat{\mu} > x_{c_{1}}) = \alpha.
                 \]
             </span>
         </div>
@@ -230,7 +230,7 @@
         <div class="equationWrapper">
             <span class="math">
                 \[
-                    P(\widehat{\mu} < x_{x_{c_{1}}}) = \dfrac{\alpha}{2} \qquad \text{e} \qquad P(\widehat{\mu} > x_{x_{c_{2}}}) = \dfrac{\alpha}{2}.
+                    P(\widehat{\mu} < x_{c_{1}}) = \dfrac{\alpha}{2} \qquad \text{e} \qquad P(\widehat{\mu} > x_{c_{2}}) = \dfrac{\alpha}{2}.
                 \]
             </span>
         </div>
@@ -312,10 +312,112 @@
             Como \(\widehat{\mu}_{\text{obs}} = 7{,}1\) não pertence à região crítica, não rejeitamos a hipótese \(H_{0}\) ao nível de significância de 6%.
             <span class="fim"></span>
         </p>
-
         
         <!--%%%%%%%%%%%%%-->
         <h4>Variância desconhecida</h4>
+        
+        <p>
+            Assim como fizemos no caso do intervalo de confiança para a média de uma população normal com variância desconhecida (ver <a href="IE-IE_EstIntMedPopNormal.html">Capítulo 3, Seção 3</a>), definimos a variável
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    T \coloneqq \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}},
+                \]
+            </span>
+        </div>
+
+        <p>
+            em que \(S\) é o desvio padrão amostral (veja <a href="IE-IE_Estimador.html">Capítulo 3 - Seção 1</a>). Conforme comentamos anteriormente, tal variável segue a distribuição \(t\)-Student com \(n - 1\) graus de liberdade, isto é, \(t_{(n-1)}\). 
+            Assim, para determinarmos o valor crítico e, consequentemente, a região de rejeição, utilizamos a distribuição \(t\)-Student em vez da normal padrão. Vamos retomar o <a href="#exem_8.3">Exemplo 3.4.1</a>, agora sob a hipótese de variância desconhecida.
+        </p>
+        
+        <p class="exemplo" id="exem_8.3_VD">
+            Considere o estudante interessado em investigar o efeito do chá de camomila sobre o tempo médio de sono. Agora, suponha que ele saiba que a média de sono é de 7 horas, mas <i>não conheça</i> a variância. Em seu teste, ele considerou os mesmos 10 amigos que beberam o chá, anotando quantas horas cada um dormiu na primeira noite:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    7{,}2;\; 6{,}5;\; 7{,}8;\; 6{,}9;\; 8{,}1;\; 7{,}4;\; 6{,}8;\; 7{,}6;\; 7{,}0;\; 6{,}7.
+                \]
+            </span>
+        </div>
+
+        <p>
+            As hipóteses consideradas foram:
+        </p>
+
+        <ul>
+            <li>\(H_0\): o chá não altera o tempo médio de sono, ou seja, \(\mu = 7\);</li>
+            <li>\(H_a\): o chá altera o tempo médio de sono, ou seja, \(\mu \neq 7\).</li>
+        </ul>
+
+        <p>
+            Considerando \(\alpha = 0{,}06\), utilizamos a distribuição \(t\)-Student com \(n - 1 = 9\) graus de liberdade. Calculamos a média e o desvio padrão amostral:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \widehat{\mu} = 7{,}1, \qquad S \approx 0{,}45.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Tomamos a seguinte variável de teste:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    T = \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}} = \dfrac{7{,}1 - 7}{0{,}45/\sqrt{10}} \approx \dfrac{0{,}1}{0{,}1423} \approx 0{,}70.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Como o teste é bilateral, buscamos os valores críticos \(t_{c_1}\) e \(t_{c_2}\) tais que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(T < t_{c_1}) = \dfrac{0{,}06}{2} = 0{,}03, \qquad P(T > t_{c_2}) = 0{,}03.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Consultando a tabela da distribuição \(t\)-Student com 9 graus de liberdade, temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    t_{c_1} = -1{,}883, \qquad t_{c_2} = 1{,}883.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Assim, a região crítica para \(\alpha = 0{,}06\) é:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    RC = \{t \in \mathbb{R} \mid t < -1{,}883 \text{ ou } t > 1{,}883\}.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Como o valor observado \(T_{\text{obs}} \approx 0{,}70\) não pertence à região crítica, não rejeitamos a hipótese \(H_0\) ao nível de significância de 6%.
+            <span class="fim"></span>
+        </p>
         
         <div>
             <a href="IE-IE_EstIntMedPopNormal.html">
