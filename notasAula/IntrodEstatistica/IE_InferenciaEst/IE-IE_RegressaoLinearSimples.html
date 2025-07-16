@@ -39,7 +39,7 @@
 </p>
 
 <p>
-    Considere \((X_{1}, \dots, X_{n})\) e \((Y_{1}, \dots, Y_{n})\) amostras para as variáveis aleatórias \(X\) e \(Y\), respectivamente. Dado o para (X_{i}, Y_{i}), com \(i = 1, \dots, n\), adotamos o modelo
+    Considere \((X_{1}, \dots, X_{n})\) e \((Y_{1}, \dots, Y_{n})\) amostras para as variáveis aleatórias \(X\) e \(Y\), respectivamente. Dado o para \((X_{i}, Y_{i})\), com \(i = 1, \dots, n\), adotamos o modelo
 </p>
 
 <div class="equationWrapper">
@@ -73,7 +73,7 @@
 <div class="equationWrapper">
     <span class="math">
         \[
-            SQ(\alpha, \beta) = \sum_{i=1}^{n}E\big(Y_{i} - (\alpha X_{i}  + \beta)\big)^{2}.
+            SQ(\alpha, \beta) = \sum_{i=1}^{n}\big(Y_{i} - (\alpha X_{i}  + \beta)\big)^{2}.
         \]
     </span>
 </div>
@@ -85,8 +85,8 @@
 <div class="equationWrapper">
     <span class="math">
         \[
-        \widehat{\beta} = \frac{\sum_{i=1}^{n}X_{i}Y_{i} - n\widehat{\mu}_{X}\widehat{\mu}_{Y}}{\sum_{i=1}^{n}X_{i}^{2} - n\widehat{\mu}_{X}^{2}}, \qquad
-        \widehat{\alpha} = \widehat{\mu}_{Y} - \widehat{\beta} \,\widehat{\mu}_{X}.
+        \widehat{\alpha} = \frac{\sum_{i=1}^{n}X_{i}Y_{i} - n\widehat{\mu}_{X}\widehat{\mu}_{Y}}{\sum_{i=1}^{n}X_{i}^{2} - n\widehat{\mu}_{X}^{2}}, \qquad
+        \widehat{\beta} = \widehat{\mu}_{Y} - \widehat{\alpha} \,\widehat{\mu}_{X}.
         \]
     </span>
 </div>
