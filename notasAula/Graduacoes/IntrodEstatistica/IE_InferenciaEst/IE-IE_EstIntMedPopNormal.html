@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 3 contSec 3;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_InferenciaEst.html">Capítulo 3 - Inferência estatística</a></h2>
+        <h3>Seção 3 - Estimação por intervalo de confiança para a média de uma população normal</h3>
+        
+        <p>
+            Estimadores fornecem valores <i>pontuais</i> para os parâmetros que desejamos estimar. No entanto, em muitas situações, é desejável apresentar uma estimativa acompanhada de uma medida de precisão. O método do <i>intervalo de confiança</i> acrescenta à estimativa pontual um valor que considera a variabilidade do estimador.
+        </p>
+
+        <p>
+            Nesta seção, vamos apresentar a estimação por intervalo de confiança para a média populacional de uma característica de uma população com distribuição normal \( \mathcal{N}(\mu, \sigma^2) \), em duas situações: com variância conhecida e com variância desconhecida.
+        </p>
+
+        <!--%%%%%%%%%%%%%-->
+        <h4>Variância conhecida</h4>
+
+        <p>
+            Suponha que uma amostra \( (X_1, \dots, X_n) \) seja formada por variáveis independentes, todas com distribuição \( \mathcal{N}(\mu, \sigma^2) \). Vimos, no <a href="IE-IE_DistribEstimMedia.html">Capítulo 3 - Seção 2</a>, que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    Z = \dfrac{\widehat{\mu} - \mu}{\sigma/\sqrt{n}} \sim \mathcal{N}(0,1).
+                \]
+            </span>
+        </div>
+
+        <p>
+            Para um nível de confiança \( \gamma \in (0,1) \), existe um valor \( z_{\gamma/2} \) tal que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(-z_{\gamma/2} < Z < z_{\gamma/2}) = \gamma.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Usando essa relação, temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    -z_{\gamma/2} < Z < z_{\gamma/2} 
+                    \quad \Rightarrow \quad 
+                    \widehat{\mu} - z_{\gamma/2}\dfrac{\sigma}{\sqrt{n}} < \mu < \widehat{\mu} + z_{\gamma/2}\dfrac{\sigma}{\sqrt{n}}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Assim, definimos o <strong>intervalo de confiança</strong> para \( \mu \), com <i>coeficiente de confiança</i> \( \gamma \), como sendo:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, \gamma) = \left[\widehat{\mu} - z_{\gamma/2}\dfrac{\sigma}{\sqrt{n}},\ \widehat{\mu} + z_{\gamma/2}\dfrac{\sigma}{\sqrt{n}}\right].
+                \]
+            </span>
+        </div>
+
+        <p>
+            Esse intervalo é aleatório, pois depende da variável \( \widehat{\mu} \), que por sua vez depende da amostra. Ele assume um valor numérico específico apenas após a coleta dos dados.
+        </p>
+
+        <p>
+            Uma interpretação adequada desse intervalo é a seguinte: se coletarmos várias amostras de mesmo tamanho, construindo um intervalo de confiança para \( \mu \) a partir de cada amostra, então <i>espera-se</i> que a proporção desses intervalos que contenham o valor real do parâmetro \( \mu \) seja igual a \( \gamma \). Em outras palavras, dizemos que temos \( 100\gamma\% \) de <i>confiança</i> de que o intervalo obtido a partir de uma amostra contenha o valor desconhecido de \( \mu \).
+        </p>
+        
+        <p class="exemplo" id="exem_7.18">
+            Suponha que o comprimento de jacarés adultos de uma certa raça tenha distribuição normal com média \( \mu \), desconhecida, e variância conhecida igual a \( \sigma^2 = 0{,}01 \) m\(^2\). Uma amostra de 10 animais foi sorteada e forneceu média \( 1{,}69 \) m. Considerando um intervalo de confiança para \( \mu \) com coeficiente \( \gamma = 0{,}95 \), temos, pela tabela da normal padrão, que \( z_{\gamma/2} = 1{,}96 \). Logo:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, 0{,}95) = \left[1{,}69 - 1{,}96\sqrt{\dfrac{0{,}01}{10}},\ 1{,}69 + 1{,}96\sqrt{\dfrac{0{,}01}{10}}\right] = [1{,}63,\ 1{,}75].
+                \]
+            </span>
+        </div>
+
+        <p>
+            Assim, podemos dizer que temos 95% de confiança de que esse intervalo, construído a partir da amostra, contenha o verdadeiro valor de \( \mu \).
+            <span class="fim"></span>
+        </p>
+        
+        <p>
+            Podemos aplicar o <a href="IE-IE_DistribEstimMedia.html#teor_TCL">Teorema Central do Limite</a> para obter intervalos de confiança para \(\mu\), mesmo quando a amostra não possua distribuição normal. Nesse caso, o intervalo terá confiança <i>aproximadamente</i> igual a \(\gamma\).
+        </p>
+        
+        <p class="exemplo" id="exem_7.20">
+            Suponha que um provedor de internet esteja monitorando o tempo das conexões de seus clientes, mas sem conhecer a distribuição de probabilidade nem a média dessa variável. A única informação disponível é que o desvio padrão é \( \sigma = \sqrt{50} \) minutos. Após uma amostra de 500 conexões, obteve-se uma média amostral de \( 25 \) minutos. Como o tamanho da amostra é suficientemente grande, podemos aplicar o <i>Teorema Central do Limite</i> e assumir que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \dfrac{\widehat{\mu} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, 1).
+                \]
+            </span>
+        </div>
+
+        <p>
+            Considerando um intervalo de confiança para \( \mu \) com coeficiente \( \gamma = 0{,}92 \), temos que, pela tabela da normal padrão, \( z_{\gamma/2} = 1{,}75 \). Assim:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, 0{,}92) = \left[25 - 1{,}75\sqrt{\dfrac{50}{500}},\ 25 + 1{,}75\sqrt{\dfrac{50}{500}}\right] = [24{,}45,\ 25{,}55].
+                \]
+            </span>
+        </div>
+
+        <p>
+            Portanto, podemos dizer que temos aproximadamente 92% de confiança de que esse intervalo, construído a partir da amostra, contenha o verdadeiro valor do parâmetro \( \mu \).
+            <span class="fim"></span>
+        </p>
+        
+        <!--%%%%%%%%%%%%%-->
+        <h4>Variância desconhecida</h4>
+        
+        <p>
+            Suponha que uma amostra \( (X_1, \dots, X_n) \) seja formada por variáveis independentes, todas com distribuição \( \mathcal{N}(\mu, \sigma^2) \), onde \(\mu\) e \(\sigma\) são desconhecidos. Considere o estimador variância amostral, conforme apresentado no <a href="IE-IE_Estimador.html">Capítulo 3 - Seção 1</a>
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S^{2} = \displaystyle\dfrac{1}{n-1}\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Defina a variável
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    T \coloneqq \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Sabemos do <a href="IE-IE_DistribEstimMedia.html">Capítulo 3 - Seção 2</a> que \(\widehat{\mu}\) segue a distribuição normal. Contudo, o mesmo não ocorre com a variável \(T\), pois não conhecemos a distribuição da variável \(S\). Apesar disso, pode-se demonstrar que \(T\) segue outro modelo probabilístico, chamado <strong>distribuição \(t\)-Student</strong>, denotada por \(t_{(n-1)}\). O número \(n-1\) é chamado de <i>graus de liberdade</i> da distribuição. A curva da função densidade de probabilidade da distribuição \(t\)-Student tem formato de sino, assim como a normal padrão. A fórmula de sua função densidade é complexa, por isso, suas probabilidades são usualmente obtidas por meio de tabelas. Essas tabelas geralmente se limitam a graus de liberdade até 120, já que, para \(n\) muito grande, a distribuição \(t\)-Student converge para a normal padrão. Para valores superiores a 120, utiliza-se a tabela da normal padrão, sendo esses casos indicados por "\(\infty\)" na tabela da \(t\)-Student.
+        </p>
+        
+        <p>
+            Fixando um nível de confiança \( \gamma \in (0,1) \), existe um valor \( t_{\gamma/2} \) tal que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    P(-t_{\gamma/2} < \dfrac{\widehat{\mu} - \mu}{S/\sqrt{n}} < t_{\gamma/2}) = \gamma.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Assim, como fizemos para o intervalo de confiança quando a variância é conhecida, podemos definir um intervalo de confiança quando a variância é desconhecida, como
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, \gamma) = \left[\widehat{\mu} - t_{\gamma/2}\dfrac{S}{\sqrt{n}},\ \widehat{\mu} + t_{\gamma/2}\dfrac{S}{\sqrt{n}}\right].
+                \]
+            </span>
+        </div>
+        
+        <p class="exemplo" id="exem_8.6">
+            Um certo estudo quer saber o consumo de oxigênio dos rins de uma certa população. Tal característica é modelada pela distribuição normal, cuja média e a variância são desconhecidas. Sejam \((X_{1}, \dots, X_{5})\) uma amostra, cujos valores fornecidos foram \(14,4\); \(12,9\); \(15,0\); \(13,7\) e \(13,5\). Para essa amostra temos que \(\widehat{\mu}_{\text{obs}} = 13,90\) e \(S^{2}_{\text{obs}} = 0,67\). Assim, considerando um nível de confiança \(\gamma = 0,9\), temos, olhando na tabela da \(t\)-Student com grau de liberdade igual a 4, que \(t_{0,45} = 2,132\). Logo, o intervalo de confiança é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    IC(\mu, 0,9) = \left[13,90 - 2,132\sqrt{\dfrac{0,67}{5}},\ 13,90 + 2,132\sqrt{\dfrac{0,67}{5}}\right] = [13,12; 14,68].
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <div>
+            <a href="IE-IE_DistribEstimMedia.html">
+                <button class="button button1">Capítulo 3 - Seção 2 - Distribuição de \(\widehat{\mu}\)</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-IE_TesteHipMedPopNormal.html">
+                <button class="button button1">Capítulo 3 - Seção 4 - Teste de hipóteses para a média de uma população normal</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

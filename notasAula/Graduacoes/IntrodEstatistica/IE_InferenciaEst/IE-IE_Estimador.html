@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 3 contSec 1;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_InferenciaEst.html">Capítulo 3 - Inferência estatística</a></h2>
+        <h3>Seção 1 - Parâmetro, estimador e estimativa</h3>
+        
+        <p>
+            Suponha que queiramos avaliar a média da altura da população de Belo Horizonte. Segundo o Censo de 2022, essa população totalizava 2.315.560 pessoas. Medir a altura de cada indivíduo dessa população e calcular a média seria uma tarefa inviável. No entanto, se selecionarmos uma parte representativa dessa população &mdash; por exemplo, 500 pessoas &mdash;, medir a altura de cada uma e calcular a média já se torna algo factível. Um subconjunto da população escolhido para fins de estudo é chamado de <strong>amostra</strong>.
+        </p>
+
+        <p>
+            A <i>inferência estatística</i> é a área da Estatística que desenvolve e aplica técnicas para estudar características da população com base em informações fornecidas por uma amostra. É importante destacar que diferentes amostras de uma mesma população podem produzir resultados distintos, devido ao caráter aleatório de sua seleção. Por isso, o estudo de amostras envolve conceitos e ferramentas da Teoria das Probabilidades.
+        </p>
+
+        <p>
+            Em Estatística, estudamos características dos indivíduos de uma população. Essas características são chamadas de <i>variáveis estatísticas</i> (ver <a href="..\IE_EstatDescritiva\IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a>). Por exemplo, em um estudo sobre os moradores de Belo Horizonte, podemos estar interessados na <em>altura</em> de cada pessoa &mdash; nesse caso, a altura é a variável estatística.
+        </p>
+
+        <p>
+            Quando desejamos resumir numericamente uma característica da população inteira, usamos um <strong>parâmetro</strong>. Por exemplo, a média das alturas de todos os moradores de Belo Horizonte é um parâmetro. Os parâmetros são números fixos, mas geralmente desconhecidos, pois raramente conseguimos medir todos os indivíduos da população.
+        </p>
+
+        <p>
+            Como não podemos acessar toda a população, trabalhamos com uma <i>amostra</i> &mdash; um subconjunto representativo dos indivíduos. Os dados dessa amostra são tratados como realizações de <i>variáveis aleatórias</i>, já que a amostra é selecionada de maneira aleatória.
+        </p>
+
+        <p>
+            Uma função construída com os dados da amostra, usada para estimar um parâmetro da população, é chamada de <strong>estimador</strong>. Por exemplo, a média das alturas observadas na amostra é um estimador da média da população.
+        </p>
+
+        <p>
+            Quando aplicamos o estimador a uma amostra específica e obtemos um valor numérico, esse valor é chamado de <strong>estimativa</strong>.
+        </p>
+        
+        <p class="exemplo" id="exem_paramEst">
+            Suponha que estejamos interessados em saber a média da altura dos alunos de certa escola. Esse valor, desconhecido, é o nosso <i>parâmetro</i>, denotado por \(\mu\). Para isso, escolhemos aleatoriamente 10 alunos e medimos a altura de cada um. Essa seleção constitui uma <i>amostra</i> de 10 alunos.
+        </p>
+
+        <p>
+            Note que diferentes amostras podem conter alunos distintos e, portanto, alturas diferentes. Estamos, assim, diante de uma sucessão de 10 experimentos aleatórios, em que, a cada experimento, escolhemos 1 aluno da escola. O espaço amostral de cada experimento é o conjunto \(\Omega\), formado por todos os alunos.
+        </p>
+
+        <p>
+            Podemos, então, definir a variável aleatória \(X_i : \Omega \to \mathbb{R}\), que representa a altura do aluno escolhido no \(i\)-ésimo experimento. Se somarmos as alturas dos alunos escolhidos e dividirmos por 10, obtemos a <i>média amostral</i>.
+        </p>
+
+        <p>
+            Pensando nisso, definimos o <i>estimador</i>:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \widehat{\mu} = \dfrac{X_1 + \cdots + X_{10}}{10}.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Esse estimador fornece uma aproximação para a média populacional \(\mu\). Quando os valores específicos de \(X_1, \dots, X_{10}\) são observados, a média calculada constitui a <i>estimativa</i> da média da população, com base naquela amostra específica.
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_vicio">
+            Um estimador \(\widehat{\lambda}\) para um parâmetro \(\lambda\) é <strong>não viciado</strong>, se \(E(\widehat{\lambda}) = \lambda\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_consist">
+            Um estimador \(\widehat{\lambda}_{n}\) para um parâmetro \(\lambda\), associado a uma amostra de tamanho \(n\), é <strong>consistente</strong>, se
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \lim\limits_{n \to \infty}E(\widehat{\lambda}_{n}) = \lambda \qquad \text{ e } \qquad \lim\limits_{n \to \infty}V(\widehat{\lambda}_{n}) = 0.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p class="exemplo" id="exem_varViciado">
+            Suponha que certa característica de uma população tem média \(\mu\) e variância \(\sigma^{2}\). Tais valores, são desconhecidos. Para estimar a variância, considere uma amostra \((X_{1}, \dots, X_{n})\), onde cada \(X_{i}\) são variáveis aleatórias independentes e identicamente distribuídas, com \(E(X_{i}) = \mu\) e \(V(X_{i}) = \sigma^{2}\). Pode-se mostrar que \(E(\widehat{\mu}) = \mu\) e \(V(\widehat{\mu}) = \frac{\sigma^{2}}{n}\). Um estimador "natural" para a variância é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \widehat{\sigma}^{2} = \dfrac{1}{n}\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Note que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{split}
+                        \displaystyle\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2} &= \sum_{i=1}^{n}(X_{i} - \mu + \mu - \widehat{\mu})^{2} = \sum_{i=1}^{n}\big((X_{i} - \mu)^{2} + 2(X_{i} - \mu)(\mu - \widehat{\mu}) + (\widehat{\mu} - \mu)^{2}\big) = \\
+                        &= \sum_{i=1}^{n}(X_{i} - \mu)^{2} + 2\sum_{i=1}^{n}(\mu - \widehat{\mu})(X_{i} - \mu) + \sum_{i=1}^{n}(\widehat{\mu} - \mu)^{2} = \sum_{i=1}^{n}(X_{i} - \mu)^{2} + 2(\mu - \widehat{\mu})\sum_{i=1}^{n}(X_{i} - \mu) + n(\widehat{\mu} - \mu)^{2} = \\
+                        &= \sum_{i=1}^{n}(X_{i} - \mu)^{2} + 2(\mu - \widehat{\mu})(n\widehat{\mu} - n\mu) + n(\widehat{\mu} - \mu)^{2} = \sum_{i=1}^{n}(X_{i} - \mu)^{2} - n(\widehat{\mu} - \mu)^{2}.
+                \end{split}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Assim,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{split}
+                        E(\widehat{\sigma}^{2}) &= E\left(\dfrac{1}{n}\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}\right) = \dfrac{1}{n}E\left(\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}\right) = \\
+                        &= \dfrac{1}{n}\left(E\big(\sum_{i=1}^{n}(X_{i} - \mu)^{2}\big) - nE\big(\widehat{\mu} - \mu)^{2}\right) = \dfrac{1}{n}\sum_{i=1}^{n}E\big((X_{i} - \mu)^{2}\big) - E\big(\widehat{\mu} - \mu)^{2}\big) = \\
+                        &= \dfrac{1}{n}\sum_{i=1}^{n}V(X_{i}) - V(\widehat{\mu}) = \dfrac{1}{n}n\sigma^{2} - \dfrac{\sigma^{2}}{n} = \dfrac{n-1}{n}\sigma^{2}.
+                    \end{split}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Portanto, \(\widehat{\sigma}^{2}\) é um estimador viciado para \(\sigma^{2}\). Note que podemos eliminar o vício multiplicando \(\widehat{\sigma}^{2}\) por \(\frac{n}{n-1}\). Dessa forma, podemos usar um outro estimador para a variância, dito <i>variância amostral</i> (ver <a href="..\IE_EstatDescritiva\IE-ED_MedDispersao.html#def_desPadrao">Capítulo 1, Seção 3</a>), conforme abaixo
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S^{2} = \displaystyle\dfrac{1}{n-1}\sum_{i=1}^{n}(X_{i} - \widehat{\mu})^{2}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <div>
+            <a href="../IE_Probabilidades/IE_Probabilidades.html">
+                <button class="button button1">Capítulo 2 - Probabilidades</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-IE_DistribEstimMedia.html">
+                <button class="button button1">Capítulo 3 - Seção 2 - Distribuição de \(\widehat{\mu}\)</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

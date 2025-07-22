@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 3 contSec 6;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_InferenciaEst.html">Capítulo 3 - Inferência estatística</a></h2>
+        <h3>Seção 6 - Regressão linear simples</h3>
+        
+        <p>
+    No <a href="IE-IE_Correlacao.html">Capítulo 3, Seção 5</a> apresentamos uma medida para indicar a dependência linear entre duas variáveis: o coeficiente de correlação. Agora, queremos ir além: estabelecer uma relação de causalidade, isto é, quantificar qual é a mudança esperada em uma variável quando variamos os valores da outra.
+</p>
+
+<p>
+    Considere \((X_{1}, \dots, X_{n})\) e \((Y_{1}, \dots, Y_{n})\) amostras para as variáveis aleatórias \(X\) e \(Y\), respectivamente. Dado o para \((X_{i}, Y_{i})\), com \(i = 1, \dots, n\), adotamos o modelo
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            Y_{i} = g(X_{i}) + e_{i},
+        \]
+    </span>
+</div>
+
+<p>
+    para relacionar tais variáveis. Isso significa que o comportamento de \(Y_{i}\) é explicado parcialmente por \(X_{i}\), através da função \(g\), e parcialmente por um termo de erro aleatório \(e_{i}\), que captura fatores não modelados. A forma funcional escolhida no modelo de <strong>regressão linear simples</strong> é:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            g(X_{i}) = \alpha + \beta X_{i}.
+        \]
+    </span>
+</div>
+
+<p>
+    A variável \(Y_{i}\) é chamada de <i>variável dependente</i>, enquanto que \(X_{i}\) é a <i>variável independente</i>.
+</p>
+
+<p>
+    Para estimar os parâmetros \(\alpha\) e \(\beta\), utilizamos o <strong>método dos mínimos quadrados</strong>, que busca minimizar o erro quadrático total:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            SQ(\alpha, \beta) = \sum_{i=1}^{n}\big(Y_{i} - (\alpha X_{i}  + \beta)\big)^{2}.
+        \]
+    </span>
+</div>
+
+<p>
+    Resolvendo o sistema de equações derivado de \(SQ(\alpha, \beta)\), obtemos as estimativas:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \widehat{\alpha} = \frac{\sum_{i=1}^{n}X_{i}Y_{i} - n\widehat{\mu}_{X}\widehat{\mu}_{Y}}{\sum_{i=1}^{n}X_{i}^{2} - n\widehat{\mu}_{X}^{2}}, \qquad
+        \widehat{\beta} = \widehat{\mu}_{Y} - \widehat{\alpha} \,\widehat{\mu}_{X}.
+        \]
+    </span>
+</div>
+
+<p class="exemplo" id="exem_regressao_linear">
+    Um estudo foi realizado na região de Bocaina-SP para investigar o efeito da concentração de uma certa substância no pasto (\(X\), em mg/l) sobre o ganho de peso (\(Y\), em kg) de bovinos após 30 dias. Foram utilizados 15 bois de mesma raça e idade, cada um recebendo uma concentração diferente da substância.
+</p>
+
+<p>
+    Os dados observados foram:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            \begin{array}{c|cccccccc}
+                X & 0{,}2 & 0{,}5 & 0{,}6 & 0{,}7 & 1{,}0 & 1{,}5 & 2{,}0 & 2{,}5 \\
+                Y & 9{,}4 & 11{,}4 & 12{,}3 & 10{,}2 & 11{,}9 & 13{,}6 & 14{,}2 & 16{,}2 \\
+                \hline
+                X & 3{,}0 & 3{,}5 & 4{,}0 & 4{,}5 & 5{,}0 & 5{,}5 & 6{,}0 & \\
+                Y & 16{,}2 & 17{,}7 & 18{,}8 & 19{,}9 & 22{,}5 & 24{,}7 & 23{,}1 & \\
+            \end{array}
+        \]
+    </span>
+</div>
+
+<p>
+    Os seguintes valores foram calculados a partir dos dados:
+</p>
+
+<ul>
+    <li>\( n = 15 \)</li>
+    <li>\( \sum x_i y_i = 785{,}55 \)</li>
+    <li>\( \sum x_i^2 = 163{,}39 \)</li>
+    <li>\( \widehat{\mu}_{X,\text{obs}} = 2{,}70 \)</li>
+    <li>\( \widehat{\mu}_{Y,\text{obs}} = 16{,}14 \)</li>
+</ul>
+
+<p>
+    Aplicando as fórmulas dos estimadores dos parâmetros da reta de regressão:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            \widehat{\beta}_{\text{obs}} = \frac{\sum x_i y_i - n\widehat{\mu}_{X,\text{obs}}\widehat{\mu}_{Y,\text{obs}}}{\sum x_i^2 - n\widehat{\mu}_{X,\text{obs}}^2} 
+            = \frac{785{,}55 - 15 \cdot 2{,}70 \cdot 16{,}14}{163{,}39 - 15 \cdot (2{,}70)^2} 
+            = \frac{135{,}99}{55{,}01} 
+            \approx 2{,}44
+        \]
+    </span>
+</div>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            \widehat{\alpha}_{\text{obs}} = \widehat{\mu}_{Y,\text{obs}} - \widehat{\beta}_{\text{obs}}\widehat{\mu}_{X,\text{obs}}
+            = 16{,}14 - 2{,}44 \cdot 2{,}70 
+            = 9{,}55
+        \]
+    </span>
+</div>
+
+<p>
+    Assim, a equação da reta de regressão ajustada é:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+            Y = \widehat{\alpha}_{\text{obs}} + \widehat{\beta}_{\text{obs}} x = 9{,}55 + 2{,}44X
+        \]
+    </span><span class="fim"></span>
+</div>
+        
+        <div>
+            <a href="IE-IE_Correlacao.html">
+                <button class="button button1">Capítulo 3 - Seção 5 - Correlação entre variáveis aleatórias discretas</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="../IE_Referencias/IE_Referencias.html">
+                <button class="button button1">Referências</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

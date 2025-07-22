@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 1 contSec 1;
+            }
+    
+            .diagram {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .box {
+            border: 2px solid #555;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+            min-width: 150px;
+            position: relative;
+        }
+
+        .arrow-down::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #555;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subcolumns {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #333;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_EstatDescritiva.html">Capítulo 1 - Estatística descritiva</a></h2>
+        <h3>Seção 1 - Variável estatística</h3>
+        
+        <p>
+            Vamos considerar o exemplo descrito na seção 1.2 do livro <a href="../IE_Referencias/IE_Referencias.html#ref1">Noções de probabilidade e estatística</a>. Neste exemplo, foi aplicado um questionário a uma turma com 50 alunos, buscando-se as seguintes informações:
+        </p>
+        
+        <div class="equationWrapper">
+            <table class="alturaFixa" border="1">
+              <thead>
+                <tr style="text-align: center">
+                  <th>Informação</th>
+                  <th>Descrição</th>
+                  <th>Valores possíveis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Turma</td>
+                  <td>Turma a que pertence o aluno</td>
+                  <td>A ou B</td>
+                </tr>
+                <tr>
+                  <td>Sexo</td>
+                  <td>Gênero do aluno</td>
+                  <td>F (feminino) ou M (masculino)</td>
+                </tr>
+                <tr>
+                  <td>Idade</td>
+                  <td>Idade em anos</td>
+                  <td>Número inteiro</td>
+                </tr>
+                <tr>
+                  <td>Altura</td>
+                  <td>Altura em metros</td>
+                  <td>Número real</td>
+                </tr>
+                <tr>
+                  <td>Peso</td>
+                  <td>Peso em quilogramas</td>
+                  <td>Número real</td>
+                </tr>
+                <tr>
+                  <td>Filhos</td>
+                  <td>Total de filhos do aluno</td>
+                  <td>Número inteiro</td>
+                </tr>
+                <tr>
+                  <td>Fumante</td>
+                  <td>Se o aluno fuma</td>
+                  <td>Sim ou Não</td>
+                </tr>
+                <tr>
+                  <td>Tolerante</td>
+                  <td>Opinião sobre cigarro</td>
+                  <td>I (indiferente), P (incomoda pouco), M (incomoda muito)</td>
+                </tr>
+                <tr>
+                  <td>Exercício</td>
+                  <td>Horas de atividade física por semana</td>
+                  <td>Número inteiro</td>
+                </tr>
+                <tr>
+                  <td>Cinema</td>
+                  <td>Número de vezes que vai ao cinema por semana</td>
+                  <td>Número inteiro</td>
+                </tr>
+                <tr>
+                  <td>OpCine</td>
+                  <td>Avaliação das salas de cinema</td>
+                  <td>B (boa a regular), M (muito boa)</td>
+                </tr>
+                <tr>
+                  <td>TV</td>
+                  <td>Horas gastas assistindo TV por semana</td>
+                  <td>Número inteiro</td>
+                </tr>
+                <tr>
+                  <td>OpTV</td>
+                  <td>Opinião sobre a programação da TV</td>
+                  <td>R (ruim), M (média), B (boa), N (não sabe)</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        <p>
+            Em estatística, chamamos de <strong>população</strong> o conjunto de elementos - como pessoas ou objetos - sobre os quais desejamos obter informações. No exemplo acima, o grupo dos 50 alunos corresponde à população do questionário aplicado. No entanto, uma população também pode ser composta por parafusos de uma caixa de ferramentas ou por todos os cachorros da cidade de Belo Horizonte, por exemplo. As informações que se deseja conhecer de cada indivíduo de certa população são chamadas de <strong>variáveis estatísticas</strong>. Note que uma variável estatística pode ser numérica ou não. Quando ela é numérica, dizemos que ela é uma <i>variável quantitativa</i>, caso contrário ela é chamada de  <i>variável qualitativa</i>. Por exemplo, "idade", "altura" e "peso" são variáveis quantitativas, enquanto que "turma", "sexo" e "OpTV" são variáveis qualitativas.
+            </p>
+            
+            <p>As variáveis quantitativas podem ser <i>discretas</i>, quando assumem valores inteiros, ou <i>contínuas</i>, caso onde seus valores pertencem ao conjuntos dos números reais. As variáveis qualitativas, por sua vez, podem ser <i>ordinais</i>, quando é possível definir uma ordem natural entre os valores possíveis, ou <i>nominais</i>, caso contrário. Por exemplo, "OpCine" e "OpTV" são ordinais e "turma", "sexo" e "fumante" são nominais.
+        </p>
+        
+        <div class="equationWrapper">
+        <div class="diagram">
+    <!-- Nível 1 -->
+    <div class="column">
+      <div class="box arrow-down">
+        <div class="title">Variável</div>
+      </div>
+
+      <!-- Nível 2 -->
+      <div class="subcolumns">
+        <!-- Qualitativa -->
+        <div class="column">
+          <div class="box arrow-down">
+            <div class="title">Qualitativa</div>
+          </div>
+          <!-- Nível 3 de Qualitativa -->
+          <div class="subcolumns">
+            <div class="box">
+              <div class="title">Nominal</div>
+            </div>
+            <div class="box">
+              <div class="title">Ordinal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantitativa -->
+        <div class="column">
+          <div class="box arrow-down">
+            <div class="title">Quantitativa</div>
+          </div>
+          <!-- Nível 3 de Quantitativa -->
+          <div class="subcolumns">
+            <div class="box">
+              <div class="title">Discreta</div>
+            </div>
+            <div class="box">
+              <div class="title">Contínua</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+        <p>
+            É importante observar que, em muitos casos, a classificação de uma variável depende de particularidades do contexto. Por exemplo, a variável "idade" pode ser considerada discreta quando expressa em anos completos, mas contínua se for medida em unidades menores, como segundos. Além disso, variáveis contínuas podem ser tratadas como discretas na prática, devido à limitação dos instrumentos de medição. Por isso, é fundamental usar o bom senso ao classificar uma variável.
+        </p>
+        
+        <div>
+            <a href="IE_EstatDescritiva.html">
+                <button class="button button1">Capítulo 1 - Estatística descritiva</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-ED_MedPosicao.html">
+                <button class="button button1">Capítulo 1 - Seção 2 - Medidas de posição</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

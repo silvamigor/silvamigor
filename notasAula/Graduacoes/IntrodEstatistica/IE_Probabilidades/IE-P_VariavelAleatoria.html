@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 2 contSec 2;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_Probabilidades.html">Capítulo 2 - Probabilidades</a></h2>
+        <h3>Seção 2 - Variável aleatória</h3>
+        
+        <p>
+            No <a href="../IE_EstatDescritiva/IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a>, definimos <i>variável estatística</i> como sendo uma informação que se deseja conhecer a respeito de uma certa população. Esse conceito é utilizado quando estamos observando ou coletando dados reais sobre a população. Um conceito relacionado a esse é o de <strong>variável aleatória</strong>, que é um <i>modelo matemático</i> da variável estatística, usado quando ainda não observamos os dados, mas queremos descrever a incerteza sobre os possíveis valores que ela pode assumir. Formalmente, dado um experimento aleatório com espaço amostral \(\Omega\), uma variável aleatória é simplesmente uma função
+        </p>
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    X: \Omega \to \mathbb{R},
+                \]
+            </span>
+        </div>
+        <p>
+            isto é, uma função que associa a cada elemento do espaço amostral um número real. Por exemplo, considere que estamos interessados na altura dos estudantes de uma escola. Como variável estatística, "altura" é uma característica mensurável da população (os estudantes da escola). Por outro lado, tratamos "altura" como uma variável aleatória quando a consideramos como o resultado de um experimento aleatório que visa responder, por exemplo, qual é a probabilidade de um aluno sorteado aleatoriamente ter altura maior que 1,80 m.
+        </p>
+        <p>
+            Assim, a variável estatística é o que a gente mede ou observa no mundo real. Já a variável aleatória é uma forma de modelar matematicamente essa mesma característica <i>antes</i> de observar os dados, quando ainda existe incerteza.
+        </p>
+        
+        <p>
+            Variáveis aleatórias podem ser classificadas, de acordo com os valores que podem assumir, em dois tipos principais:
+        </p>
+
+        <ul>
+            <li><strong>Variável aleatória discreta:</strong> quando assume valores pertencentes a um conjunto finito ou infinito enumerável (ou seja, que pode ser posto em correspondência com os números naturais). Exemplos comuns incluem o número de filhos em uma família, o número de chamadas atendidas em um call center por hora, ou o resultado de um dado.</li>
+
+            <li><strong>Variável aleatória contínua:</strong> quando assume valores em um intervalo da reta real (ou seja, infinitamente muitos valores que não podem ser enumerados). Exemplos incluem a altura de uma pessoa, o tempo de espera em uma fila ou a temperatura ambiente.</li>
+        </ul>
+
+        <p>
+            Sejam \(X: \Omega \to \mathbb{R}\) uma variável aleatória e \(P: \wp(\Omega) \to \mathbb{R}\) uma função de probabilidade. Para cada \(x, y \in \mathbb{R},\) definimos os eventos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    (X = x) \coloneqq \{\omega \in \Omega \mid X(\omega) = x\}, \quad
+                    (X \le x) \coloneqq \{\omega \in \Omega \mid X(\omega) \le x\} \quad \text{ e } \quad 
+                    (y \le X \le x) \coloneqq \{\omega \in \Omega \mid y \le X(\omega) \le x\}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Observação: definimos, analogamente, os eventos \((X < x)\) e \((y < X < x)\).
+        </p>
+        
+        <p>
+            A <strong>função de distribuição</strong> de \(X\) é definida como a função:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        F_X:\, \mathbb{R} & \to & [0,1] \\
+                        x & \mapsto & P(X \le x),
+                    \end{array}
+                \]
+            </span>
+        </div>
+
+        <p>
+            ou seja, \(F_X(x)\) representa a probabilidade de que o valor assumido por \(X\) seja menor ou igual a \(x\). A função \(F_X\) é crescente, limitada entre 0 e 1, contínua à direita, e descreve completamente o comportamento probabilístico da variável aleatória.
+        </p>
+
+        <p>
+            Se \(X\) é uma variável aleatória <i>discreta</i>, com conjunto de valores possíveis \(X(\Omega) = \{x_1, \dots, x_n\}\), então sua <strong>função de probabilidade</strong> é:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        f_X:\, X(\Omega) & \to & [0,1] \\
+                        x_i & \mapsto & P(X = x_i)
+                    \end{array}
+                \]
+            </span>
+        </div>
+
+        <p>
+            Note que \(\sum_{i=1}^{n} f_X(x_i) = 1\). Observe também que, dado \(x \in \bbR\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    (X \le x) = \bigcup_{x_{i} \le x} (X = x_{i})
+                \]
+            </span>
+        </div>
+        
+        <p>
+            é uma união disjunta. Logo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    F_{X}(x) = P(X \le x) = \sum_{x_{i} \le x}P(X = x_{i}) = \sum_{x_{i} \le x}f_{X}(x_{i}).
+                \]
+            </span>
+        </div>
+        
+        <p class="exemplo">
+            Considere um conjunto de 1000 crianças alérgicas que estão em tratamento para essa doença que consiste no seguinte: inicialmente, todas tomam uma dose de vacina; depois de 1 mês, aquelas que ainda apresentam alergia, tomam mais uma dose; depois de mais 1 mês, aquelas ainda alérgicas, tomam mais um dose e segue assim até se curarem. O número de doses necessária para curar todas as crianças foi 5, conforme indica a tabela abaixo.
+        </p>
+        
+        <div class="equationWrapper tabela-flexivel">
+          <table id="tab_exemVarAleatDisc" border=1>
+              <thead>
+                <tr>
+                  <th class="sticky-col">Doses</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="sticky-col">Número de crianças</td>
+                  <td>245</td>
+                  <td>288</td>
+                  <td>256</td>
+                  <td>145</td>
+                  <td>66</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        <p>
+            Considere o experimento aleatória onde observa-se se uma criança se cura após cada dose, ou seja, queremos saber se houve sucesso após a primeira dose, ou se o sucesso veio após a segunda doses, ou assim até a quinta dose. Denotando 1 para sucesso e 0 para fracasso, podemos modelar o espaço amostral como
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \Omega = \{(1,0,0,0,0), (0,1,0,0,0), (0,0,1,0,0), (0,0,0,1,0), (0,0,0,0,1)\},
+                \]
+            </span>
+        </div>
+        
+        <p>
+            onde, por exemplo, \((0,1,0,0,0)\) indica sucesso na segunda dose, isto é, a criança se curou com segunda dose. Considere a variável aleatória que indica o número de doses tomadas por uma criança, conforme descrito abaixo:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        X:\, \Omega & \to & \bbR \\
+                        \omega & \mapsto &
+                        \left\{
+                            \begin{array}{cl}
+                                1, & \text{ se } \omega = (1,0,0,0,0), \\
+                                2, & \text{ se } \omega = (0,1,0,0,0), \\
+                                3, & \text{ se } \omega = (0,0,1,0,0), \\
+                                4, & \text{ se } \omega = (0,0,0,1,0), \\
+                                5, & \text{ se } \omega = (0,0,0,0,1).
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Note que \(X(\Omega) = \{1, \dots, 5\}\). Considerando a tabela <a href="#tab_exemVarAleatDisc">acima</a>, que indica o número de doses por crianças, podemos definir a seguinte função de probabilidade
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        f_{X}:\, X(\Omega) & \to & [0,1] \\
+                        x_{i} & \mapsto & 
+                        \left\{
+                            \begin{array}{cl}
+                                0,245, & \text{ se } x_{i} = 1, \\
+                                0,288, & \text{ se } x_{i} = 2, \\
+                                0,256, & \text{ se } x_{i} = 3, \\
+                                0,145, & \text{ se } x_{i} = 4, \\
+                                0,066, & \text{ se } x_{i} = 5.
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Da função de probabilidade, chegamos na função de distribuição, conforme a seguir
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        F_{X}:\, \bbR & \to & [0,1] \\
+                        x & \mapsto & 
+                        \left\{
+                            \begin{array}{cl}
+                                0, & \text{ se } x < 1, \\
+                                0,245, & \text{ se } 1 \le x < 2, \\
+                                0,533, & \text{ se } 2 \le x < 3, \\
+                                0,789, & \text{ se } 3 \le x < 4, \\
+                                0,934, & \text{ se } 4 \le x < 5, \\
+                                1, & \text{ se } x \ge 5,
+                            \end{array}
+                        \right.
+                    \end{array}
+                \]
+            </span><span class="fim"></span>
+        </div>
+
+        <p>
+            Se \(X\) é uma variável aleatória <i>contínua</i>, então existe uma função
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    f_X:\, \mathbb{R} \to [0,\infty),
+                \]
+            </span>
+        </div>
+
+        <p>
+            chamada <strong>função densidade de probabilidade</strong>, que satisfaz:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \(
+                    \begin{array}{ll}
+                        \text{(a)} & f_X(x) \ge 0, \text{ para todo } x \in \mathbb{R}; \\
+                        \text{(b)} & \displaystyle\int_{-\infty}^{\infty} f_X(t)\,dt = 1; \\
+                        \text{(c)} & P(a \le X \le b) = \displaystyle\int_a^b f_X(t)\,dt.
+                    \end{array}
+                \)
+            </span>
+        </div>
+
+        <p>
+            Observação: no caso contínuo, temos \(P(X = x) = 0\), para todo \(x \in \mathbb{R}\).
+        </p>
+        
+        <p>
+            Note que 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    F_{X}(x) = P(X \le x) = P(-\infty < X \le x) = \displaystyle\int_{-\infty}^{b} f_X(t)\,dt.
+                \]
+            </span>
+        </div>
+        
+        <div>
+            <a href="IE-P_DefProbabilidade.html">
+                <button class="button button1">Capítulo 2 - Seção 1 - Definição de probabilidade</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-P_ExemploDistr.html">
+                <button class="button button1">Capítulo 2 - Seção 3 - Exemplos de distribuição</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

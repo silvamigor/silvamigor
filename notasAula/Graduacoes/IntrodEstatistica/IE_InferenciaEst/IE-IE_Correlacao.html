@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 3 contSec 5;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_InferenciaEst.html">Capítulo 3 - Inferência estatística</a></h2>
+        <h3>Seção 5 - Correlação entre variáveis aleatórias discretas</h3>
+        
+        <p>
+            Quando lidamos com duas variáveis aleatórias \(X\) e \(Y\), é natural investigar se existe alguma relação entre elas &#8212; por exemplo, se valores altos de uma tendem a estar associados a valores altos ou baixos da outra. Se as variáveis são dependentes, a relação entre elas pode ser de vários tipos e, no caso de ser linear, uma maneira clássica de quantificar essa associação é por meio da <i>correlação</i>.
+        </p>
+
+        <p>
+            No contexto de variáveis aleatórias discretas, a correlação é baseada na <strong>covariância</strong> entre \(X\) e \(Y\), que mede a tendência conjunta de variação das duas variáveis em relação às suas médias. A covariância é definida por:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \operatorname{Cov}(X, Y) \coloneqq E\Big(\big(X - E(X)\big)\big(Y - E(Y)\big)\Big) = E(XY) - E(X)E(Y).
+                \]
+            </span>
+        </div>
+
+        <p>
+            No entanto, a covariância depende das unidades de medida de \(X\) e \(Y\), o que dificulta a comparação entre diferentes situações. Para contornar esse problema, definimos a <strong>correlação</strong> como uma forma padronizada da covariância:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \rho_{X,Y} = \dfrac{\operatorname{Cov}(X,Y)}{\sqrt{V(X)V(Y)}},
+                \]
+            </span>
+        </div>
+
+        <p class="teor" id="teor_covar">
+            Sejam \(X\) e \(Y\) variáveis aleatórias discretas. Então
+            <ol class="numerico">
+                <li>\(\rho_{X,Y} \in [-1,1].\)</li>
+                <li>\(\rho_{X,Y} = 1\) se, e somente se, \(Y = aX + b\) quase certamente, onde \(b \in \mathbb{R}\) e \(a > 0.\)</li>
+                <li>\(\rho_{X,Y} = -1\) se, e somente se, \(Y = aX + b\) quase certamente, onde \(b \in \mathbb{R}\) e \(a < 0.\)</li>
+            </ol>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                FAZER...
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+
+        <p>
+            Quando \(\rho_{X,Y} = 0\), dizemos que \(X\) e \(Y\) são <strong>não correlacionadas</strong>. É importante destacar que a correlação mede apenas <em>associação linear</em> entre as variáveis: duas variáveis podem ser fortemente relacionadas de maneira não linear e, ainda assim, terem correlação zero.
+        </p>
+        
+        <p class="exemplo" id="exem_5.5">
+     Esse é o Exemplo 5.5 de Noções de Probabilidade e Estatística. Uma região foi subdividida em 10 sub-regiões. Em cada uma delas, foram observadas duas variáveis: <em>número de poços artesianos</em> (\(X\)) e <em>número de riachos ou rios presentes</em> na sub-região (\(Y\)). Os resultados são apresentados na tabela a seguir:
+</p>
+
+<table class="tabelaDados">
+    <tr><th>Sub-região</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+    <tr><th>\(X\)</th><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>0</td></tr>
+    <tr><th>\(Y\)</th><td>1</td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>2</td><td>2</td></tr>
+</table>
+
+<p>
+    Considerando que escolhemos uma das sub-regiões ao acaso, isto é, cada sub-região tem a mesma probabilidade \(1/10\) de ser escolhida, podemos construir a distribuição conjunta de \((X, Y)\):
+</p>
+
+<table class="tabelaDistConjunta">
+    <tr><th>\((X, Y)\)</th><th>Probabilidade</th></tr>
+    <tr><td>\((0,0)\)</td><td>\(1/10\)</td></tr>
+    <tr><td>\((0,1)\)</td><td>\(2/10\)</td></tr>
+    <tr><td>\((0,2)\)</td><td>\(2/10\)</td></tr>
+    <tr><td>\((1,0)\)</td><td>\(1/10\)</td></tr>
+    <tr><td>\((1,1)\)</td><td>\(1/10\)</td></tr>
+    <tr><td>\((2,0)\)</td><td>\(1/10\)</td></tr>
+    <tr><td>\((2,1)\)</td><td>\(1/10\)</td></tr>
+    <tr><td>\((2,2)\)</td><td>\(1/10\)</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>1</strong></td></tr>
+</table>
+
+<p>
+    Podemos também apresentar a distribuição conjunta em forma de tabela de dupla entrada:
+</p>
+
+<table class="tabelaDuplaEntrada">
+    <tr><th>\(X \backslash Y\)</th><th>0</th><th>1</th><th>2</th></tr>
+    <tr><th>0</th><td>\(1/10\)</td><td>\(2/10\)</td><td>\(2/10\)</td></tr>
+    <tr><th>1</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(0\)</td></tr>
+    <tr><th>2</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(1/10\)</td></tr>
+</table>
+
+<p>
+    As distribuições marginais também podem aparecer na tabela, bastando somar as probabilidades das linhas e colunas. Por exemplo, a probabilidade de \(X = 0\) é:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        P(X = 0) = P(0,0) + P(0,1) + P(0,2) = \frac{1}{10} + \frac{2}{10} + \frac{2}{10} = \frac{5}{10}
+        \]
+    </span>
+</div>
+
+<p>
+    Repetindo os cálculos para os outros valores de \(X\) e \(Y\), obtemos:
+</p>
+
+<table class="tabelaComMarginais">
+    <tr><th>\(X \backslash Y\)</th><th>0</th><th>1</th><th>2</th><th>\(P(X = x)\)</th></tr>
+    <tr><th>0</th><td>\(1/10\)</td><td>\(2/10\)</td><td>\(2/10\)</td><td>\(5/10\)</td></tr>
+    <tr><th>1</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(0\)</td><td>\(2/10\)</td></tr>
+    <tr><th>2</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(1/10\)</td><td>\(3/10\)</td></tr>
+    <tr><th>\(P(Y = y)\)</th><td>\(3/10\)</td><td>\(4/10\)</td><td>\(3/10\)</td><td>1</td></tr>
+</table>
+
+<p>
+    Portanto, as funções de probabilidade marginais são as seguintes:
+</p>
+
+<table class="tabelaMarginalSimples" style="margin-bottom: 1em;">
+    <tr><th>\(X\)</th><td>0</td><td>1</td><td>2</td></tr>
+    <tr><th>\(p_i\)</th><td>\(5/10\)</td><td>\(2/10\)</td><td>\(3/10\)</td></tr>
+</table>
+
+<p style="display:inline-block; margin-right: 1em;"><strong>e</strong></p>
+
+<table class="tabelaMarginalSimples" style="display:inline-block;">
+    <tr><th>\(Y\)</th><td>0</td><td>1</td><td>2</td></tr>
+    <tr><th>\(p_i\)</th><td>\(3/10\)</td><td>\(4/10\)</td><td>\(3/10\)</td></tr>
+</table>
+
+<p>
+    Vamos calcular a correlação entre as variáveis aleatórias \(X\) (número de poços artesianos) e \(Y\) (número de riachos ou rios) usando os dados da distribuição conjunta.
+</p>
+
+<p>
+    A esperança de \(X\) é:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \mathbb{E}[X] = 0 \cdot \frac{5}{10} + 1 \cdot \frac{2}{10} + 2 \cdot \frac{3}{10} = 0 + 0{,}2 + 0{,}6 = \boxed{0{,}8}
+        \]
+    </span>
+</div>
+
+<p>
+    A esperança de \(Y\) é:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \mathbb{E}[Y] = 0 \cdot \frac{3}{10} + 1 \cdot \frac{4}{10} + 2 \cdot \frac{3}{10} = 0 + 0{,}4 + 0{,}6 = \boxed{1{,}0}
+        \]
+    </span>
+</div>
+
+<p>
+    Usando a distribuição conjunta:
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \begin{aligned}
+        \mathbb{E}[XY] &= 0\cdot0 \cdot \tfrac{1}{10} + 0\cdot1 \cdot \tfrac{2}{10} + 0\cdot2 \cdot \tfrac{2}{10} \\
+        &+ 1\cdot0 \cdot \tfrac{1}{10} + 1\cdot1 \cdot \tfrac{1}{10} + 2\cdot0 \cdot \tfrac{1}{10} \\
+        &+ 2\cdot1 \cdot \tfrac{1}{10} + 2\cdot2 \cdot \tfrac{1}{10} \\
+        &= 0 + 0 + 0 + 0 + \tfrac{1}{10} + 0 + \tfrac{2}{10} + \tfrac{4}{10} = \boxed{0{,}7}
+        \end{aligned}
+        \]
+    </span>
+</div>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \operatorname{Cov}(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X] \cdot \mathbb{E}[Y] = 0{,}7 - (0{,}8 \cdot 1{,}0) = \boxed{-0{,}1}
+        \]
+    </span>
+</div>
+
+<p>
+    Primeiro, \(\mathbb{E}[X^2]\):
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \mathbb{E}[X^2] = 0^2 \cdot \tfrac{5}{10} + 1^2 \cdot \tfrac{2}{10} + 2^2 \cdot \tfrac{3}{10} = 0 + \tfrac{2}{10} + \tfrac{12}{10} = \tfrac{14}{10} = 1{,}4
+        \]
+    </span>
+</div>
+
+<p>
+    Então, \(\operatorname{Var}(X)\):
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \operatorname{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = 1{,}4 - (0{,}8)^2 = 1{,}4 - 0{,}64 = \boxed{0{,}76}
+        \]
+    </span>
+</div>
+
+<p>
+    Agora, \(\mathbb{E}[Y^2]\):
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \mathbb{E}[Y^2] = 0^2 \cdot \tfrac{3}{10} + 1^2 \cdot \tfrac{4}{10} + 2^2 \cdot \tfrac{3}{10} = 0 + \tfrac{4}{10} + \tfrac{12}{10} = \tfrac{16}{10} = 1{,}6
+        \]
+    </span>
+</div>
+
+<p>
+    Portanto, \(\operatorname{Var}(Y)\):
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \operatorname{Var}(Y) = \mathbb{E}[Y^2] - (\mathbb{E}[Y])^2 = 1{,}6 - 1^2 = \boxed{0{,}6}
+        \]
+    </span>
+</div>
+
+<p>
+    Para a correlação, temos que
+</p>
+
+<div class="equationWrapper">
+    <span class="math">
+        \[
+        \rho_{X,Y} = \frac{\operatorname{Cov}(X,Y)}{\sqrt{\operatorname{Var}(X)} \cdot \sqrt{\operatorname{Var}(Y)}} = \frac{-0{,}1}{\sqrt{0{,}76} \cdot \sqrt{0{,}6}} \approx \frac{-0{,}1}{0{,}8719 \cdot 0{,}7746} \approx \frac{-0{,}1}{0{,}675} \approx \boxed{-0{,}148}
+        \]
+    </span>
+</div>
+
+<p>
+    Portanto, as variáveis \(X\) e \(Y\) têm uma correlação negativa fraca. O valor de \(\rho_{X,Y} \approx -0{,}15\) indica que, de modo geral, quando uma variável aumenta, a outra tende levemente a diminuir.
+<span class="fim"></span></p>
+        
+        <div>
+            <a href="IE-IE_TesteHipMedPopNormal.html">
+                <button class="button button1">Capítulo 3 - Seção 4 - Teste de hipóteses para a média de uma população normal</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-IE_RegressaoLinearSimples.html">
+                <button class="button button1">Capítulo 3 - Seção 6 - Regressão linear simples</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

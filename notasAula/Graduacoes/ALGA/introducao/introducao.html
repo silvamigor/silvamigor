@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Álgebra linear e geometria analítica</title>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Register.StartupHook("TeX Jax Ready",function (){
+                 MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+                    cancel: ["Extension","cancel"],
+                    bcancel: ["Extension","cancel"],
+                    xcancel: ["Extension","cancel"],
+                    cancelto: ["Extension","cancel"]
+                });
+            });
+            MathJax.Hub.Config({
+                extensions: ["https://lomath.in/doc/xyjax/xypic.js","tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true
+                },
+                "HTML-CSS": { fonts: ["TeX"] },
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    Macros: {
+                        fraka: ["\\mathfrak{a}"],
+                        frakb: ["\\mathfrak{b}"],
+                        frakc: ["\\mathfrak{c}"],
+                        frakd: ["\\mathfrak{d}"],
+                        frake: ["\\mathfrak{e}"],
+                        frakf: ["\\mathfrak{f}"],
+                        frakg: ["\\mathfrak{g}"],
+                        frakh: ["\\mathfrak{h}"],
+                        fraki: ["\\mathfrak{i}"],
+                        frakj: ["\\mathfrak{j}"],
+                        frakk: ["\\mathfrak{k}"],
+                        frakl: ["\\mathfrak{l}"],
+                        frakm: ["\\mathfrak{m}"],
+                        frakn: ["\\mathfrak{n}"],
+                        frako: ["\\mathfrak{o}"],
+                        frakp: ["\\mathfrak{p}"],
+                        frakq: ["\\mathfrak{q}"],
+                        frakr: ["\\mathfrak{r}"],
+                        fraks: ["\\mathfrak{s}"],
+                        frakt: ["\\mathfrak{t}"],
+                        fraku: ["\\mathfrak{u}"],
+                        frakv: ["\\mathfrak{v}"],
+                        frakx: ["\\mathfrak{x}"],
+                        frakw: ["\\mathfrak{w}"],
+                        fraky: ["\\mathfrak{y}"],
+                        frakz: ["\\mathfrak{z}"],
+                        frakA: ["\\mathfrak{A}"],
+                        frakB: ["\\mathfrak{B}"],
+                        frakC: ["\\mathfrak{C}"],
+                        frakD: ["\\mathfrak{D}"],
+                        frakE: ["\\mathfrak{E}"],
+                        frakF: ["\\mathfrak{F}"],
+                        frakG: ["\\mathfrak{G}"],
+                        frakH: ["\\mathfrak{H}"],
+                        frakI: ["\\mathfrak{I}"],
+                        frakJ: ["\\mathfrak{J}"],
+                        frakK: ["\\mathfrak{K}"],
+                        frakL: ["\\mathfrak{L}"],
+                        frakM: ["\\mathfrak{M}"],
+                        frakN: ["\\mathfrak{N}"],
+                        frakO: ["\\mathfrak{O}"],
+                        frakP: ["\\mathfrak{P}"],
+                        frakQ: ["\\mathfrak{Q}"],
+                        frakR: ["\\mathfrak{R}"],
+                        frakS: ["\\mathfrak{S}"],
+                        frakT: ["\\mathfrak{T}"],
+                        frakU: ["\\mathfrak{U}"],
+                        frakV: ["\\mathfrak{V}"],
+                        frakX: ["\\mathfrak{X}"],
+                        frakW: ["\\mathfrak{W}"],
+                        frakY: ["\\mathfrak{Y}"],
+                        frakZ: ["\\mathfrak{Z}"],
+                        frakgl: ["\\mathfrak{gl}"],
+                        fraksl: ["\\mathfrak{sl}"],
+                        frakso: ["\\mathfrak{so}"],
+                        fraksp: ["\\mathfrak{sp}"],
+                        bba: ["\\mathbb{a}"],
+                        bbb: ["\\mathbb{b}"],
+                        bbc: ["\\mathbb{c}"],
+                        bbd: ["\\mathbb{d}"],
+                        bbe: ["\\mathbb{e}"],
+                        bbf: ["\\mathbb{f}"],
+                        bbg: ["\\mathbb{g}"],
+                        bbh: ["\\mathbb{h}"],
+                        bbi: ["\\mathbb{i}"],
+                        bbj: ["\\mathbb{j}"],
+                        bbk: ["\\mathbb{k}"],
+                        bbl: ["\\mathbb{l}"],
+                        bbm: ["\\mathbb{m}"],
+                        bbn: ["\\mathbb{n}"],
+                        bbo: ["\\mathbb{o}"],
+                        bbp: ["\\mathbb{p}"],
+                        bbq: ["\\mathbb{q}"],
+                        bbr: ["\\mathbb{r}"],
+                        bbs: ["\\mathbb{s}"],
+                        bbt: ["\\mathbb{t}"],
+                        bbu: ["\\mathbb{u}"],
+                        bbv: ["\\mathbb{v}"],
+                        bbx: ["\\mathbb{x}"],
+                        bbw: ["\\mathbb{w}"],
+                        bby: ["\\mathbb{y}"],
+                        bbz: ["\\mathbb{z}"],
+                        bbA: ["\\mathbb{A}"],
+                        bbB: ["\\mathbb{B}"],
+                        bbC: ["\\mathbb{C}"],
+                        bbD: ["\\mathbb{D}"],
+                        bbE: ["\\mathbb{E}"],
+                        bbF: ["\\mathbb{F}"],
+                        bbG: ["\\mathbb{G}"],
+                        bbH: ["\\mathbb{H}"],
+                        bbI: ["\\mathbb{I}"],
+                        bbJ: ["\\mathbb{J}"],
+                        bbK: ["\\mathbb{K}"],
+                        bbL: ["\\mathbb{L}"],
+                        bbM: ["\\mathbb{M}"],
+                        bbN: ["\\mathbb{N}"],
+                        bbO: ["\\mathbb{O}"],
+                        bbP: ["\\mathbb{P}"],
+                        bbQ: ["\\mathbb{Q}"],
+                        bbR: ["\\mathbb{R}"],
+                        bbS: ["\\mathbb{S}"],
+                        bbT: ["\\mathbb{T}"],
+                        bbU: ["\\mathbb{U}"],
+                        bbV: ["\\mathbb{V}"],
+                        bbX: ["\\mathbb{X}"],
+                        bbW: ["\\mathbb{W}"],
+                        bbY: ["\\mathbb{Y}"],
+                        bbZ: ["\\mathbb{Z}"],
+                        cala: ["\\mathcal{a}"],
+                        calb: ["\\mathcal{b}"],
+                        calc: ["\\mathcal{c}"],
+                        cald: ["\\mathcal{d}"],
+                        cale: ["\\mathcal{e}"],
+                        calf: ["\\mathcal{f}"],
+                        calg: ["\\mathcal{g}"],
+                        calh: ["\\mathcal{h}"],
+                        cali: ["\\mathcal{i}"],
+                        calj: ["\\mathcal{j}"],
+                        calk: ["\\mathcal{k}"],
+                        call: ["\\mathcal{l}"],
+                        calm: ["\\mathcal{m}"],
+                        caln: ["\\mathcal{n}"],
+                        calo: ["\\mathcal{o}"],
+                        calp: ["\\mathcal{p}"],
+                        calq: ["\\mathcal{q}"],
+                        calr: ["\\mathcal{r}"],
+                        cals: ["\\mathcal{s}"],
+                        calt: ["\\mathcal{t}"],
+                        calu: ["\\mathcal{u}"],
+                        calv: ["\\mathcal{v}"],
+                        calx: ["\\mathcal{x}"],
+                        calw: ["\\mathcal{w}"],
+                        caly: ["\\mathcal{y}"],
+                        calz: ["\\mathcal{z}"],
+                        calA: ["\\mathcal{A}"],
+                        calB: ["\\mathcal{B}"],
+                        calC: ["\\mathcal{C}"],
+                        calD: ["\\mathcal{D}"],
+                        calE: ["\\mathcal{E}"],
+                        calF: ["\\mathcal{F}"],
+                        calG: ["\\mathcal{G}"],
+                        calH: ["\\mathcal{H}"],
+                        calI: ["\\mathcal{I}"],
+                        calJ: ["\\mathcal{J}"],
+                        calK: ["\\mathcal{K}"],
+                        calL: ["\\mathcal{L}"],
+                        calM: ["\\mathcal{M}"],
+                        calN: ["\\mathcal{N}"],
+                        calO: ["\\mathcal{O}"],
+                        calP: ["\\mathcal{P}"],
+                        calQ: ["\\mathcal{Q}"],
+                        calR: ["\\mathcal{R}"],
+                        calS: ["\\mathcal{S}"],
+                        calT: ["\\mathcal{T}"],
+                        calU: ["\\mathcal{U}"],
+                        calV: ["\\mathcal{V}"],
+                        calX: ["\\mathcal{X}"],
+                        calW: ["\\mathcal{W}"],
+                        calY: ["\\mathcal{Y}"],
+                        calZ: ["\\mathcal{Z}"],
+                        bfa: ["\\mathbf{a}"],
+                        bfb: ["\\mathbf{b}"],
+                        bfc: ["\\mathbf{c}"],
+                        bfd: ["\\mathbf{d}"],
+                        bfe: ["\\mathbf{e}"],
+                        bff: ["\\mathbf{f}"],
+                        bfg: ["\\mathbf{g}"],
+                        bfh: ["\\mathbf{h}"],
+                        bfi: ["\\mathbf{i}"],
+                        bfj: ["\\mathbf{j}"],
+                        bfk: ["\\mathbf{k}"],
+                        bfl: ["\\mathbf{l}"],
+                        bfm: ["\\mathbf{m}"],
+                        bfn: ["\\mathbf{n}"],
+                        bfo: ["\\mathbf{o}"],
+                        bfp: ["\\mathbf{p}"],
+                        bfq: ["\\mathbf{q}"],
+                        bfr: ["\\mathbf{r}"],
+                        bfs: ["\\mathbf{s}"],
+                        bft: ["\\mathbf{t}"],
+                        bfu: ["\\mathbf{u}"],
+                        bfv: ["\\mathbf{v}"],
+                        bfx: ["\\mathbf{x}"],
+                        bfw: ["\\mathbf{w}"],
+                        bfy: ["\\mathbf{y}"],
+                        bfz: ["\\mathbf{z}"],
+                        bfA: ["\\mathbf{A}"],
+                        bfB: ["\\mathbf{B}"],
+                        bfC: ["\\mathbf{C}"],
+                        bfD: ["\\mathbf{D}"],
+                        bfE: ["\\mathbf{E}"],
+                        bfF: ["\\mathbf{F}"],
+                        bfG: ["\\mathbf{G}"],
+                        bfH: ["\\mathbf{H}"],
+                        bfI: ["\\mathbf{I}"],
+                        bfJ: ["\\mathbf{J}"],
+                        bfK: ["\\mathbf{K}"],
+                        bfL: ["\\mathbf{L}"],
+                        bfM: ["\\mathbf{M}"],
+                        bfN: ["\\mathbf{N}"],
+                        bfO: ["\\mathbf{O}"],
+                        bfP: ["\\mathbf{P}"],
+                        bfQ: ["\\mathbf{Q}"],
+                        bfR: ["\\mathbf{R}"],
+                        bfS: ["\\mathbf{S}"],
+                        bfT: ["\\mathbf{T}"],
+                        bfU: ["\\mathbf{U}"],
+                        bfV: ["\\mathbf{V}"],
+                        bfX: ["\\mathbf{X}"],
+                        bfW: ["\\mathbf{W}"],
+                        bfY: ["\\mathbf{Y}"],
+                        bfZ: ["\\mathbf{Z}"],
+                        bfad: ["\\mathbf{ad}"],
+                        zero: ["\\{0\\}"],
+                        id: ["\\operatorname\{id\}"],
+                        sen: ["\\operatorname\{sen\}"],
+                        tg: ["\\operatorname\{tg\}"],
+                        ad: ["\\operatorname\{ad\}"],
+                        mdc: ["\\operatorname\{mdc\}"],
+                        im: ["\\operatorname\{im\}"],
+                        Quat: ["\\operatorname\{Quat\}"],
+                        Aut: ["\\operatorname\{Aut\}"],
+                        Inn: ["\\operatorname\{Inn\}"],
+                        orb: ["\\operatorname\{orb\}"],
+                        stab: ["\\operatorname\{stab\}"],
+                        Rep: ["\\operatorname\{Rep\}"],
+                        Hom: ["\\operatorname\{Hom\}"],
+                        End: ["\\operatorname\{End\}"],
+                        Obj: ["\\operatorname\{Obj\}"],
+                        tr: ["\\operatorname\{tr\}"],
+                        diam: ["\\operatorname\{diam\}"],
+                        diag: ["\\operatorname\{diag\}"],
+                        Ind: ["\\operatorname\{Ind\}"],
+                        Res: ["\\operatorname\{Res\}"],
+                        Set: ["\\operatorname\{Set\}"],
+                        coker: ["\\operatorname\{coker\}"],
+                        supp: ["\\operatorname\{supp\}"],
+                        Tor: ["\\operatorname\{Tor\}"],
+                        vspan: ["\\operatorname\{vspan\}"],
+                        char: ["\\operatorname\{char\}"],
+                        Ann: ["\\operatorname\{Ann\}"],
+                        Der: ["\\operatorname\{Der\}"],
+                        pint: ["{ \\langle #1,#2 \\rangle }",2],
+                        rfrac: ["{ {}^{#1}\\!/_{#2} }",2],
+                        norma: ["{ \\Vert #1 \\Vert }",1],
+                    },
+                },
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+        <script src="http://www.w3schools.com/lib/w3data.js"></script>
+        <link rel="stylesheet" type="text/css" href="itemParenteses.css" />
+        <link rel="stylesheet" type="text/css" href="ambTeor.css" />
+        <script>
+            function closeDetail(detailsElement) {
+                detailsElement.removeAttribute("open");
+                window.location = '#' + detailsElement.scrollIntoView({block: "nearest", behavior: "smooth"});
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+        <style>
+            body{
+                font-size: 16pt;
+                font-family: "Helvetica", sans-serif;
+                line-height: 1.5;
+                background-color: rgb(233,227,206);
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo;
+            }
+            h1{
+                background-color: rgb(213,113,0);
+            }
+            .hifscor { 
+                text-decoration:none;
+                color: inherit;
+            }
+            details > summary {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                transition: 0.15s background linear;
+            }  
+            details > summary:hover {
+                background: #d4d1ec;
+            }
+            details > p{
+                border: solid;
+            }
+            .equationCenter {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .buttonDetails {
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+            }
+            .button {
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 20px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: rgb(233,227,206); 
+                color: black; 
+                border: 2px solid rgb(213,113,0);
+            }
+            .button1:hover {
+                background-color: rgb(213,113,0);
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../principal_ALGA.html">Álgebra linear e geometria analítica</a></h1></div> 
+        <h2>Introdução</h2>
+        
+        <p>
+            Talvez você deva estar estranhando o nome "Álgebra linear e geometria analítica", nessa ordem, já que o comum é o contrário "Geometria analítica e álgebra linear", frequentemente abreviado por GAAL. Na verdade, eu gostaria mesmo é do nome "Noções de álgebra linear e sua aplicação ao estudo de alguns conceitos em geometria euclidiana plana e espacial". Mas você percebeu que tal nome é demasiadamente grande para o título de um curso, de modo que me convenci a fazer apenas a pequena alteração na ordem. De qualquer forma, o nome pretendido, mas não adotado, dá a ideia do que farei ao longo dessas notas: vamos estudar alguns princípios básicos de Álgebra Linear e utilizá-los, como ferramenta, para entender alguns conceitos e objetos da Geometria Euclidiana Plana e Espacial, tais como distâncias, ângulos, retas, planos e cônicas.
+        </p>
+
+        <p>
+            O que faremos aqui pode se assemelhar ao que turistas fazem quando vão à natureza em busca de aventura, sob a tutela de um guia. Vamos caminhar por um trecho da selva Matemática e esse texto será nosso mapa, nosso GPS. Para não nos perdermos é bom termos em mente para onde queremos ir, ou seja, qual é o nosso objetivo final. É claro que tudo isso é uma grosseira analogia. A verdade é que na Matemática o simples fato de entender uma teoria, já pode ser considerado em si o objetivo final. É como se os matemáticos fossem cartógrafos ou geógrafos que desbravam o desconhecido e preenchem no mapa aquilo que ainda está faltando. Mas, para nós, que estamos começando, colocar uma meta talvez seja um facilitador. Nesse sentido, a nossa rota aqui é partir daquilo que sabemos do ensino básico de Matemática, caminhar pela Álgebra Linear, chegar até a Geometria Euclidiana Plana e Espacial e entendê-la sob o aspecto da álgebra, de posse que podemos apontar a identificação de cônicas como sendo nosso destino. Assim, você pode pôr em sua mente que tudo o que faremos terá como intuito classificar todas as cônicas, isto é, todas as curvas obtidas pela interseção de um cone com um plano (veja uma animação <a href="https://www.geogebra.org/m/GmTngth7#material/T8TV2JqG">aqui</a>). Mas não deixe de desfrutar as maravilhas que veremos ao longo dessa caminhada. Eu não tenho a pretensão de querer que ao final dessa jornada, você seja um profundo conhecedor de tudo que vimos. Ficarei feliz se você ao menos se familiarizar com a paisagem, de modo que no futuro, depois de um tempo, ao se deparar com temas estudados aqui, mesmo sem lembrar de detalhes, você possa dizer "já vi isso e sei como relembrar".
+        </p>
+        
+        <p>
+            Imaginando que essas notas serão lidas por alunos no ciclo inicial dos cursos de graduação, vale a pena ressaltar aqui, embora isso possa parecer óbvio, que esse é um texto de Matemática, e como tal ele apresenta uma determinada característica. Assim como textos de Direito são repletos de artigos, parágrafos e incisos, os de Matemática são dominados por lemas, proposições, teoremas, corolários (nomes dados a afirmações matemáticas; as diferenças se dão pelo grau de importância na teoria, por exemplo, um teorema é, de certa maneira, mais importante que uma proposição) e exemplos. Digo isso porque pode ser que você nunca tenha se deparado com algo assim. É uma escrita que foca no rigor, precisão e no crescente conhecimento, usando tudo já disponível. Assim, tentarei demonstrar tudo o que for afirmado, para que não pareça que estamos em uma brincadeira ou um truque de mágica. Nos textos de Matemática, acredito que as demonstrações sejam aquilo que mais assusta. Mas não se preocupe. Diante de uma demonstração de um teorema, em uma eventual barreira de entendimento, não é absurdo pulá-la e deixar para entendê-la depois, tendo pelo menos compreendido o enunciado do teorema.
+        </p>
+        
+        <p>
+            Por fim, como cada vez mais ferramentas computacionais estão presentes no nosso cotidiano, vou utilizar para nos auxiliar e também nos familiarizar, os software <a href="https://www.sagemath.org/">SageMath</a>, para fazer contas algébricas, e <a href="https://www.geogebra.org/">Geogebra</a>, para visualizações geométricas. Incentivo você a procurar na internet conteúdos a respeito desses programas. 
+        </p>
+        
+        <p>
+            Portanto, dito tudo isso: bem-vindos à selva!
+        </p>
+        
+        <div>
+            <a href="../principal_ALGA.html">
+                <button class="button button1">Álgebra linear e geometria analítica</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="../algLinear/principal_algLinear.html">
+                <button class="button button1">Parte 1 - Álgebra linear</button>
+            </a>
+        </div>
+    </body>  
+</html>
+
