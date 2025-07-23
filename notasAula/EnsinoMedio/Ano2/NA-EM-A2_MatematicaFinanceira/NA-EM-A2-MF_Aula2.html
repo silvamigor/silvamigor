@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Segundo ano</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor"  href="../NA-EM-A2_index.html">Segundo ano</a></h1></div>
+        
+        <a class="hifscor"  href="NA-EM-A2_MatematicaFinanceira.html"><h2>Matemática financeira</h2></a>
+        
+        <h3>Aula 2 - Regimes de capitalização &#8212; juros simples e juros compostos</h3>
+        
+        <p>
+            <strong>Capitalização</strong> é o processo de adição dos juros ao capital inicial. Esse processo pode ocorrer de forma <em>contínua</em> ou <em>discreta</em>. Na capitalização contínua, os juros são incorporados ao capital a todo instante. Esse tipo de capitalização é utilizado, por exemplo, nos mercados de derivativos. Já na capitalização discreta, os juros são acrescidos ao final de intervalos de tempo específicos, como ano, mês ou dia. Em nossas aulas, trabalharemos apenas com a capitalização discreta.
+        </p>
+
+        <p>
+            A maneira como os juros são acrescentados ao capital é chamada de <strong>regime de capitalização</strong>. Existem dois regimes principais: <em>juros simples</em> e <em>juros compostos</em>. No regime de juros simples, os juros são constantes por período e são calculados proporcionalmente ao capital inicial, isto é, para todo \( n \):
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    J_{n} = S_{0} \cdot i.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            No regime de juros compostos, os juros são calculados sobre o montante acumulado em cada período, ou seja, para todo \( n \):
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    J_{n} = S_{n-1} \cdot i.
+                \]
+            </span>
+        </div>
+  
+
+        <h4>&bull; Juros simples</h4>
+
+        <p>
+            Considere um intervalo de tempo qualquer (ano, mês ou dia, por exemplo). Seja \( i \) a taxa de juros relativa a esse intervalo. Seja \( S_{0} \) o capital inicial e \( S_n \) o valor futuro após \( n \) intervalos de tempo. Vimos, na <a href="NA-EM-A2-MF_Aula1.html#eq_juros1">Equação (1)</a>, que \( J_n = S_n - S_{n-1} \).
+        </p>
+
+        <p>
+            Como, no regime de juros simples, os juros em cada período são calculados sempre sobre o capital inicial \( S_0 \), temos que \( J_n = S_0 \cdot i \). Então, tomando \( n = 1 \), temos:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_0 \cdot i = J_1 = S_1 - S_0 \qquad \Rightarrow \qquad S_1 = S_0(1+i).
+                \]
+            </span>
+        </div>
+        
+        <p>Tomando \( n = 2 \):</p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_0 \cdot i = J_2 = S_2 - S_1 \qquad \Rightarrow \qquad S_2 = S_1 + S_0 \cdot i.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Usando que \( S_1 = S_0(1+i) \), concluímos que:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_2 = S_0(1 + 2i).
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Seguindo esse raciocínio, concluímos que, para o regime de juros simples, vale a seguinte equação:</p>
+        
+        <div class="equationWrapper" id="eq-jurosSimples">
+            <span class="math">
+                \begin{equation} \label{eq_jurosSimples}
+                    \boxed{S_n = S_0(1 + n \cdot i)} 
+                \end{equation}
+            </span>
+        </div>
+
+        <p class="exemplo simples">
+            Considere que uma pessoa invista R$ 100,00 por um prazo de 4 anos a uma taxa de juros simples de 10% a.a. Então, ao final desse período, essa pessoa obterá:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_{4} = 100(1 + 4 \cdot 0{,}1) = R\$\,140{,}00. \tag*{\(\Box\)}
+                \]
+            </span>
+        </div>
+
+        <h4>&bull; Juros compostos</h4>
+
+        <p>
+            Para obtermos uma fórmula para o valor futuro considerando \( n \) intervalos de tempo fixado, basta seguir o raciocínio anterior, observando que, no regime de juros compostos, temos \( J_n = S_{n-1} \cdot i \).
+        </p>
+
+        <p>
+            Nesse caso, para \( n = 1 \), temos:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_0 \cdot i = J_1 = S_1 - S_0 \qquad \Rightarrow \qquad S_1 = S_0(1+i).
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Para \( n = 2 \):
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_1 \cdot i = J_2 = S_2 - S_1 \qquad \Rightarrow \qquad S_2 = S_1(1 + i).
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Como \( S_1 = S_0(1+i) \), então:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    S_2 = S_0(1 + i)^2.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Seguindo esse raciocínio, concluímos que, para o regime de juros compostos, vale a seguinte equação:
+        </p>
+        
+        <div class="equationWrapper" id="eq-jurosCompostos">
+            <span class="math"> 
+                \begin{equation} \label{eq_jurosCompostos}
+                    \boxed{S_n = S_0(1 + i)^n}
+                \end{equation}
+            </span>
+        </div>
+
+        <p class="exemplo simples">
+            Assim como no exemplo anterior, suponha que uma pessoa invista R$ 100,00 por um prazo de 4 anos a uma taxa de juros compostos de 10% a.a. Então, ao final desse período, essa pessoa obterá:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S_{4} = 100(1 + 0{,}1)^{4} = R\$\,146,41. \tag*{\(\Box\)}
+                \]
+            </span>
+        </div>
+        
+        <div><a href="NA-EM-A2-MF_Aula1.html">
+            <button class="button button1">Matemática financeira - Aula 1</button>
+        </a></div>
+        
+        <div><a href="NA-EM-A2-MF_Aula3.html">
+            <button class="button button1">Matemática financeira - Aula 3</button>
+        </a></div>
+    </body>
+</html>

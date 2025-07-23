@@ -2,6 +2,7 @@
 (function () {
   window.MathJax = {
     tex: {
+      tags: 'ams',
       packages: {
         '[+]': ['base', 'ams', 'cancel']
       },

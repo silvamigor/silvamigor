@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Segundo ano</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor"  href="../NA-EM-A2_index.html">Segundo ano</a></h1></div>
+        
+        <a class="hifscor"  href="NA-EM-A2_MatematicaFinanceira.html"><h2>Matemática financeira</h2></a>
+        
+        <h3>Aula 1 - Valor do dinheiro no tempo (VDT)</h3>
+        
+        <p>
+            O dinheiro é uma construção social usada, essencialmente, como meio de troca. Sua origem remonta ao escambo, que consistia na troca direta de mercadorias. Com o tempo, alguns objetos como sal, conchas ou metais preciosos passaram a ser utilizados para facilitar essas trocas.
+        </p>
+
+        <p>
+            Mais tarde, os ourives começaram a guardar ouro e a emitir recibos de depósito. Esses recibos passaram a circular como meio de pagamento, devido à confiança de que representavam um valor armazenado. Com o tempo, esses papéis se tornaram o próprio dinheiro, aceito por todos como forma de pagamento.
+        </p>
+
+        <p>
+            Acontece que os objetos a serem trocados pelo dinheiro possuem valores que mudam com o tempo. Um bem que antes tinha pouco valor pode se tornar muito valioso no futuro — e o contrário também pode acontecer. Além disso, eventos climáticos (como secas ou tempestades) e situações políticas (como guerras ou crises) influenciam diretamente os preços dos bens e serviços.
+        </p>
+
+        <p>
+            Tudo isso afeta o poder de compra do dinheiro, ou seja, a quantidade de coisas que ele consegue adquirir. Por essa razão, dizemos que o dinheiro tem um valor que depende do tempo. Essa propriedade é conhecida como o <strong>valor do dinheiro no tempo</strong>.
+        </p>
+        
+        <p>
+            Duas importantes consequências dessa propriedade são as seguintes:
+        </p>
+
+        <ul>
+            <li><strong>Consequência 1:</strong> <i>Só podemos comparar valores monetários em uma mesma data.</i></li>
+            <li><strong>Consequência 2:</strong> <i>Só se usam operações aritméticas (somar, subtrair, multiplicar ou dividir) com valores monetários quando se considera uma mesma data.</i></li>
+        </ul>
+
+        <p>
+            O valor de uma quantia de dinheiro no tempo presente é chamado de <strong>valor presente</strong> (também conhecido como <i>capital</i> ou <i>capital inicial</i>) e é denotado por \( C \) ou por \( S_0 \). Também se utiliza a notação \( \text{PV} \) (do inglês <i>present value</i>).
+        </p>
+
+        <p>
+            Já o valor dessa mesma quantia em um momento futuro é chamado de <strong>valor futuro</strong> (ou <i>capital final</i>, também denominado <i>montante</i>) e é representado por \( M \) ou \( \text{FV} \) (de <i>future value</i>).
+        </p>
+
+        <p>
+            Fixando um intervalo de tempo (dia, mês, ano etc.) e considerando \( n \) desses intervalos, usamos a notação \( S_n \) para indicar o valor futuro após \( n \) períodos.
+        </p>
+
+        <p>
+            Chamamos de <strong>juros</strong>, entre os tempos \( n - 1 \) e \( n \), e denotamos por \( J_n \), a diferença entre os valores futuros nesses dois instantes:
+        </p>
+
+        <div class="equationWrapper" id="eq_juros1">
+            <span class="math">
+            \begin{equation} \label{eq_juros1}
+                J_n = S_n - S_{n-1}.
+            \end{equation}
+            </span>
+        </div>
+
+        <p>
+            Ainda considerando um intervalo de tempo fixado, definimos a <strong>taxa de juros</strong> relativa a esse intervalo, representada pela letra \( i \), como sendo a razão entre os juros do primeiro período e o capital inicial:
+        </p>
+
+        <div class="equationWrapper" id="eq_juros12>
+            <span class="math">
+                \begin{equation} \label{eq_juros2}
+                    i = \dfrac{J_1}{S_0} = \dfrac{S_1}{S_0} - 1.
+                \end{equation}
+            </span>
+        </div>
+        
+        <p class="exemplo simples">
+            Suponha que você tem que receber R$ 1.000,00 e lhe oferecem duas opções:
+        </p>
+        
+        <ol class="alfa">
+            <li>receber todo o valor hoje;</li>
+            <li>receber esse valor daqui 30 dias.</li>
+        </ol>
+        
+        <p>
+            Se você recebe o valor hoje, poderá aplicar na poupança a uma taxa de juros de 0,5% ao mês (hipótese bem conservadora). Nesse caso, em um mês você terá
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                   S_{1} = 1000(1+0,005) = 1005 \text{ reais}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Isso nos diz que se optar pela segunda opção, você terá perdido 5 reais. <i>Mas e se você apenas guardar o dinheiro, sem aplicar? Ou se gastar?</i> Mesmo assim, o raciocínio se mantém: a matemática financeira não diz o que você deve fazer com o dinheiro, mas mostra que, se ele puder render juros, seu valor cresce com o tempo. Ao não investir, você perde a chance de crescimento -- esse é o chamado <i>custo de oportunidade</i>.
+        <span class="fim"></span></p>
+        
+        <p class="exemplo simples">
+            Suponha que você aplicou R$ 5.000,00 em uma ação e, um ano depois, essa ação passou a valer R$ 3.500,00. Então, a taxa de juros ao ano foi:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    i = \dfrac{S_{1}}{S_{0}} - 1 = \dfrac{3500}{5000} - 1 = -\dfrac{3}{10},
+                \]
+            </span>
+        </div>
+        
+        <p>
+            ou seja, \(i = -0,3\ \text{a.a.}\) (onde "a.a." significa "ao ano"). Note que a taxa de juros foi negativa, o que significa que houve uma desvalorização de 30% no valor da ação ao longo do ano.
+        <span class="fim"></span></p>
+        
+        <div><a href="NA-EM-A2_MatematicaFinanceira.html">
+            <button class="button button1">Matemática financeira</button>
+        </a></div>
+        
+        <div><a href="NA-EM-A2-MF_Aula2.html">
+            <button class="button button1">Matemática financeira - Aula 2</button>
+        </a></div>
+    </body>
+</html>

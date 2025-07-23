@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Segundo ano</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor"  href="../NA-EM-A2_index.html">Segundo ano</a></h1></div>
+        
+        <a class="hifscor"  href="NA-EM-A2_MatematicaFinanceira.html"><h2>Matemática financeira</h2></a>
+        
+        <h3>Aula 3 - Fluxo de caixa</h3>
+        
+        <p>
+            <strong>Fluxo de caixa</strong> é um diagrama que representa o valor do dinheiro ao longo do tempo. Nele, traça-se uma linha horizontal que indica o eixo do tempo, sobre a qual se colocam setas apontando para cima ou para baixo, representando os valores em cada período. As setas para cima indicam entradas (recebimentos), enquanto as setas para baixo indicam saídas (pagamentos).
+        </p>
+
+       <img src="fluxo1.svg" alt="Fluxo de caixa" width="600" height="200">
+        
+        <p>
+            O fluxo de caixa nos permite visualizar o comportamento do dinheiro ao longo do tempo. Com essa representação, torna-se mais fácil trazer todos os valores para um mesmo instante, facilitando a comparação e a realização de operações aritméticas.
+        </p>
+
+        <p class="exemplo simples">
+            Um produto custa R$ 500,00, com 20% de desconto para pagamento à vista. O pagamento também pode ser feito em duas parcelas de R$ 216,00, sendo a primeira parcela paga um mês após a compra e a segunda parcela, no mês seguinte. Considerando juros compostos, qual é a taxa de juros mensal embutida nessa operação? Para resolver essa questão, considere o fluxo de caixa abaixo, onde é indicado o valor do dinheiro no tempo.
+        </p>
+
+        <img src="fluxo2.svg" alt="Fluxo de caixa" width="600" height="200">
+
+        <p>
+            Observe que os valores estão em tempos diferentes. Para podermos operar com eles, vamos levar os valores nos tempos 1 e 2 para o tempo 0. Uma vez que o regime de capitalização é juros compostos, considerando a taxa de juros igual a \(i\), temos que:
+        </p>
+
+        <ul>
+            <li>o valor de 216 no tempo igual a 1, corresponde a \(216 = S_{01}(1+i)\). Ou seja, levando 216 para o tempo 0, obtemos \(S_{01} = \frac{216}{1+i}\).</li>
+            <li>o valor de 216 no tempo igual a 2, corresponde a \(216 = S_{02}(1+i)^{2}\). Ou seja, levando 216 para o tempo 0, obtemos \(S_{02} = \frac{216}{(1+i)^{2}}\).</li>
+        </ul>
+
+        <p>
+            Agora, podemos dizer que:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    400 = S_{01} + S_{02} = \dfrac{216}{1+i} + \dfrac{216}{(1+i)^{2}} = \dfrac{216i + 432}{(1+i)^{2}} \; \Rightarrow \; 50(1+i)^2 -27(1+i) -27 = 0.
+                \]
+            </span>
+        </div>
+            
+        <p>
+            Resolvendo essa equação e tomando o valor positivo, obtemos que \(1 + i = 1{,}0527\), ou seja, \(i = 5{,}27\%\).
+        <span class="fim"></span></p>
+
+        <p class="exemplo simples">
+            Um investidor receberá R$ 500,00 daqui a 1 mês, R$ 700,00 daqui a 2 meses e R$ 800,00 daqui a 3 meses. Considerando uma taxa de juros compostos de 2% ao mês, qual é o valor presente desses recebimentos? Considerando tais valores em um fluxo de caixa, temos que:
+        </p>
+
+        <img src="fluxo3.svg" alt="Fluxo de caixa" width="600" height="200">
+
+        <p>
+            Nesse caso, o valor presente desses recebimentos a uma taxa de 2% ao mês é:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \dfrac{500}{1{,}02} + \dfrac{700}{1{,}02^{2}} + \dfrac{800}{1{,}02^{3}} = 1.441{,}94 \text{ reais}. \tag*{\(\Box\)}
+                \]
+            </span>
+        </div>
+        
+        <div><a href="NA-EM-A2-MF_Aula2.html">
+            <button class="button button1">Matemática financeira - Aula 2</button>
+        </a></div>
+        
+        <div><a href="NA-EM-A2-MF_Aula4.html">
+            <button class="button button1">Matemática financeira - Aula 4</button>
+        </a></div>
+    </body>
+</html>

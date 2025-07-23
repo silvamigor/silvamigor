@@ -3,6 +3,12 @@
   font-weight: bold;
   content: "Teorema " counter(contCap)"."counter(contSec)"."counter(contTeor) ". ";
 }
+
+.teor.simples:before{
+  counter-increment: contTeor;
+  font-weight: bold;
+  content: "Teorema " counter(contTeor) ". ";
+}
     
 .teor[text]:before {
   counter-increment: contTeor;
@@ -13,6 +19,12 @@
   counter-increment: contProp;
   font-weight: bold;
   content: "Proposição " counter(contCap)"."counter(contSec)"."counter(contProp) ". ";
+}
+
+.prop.simples:before{
+  counter-increment: contProp;
+  font-weight: bold;
+  content: "Proposição " counter(contProp) ". ";
 }
       
 .prop[text]:before {
@@ -25,6 +37,12 @@
   font-weight: bold;
   content: "Lema " counter(contCap)"."counter(contSec)"."counter(contLema) ". ";
 }
+
+.lema.simples:before{
+  counter-increment: contLema;
+  font-weight: bold;
+  content: "Lema " counter(contLema) ". ";
+}
       
 .lema[text]:before {
   counter-increment: contLema;
@@ -36,11 +54,23 @@
   font-weight: bold;
   content: "Observação " counter(contCap)"."counter(contSec)"."counter(contObs) ". ";
 }
+
+.obs.simples:before{
+  counter-increment: contObs;
+  font-weight: bold;
+  content: "Observação " counter(contObs) ". ";
+}
       
 .def:before{
   counter-increment: contDef;
   font-weight: bold;
   content: "Definição " counter(contCap)"."counter(contSec)"."counter(contDef) ". ";
+}
+
+.def.simples:before{
+  counter-increment: contDef;
+  font-weight: bold;
+  content: "Definição " counter(contDef) ". ";
 }
 
 .fim::after {
@@ -52,4 +82,10 @@
   counter-increment: contExemplo;
   font-weight: bold;
   content: "Exemplo "counter(contCap)"." counter(contSec)"."counter(contExemplo) ". ";
+}
+
+.exemplo.simples:before {
+  counter-increment: contExemplo;
+  font-weight: bold;
+  content: "Exemplo " counter(contExemplo) ". ";
 }
