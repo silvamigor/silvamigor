@@ -36,6 +36,64 @@
         
         <h3>Aula 4 - Períodos fracionários</h3>
         
+        <p>
+            Conforme comentamos na <a href="NA-EM-A2-MF_Aula2.html">Aula 2</a>, o tipo de capitalização que estamos estudando é o discreto. Isso significa que os juros são formados ao final de determinados períodos. Acontece que, em algumas situações uma operação financeira termina antes de completar um período inteiro, como, por exemplo, quando uma pessoa pega um valor emprestado a uma taxa anual, mas resolve quitar a dívida no 11.° mês, antes de completar 1 ano. Pelo que dissemos até agora, não haveria formação de juros, pois não se completaram 1 período inteiro. Isso implicaria que o investidor não receberia os juros dos 11 meses. Para evitar essa situação adotou-se duas convenções para resolver esse problema: convenção linear e convenção exponencial. 
+        </p>
+        
+        <h4>&bull; Convenção linear</h4>
+        
+        <p>
+            Seja \(n\) um número inteiro de períodos de capitalização (por exemplo, 2 anos ou 5 meses) e seja \(m = n + \frac{p}{q}\), com \(p < q\) (por exemplo, 2 \(+ \frac{3}{4}\) anos ou 5 \(+ \frac{7}{8}\) meses). Na convenção linear, para calcularmos \(S_{m}\), nós definimos uma função afim que no tempo \(n\) vale \(S_{n}\) e no tempo \(n+1\) vale \(S_{n+1}\). Isso nos define a função
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(x) = (S_{n+1} - S_{n})(x - n) + S_{n} = J_{n+1}(x - n)+ S_{n}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Assim, avaliando essa função em \(x = m\), obtemos
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S_{m} = S_{n} + J_{n+1}\dfrac{p}{q}.
+                \]
+            </span>
+        </div>
+        
+        <h5>Juros simples</h5>
+        
+        <p>
+            Nos juros simples, temos que \(J_{n+1} = S_{0}\cdot i\) e \(S_{n} = S_{0}(1+ni)\). Logo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S_{m} = S_{0}(1+ni) + S_{0}\cdot i \cdot \dfrac{p}{q} = S_{0}(1+mi).
+                \]
+            </span>
+        </div>
+        
+        <h5>Juros compostos</h5>
+        
+        <p>
+            Nos juros compostos, temos que \(J_{n+1} = S_{n}\cdot i\) e \(S_{n} = S_{0}(1+i)^{n}\). Logo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S_{m} = S_{0}(1+i)^{n} + S_{0}(1+i)^{n}\cdot i \cdot \dfrac{p}{q} = S_{0}(1+i)^{n}\left(1 + \dfrac{p}{q}\cdot i\right).
+                \]
+            </span>
+        </div>
+        
         <div><a href="NA-EM-A2-MF_Aula3.html">
             <button class="button button1">Matemática financeira - Aula 3</button>
         </a></div>
