@@ -66,6 +66,10 @@
             </span>
         </div>
         
+        <p>
+            Vamos analisar analisar para juros simples e compostos.
+        </p>
+        
         <h5>Juros simples</h5>
         
         <p>
@@ -78,6 +82,18 @@
                     S_{m} = S_{0}(1+ni) + S_{0}\cdot i \cdot \dfrac{p}{q} = S_{0}(1+mi).
                 \]
             </span>
+        </div>
+        
+        <p class="exemplo simples" id="ex_CL1">
+            Uma aplicação de 1000 reais foi feita no regime de juros simples a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção linear, qual o montante ao final desse período? Nesse caso, completou-se 1 ano mais \(\frac{6}{12}\) de ano, ou seja, um período de \(1 + \frac{6}{12} = \) \(\frac{18}{12}\). Portanto, o capital final foi de
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S = 1000\left(1+\dfrac{18}{12}0,12\right) = 1180 \text{ reais}.
+                \]
+            </span><span class="fim"></span>
         </div>
         
         <h5>Juros compostos</h5>
@@ -93,6 +109,54 @@
                 \]
             </span>
         </div>
+        
+        <p class="exemplo simples" id="ex_CL2">
+            Uma aplicação de 1000 reais foi feita no regime de juros compostos a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção linear, qual o montante ao final desse período? Semelhante ao exemplo anterior, o tempo a considerar é \(1 + \frac{6}{12}\) ano. Portanto, o capital final foi de
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S = 1000(1+0,12)\left(1 + \dfrac{6}{12}\cdot 0,12\right) = 1187,20 \text{ reais}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <h4>&bull; Convenção exponencial</h4>
+        
+        <p>
+            A convenção exponencial é usada apenas nos juros compostos. Nela, simplesmente consideramos o período fracionário na própria fórmula considerando uma continuidade no tempo. Assim, se \(n\) é um número inteiro de períodos de capitalização \(m = n + \frac{p}{q}\), com \(p < q\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S_{n} = S_{0}(1 + i)^{m} = S_{0}(1 + i)^{n + \frac{p}{q}}.
+                \]
+            </span>
+        </div>
+        
+        <p class="exemplo simples" id="ex_CE">
+            Uma aplicação de 1000 reais foi feita no regime de juros compostos a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção exponencial, qual o montante ao final desse período? Semelhante aos exemplos anteriores, o tempo a considerar é \(\frac{18}{12}\) ano. Portanto, o capital final foi de
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    S = 1000(1+0,12)^{\frac{18}{12}} = 1185,30 \text{ reais}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p>
+        Note que, no <a href="ex_CL2">Exemplo 2</a>, que usamos a convenção linear nos juros compostos, obtivemos um valor maior do que no <a href="ex_CE">Exemplo 3</a>, quando usamos a convenção exponencial. Vamos entender o porquê disso. Considere \(m = n + \frac{p}{q}\), onde \(p < q\). Veja que, na convenção linear, para calcularmos o capital \(S_{m}\), multiplicamos \(S_{n} = S_{0}(1+i)^{n}\) por \(1 + \frac{p}{q}i\). Já na convenção exponencial, para calcularmos o capital \(S_{m}\), multiplicamos \(S_{n} = S_{0}(1+i)^{n}\) por \((1+i)^{\frac{p}{q}}\). Assim, basta compararmos as funções \(f(t) = 1 + ti\) com \(g(t) = (1 + i)^{t}\), pois no caso da convenção linear, temos que \(S_{m} = S_{n}f(\frac{p}{q})\) e, no caso da convenção exponencial, temos que \(S_{m} = S_{n}g(\frac{p}{q})\). Uma vez que \(p < q\), então \(\frac{p}{q} < 1\). Isso implica que \(g(\frac{p}{q}) < f(\frac{p}{q})\), conforme se vê na figura abaixo.
+        </p>
+        
+        <img src="linearExponencial.svg" alt="Linear versus exponencial" width="600" height="200">
+        
+        <p>
+            Portanto, a convenção linear no regime de juros compostos resulta sempre em um juros maior.
+        </p>
         
         <div><a href="NA-EM-A2-MF_Aula3.html">
             <button class="button button1">Matemática financeira - Aula 3</button>
