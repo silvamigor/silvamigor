@@ -37,15 +37,15 @@
         <h3>Aula 4 - Períodos fracionários</h3>
         
         <p>
-            Conforme comentamos na <a href="NA-EM-A2-MF_Aula2.html">Aula 2</a>, o tipo de capitalização que estamos estudando é o discreto. Isso significa que os juros são formados ao final de determinados períodos. Acontece que, em algumas situações uma operação financeira termina antes de completar um período inteiro, como, por exemplo, quando uma pessoa pega um valor emprestado a uma taxa anual, mas resolve quitar a dívida no 11.° mês, antes de completar 1 ano. Pelo que dissemos até agora, não haveria formação de juros, pois não se completaram 1 período inteiro. Isso implicaria que o investidor não receberia os juros dos 11 meses. Para evitar essa situação adotou-se duas convenções para resolver esse problema: convenção linear e convenção exponencial. 
+            Conforme comentamos na <a href="NA-EM-A2-MF_Aula2.html">Aula 2</a>, o tipo de capitalização que estamos estudando é o discreto. Isso significa que os juros são formados ao final de determinados períodos. Acontece que, em algumas situações, uma operação financeira termina antes de completar um período inteiro, como, por exemplo, quando uma pessoa pega um valor emprestado a uma taxa anual, mas resolve quitar a dívida no 11.º mês, antes de completar 1 ano. Pelo que dissemos até agora, não haveria formação de juros, pois não se completaram 1 período inteiro. Isso implicaria que o investidor não receberia os juros dos 11 meses. Para evitar essa situação, adotaram-se duas convenções para resolver esse problema: <i>convenção linear</i> e <i>convenção exponencial</i>. 
         </p>
-        
+
         <h4>&bull; Convenção linear</h4>
-        
+
         <p>
-            Seja \(n\) um número inteiro de períodos de capitalização (por exemplo, 2 anos ou 5 meses) e seja \(m = n + \frac{p}{q}\), com \(p < q\) (por exemplo, 2 \(+ \frac{3}{4}\) anos ou 5 \(+ \frac{7}{8}\) meses). Na convenção linear, para calcularmos \(S_{m}\), nós definimos uma função afim que no tempo \(n\) vale \(S_{n}\) e no tempo \(n+1\) vale \(S_{n+1}\). Isso nos define a função
+            Seja \(n\) um número inteiro de períodos de capitalização (por exemplo, 2 anos ou 5 meses) e seja \(m = n + \frac{p}{q}\), com \(p < q\) (por exemplo, 2 \(+ \frac{3}{4}\) anos ou 5 \(+ \frac{7}{8}\) meses). Na convenção linear, para calcularmos \(S_{m}\), nós definimos uma função afim que no tempo \(n\) vale \(S_{n}\) e no tempo \(n+1\) vale \(S_{n+1}\). Isso nos define a função:
         </p>
-        
+
         <div class="equationWrapper">
             <span class="math"> 
                 \[
@@ -53,11 +53,11 @@
                 \]
             </span>
         </div>
-        
+
         <p>
-            Assim, avaliando essa função em \(x = m\), obtemos
+            Assim, avaliando essa função em \(x = m\), obtemos:
         </p>
-        
+
         <div class="equationWrapper">
             <span class="math"> 
                 \[
@@ -65,97 +65,113 @@
                 \]
             </span>
         </div>
-        
+
         <p>
-            Vamos analisar analisar para juros simples e compostos.
+            Vamos analisar os efeitos dessa convenção nos juros simples e compostos.
         </p>
-        
+
         <h5>Juros simples</h5>
-        
+
         <p>
             Nos juros simples, temos que \(J_{n+1} = S_{0}\cdot i\) e \(S_{n} = S_{0}(1+ni)\). Logo,
         </p>
-        
-        <div class="equationWrapper">
+
+        <div class="equationWrapper" id="eq_CLJS">
             <span class="math"> 
-                \[
-                    S_{m} = S_{0}(1+ni) + S_{0}\cdot i \cdot \dfrac{p}{q} = S_{0}(1+mi).
-                \]
+                \begin{equation} \label{eq_CLJS}
+                    S_{m} = S_{0}(1+ni) + S_{0}\cdot i \cdot \dfrac{p}{q} \; \Rightarrow \; \boxed{S_{m} = S_{0}(1+mi)}.
+                \end{equation}
             </span>
         </div>
-        
+
         <p class="exemplo simples" id="ex_CL1">
-            Uma aplicação de 1000 reais foi feita no regime de juros simples a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção linear, qual o montante ao final desse período? Nesse caso, completou-se 1 ano mais \(\frac{6}{12}\) de ano, ou seja, um período de \(1 + \frac{6}{12} = \) \(\frac{18}{12}\). Portanto, o capital final foi de
+            Uma aplicação de 1000 reais foi feita no regime de juros simples a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção linear, qual o montante ao final desse período? Nesse caso, completou-se 1 ano mais \(\frac{6}{12}\) de ano, ou seja, um período de \(1 + \frac{6}{12} = \frac{18}{12} = 1{,}5\) ano. Portanto, o capital final foi de:
         </p>
-        
+
         <div class="equationWrapper">
             <span class="math"> 
                 \[
-                    S = 1000\left(1+\dfrac{18}{12}0,12\right) = 1180 \text{ reais}.
+                    S = 1000\left(1+\dfrac{18}{12} \cdot 0{,}12\right) = 1180 \text{ reais}.
                 \]
             </span><span class="fim"></span>
         </div>
-        
+
         <h5>Juros compostos</h5>
-        
+
         <p>
             Nos juros compostos, temos que \(J_{n+1} = S_{n}\cdot i\) e \(S_{n} = S_{0}(1+i)^{n}\). Logo,
         </p>
-        
-        <div class="equationWrapper">
+
+        <div class="equationWrapper" id="eq_CLJC">
             <span class="math"> 
-                \[
-                    S_{m} = S_{0}(1+i)^{n} + S_{0}(1+i)^{n}\cdot i \cdot \dfrac{p}{q} = S_{0}(1+i)^{n}\left(1 + \dfrac{p}{q}\cdot i\right).
-                \]
+                \begin{equation} \label{eq_CLJC}
+                    S_{m} = S_{0}(1+i)^{n} + S_{0}(1+i)^{n}\cdot i \cdot \dfrac{p}{q} \; \Rightarrow \; \boxed{S_{m} = S_{0}(1+i)^{n}\left(1 + \dfrac{p}{q}\cdot i\right)}.
+                \end{equation}
             </span>
         </div>
-        
+
         <p class="exemplo simples" id="ex_CL2">
-            Uma aplicação de 1000 reais foi feita no regime de juros compostos a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção linear, qual o montante ao final desse período? Semelhante ao exemplo anterior, o tempo a considerar é \(1 + \frac{6}{12}\) ano. Portanto, o capital final foi de
+            Considere o <a href="#ex_CL1">Exemplo 1</a>, mas sob o regime de juros compostos. Como o tempo a considerar \(1 + \frac{6}{12} = 1{,}5\) ano, então, considerando a <a href="#eq_CLJC">Equação 2</a>, o capital final foi de:
         </p>
-        
+
         <div class="equationWrapper">
             <span class="math"> 
                 \[
-                    S = 1000(1+0,12)\left(1 + \dfrac{6}{12}\cdot 0,12\right) = 1187,20 \text{ reais}.
+                    S = 1000(1+0{,}12)\left(1 + \dfrac{6}{12}\cdot 0{,}12\right) = 1187{,}20 \text{ reais}.
                 \]
             </span><span class="fim"></span>
         </div>
-        
+
         <h4>&bull; Convenção exponencial</h4>
-        
+
         <p>
-            A convenção exponencial é usada apenas nos juros compostos. Nela, simplesmente consideramos o período fracionário na própria fórmula considerando uma continuidade no tempo. Assim, se \(n\) é um número inteiro de períodos de capitalização \(m = n + \frac{p}{q}\), com \(p < q\), temos que
+            A convenção exponencial é usada apenas nos juros compostos. Nela, simplesmente consideramos o período fracionário na própria fórmula, assumindo uma continuidade no tempo. Assim, se \(n\) é um número inteiro de períodos de capitalização e \(m = n + \frac{p}{q}\), com \(p < q\), temos que:
         </p>
-        
-        <div class="equationWrapper">
+
+        <div class="equationWrapper" id="eq_CEJC">
             <span class="math"> 
-                \[
-                    S_{n} = S_{0}(1 + i)^{m} = S_{0}(1 + i)^{n + \frac{p}{q}}.
-                \]
+                \begin{equation} \label{eq_CEJC}
+                    S_{m} = S_{0}(1 + i)^{m} \; \Rightarrow \; \boxed{S_{m} = S_{0}(1 + i)^{n + \frac{p}{q}}}.
+                \end{equation}
             </span>
         </div>
         
-        <p class="exemplo simples" id="ex_CE">
-            Uma aplicação de 1000 reais foi feita no regime de juros compostos a uma taxa de juros de 12% a.a. Contudo, a aplicação foi retirada depois de 1 ano e 6 meses. Considerando a convenção exponencial, qual o montante ao final desse período? Semelhante aos exemplos anteriores, o tempo a considerar é \(\frac{18}{12}\) ano. Portanto, o capital final foi de
+        <p>
+            A convenção exponencial preserva a coerência da fórmula dos juros compostos para qualquer valor de tempo, inclusive fracionário, mantendo a equivalência entre taxas. Esse conceito será desenvolvido com mais detalhes na <a href="NA-EM-A2-MF_Aula5.html">Aula 5</a>.
         </p>
-        
+
+
+        <p class="exemplo simples" id="ex_CE">
+            Considere o <a href="#ex_CL2">Exemplo 2</a>, mas com a convenção exponencial. Então, pela <a href="#eq_CEJC">Equação 3</a>, temos que
+        </p>
+
         <div class="equationWrapper">
             <span class="math"> 
                 \[
-                    S = 1000(1+0,12)^{\frac{18}{12}} = 1185,30 \text{ reais}.
+                    S = 1000(1+0{,}12)^{1{,}5} = 1185{,}30 \text{ reais}.
                 \]
             </span><span class="fim"></span>
         </div>
-        
+
         <p>
-        Note que, no <a href="ex_CL2">Exemplo 2</a>, que usamos a convenção linear nos juros compostos, obtivemos um valor maior do que no <a href="ex_CE">Exemplo 3</a>, quando usamos a convenção exponencial. Vamos entender o porquê disso. Considere \(m = n + \frac{p}{q}\), onde \(p < q\). Veja que, na convenção linear, para calcularmos o capital \(S_{m}\), multiplicamos \(S_{n} = S_{0}(1+i)^{n}\) por \(1 + \frac{p}{q}i\). Já na convenção exponencial, para calcularmos o capital \(S_{m}\), multiplicamos \(S_{n} = S_{0}(1+i)^{n}\) por \((1+i)^{\frac{p}{q}}\). Assim, basta compararmos as funções \(f(t) = 1 + ti\) com \(g(t) = (1 + i)^{t}\), pois no caso da convenção linear, temos que \(S_{m} = S_{n}f(\frac{p}{q})\) e, no caso da convenção exponencial, temos que \(S_{m} = S_{n}g(\frac{p}{q})\). Uma vez que \(p < q\), então \(\frac{p}{q} < 1\). Isso implica que \(g(\frac{p}{q}) < f(\frac{p}{q})\), conforme se vê na figura abaixo.
+            Note que, no <a href="#ex_CL2">Exemplo 2</a>, em que usamos a convenção linear nos juros compostos, obtivemos um valor maior do que no <a href="#ex_CE">Exemplo 3</a>, em que usamos a convenção exponencial. Vamos entender o porquê disso. Considere \(m = n + \frac{p}{q}\), onde \(p < q\). Veja que, na convenção linear, para calcularmos o capital \(S_{m}\), multiplicamos \(S_{n} = S_{0}(1+i)^{n}\) por \(1 + \frac{p}{q}i\) (veja a <a href="#eq_CLJC">Equação 2</a>). Já na convenção exponencial, multiplicamos \(S_{n}\) por \((1+i)^{\frac{p}{q}}\) (veja a <a href="#eq_CEJC">Equação 3</a>). Assim, basta compararmos as funções \(f(t) = 1 + ti\) com \(g(t) = (1 + i)^{t}\), pois:
         </p>
-        
-        <img src="linearExponencial.svg" alt="Linear versus exponencial" width="600" height="200">
-        
+
+        <ul>
+            <li>na convenção linear: \(S_{m} = S_{n}\cdot f\left(\frac{p}{q}\right)\);</li>
+            <li>na convenção exponencial: \(S_{m} = S_{n}\cdot g\left(\frac{p}{q}\right)\).</li>
+        </ul>
+
         <p>
-            Portanto, a convenção linear no regime de juros compostos resulta sempre em um juros maior.
+            Como \(\frac{p}{q} < 1\), então \(g\left(\frac{p}{q}\right) < f\left(\frac{p}{q}\right)\), conforme se vê na figura abaixo:
+        </p>
+
+        <figure>
+            <img src="linearExponencial.svg" alt="Linear versus exponencial" width="600" height="200">
+        </figure>
+
+        <p>
+            Portanto, a convenção linear no regime de juros compostos resulta sempre em um valor maior de juros, o que pode não representar de forma justa o crescimento real do capital. Por isso, em aplicações mais rigorosas, especialmente financeiras, a convenção exponencial é preferida.
         </p>
         
         <div><a href="NA-EM-A2-MF_Aula3.html">
