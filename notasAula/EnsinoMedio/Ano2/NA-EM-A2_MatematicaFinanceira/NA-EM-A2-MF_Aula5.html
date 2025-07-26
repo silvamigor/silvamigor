@@ -35,6 +35,169 @@
         <a class="hifscor"  href="NA-EM-A2_MatematicaFinanceira.html"><h2>Matemática financeira</h2></a>
         
         <h3>Aula 5 - Taxas de juros equivalentes</h3>
+
+        <p>
+            Considere duas taxas \(i_1\) e \(i_2\), relativas aos períodos \(t_1\) e \(t_2\), respectivamente (por exemplo, \(t_1\) pode ser um ano e \(t_2\), um mês). Dizemos que \(i_1\) e \(i_2\) são taxas <strong>equivalentes</strong> se, para um mesmo prazo de aplicação e um mesmo capital inicial, ambas resultarem no mesmo capital final. Vamos estudar taxas equivalentes para os regimes de juros simples e compostos.
+        </p>
+
+        <h4>Regime de juros simples</h4>
+
+        <p>
+            Suponha que o período de \(i_2\) seja \(k\) vezes maior que o período de \(i_1\), isto é:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    t_2 = k \cdot t_1.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Por exemplo, se \(t_1\) representa um trimestre e \(t_2\) um ano, então \(t_2 = 4 \cdot t_1\), ou seja, 1 ano corresponde a 4 trimestres.
+        </p>
+
+        <p>
+            Seja \(C\) o capital inicial. Para que \(i_1\) e \(i_2\) sejam taxas equivalentes, o montante ao fim do mesmo prazo \(t_2\) deve ser o mesmo. Isso significa que, ao considerarmos a taxa \(i_2\), tomamos um único período de duração \(t_2\) (por exemplo, 1 ano), enquanto que, ao considerarmos a taxa \(i_1\), tomamos \(k\) períodos de duração \(t_1\) (por exemplo, 4 trimestres). No regime de juros simples, isso implica:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    C(1 + k i_1) = C(1 + i_2) \quad \Rightarrow \quad 1 + k i_1 = 1 + i_2,
+                \]
+            </span>
+        </div>
+
+        <p>
+            ou seja:
+        </p>
+
+        <div class="equationWrapper" id="eq_taxaEqSimples">
+            <span class="math">
+                \[
+                    \boxed{i_2 = k \cdot i_1}.
+                \]
+            </span>
+        </div>
+
+        <p class="exemplo simples" id="exem_equJS">
+            Considere as seguintes opções:
+        </p>
+
+        <ol type="1">
+            <li>Banco A: taxa de remuneração de 12% a.a. (ao ano) no regime de juros simples.</li>
+            <li>Banco B: taxa de remuneração de 3% a.t. (ao trimestre) no regime de juros simples.</li>
+        </ol>
+
+        <p>
+            Em qual das opções o dinheiro rende mais?
+        </p>
+
+        <p>
+            Vamos transformar a taxa \(i_2 = 0{,}03\) a.t. em uma taxa anual equivalente, e então compará-la com \(i_1 = 0{,}12\) a.a.
+        </p>
+
+        <p>
+            Seja \(i\) a taxa anual equivalente a \(i_2\). O período de \(i\) é de 1 ano = 12 meses, enquanto o de \(i_2\) é 1 trimestre = 3 meses. Assim, \(1\) ano contém \(k = 4\) trimestres.
+        </p>
+
+        <p>
+            Logo, como \(i\) e \(i_2\) são equivalentes:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    i = 4 \cdot 0{,}03 = 0{,}12 = i_1.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Portanto, o rendimento do dinheiro é o mesmo nas duas opções.
+        <span class="fim"></span></p>
+
+        <h4>Regime de juros compostos</h4>
+
+        <p>
+            Suponha novamente que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    t_2 = k \cdot t_1,
+                \]
+            </span>
+        </div>
+
+        <p>
+            e seja \(C\) o capital inicial. Para que \(i_1\) e \(i_2\) sejam taxas equivalentes, o montante final ao fim do mesmo prazo \(t_2\) deve ser o mesmo. No regime de juros compostos, temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    C(1 + i_1)^{k} = C(1 + i_2).
+                \]
+            </span>
+        </div>
+
+        <p>
+            Cancelando \(C\), obtemos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    (1 + i_1)^{k} = (1 + i_2),
+                \]
+            </span>
+        </div>
+
+        <p>
+            o que implica:
+        </p>
+
+        <div class="equationWrapper" id="eq_taxaEqCompostos">
+            <span class="math">
+                \[
+                    \boxed{i_2 = (1 + i_1)^k - 1}.
+                \]
+            </span>
+        </div>
+
+        <p class="exemplo simples" id="exem_equJC">
+            Determine a taxa trimestral equivalente à taxa de 15% a.s. (ao semestre), no regime de juros compostos.
+        </p>
+
+        <p>
+            Seja \(i_{1} = 0{,}15\) a taxa semestral, e \(i_{2}\) a taxa trimestral equivalente a \(i_{1}\). Sabemos que:
+        </p>
+
+        <ul>
+            <li>\(t_{1} = 6\) meses (semestre),</li>
+            <li>\(t_{2} = 3\) meses (trimestre),</li>
+            <li>Logo, \(k = \frac{t_1}{t_2} = 2\).</li>
+        </ul>
+
+        <p>
+            Usando a fórmula para taxas equivalentes em juros compostos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    i_2 = (1 + i_1)^{\frac{1}{2}} - 1 = (1 + 0{,}15)^{\frac{1}{2}} - 1 = 0{,}0724.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Assim, a taxa de \(7{,}24\%\) a.t. é equivalente à taxa de \(15\%\) a.s.
+        <span class="fim"></span></p>
         
         <div><a href="NA-EM-A2-MF_Aula4.html">
             <button class="button button1">Matemática financeira - Aula 4</button>

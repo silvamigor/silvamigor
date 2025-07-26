@@ -36,6 +36,50 @@
         
         <h3>Aula 6 - Taxas de juros nominais e efetivas</h3>
         
+        <p>
+            É comum encontrar, na prática, anúncios como: “taxa de 12% a.a. com capitalização mensal”. Isso significa que a taxa está expressa em termos anuais, mas os juros são formados e capitalizados ao final de cada mês.
+        </p>
+
+        <p>
+            Embora isso, de certo modo, revele uma certa incoerência conceitual — afinal, uma taxa anual pressupõe capitalização ao fim de cada ano — esse tipo de taxa é chamada de <strong>taxa nominal</strong>: trata-se de uma taxa anunciada com base em um período de referência (por exemplo, o ano), mas cujos juros são efetivamente capitalizados em períodos menores (como o mês).
+        </p>
+
+        <p>
+            Para aplicar corretamente esse tipo de taxa nas fórmulas que desenvolvemos, devemos identificar a <strong>taxa efetiva</strong>, isto é, a taxa correspondente ao período real de capitalização. Por exemplo, uma taxa nominal de 24% ao ano com capitalização mensal corresponde a uma taxa efetiva de:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \frac{24\%}{12} = 2\% \text{ a.m.}
+                \]
+            </span>
+        </div>
+
+        <p class="exemplo simples" id="exem_taxaNomEfe">
+            Qual é a taxa anual efetiva equivalente a uma taxa nominal de 24% a.a.c.m. (ao ano com capitalização mensal)?
+        </p>
+
+        <p>
+            Primeiro, identificamos a taxa efetiva mensal: \( \frac{24\%}{12} = 0{,}02 \) a.m.
+        </p>
+
+        <p>
+            Agora, seja \(i\) a taxa efetiva anual correspondente. Como há 12 períodos de capitalização por ano, temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    i = (1 + 0{,}02)^{12} - 1 = 0{,}2682.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Isso significa que a taxa nominal de 24% a.a.c.m. é equivalente a uma taxa efetiva de 26,82% a.a.
+        <span class="fim"></span></p>
+        
         <div><a href="NA-EM-A2-MF_Aula5.html">
             <button class="button button1">Matemática financeira - Aula 5</button>
         </a></div>
