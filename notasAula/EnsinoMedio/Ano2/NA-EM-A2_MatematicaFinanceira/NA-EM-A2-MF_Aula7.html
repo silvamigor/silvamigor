@@ -37,8 +37,97 @@
         <h3>Aula 7 - Taxas de juros aparentes e reais</h3>
         
         <p>
-            
+            O valor dos bens e serviços que consumimos varia ao longo do tempo, dependendo de muitos fatores. Por exemplo, o preço do café pode aumentar por conta de uma enchente na região produtora. Pode acontecer também dos preços se reduzirem. O aumento generalizado e persistente dos preços dos bens e serviços é chamado de <strong>inflação</strong>, enquanto a redução desses preços é chamada de <strong>deflação</strong>.
         </p>
+
+        <p>
+            Para compreender esse fenômeno de aumento ou redução geral dos preços, é necessário utilizar alguma medida que permita comparar os valores ao longo do tempo. No Brasil, existem duas principais medidas da inflação: o <a href="https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html?=&t=o-que-e">IPCA</a> (Índice Nacional de Preços ao Consumidor Amplo), realizado pelo IBGE (Instituto Brasileiro de Geografia e Estatística), e o <a href="https://portalibre.fgv.br/igp">IGP</a> (Índice Geral de Preços), realizado pelo Ibre/FGV (Instituto Brasileiro de Economia da Fundação Getúlio Vargas).
+        </p>
+
+        <p>
+            De modo geral, para determinar essas medidas de inflação, são selecionados certos bens e serviços que, de certa forma, representam o padrão de consumo da população, como, por exemplo, arroz e feijão. Em seguida, observa-se a variação do preço desses bens e serviços. Assim, se \(I_{0}\) representa o valor de tais itens em uma determinada data e \(I_{1}\) o valor desses mesmos produtos em outra data no futuro, então a taxa de inflação nesse período é:
+        </p>
+
+        <div class="equationWrapper" id="eq_taxaInflacao">
+            <span class="math">
+                \begin{equation} \label{eq_taxaInflacao}
+                    I = \dfrac{I_{1} - I_{0}}{I_{0}} = \dfrac{I_{1}}{I_{0}} - 1.
+                \end{equation}
+            </span>
+        </div>
+
+        <p>
+            Quando há inflação, ocorre um aumento do custo de vida da população, uma vez que os consumidores precisam gastar mais dinheiro para adquirir os mesmos bens e serviços que antes. A inflação também interfere na taxa de juros de uma aplicação. Isso ocorre porque, em uma aplicação, a taxa de juros compara o ganho obtido com o capital inicialmente investido:
+        </p>
+
+        <div class="equationWrapper" id="eq_taxaAparente">
+            <span class="math">
+                \begin{equation} \label{eq_taxaAparente}
+                    i =  \dfrac{S_1 - S_{0}}{S_0} = \dfrac{S_1}{S_0} - 1.
+                \end{equation}
+            </span>
+        </div>
+
+        <p>
+            conforme definimos na <a href="NA-EM-A2-MF_Aula1.html#eq_juros2">Aula 1</a>. Essa taxa, no entanto, não leva em consideração a inflação. Por essa razão, ela é denominada <strong>taxa de juros aparente</strong> e, nesse contexto, é representada por \(i_{A}\). 
+        </p>
+
+        <p>
+            Definimos a <strong>taxa de juros real</strong>, denotada por \(i_{R},\) como sendo aquela que mede o ganho efetivo de poder de compra obtido com a aplicação, em relação ao poder de compra inicial. Entendemos o poder de compra como a razão entre o valor monetário e o nível de preços vigente naquele momento. Assim, temos:
+        </p>
+
+        <div class="equationWrapper" id="eq_taxaReal">
+            <span class="math">
+                \begin{equation} \label{eq_taxaReal}
+                    i_{R} = \dfrac{\frac{S_{1}}{I_{1}} - \frac{S_{0}}{I_{1}}}{\frac{S_{0}}{I_{0}}} = \dfrac{S_{1}}{S_{0}}\dfrac{I_{0}}{I_{1}} - 1.
+                \end{equation}
+            </span>
+        </div>
+
+        <p>
+            Note que:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{rcl}
+                        \text{Equação \eqref{eq_taxaReal}} & \Rightarrow & 1 + i_{R} = \frac{S_{1}}{S_{0}}\frac{I_{0}}{I_{1}} \\
+                        \text{Equação \eqref{eq_taxaInflacao}} & \Rightarrow & 1 + I = \frac{I_{1}}{I_{0}} \\
+                        \text{Equação \eqref{eq_taxaAparente}} & \Rightarrow & 1 + i_{A} = \frac{S_{1}}{S_{0}}
+                    \end{array}
+                \]
+            </span>
+        </div>
+
+        <p>
+            Logo,
+        </p>
+
+        <div class="equationWrapper" id="eq_reltaxaRealApar">
+            <span class="math">
+                \begin{equation} \label{eq_reltaxaRealApar}
+                    \boxed{1 + i_{A} = (1 + i_{R})(1 + I)}
+                \end{equation}
+            </span>
+        </div>
+
+        <p class="exemplo simples">
+            Suponha que você investiu R$ 1.000,00 em uma aplicação cuja taxa de juros foi de 50% ao ano. Suponha também que a inflação nesse período de 1 ano foi de 40%. Qual foi a taxa de juros real nesse período? Usando a Equação \eqref{eq_reltaxaRealApar}, temos:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    i_{R} = \dfrac{1 + i_{A}}{1 + I} - 1 = \dfrac{1,5}{1,4} - 1 = 0{,}0714 = 7{,}14\% \text{ a.a.}
+                \]
+            </span>
+        </div>
+
+        <p>
+            Esse valor é significativamente inferior à taxa aparente, pois a inflação corroeu boa parte do rendimento nominal. Em outras palavras, embora o valor do investimento tenha aumentado 50%, o poder de compra real cresceu apenas cerca de 7,14%.
+        <span class="fim"></span></p>
+
         
         <div><a href="NA-EM-A2-MF_Aula6.html">
             <button class="button button1">Matemática financeira - Aula 6</button>
