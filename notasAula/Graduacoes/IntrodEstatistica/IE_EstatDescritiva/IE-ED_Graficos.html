@@ -76,6 +76,8 @@
         
         <p>
             Vamos considerar a variável "Peso", do exemplo apresentado no <a href="IE-ED_VariavelEstat.html">Capítulo 1, Seção 1</a> e cuja tabela de dados pode ser vista <a href="IE-ED_MedPosicao.html#tab_questPre">aqui</a>. Vamos dividir seus dados em 6 faixas: 
+        </p>
+        
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -83,58 +85,63 @@
                     \]
                 </span>
             </div>
+            
+            <p>
             A tabela a seguir descreve cada faixa, apresentando o número de observações, a frequência relativa e a densidade de frequência.
-            <div class="equationWrapper">
-                <table class="alturaFixa" id="tab_pesoFreq" border="1">
-                    <thead>
-                        <tr style="text-align: center">
-                            <th>Faixas</th>
-                            <th>Observações</th>
-                            <th>Frequência relativa</th>
-                            <th>Densidade de frequência</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>\([40, 50)\)</td>
-                            <td>8</td>
-                            <td>0.16</td>
-                            <td>0.016</td>
-                        </tr>
-                        <tr>
-                            <td>\([50, 60)\)</td>
-                            <td>21</td>
-                            <td>0.42</td>
-                            <td>0.042</td>
-                        </tr>
-                        <tr>
-                            <td>\([60, 70)\)</td>
-                            <td>10</td>
-                            <td>0.20</td>
-                            <td>0.020</td>
-                        </tr>
-                        <tr>
-                            <td>\([70, 80)\)</td>
-                            <td>6</td>
-                            <td>0.12</td>
-                            <td>0.012</td>
-                        </tr>
-                        <tr>
-                            <td>\([80, 90)\)</td>
-                            <td>4</td>
-                            <td>0.08</td>
-                            <td>0.008</td>
-                        </tr>
-                        <tr>
-                            <td>\([90, 100)\)</td>
-                            <td>1</td>
-                            <td>0.02</td>
-                            <td>0.002</td>
-                        </tr>
-                    </tbody>
-                </table>
+            </p>
+            
+            <div class="table-container">
+                <div class="table-scroll-vertical">
+                    <table>
+                        <thead>
+                            <tr style="text-align: center">
+                                <th>Faixas</th>
+                                <th>Observações</th>
+                                <th>Frequência relativa</th>
+                                <th>Densidade de frequência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>\([40, 50)\)</td>
+                                <td>8</td>
+                                <td>0.16</td>
+                                <td>0.016</td>
+                            </tr>
+                            <tr>
+                                <td>\([50, 60)\)</td>
+                                <td>21</td>
+                                <td>0.42</td>
+                                <td>0.042</td>
+                            </tr>
+                            <tr>
+                                <td>\([60, 70)\)</td>
+                                <td>10</td>
+                                <td>0.20</td>
+                                <td>0.020</td>
+                            </tr>
+                            <tr>
+                                <td>\([70, 80)\)</td>
+                                <td>6</td>
+                                <td>0.12</td>
+                                <td>0.012</td>
+                            </tr>
+                            <tr>
+                                <td>\([80, 90)\)</td>
+                                <td>4</td>
+                                <td>0.08</td>
+                                <td>0.008</td>
+                            </tr>
+                            <tr>
+                                <td>\([90, 100)\)</td>
+                                <td>1</td>
+                                <td>0.02</td>
+                                <td>0.002</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </p>
         
         <p>
             Você pode fazer essa tabela em R, utilizando os comandos
@@ -157,8 +164,11 @@ print(tabela)</code></pre>
         
         <p>
             Com base nas informações apresentadas na tabela acima, podemos construir o histograma da variável Peso.
-            <img src="histograma_Peso.svg" alt="Histograma da variável Peso" width="600">
         </p>
+        
+        <br>
+        
+        <img src="histograma_Peso.svg" alt="Histograma da variável Peso" width="600">
         
         <p>
             Você pode fazer esse gráfico em R, utilizando os comandos

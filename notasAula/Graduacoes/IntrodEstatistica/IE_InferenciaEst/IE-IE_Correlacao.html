@@ -88,17 +88,23 @@
      Esse é o Exemplo 5.5 de Noções de Probabilidade e Estatística. Uma região foi subdividida em 10 sub-regiões. Em cada uma delas, foram observadas duas variáveis: <em>número de poços artesianos</em> (\(X\)) e <em>número de riachos ou rios presentes</em> na sub-região (\(Y\)). Os resultados são apresentados na tabela a seguir:
 </p>
 
-<table class="tabelaDados">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>Sub-região</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
     <tr><th>\(X\)</th><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>0</td></tr>
     <tr><th>\(Y\)</th><td>1</td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>2</td><td>2</td></tr>
 </table>
+</div>
+</div>
 
 <p>
     Considerando que escolhemos uma das sub-regiões ao acaso, isto é, cada sub-região tem a mesma probabilidade \(1/10\) de ser escolhida, podemos construir a distribuição conjunta de \((X, Y)\):
 </p>
 
-<table class="tabelaDistConjunta">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>\((X, Y)\)</th><th>Probabilidade</th></tr>
     <tr><td>\((0,0)\)</td><td>\(1/10\)</td></tr>
     <tr><td>\((0,1)\)</td><td>\(2/10\)</td></tr>
@@ -110,17 +116,23 @@
     <tr><td>\((2,2)\)</td><td>\(1/10\)</td></tr>
     <tr><td><strong>Total</strong></td><td><strong>1</strong></td></tr>
 </table>
+</div>
+</div>
 
 <p>
     Podemos também apresentar a distribuição conjunta em forma de tabela de dupla entrada:
 </p>
 
-<table class="tabelaDuplaEntrada">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>\(X \backslash Y\)</th><th>0</th><th>1</th><th>2</th></tr>
     <tr><th>0</th><td>\(1/10\)</td><td>\(2/10\)</td><td>\(2/10\)</td></tr>
     <tr><th>1</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(0\)</td></tr>
     <tr><th>2</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(1/10\)</td></tr>
 </table>
+</div>
+</div>
 
 <p>
     As distribuições marginais também podem aparecer na tabela, bastando somar as probabilidades das linhas e colunas. Por exemplo, a probabilidade de \(X = 0\) é:
@@ -138,29 +150,41 @@
     Repetindo os cálculos para os outros valores de \(X\) e \(Y\), obtemos:
 </p>
 
-<table class="tabelaComMarginais">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>\(X \backslash Y\)</th><th>0</th><th>1</th><th>2</th><th>\(P(X = x)\)</th></tr>
     <tr><th>0</th><td>\(1/10\)</td><td>\(2/10\)</td><td>\(2/10\)</td><td>\(5/10\)</td></tr>
     <tr><th>1</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(0\)</td><td>\(2/10\)</td></tr>
     <tr><th>2</th><td>\(1/10\)</td><td>\(1/10\)</td><td>\(1/10\)</td><td>\(3/10\)</td></tr>
     <tr><th>\(P(Y = y)\)</th><td>\(3/10\)</td><td>\(4/10\)</td><td>\(3/10\)</td><td>1</td></tr>
 </table>
+</div>
+</div>
 
 <p>
     Portanto, as funções de probabilidade marginais são as seguintes:
 </p>
 
-<table class="tabelaMarginalSimples" style="margin-bottom: 1em;">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>\(X\)</th><td>0</td><td>1</td><td>2</td></tr>
     <tr><th>\(p_i\)</th><td>\(5/10\)</td><td>\(2/10\)</td><td>\(3/10\)</td></tr>
 </table>
+</div>
+</div>
 
-<p style="display:inline-block; margin-right: 1em;"><strong>e</strong></p>
+<br>
 
-<table class="tabelaMarginalSimples" style="display:inline-block;">
+<div class="table-container">
+<div class="table-scroll-vertical">
+<table>
     <tr><th>\(Y\)</th><td>0</td><td>1</td><td>2</td></tr>
     <tr><th>\(p_i\)</th><td>\(3/10\)</td><td>\(4/10\)</td><td>\(3/10\)</td></tr>
 </table>
+</div>
+</div>
 
 <p>
     Vamos calcular a correlação entre as variáveis aleatórias \(X\) (número de poços artesianos) e \(Y\) (número de riachos ou rios) usando os dados da distribuição conjunta.
