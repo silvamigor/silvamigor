@@ -76,6 +76,14 @@ details > .caixa {
     color: black;
 }
 
+.imagem-responsiva {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* para centralizar */
+}
+
 /* Contêiner com rolagem horizontal */
 .table-container {
   overflow-x: auto;
