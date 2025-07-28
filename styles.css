@@ -83,6 +83,13 @@ details > .caixa {
   width: 100%;
 }
 
+/* Rolagem vertical com altura máxima */
+.table-scroll-vertical {
+  max-height: 300px; /* altura visível máxima */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
 /* Estilo geral da tabela */
 table {
   border-collapse: collapse;

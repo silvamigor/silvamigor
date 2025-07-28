@@ -174,6 +174,48 @@
             Portanto, a convenção linear no regime de juros compostos resulta sempre em um valor maior de juros, o que pode não representar de forma justa o crescimento real do capital. Por isso, em aplicações mais rigorosas, especialmente financeiras, a convenção exponencial é preferida.
         </p>
         
+        <p>
+            Vamos finalizar essa aula com mais um exemplo.
+        </p>
+        
+        <p class="exemplo simples">
+            Três dívidas &mdash; a primeira de R$ 2.000, com vencimento em 30 dias; a segunda de R$ 1.000, com vencimento em 60 dias; e a terceira de R$ 3.000, com vencimento em 90 dias &mdash; serão liquidadas por meio e um único pagamento de R$ 6.000. Se a taxa de juros aplicada for de 3% ao mês sob regime de juros compostos, daqui a quanto tempo deve ser efetuado este pagamento? Os dados da questão nos levam ao seguinte fluxo de caixa:
+        </p>
+        
+        <br>
+        
+        <figure>
+            <img src="fluxoExemploAula4.svg" alt="Fluxo de caixa do Exemplo 4" width="600" height="200">
+        </figure>
+        
+        <p>
+            Levando os valores para o tempo igual a zero, considerando a taxa de  3% ao mês, temos que a equação a ser resolvida é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \dfrac{2000}{1,03} + \dfrac{1000}{1,03^{2}} + \dfrac{3000}{1,03^{3}} = \dfrac{6000}{1,03^{n}} \qquad \Rightarrow \qquad 1,03^{n} = 1,0658.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Tomando o logaritmo natural de ambos os lados da equação acima, obtemos
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    n = \dfrac{\ln(1,0658)}{\ln(1,03)} = 2,1547,
+                \]
+            </span>
+        </div>
+        
+        <p>
+            ou seja, o tempo para quitar a dívida em uma parcela de \(6.000\) reais é de \(2,1547\) meses.
+        <span class="fim"></span></p>
+        
         <div><a href="NA-EM-A2-MF_Aula3.html">
             <button class="button button1">Matemática financeira - Aula 3</button>
         </a></div>
