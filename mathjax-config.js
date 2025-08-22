@@ -16,7 +16,7 @@
         cancelto: ['{\\cancelto{#1}{#2}}', 2],
         // exemplos de fraktur e mathbb
         fraka: ['\\mathfrak{a}'], frakb: ['\\mathfrak{b}'],
-        bbR: ['\\mathbb{R}'], bbZ: ['\\mathbb{Z}']
+        bbR: ['\\mathbb{R}'], bbQ: ['\\mathbb{Q}'], bbZ: ['\\mathbb{Z}'], bbN: ['\\mathbb{N}']
       }
     },
     svg: {

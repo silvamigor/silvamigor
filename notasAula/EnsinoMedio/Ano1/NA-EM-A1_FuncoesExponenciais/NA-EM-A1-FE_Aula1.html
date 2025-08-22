@@ -21,7 +21,7 @@
         <!-- Ambiente de teorema -->
         <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
         <!-- Plugin TikZ do MathJax v3 -->
-        <script type="module" src="../../../../scripts.js"></script>
+        <script src="../../../../scripts.js"></script>
         <style>
             body{
                 counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
@@ -35,6 +35,225 @@
         <a class="hifscor"  href="NA-EM-A1_FuncoesExponenciais.html"><h2>Funções exponenciais</h2></a>
         
         <h3>Aula 1 - Potência com expoente natural e com expoente inteiro</h3>
+        
+        <p class="exemplo simples" id="ex_crescPop">
+            Uma cidade tem \(10\) mil habitantes e cresce \(3\)% ao ano. Quantos habitantes terá daqui a \(20\) anos?
+        <span class="fim"></span></p>
+        
+        <p class="exemplo simples" id="ex_jurosCompostos">
+            Uma pessoa colocou R$ \(1.000,00\) em um banco. A cada mês, seu saldo aumenta \(3\)%. Quanto terá depois de \(1\) ano?
+        <span class="fim"></span></p>
+        
+        <p class="exemplo simples" id="ex_ordemPot">
+            Quem é maior: \(11^{50}\) ou \(4^{100}\)?
+        <span class="fim"></span></p>
+        
+        <p class="exemplo simples" id="ex_funcaoExpCres">
+            A função \(f(x) = 2^{x}\) é crescente ou decrescente?
+        <span class="fim"></span></p>
+        
+        <p class="exemplo simples" id="ex_eqExp">
+            Qual o conjunto solução da equação \(3\cdot 5^{x^{2}} + 3^{x^{2}+1} - 8\cdot 3^{x^{2}} = 0\)?
+        <span class="fim"></span></p>
+        
+        <p>
+            Vamos desenvolver, nestas aulas, uma teoria matemática que nos dê condições para respondermos às perguntas apresentadas nos exemplos acima. Começaremos com uma noção muito intuitiva de números reais com expoente natural maior ou igual a \(2\).
+        </p>
+        
+        <p class="def simples" id="def_expNat">
+            Sejam \(a \in \bbR\) e \(n \in \bbN\), com \(n \ge 2\). Definimos \(a^{n}\) como sendo o produto de \(n\) fatores iguais a \(a\), isto é,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \boxed{a^{n} \coloneqq \underbrace{a\cdot a \cdot \ldots \cdot a}_{n \; \text{fatores}}}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p>
+            Assim, por exemplo,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \sqrt{2}^{\;4} = \sqrt{2}\cdot\sqrt{2}\cdot\sqrt{2}\cdot\sqrt{2} = 4.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Como não há produto com um único fator, definimos
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \boxed{a^{1} \coloneqq a}.
+                \]
+            </span>
+        </div>
+        
+        <p class="lema simples" id="lema_somaExpNat">
+            Sejam \(a \in \bbR\) e \(m,n \in \bbN\), com \(m,n \ge 1\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    a^{m+n} = a^{m}\cdot a^{n}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Por definição, \(a^{m+n}\) é o produto de \(m+n\) fatores iguais a \(a\). Também por definição, \(a^{m}\) é o produto de \(m\) fatores iguais a \(a\) e \(a^{n}\) é o produto de \(n\) fatores iguais a \(a\). Logo, \(a^{m}\cdot a^{n}\) é o produto de \(m+n\) fatores iguais a \(a\), ou seja, \(a^{m+n} = a^{m}\cdot a^{n}\).
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="exemplo simples" id="ex_somaExpNat">
+            Veja que, por um lado,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    2^{2+3} = \underbrace{2\cdot 2\cdot 2\cdot 2\cdot 2}_{2+3 \; \text{fatores}} = 32.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Por outro lado, 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    2^{2}\cdot 2^{3} = \underbrace{2\cdot 2}_{2 \; \text{fatores}} \cdot \underbrace{2\cdot 2\cdot 2}_{3 \; \text{fatores}} = 32.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p class="lema simples" id="lema_seqCresDecrNat">
+            Seja \(a \in \bbR\), com \(a > 1\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1 < a < a^{2} < a^{3} < \cdots < a^{n} < a^{n+1} < \cdots
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Se \(0 < a < 1\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1 > a > a^{2} > a^{3} > \cdots > a^{n} > a^{n+1} > \cdots
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Se \(a > 1\), então, multiplicando ambos os lados da desigualdade por \(a^{n}\), obtemos \(a^{n+1} > a^{n}\). O mesmo raciocínio se aplica se \(0 < a < 1\).
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="exemplo simples" id="ex_seqCresDecrNat">
+            Se \(a = 2\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1 < 2 < 2^{2} < 2^{3} < \cdots
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Se \(a = \frac{1}{2}\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1 > \dfrac{1}{2} > \left(\dfrac{1}{2}\right)^{2} > \left(\dfrac{1}{2}\right)^{3} > \cdots
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p>
+            Vamos, agora, estender a <a href="#def_expNat">Definição 1</a> de modo a dar um significado à expressão \(a^{n}\), quando \(n \in \bbZ\). Tal extensão deve ainda satisfazer o <a href="#lema_somaExpNat">Lema 1</a>, isto é, queremos que \(a^{m+n}\) seja igual a \(a^{m}\cdot a^{n}\), para todo \(m,n \in \bbZ\). Assim, a igualdade \(a^{0}\cdot a^{1} = a^{0+1}\) deve ser válida. Isso implica que \(a^{0}\cdot a = a\). Portanto, a única maneira de definir \(a^{0}\) é:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \boxed{a^{0} \coloneqq 1}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Além disso, dado \(n \in \bbN\), devemos ter
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    a^{-n}\cdot a^{n} = a^{-n + n} = a^{0} = 1.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Portanto, \(a^{-n}\) deve ser o inverso de \(a^{n}\), ou seja,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \boxed{a^{-n} \coloneqq \dfrac{1}{a^{n}}}.
+                \]
+            </span>
+        </div>
+        
+        <p class="lema simples" id="lema_potPot">
+            Sejam \(a \in \bbR\) e \(m,n \in \bbZ\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    (a^{m})^{n} = a^{mn}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
         
         <div><a href="NA-EM-A1_FuncoesExponenciais.html">
             <button class="button button1">Funções exponenciais</button>
