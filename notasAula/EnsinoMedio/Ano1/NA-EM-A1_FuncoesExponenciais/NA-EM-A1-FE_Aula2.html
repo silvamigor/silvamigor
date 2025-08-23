@@ -36,6 +36,76 @@
         
         <h3>Aula 2 - Potência com expoente racional</h3>
         
+        <p>
+            Vamos, agora, entender o que significa um número real com expoente racional. Antes, porém, vamos relembrar um conceito importante. Seja \(a \in \mathbb{R}\) e \(n \in \mathbb{N}\), com \(n \geq 1\). Uma <strong>\(n\)-ésima raiz algébrica</strong> de \(a\) é um número \(b \in \mathbb{R}\) tal que \(b^{n} = a\). Se \(n = 2\), a \(2\)-ésima raiz algébrica é chamada de <i>raiz quadrada algébrica</i> e, se \(n = 3\), a \(3\)-ésima raiz algébrica é chamada de <i>raiz cúbica algébrica</i>. Por exemplo, \(-2\) e \(2\) são raízes quadradas algébricas de \(4\), porque \((-2)^{2} = 4\) e \((2)^{2} = 4\).
+        </p>
+
+        <p>
+            Existe um resultado que diz que, se \(n \in \mathbb{N}\), com \(n \geq 1\), e \(a \in \mathbb{R}\) é tal que \(a \geq 0\), então existe uma única \(n\)-ésima raiz algébrica de \(a\) que é positiva. Tal número é dito <strong>\(n\)-ésima raiz aritmética</strong> de \(a\) (ou simplesmente <i>\(n\)-ésima raiz</i>) e é denotado por \(\sqrt[n]{a}\). Por exemplo, a raiz quadrada aritmética de \(4\) é \(2\), isto é, \(\sqrt{4} = 2\).
+        </p>
+
+        <p>
+            Feita essa revisão, vamos definir a exponenciação por um número racional. Assim como foi feito para os inteiros, queremos preservar a propriedade descrita na <a href="NA-EM-A1-FE_Aula1.html#lema_somaExpNat">Aula 1 - Lema 1</a>: se \(r,s \in \mathbb{Q}\), então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                a^{r+s} = a^{r} \cdot a^{s}.
+            \]
+            </span>
+        </div>
+        
+        <p>
+            No caso \(r = \tfrac{1}{2}\), isso significa que
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    a = a^{1} = a^{\tfrac{1}{2}+\tfrac{1}{2}} = a^{\tfrac{1}{2}} \cdot a^{\tfrac{1}{2}} = \bigl(a^{\tfrac{1}{2}}\bigr)^{2}.
+                \]
+            </span>
+        </div>
+
+        <p>
+            Logo, \(a^{1/2}\) deve ser uma raiz quadrada algébrica de \(a\). Se \(a < 0\), isso levaria a afirmar que um número real ao quadrado é negativo, o que é impossível. Já se \(a > 0\), sabemos que existe uma única raiz quadrada aritmética de \(a\). Assim, a única maneira de definir \(a^{1/2}\), quando \(a > 0\), é fazê-lo ser \(\sqrt{a}\). Seguindo esse raciocínio, se \(r = \tfrac{m}{n} \in \mathbb{Q}\), com \(m \in \mathbb{Z}\), \(n \in \mathbb{N}\) e \(n > 0\), temos que
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \bigl(a^{r}\bigr)^{n} = 
+                    \underbrace{a^{r} \cdot \ldots \cdot a^{r}}_{n\; \text{fatores}} 
+                    = a^{\overbrace{r+\cdots + r}^{n\; \text{fatores}}} 
+                    = a^{rn} = a^{m},
+                \]
+            </span>
+        </div>
+
+        <p>
+            ou seja, \(a^{r}\) deve ser uma \(n\)-ésima raiz aritmética de \(a^{m}\).
+        </p>
+
+        <p class="def simples" id="def_expRacional">
+            Sejam \(a \in \mathbb{R}\), com \(a > 0\), \(m \in \mathbb{Z}\) e \(n \in \mathbb{N}\), com \(n > 0\). Define-se:
+        </p>
+
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \boxed{a^{\tfrac{m}{n}} \coloneqq \sqrt[n]{\,a^{m}\,}}.
+                \]
+            </span><span class="fim"></span>
+        </div>
+
+        <p class="obs simples" id="obs_Aula2">
+            <ul>
+                <li>Se \(a = 0\) e \(\tfrac{m}{n} > 0\), então \(0^{m/n} = 0\). Se \(\tfrac{m}{n} \leq 0\), a expressão não é definida.</li>
+                <li>Se \(a < 0\), a definição em \(\mathbb{R}\) só faz sentido quando o denominador \(n\) é ímpar, pois nesse caso \(\sqrt[n]{a}\) existe nos reais.</li>
+            </ul>
+        </p>
+        
         <div><a href="NA-EM-A1-FE_Aula1.html">
             <button class="button button1">Funções exponenciais - Aula 1</button>
         </a></div>

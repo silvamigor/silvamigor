@@ -48,6 +48,23 @@
   counter-increment: contLema;
   content: "Lema " counter(contCap)"."counter(contSec)"."counter(contLema) " (" attr(text)"). ";
 }
+
+.corolario:before{
+  counter-increment: contCoro;
+  font-weight: bold;
+  content: "Corolário " counter(contCap)"."counter(contSec)"."counter(contCoro) ". ";
+}
+
+.corolario.simples:before{
+  counter-increment: contCoro;
+  font-weight: bold;
+  content: "Corolário " counter(contCoro) ". ";
+}
+      
+.corolario[text]:before {
+  counter-increment: contCoro;
+  content: "Corolário " counter(contCap)"."counter(contSec)"."counter(contCoro) " (" attr(text)"). ";
+}
       
 .obs:before{
   counter-increment: contObs;

@@ -24,7 +24,7 @@
         <script src="../../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contCap contSec;
             }
         </style>
     </head>
@@ -141,6 +141,56 @@
             </span><span class="fim"></span>
         </div>
         
+        <p class="corolario simples" id="coro_somaExpNatGen">
+            Sejam \(a \in \bbR\) e \(m_{1}, m_{2}, \dots, m_{k} \in \bbN\), com \(m_{1}, \dots, m_{k} \ge 1\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    a^{m_{1} + m_{2}+ \cdots + m_{k}} = a^{m_{1}}\cdot a^{m_{2}} \cdot \ldots \cdot a^{m_{k}}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Sabemos do <a href="#lema_somaExpNat">Lema 1</a> que \(a^{m_{1}}\cdot a^{m_{2}} = a^{m_{1}+m_{2}}\). Aplicando o mesmo lema novamente, obtemos que \(a^{m_{1}+m_{2}}\cdot a^{m_{3}} = a^{m_{1}+m_{2}+m_{3}}\). Repetindo esse procedimento \(k\) vezes, chegamos ao resultado pretendido.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="corolario simples" id="coro_potPot">
+            Sejam \(a \in \bbR\) e \(m,n \in \bbN\), com \(m,n \ge 1\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    (a^{m})^{n} = a^{mn}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Pelo <a href="coro_somaExpNatGen">Corolário 1</a>, temos que
+                
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            (a^{m})^{n} = \underbrace{a^{m} \cdot \ldots \cdot a^{m}}_{n\; \text{fatores}} = a^{\overbrace{m+\cdots+m}^{n\; \text{fatores}}} = a^{mn}.
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
         <p class="lema simples" id="lema_seqCresDecrNat">
             Seja \(a \in \bbR\), com \(a > 1\). Então
         </p>
@@ -199,7 +249,11 @@
         </div>
         
         <p>
-            Vamos, agora, estender a <a href="#def_expNat">Definição 1</a> de modo a dar um significado à expressão \(a^{n}\), quando \(n \in \bbZ\). Tal extensão deve ainda satisfazer o <a href="#lema_somaExpNat">Lema 1</a>, isto é, queremos que \(a^{m+n}\) seja igual a \(a^{m}\cdot a^{n}\), para todo \(m,n \in \bbZ\). Assim, a igualdade \(a^{0}\cdot a^{1} = a^{0+1}\) deve ser válida. Isso implica que \(a^{0}\cdot a = a\). Portanto, a única maneira de definir \(a^{0}\) é:
+            Vamos, agora, estender a <a href="#def_expNat">Definição 1</a> de modo a dar um significado à expressão \(a^{n}\), quando \(n \in \bbZ\). Tal extensão deve ainda satisfazer o <a href="#lema_somaExpNat">Lema 1</a>, isto é, queremos que \(a^{m+n}\) seja igual a \(a^{m}\cdot a^{n}\), para todo \(m,n \in \bbZ\). Assim, a igualdade \(a^{0}\cdot a^{1} = a^{0+1}\) deve ser válida. Isso implica que \(a^{0}\cdot a = a\). Note que se \(a = 0\), então \(a^{0}\) poderia ser qualquer número, porque qualquer número multiplicado por zero é zero. Isso não nos permitiria uma definição desse objeto. Portanto, ao fazermos a extensão do expoente de um número real por um número inteiro, precisamos supor que \(a \neq 0\). Dessa forma, a única maneira de definir \(a^{0}\) é fazendo-o ser igual a 1.
+        </p>
+        
+        <p class="def simples" id="def_expZero">
+            Sejam \(a \in \bbR\), com \(a \neq 0\). Então,
         </p>
         
         <div class="equationWrapper">
@@ -207,7 +261,7 @@
                 \[
                     \boxed{a^{0} \coloneqq 1}.
                 \]
-            </span>
+            </span><span class="fim"></span>
         </div>
         
         <p>
@@ -217,13 +271,17 @@
         <div class="equationWrapper">
             <span class="math"> 
                 \[
-                    a^{-n}\cdot a^{n} = a^{-n + n} = a^{0} = 1.
+                    a^{-n}\cdot a^{n} = a^{-n + n} = a^{0} = 1,
                 \]
             </span>
         </div>
         
         <p>
-            Portanto, \(a^{-n}\) deve ser o inverso de \(a^{n}\), ou seja,
+            o que nos leva a seguinte definição
+        </p>
+        
+        <p class="def simples" id="def_expInt">
+            Sejam \(a \in \bbR\), com \(a \neq 0\), e \(n \in \bbN\). Então,
         </p>
         
         <div class="equationWrapper">
@@ -231,29 +289,24 @@
                 \[
                     \boxed{a^{-n} \coloneqq \dfrac{1}{a^{n}}}.
                 \]
-            </span>
+            </span><span class="fim"></span>
         </div>
         
-        <p class="lema simples" id="lema_potPot">
-            Sejam \(a \in \bbR\) e \(m,n \in \bbZ\). Então
+        <p class="exemplo simples" id="ex_expNeg">
+            Veja que
         </p>
         
         <div class="equationWrapper">
             <span class="math"> 
                 \[
-                    (a^{m})^{n} = a^{mn}.
+                    3^{-2} = \dfrac{1}{3^{2}} = \dfrac{1}{9}.
                 \]
-            </span>
+            </span><span class="fim"></span>
         </div>
         
-        <details>
-            <summary>Demonstração</summary>
-            <div class="caixa">
-                
-            </div>
-            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
-            <br>
-        </details>
+        <p>
+            Fica como exercício mostrar que o <a href="#lema_somaExpNat">Lema 1</a> e os seus dois corolários valem para expoentes inteiros.
+        </p>
         
         <div><a href="NA-EM-A1_FuncoesExponenciais.html">
             <button class="button button1">Funções exponenciais</button>
