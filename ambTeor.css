@@ -106,3 +106,15 @@
   font-weight: bold;
   content: "Exemplo " counter(contExemplo) ". ";
 }
+
+.exercicio:before{
+  counter-increment: contExercicio;
+  font-weight: bold;
+  content: "Exercício "counter(contCap)"." counter(contSec)"."counter(contExercicio) ". ";
+}
+
+.exercicio.simples:before {
+  counter-increment: contExercicio;
+  font-weight: bold;
+  content: "Exercício " counter(contExercicio) ". ";
+}

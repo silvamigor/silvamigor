@@ -24,7 +24,7 @@
         <script type="module" src="../../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contExercicio contCap contSec;
             }
         </style>
     </head>
@@ -45,7 +45,7 @@
         </p>
 
         <p>
-            Feita essa revisão, vamos definir a exponenciação por um número racional. Assim como foi feito para os inteiros, queremos preservar a propriedade descrita na <a href="NA-EM-A1-FE_Aula1.html#lema_somaExpNat">Aula 1 - Lema 1</a>: se \(r,s \in \mathbb{Q}\), então
+            Feita essa revisão, vamos definir a exponenciação por um número racional. Assim como foi feito para os inteiros, queremos preservar a propriedade descrita no <a href="NA-EM-A1-FE_Aula1.html#lema_somaExpNat">Lema 1 - Aula 1</a>: se \(r,s \in \mathbb{Q}\), então
         </p>
         
         <div class="equationWrapper">
@@ -103,7 +103,39 @@
             <ul>
                 <li>Se \(a = 0\) e \(\tfrac{m}{n} > 0\), então \(0^{m/n} = 0\). Se \(\tfrac{m}{n} \leq 0\), a expressão não é definida.</li>
                 <li>Se \(a < 0\), a definição em \(\mathbb{R}\) só faz sentido quando o denominador \(n\) é ímpar, pois nesse caso \(\sqrt[n]{a}\) existe nos reais.</li>
+                <li>O <a href="NA-EM-A1-FE_Aula1.html#lema_somaExpNat">Lema 1 - Aula 1</a>, os seus dois corolários e o <a href="NA-EM-A1-FE_Aula1.html#lema_seqCresDecrNat">Lema 2 - Aula 1</a> valem para expoentes racionais.</li>
             </ul>
+        </p>
+        
+        <p class="exercicio simples" id="exerc_aula2">
+            <ol class="numerico">
+                <li>
+                    Sejam \(a \in \bbR - \{0\}\) e \(m,n \in \bbN\). Mostre que 
+                    <div class="equationWrapper">
+                        <span class="math"> 
+                            \[
+                                \sqrt[n]{\sqrt[m]{a}} = \sqrt[m\cdot n]{a}..
+                            \]
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    Calcule:
+                    <div class="equationWrapper">
+                        <span class="math"> 
+                            \[
+                                \begin{array}{ccc}
+                                    \text{(a) } \;\; 8^{\frac{4}{3}}, \qquad
+                                    & 
+                                    \text{(b) } \;\; (\sqrt{5})^{\frac{2}{3}}, \qquad
+                                    &
+                                    \text{(c) } \;\; 9^{0,5}.
+                                \end{array}
+                            \]
+                        </span>
+                    </div>
+                </li>
+            </ol>
         </p>
         
         <div><a href="NA-EM-A1-FE_Aula1.html">

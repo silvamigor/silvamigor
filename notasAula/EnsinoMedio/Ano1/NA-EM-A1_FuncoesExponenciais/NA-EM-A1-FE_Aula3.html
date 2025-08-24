@@ -24,7 +24,7 @@
         <script type="module" src="../../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contExercicio contCap contSec;
             }
         </style>
     </head>
@@ -35,6 +35,42 @@
         <a class="hifscor"  href="NA-EM-A1_FuncoesExponenciais.html"><h2>Funções exponenciais</h2></a>
         
         <h3>Aula 3 - Potência com expoente irracional</h3>
+        
+        <p>
+            Finalmente, vamos entender o que significa elevar um número real a um número irracional. Para simplificar a notação, vamos denotar por \(\bbR_{+}^{\ast}\) o conjunto \(\{x \in \bbR \mid x > 0\}\), isto é, \(\bbR_{+}^{\ast}\) é o conjunto dos números reais positivos. Já definimos o que significa \(a^{r}\), quando \(a \in \bbR_{+}^{\ast}\) e \(r \in \bbQ\). Suponha que \(b \in \bbR - \bbQ\), ou seja, que \(b\) é um número irracional. Vamos explicar o que é \(a^{b}\). Para isso, comecemos por um exemplo. O que é \(10^{\sqrt{2}}\)?
+        </p>
+        
+        <p>
+            Note que \(\sqrt{2}\) pode ser aproximada inferiormente por uma sequência de números racionais:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1,4 < 1,41 < 1,414 < \cdots < \sqrt{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            O número \(\sqrt{2}\) também pode ser aproximada superiormente por uma sequência de números racionais:
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    1,5 > 1,42 > 1,415 > \cdots > \sqrt{2}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Sabemos que para números racionais temos que \(10^{1,4} < 10^{1,41} < 10^{1,414} < \cdots\) e que \(10^{1,5} > 10^{1,42} > 10^{1,415} > \cdots\). Isso, nos permite obter aproximações racionais para o valor de \(10^{\sqrt{2}}\), com quantas casas decimais quisermos, atribuindo a \(\sqrt{2}\) valores aproximados por falta e por excesso. É dessa maneira que definimos \(a^{b}\), quando \(a \in \bbR_{+}^{\ast}\) e \(b \in \bbR - \bbQ\).
+        </p>
+        
+        <p class="def simples" id="def_expIrrac">
+            Sejam \(a \in \bbR_{+}^{\ast}\) e \(b \in \bbR - \bbQ\). Então \(a^{b}\) é número real cujas aproximações por falta são as potências \(a^{r}\), com \(r\) racional menor do que \(b\) e cujas aproximações por excesso são as potências \(a^{s}\), com \(s\) racional maior do que \(b\).
+        </p>
         
         <div><a href="NA-EM-A1-FE_Aula2.html">
             <button class="button button1">Funções exponenciais - Aula 2</button>

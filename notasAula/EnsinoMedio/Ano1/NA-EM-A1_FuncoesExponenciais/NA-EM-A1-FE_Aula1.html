@@ -24,7 +24,7 @@
         <script src="../../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contCap contSec;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contExercicio contCap contSec;
             }
         </style>
     </head>
@@ -192,33 +192,30 @@
         </details>
         
         <p class="lema simples" id="lema_seqCresDecrNat">
-            Seja \(a \in \bbR\), com \(a > 1\). Então
+            Sejam \(a \in \bbR\) e \(m,n \in \bbN\), com \(1 < m < n\).
         </p>
         
-        <div class="equationWrapper">
-            <span class="math"> 
-                \[
-                    1 < a < a^{2} < a^{3} < \cdots < a^{n} < a^{n+1} < \cdots
-                \]
-            </span>
-        </div>
-        
-        <p>
-            Se \(0 < a < 1\), então
-        </p>
-        
-        <div class="equationWrapper">
-            <span class="math"> 
-                \[
-                    1 > a > a^{2} > a^{3} > \cdots > a^{n} > a^{n+1} > \cdots
-                \]
-            </span>
-        </div>
+        <ol class="alfa">
+            <li>
+                Se \(1 < a\), então \(a^{m} < a^{n}\).
+            </li>
+            <li>
+                Se \(0 < a < 1\), então \(a^{m} < a^{n}\).
+            </li>
+        </ol>
         
         <details>
             <summary>Demonstração</summary>
             <div class="caixa">
-                Se \(a > 1\), então, multiplicando ambos os lados da desigualdade por \(a^{n}\), obtemos \(a^{n+1} > a^{n}\). O mesmo raciocínio se aplica se \(0 < a < 1\).
+                Vamos demonstrar o item (a). A demonstração de (b) é análoga. Como \(1 < a\), então, multiplicando ambos os lados da desigualdade por \(a\), obtemos \(1 < a < a^{2}\). Repetindo esse procedimento para a desigualdade \(a < a^{2}\), obtemos \(1 < a < a^{2} < a^{3}\). Seguindo esse passo, concluímos que
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            1 < a < a^{2} < \cdots < a^{m} < \cdots < a^{n} < \cdots, 
+                        \]
+                    </span>
+                </div>
+                ou seja, \(a^{m} < a^{n}\).
             </div>
             <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
             <br>
@@ -305,7 +302,44 @@
         </div>
         
         <p>
-            Fica como exercício mostrar que o <a href="#lema_somaExpNat">Lema 1</a> e os seus dois corolários valem para expoentes inteiros.
+            Fica como exercício mostrar que o <a href="#lema_somaExpNat">Lema 1</a>, os seus dois corolários e o <a href="#lema_seqCresDecrNat">Lema 2</a> valem para expoentes inteiros.
+        </p>
+        
+        <p class="exercicio simples" id="exerc_aula1">
+            <ol class="numerico">
+                <li>
+                    Sejam \(a, b \in \bbR - \{0\}\) e \(m,n \in \bbN\). Mostre que 
+                    <div class="equationWrapper">
+                        <span class="math"> 
+                            \[
+                                \begin{array}{ccc}
+                                    \text{(a) } \;\; \dfrac{a^{m}}{a^{n}} = a^{m-n}, \qquad
+                                    & 
+                                    \text{(b) } \;\; (a\cdot b)^{n} = a^{n}\cdot b^{n}, \qquad
+                                    &
+                                    \text{(c) } \;\; \left(\dfrac{a}{b}\right)^{n} = \dfrac{a^{n}}{b^{n}}.
+                                \end{array}
+                            \]
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    Calcule:
+                    <div class="equationWrapper">
+                        <span class="math"> 
+                            \[
+                                \begin{array}{ccc}
+                                    \text{(a) } \;\; (-3)^{0}, \qquad
+                                    & 
+                                    \text{(b) } \;\; (\sqrt{2})^{1}, \qquad
+                                    &
+                                    \text{(c) } \;\; \left(-\dfrac{1}{7}\right)^{-3}.
+                                \end{array}
+                            \]
+                        </span>
+                    </div>
+                </li>
+            </ol>
         </p>
         
         <div><a href="NA-EM-A1_FuncoesExponenciais.html">
