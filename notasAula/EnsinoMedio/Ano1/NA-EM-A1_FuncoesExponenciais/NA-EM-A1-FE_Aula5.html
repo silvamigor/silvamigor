@@ -36,6 +36,122 @@
         
         <h3>Aula 5 - Propriedades da função exponencial de base \(a\) &#8212; parte I</h3>
         
+        <p>
+            Para todas as proposições a seguir, considere \(f\) a função exponencial com base \(a \in \bbR_{+}^{\ast} - \{1\}\), isto é, \(f(x) = a^{x}\).
+        </p>
+        
+        <p class="prop simples" id="prop_somaProd">
+            Para todo \(x, y \in \bbR\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(x + y) = f(x)f(y).
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Isso segue do fato de que
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            f(x + y) = a^{x+y} = a^{x}a^{y} = f(x)f(y).
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_zero">
+            Vale que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(0) = 1.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Tal resultado vale, porque
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            f(0) = a^{0} = 1.
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_negInv">
+            Para todo \(x \in \bbR\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(-x) = f(x)^{-1}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Note que
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            f(-x) = a^{-x} = \dfrac{1}{a^{x}} = (a^{x})^{-1} = f(x)^{-1}.
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_prodPot">
+            Para todo \(x, y \in \bbR\), temos que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(xy) = f(x)^{y}.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Veja que
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            f(xy) = a^{xy} = (a^{x})^{y} = f(x)^{y}.
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
         <div><a href="NA-EM-A1-FE_Aula4.html">
             <button class="button button1">Funções exponenciais - Aula 4</button>
         </a></div>

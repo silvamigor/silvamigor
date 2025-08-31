@@ -4,10 +4,14 @@ body {
     font-family: "Helvetica", sans-serif;
     line-height: 1.5;
     background-color: rgb(233,227,206);
+    margin: auto;
+    padding: 5pt;
 }
 
 h1 {
     background-color: rgb(213,113,0);
+    padding: 5pt;
+    border-radius: 50px;
 }
 
 .hifscor {

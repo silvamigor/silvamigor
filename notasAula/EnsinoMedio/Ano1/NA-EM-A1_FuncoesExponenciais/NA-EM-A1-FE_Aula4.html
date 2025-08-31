@@ -37,7 +37,19 @@
         <h3>Aula 4 - Função exponencial de base \(a\) e função do tipo exponencial</h3>
         
         <p>
-            Nas aulas anteriores, demos um significado ao símbolo \(a^{x}\), quando \(a \in \bbR_{+}^{\ast}\) e \(x \in \bbR\). Assim, fixado \(a \in \bbR_{+}^{\ast}\), podemos definir uma função de \(\bbR\) para \(\bbR_{+}^{\ast}\), que leva um real qualquer \(x\) em \(a^{x} \in \bbR_{+}^{\ast}\). Note que, se \(a = 1\), então \(1^{x} = 1\), para todo \(x \in \bbR\). Nesse caso, obtemos a função constante igual a \(1\). Portanto, para evitar obter a função constante, fazemos a seguinte definição:
+            Nas aulas anteriores, demos um significado ao símbolo \(a^{x}\), quando \(a \in \bbR_{+}^{\ast}\) e \(x \in \bbR\). Assim, fixado \(a \in \bbR_{+}^{\ast}\), podemos definir uma função de \(\bbR\) para \(\bbR\), que leva um real qualquer \(x\) em \(a^{x} \in \bbR\). Note que, se \(a = 1\), então \(1^{x} = 1\), para todo \(x \in \bbR\). Nesse caso, obtemos a função constante igual a \(1\). Portanto, para evitar obter a função constante, vamos considerar que \(a \neq 1\). Note também que, para todo \(x \in \bbR\)
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    a^{x} = a^{\frac{x}{2}+\frac{x}{2}} = (a^{\frac{x}{2}})^{2} > 0.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Portanto, fixado \(a \in \bbR_{+}^{\ast} - \{1\}\), a função que vamos definir leva \(x \in \bbR\) em \(a^{x} \in \bbR_{+}^{\ast}\).
         </p>
         
         <p class="def simples" id="def_funExpBaseA">
@@ -57,6 +69,30 @@
         
         <p>
             Uma função do tipo \(f(x) = b\cdot a^{kx}\), onde \(b, k \in \bbR^{\ast}\) (isto é, \(b,k\) são números reais não nulo), é uma função do <strong>tipo exponencial</strong>.
+        </p>
+        
+        <p class="exercicio simples" id="exerc_aula4">
+            <ol class="numerico">
+                <li>
+                    Dada a função \(f: \bbR \to \bbR_{+}^{\ast}\), \(x \mapsto 4^{x}\), calcule:
+                    <div class="equationWrapper">
+                        <span class="math"> 
+                            \[
+                                \begin{array}{ccc}
+                                    \text{(a) } \;\; f(0), \qquad
+                                    & 
+                                    \text{(b) } \;\; f(-1), \qquad
+                                    &
+                                    \text{(c) } \;\; f(-\frac{1}{2}).
+                                \end{array}
+                            \]
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    O número de bactérias numa cultura, em função do tempo t (em horas), pode ser expresso por \(N(t) = 256\cdot 2^{0,75t}\). Em quanto tempo, em horas, o número de bactérias será igual a \(2\,048\)?
+                </li>
+            </ol>
         </p>
         
         <div><a href="NA-EM-A1-FE_Aula3.html">

@@ -36,6 +36,59 @@
         
         <h3>Aula 6 - Propriedades da função exponencial de base \(a\) &#8212; parte II</h3>
         
+        <p>
+            Vamos continuar com as propriedades da função \(f(x) = a^{x}\), com \(a \in \bbR_{+}^{\ast} - \{1\}\).
+        </p>
+        
+        <p class="prop simples" id="prop_crescDecres">
+            Sejam \(x, y \in \bbR\), com \(x < y\).
+        </p>
+        
+        <ol class="alfa">
+            <li>
+                Se \(1 < a\), então \(f(x) < f(y)\), ou seja, \(f\) é crescente.
+            </li>
+            <li>
+                Se \(0 < a < 1\), então \(f(y) < f(x)\), ou seja, \(f\) é decrescente.
+            </li>
+        </ol>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Vamos dar uma ideia da demonstração de (a). Vimos no <a href="NA-EM-A1-FE_Aula1.html#lema_seqCresDecrNat">Lema 2 - Aula 1</a>, que tal propriedade vale para os naturais. Para os inteiros, vemos que se \(1 < a\), então multiplicando por \(a^{-1}\), temos que \(a^{-1} < 1\). Seguindo assim, temos que \(a^{m} < a^{n}\), se \(m < n\), com \(m,n \in \bbZ\). Para os racionais, temos que se \(\frac{m_{1}}{n_{1}} < \frac{m_{2}}{n_{2}}\), então \(m_{1}n_{2} < m_{2}n_{1}\). Logo, \(a^{m_{1}n_{2}} < a^{m_{2}n_{1}}\). Multiplicando por \(a^{\frac{1}{n_{1}n_{2}}}\), obtemos \(a^{\frac{m_{1}}{n_{1}}} < a^{\frac{m_{2}}{n_{2}}}\). Para os irracionais, a demonstração requer alguns conceitos não apresentados nessas notas. Portanto, omitiremos essa parte.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_expInj">
+            A função \(f\) é injetiva.
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Sejam \(x_{1}, x_{2} \in \bbR\), com \(x_{1} \neq x_{2}\). Então \(x_{1} < x_{2}\) ou \(x_{2} < x_{1}\). Assuma, sem perda de generalidade, que \(x_{1} < x_{2}\). Pela <a href="#prop_crescDecres">Proposição 2</a>, temos que \(f(x_{1}) < f(x_{2})\), se \(a > 1\), ou \(f(x_{2}) < f(x_{1})\), se \(0 < a < 1\). De todo modo, \(f(x_{1}) \neq f(x_{2})\).
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_expSobrej">
+            A função \(f\) é sobrejetiva.
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Essa demonstração também será omitida, por envolver conceitos não apresentados nessas notas.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        
         <div><a href="NA-EM-A1-FE_Aula5.html">
             <button class="button button1">Funções exponenciais - Aula 5</button>
         </a></div>

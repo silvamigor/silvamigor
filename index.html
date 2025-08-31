@@ -5,48 +5,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title> Igor Martins Silva </title>
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-            tex2jax: {
-              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-              processEscapes: true
-            },
-            "HTML-CSS": { fonts: ["TeX"] }
-          });
-        </script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js"></script>
+        <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script type="module" src="scripts.js"></script>
         <style>
-            body{
-            font-size: 16pt;
-            font-family: "Helvetica", sans-serif;
-            line-height: 1.5;
-            background-color: rgb(233,227,206);
-            }
-          
-            h1{
-                background-color: rgb(213,113,0);
-            }
-          
             .minha-foto {
-                float: left; /* Faz a foto ficar à esquerda */
-                width: 200px; /* Ajuste o tamanho conforme necessário */
-                margin-right: 15px; /* Dá espaço entre a foto e o texto */
-                border-radius: 20%; /* Se quiser deixar a foto redonda */
+                margin-top: 10px; /* espaço acima da imagem */
+                float: left;
+                width: 200px;
+                margin-right: 15px;
+                border-radius: 20%;
             }
-        
-            .hifscor { 
-                text-decoration:none;
-                color: inherit;
-            }
-            
         </style>
     </head>
-      
-    </style>
-  </head>
   
   <body>
     <div style="text-align:center"><h1>Igor Martins Silva</h1></div>
@@ -55,7 +39,9 @@
     
     <img src="foto.jpg" alt="Minha foto" class="minha-foto">
     
-    <p>Sou bacharel em Engenharia Civil e em Matemática, ambos pela Universidade Federal de Minas Gerais (<a href="https://ufmg.br/">UFMG</a>). Concluí o primeiro curso no final do primeiro semestre de 2013 e o segundo no final do segundo semestre de 2018. Em abril de 2021, defendi minha dissertação (<a href="http://hdl.handle.net/1843/38396">veja aqui</a>) e obtive o título de <em>mestre em Matemática</em>. Em fevereiro de 2025, defendi minha tese (<a href="http://hdl.handle.net/1843/81961">veja aqui</a>) e obtive o título de <em>doutor em Matemática</em>. Ambos os títulos foram concedidos pelo Programa de Pós-Graduação em Matemática da UFMG (<a href="http://www.mat.ufmg.br/posgrad/">PPGMAT-UFMG</a>). Atualmente, curso a Licenciatura em Matemática, também na UFMG. Clique <a href="http://lattes.cnpq.br/0813946669161934">aqui</a> para ver meu currículo Lattes.</p>
+    <p>
+        Sou bacharel em Engenharia Civil e em Matemática, ambos pela Universidade Federal de Minas Gerais (<a href="https://ufmg.br/">UFMG</a>). Concluí o primeiro curso no final do primeiro semestre de 2013 e o segundo no final do segundo semestre de 2018. Em abril de 2021, defendi minha dissertação (<a href="http://hdl.handle.net/1843/38396">veja aqui</a>) e obtive o título de <em>mestre em Matemática</em>. Em fevereiro de 2025, defendi minha tese (<a href="http://hdl.handle.net/1843/81961">veja aqui</a>) e obtive o título de <em>doutor em Matemática</em>. Ambos os títulos foram concedidos pelo Programa de Pós-Graduação em Matemática da UFMG (<a href="http://www.mat.ufmg.br/posgrad/">PPGMAT-UFMG</a>). Atualmente, curso a Licenciatura em Matemática, também na UFMG. Clique <a href="http://lattes.cnpq.br/0813946669161934">aqui</a> para ver meu currículo Lattes.
+    </p>
     
     <p>Neste espaço, compartilho dois projetos sobre matemática:</p>
 
