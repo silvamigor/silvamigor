@@ -21,7 +21,7 @@
         <!-- Ambiente de teorema -->
         <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
         <!-- Plugin TikZ do MathJax v3 -->
-        <script type="module" src="../../../../scripts.js"></script>
+        <script src="../../../../scripts.js"></script>
         <style>
             body{
                 counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
@@ -68,7 +68,7 @@
             <br>
         </details>
         
-        <p class="prop simples" id="prop_zero">
+        <p class="prop simples" id="prop_avalZero">
             Vale que
         </p>
         
@@ -88,6 +88,34 @@
                     <span class="math"> 
                         \[
                             f(0) = a^{0} = 1.
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="prop simples" id="prop_avalUm">
+            Vale que
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f(1) = a.
+                \]
+            </span>
+        </div>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Tal resultado vale, porque
+                <div class="equationWrapper">
+                    <span class="math"> 
+                        \[
+                            f(1) = a^{1} = a.
                         \]
                     </span>
                 </div>

@@ -21,7 +21,7 @@
         <!-- Ambiente de teorema -->
         <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
         <!-- Plugin TikZ do MathJax v3 -->
-        <script type="module" src="../../../../scripts.js"></script>
+        <script src="../../../../scripts.js"></script>
         <style>
             body{
                 counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
@@ -35,6 +35,31 @@
         <a class="hifscor"  href="NA-EM-A1_FuncoesExponenciais.html"><h2>Funções exponenciais</h2></a>
         
         <h3>Aula 8 - Número de Euler</h3>
+        
+        <p>
+            Considere uma função exponencial \(f(x) = a^{x}\). Podemos estudar a reta tangente ao gráfico dessa função no ponto \((0,1)\).
+        </p>
+
+        <br>
+
+        <img src="NumeroEuler.svg" alt="Número de Euler" style="width:300px; height:auto;">
+
+        <p>
+            Essa reta é descrita por uma função afim da forma \(g(x) = \alpha x + \beta\). 
+            <a href="https://www.geogebra.org/m/eqqgy6w8">Aqui</a> há um arquivo no GeoGebra que mostra uma função exponencial e sua reta tangente nesse ponto.
+        </p>
+
+        <p>
+            Um caso especial ocorre quando a reta tangente tem coeficiente angular igual a 1, isto é, quando \(\alpha = 1\). A base \(a\) que torna isso verdadeiro é chamada <strong>número de Euler</strong>, denotado por \(e\). Esse número é irracional e aproximadamente igual a \(2,71828\).
+        </p>
+        
+        <p class="exercicio simples" id="exerc_aula1">
+            <ol class="numerico">
+                <li>
+                    Considere a função \(f(x) = e^{x}\). Seja \(g(x)\) a reta tangente ao gráfico de \(f\) passando pelo ponto \((0,1)\). Qual é o zero de \(g(x)\)?
+                </li>
+            </ol>
+        </p>
         
         <div><a href="NA-EM-A1-FE_Aula7.html">
             <button class="button button1">Funções exponenciais - Aula 7</button>
