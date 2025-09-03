@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 2 contSec 3;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_Probabilidades.html">Capítulo 2 - Probabilidades</a></h2>
+        <h3>Seção 3 - Alguns resultados sobre probabilidade</h3>
+        
+        <p>
+            Em algumas situações, um experimento aleatório pode ser decomposto em etapas. O conhecimento do resultado de uma etapa pode influenciar a probabilidade dos eventos nas etapas seguintes. Para descrever esse tipo de situação, utilizamos o conceito de <i>probabilidade condicional</i>.
+        </p>
+        
+        <p class="def" id="def_probCond">
+            Sejam \(A\) e \(B\) eventos. A <strong>probabilidade condicional</strong> de \(A\) dado \(B\), denotado por \(P(A\mid B)\), é definido como
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid B) \coloneqq \left\{
+                        \begin{array}{cr}
+                            \dfrac{P(A \cap B)}{P(B)}, & \text{se } P(B) > 0, \\
+                            P(A), & \text{se } P(B) = 0.
+                        \end{array}
+                        \right.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p class="exemplo">
+            Considere um casal que pretende ter dois filhos. Modelamos essa situação como um experimento aleatório, no qual observamos o sexo de cada filho. Suponha que cada filho tem, independentemente, a mesma chance de ser menino (M) ou menina (F). O espaço amostral para os sexos dos dois filhos (em ordem do mais velho para o mais novo) é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \Omega = \{(M,M), (M,F), (F,M), (F,F)\}.
+                    \]
+                </span>
+            </div>
+            Assim a probabilidade a ser considerada é a função
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \begin{array}{rcl}
+                            P: \wp(\Omega) & \to & \bbR \\
+                            A & \mapsto & \dfrac{\#A}{4}.
+                        \end{array}
+                    \]
+                </span>
+            </div>
+            Suponha que o mais velho seja menino. Isso é descrito pelo evento \(B = \{(M,M), (M,F)\}\). O evento onde ambos são meninos é \(A = \{(M,M)\}\). Assim, a probabilidade de ambos serem meninos dado que o mais velho é menino é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid B) = \dfrac{P(A \cap B)}{P(B)} = \dfrac{1}{2}.
+                    \]
+                </span>
+            </div>
+            Agora, suponha que pelo menos um deles é menino, evento descrito por \(C = \{(M,M), (M,F), (F,M)\}\). Dessa forma, a probabilidade de ambos serem meninos dado que pelo menos um é menino é
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A\mid C) = \dfrac{P(A \cap C)}{P(C)} = \dfrac{1}{3}.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <p class="teor" text="Teorema da multiplicação" id="teor_mult">
+            Sejam \(A_{1}\), \(A_{2}\), \(\ldots\), \(A_{n}\) eventos com probabilidade positiva, com \(n \ge 2\). Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(\cap_{i=1}^{n}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{n}\mid \cap_{i=1}^{n-1}A_{i}).
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                A demonstração é feita por indução sobre \(n\). O caso base para a indução é \(n = 2\). Nesse caso, basta usar a definição de probabilidade condicional para chegar que \(P(A_{1}\cap A_{2}) = P(A_{1})P(A_{2}\mid A_{1})\). Suponha, por indução, que o resultado vale para algum número \(k > 2\), isto é, suponha que vale
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(\cap_{i=1}^{k}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{k}\mid \cap_{i=1}^{k-1}A_{i}). \tag*{\((\ast)\)}
+                        \]
+                    </span>
+                </div>
+                Temos que mostrar que o resultado vale para \(k+1\), isto é, temos que mostrar que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(\cap_{i=1}^{k+1}A_{i}) = P(A_{1})P(A_{2}\mid A_{1})P(A_{3}\mid A_{1}\cap A_{2})\cdots P(A_{k}\mid \cap_{i=1}^{k}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Defina \(B = \cap_{i=1}^{k}A_{i}\). Pela definição de probabilidade condicional, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(A_{k+1}\mid B) = \dfrac{P(B \cap A_{k+1})}{P(B)} = \dfrac{P(\cap_{i=1}^{k+1}A_{i})}{P(B)} \; \Rightarrow \; P(\cap_{i=1}^{k+1}A_{i}) = P(A_{k+1}\mid B)P(B) = P(A_{k+1}\mid \cap_{i=1}^{k}A_{i})P(\cap_{i=1}^{k}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Usando a hipótese de indução, apresentada na Equação \((\ast)\), obtemos o resultado.
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="def" id="def_evenInd">
+            Sejam \(A\) e \(B\) eventos. Dizemos que \(A\) e \(B\) são eventos independentes, se \(P(A \cap B) = P(A)P(B)\).
+        <span class="fim"></span></p>
+        
+        <p class="def" id="def_partEsp">
+            Dizemos que uma sequência \((A_{i})_{i=1}^{n}\) de eventos é uma partição de um espaço amostral \(\Omega\), se 
+            <ol class="numerico">
+                <li>\(\cup_{i=1}^{n}A_{i} = \Omega\),</li>
+                <li>\(A_{i} \cap A_{j} = \varnothing\), para todo \(i\) e para todo \(j\), com \(i \neq j\).<span class="fim"></span></li>
+            </ol>
+        </p>
+        
+        <p class="teor" text="Teorema da probabilidade total" id="teor_probTotal">
+            Seja \((A_{i})_{i=1}^{n}\) uma partição de \(\Omega\), onde \(P(A_{i}) > 0\), para todo \(i = 1, \ldots, n\). Seja \(B\) um evento. Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(B) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i}).
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Como \((A_{i})_{i=1}^{n}\) é uma partição de \(\Omega\), então \(\cup_{i=1}^{n}A_{i} = \Omega\). Disso, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            B = B \cap \Omega = B \cap (\cup_{i=1}^{n}A_{i}).
+                        \]
+                    </span>
+                </div>
+                Como a união é disjunta, então \(B = \cup_{i=1}^{n}(B \cap A_{i})\). Daí,
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(B) = P(\cup_{i=1}^{n}(B \cap A_{i}))= \sum_{i=1}^{n}P(B \cap A_{i}) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i}).
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p class="teor" text="Teorema de Bayes" id="teor_bayes">
+            Seja \((A_{i})_{i=1}^{n}\) uma partição de \(\Omega\), onde \(P(A_{i}) > 0\), para todo \(i = 1, \ldots, n\). Seja \(B\) um evento. Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(A_{i}\mid B) = \dfrac{P(A_{i})P(B\mid A_{i})}{\sum_{j=1}^{n}P(A_{j})P(B\mid A_{j})}.
+                    \]
+                </span><span class="fim"></span>
+            </div>
+        </p>
+        
+        <details>
+            <summary>Demonstração</summary>
+            <div class="caixa">
+                Do <a href="#teor_probTotal">Teorema da probabilidade total</a>, temos que \(P(B) = \sum_{i=1}^{n}P(A_{i})P(B\mid A_{i})\). Disso e da definição de probabilidade condicional, temos que
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            P(A_{i}\mid B) = \dfrac{P(B\cap A_{i})}{P(B)} = \dfrac{P(A_{i})P(B\mid A_{i})}{\sum_{i=1}^{n}P(A_{i})P(B\mid A_{i})},
+                        \]
+                    </span>
+                </div>
+            </div>
+            <button class="buttonDetails" onclick="closeDetail(this.parentElement)">&#9650;</button>
+            <br>
+        </details>
+        
+        <p>
+            O Teorema de Bayes nos permite atualizar uma probabilidade à luz de novas evidências. Em muitas situações do mundo real, não sabemos diretamente a probabilidade de um evento \(A\), mas temos informações sobre a probabilidade de um outro evento \(B\), condicionado a \(A\), e queremos inverter essa relação.
+        </p>
+        
+        <p>
+            Por exemplo, suponha que queremos saber a probabilidade de uma pessoa estar doente \(A\), dado que o teste deu positivo \(B\). Sabemos, geralmente, qual é a sensibilidade do teste (a probabilidade de testar positivo, dado que a pessoa está doente), mas o que realmente queremos é o inverso: qual a chance de estar doente, dado o teste positivo?
+        </p>
+        
+        <p>
+            Esse processo de inverter a condição é exatamente o que o Teorema de Bayes permite fazer.
+        </p>
+        
+        <p class="exemplo">
+            Considere o espaço amostral
+             <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \Omega = \{(d, +), (d, -), (d^{\complement}, +), (d^{\complement}, -)\},
+                    \]
+                </span>
+            </div>
+            onde \(d\) e \(d^{\complement}\) indicam, respectivamente, que o indivíduo está doente ou não está doente, e os símbolos \(+\) e \(-\) representam, respectivamente, um resultado positivo (o exame acusa a doença) ou negativo (o exame não acusa a doença). Sejam \(D = \{(d, +), (d, -)\}\), \(S = \{(d, +), (d^{\complement}, +)\}\) e \(N = \{(d, -), (d^{\complement}, -)\}\). Suponha que \(P(S\mid D)= 0,8\), \(P(N\mid D^{\complement})= 0,9\) e \(P(D) = 0,06\). Então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        P(D^{\complement}\mid S) = \dfrac{P(D^{\complement} \cap S)}{P(S)} = \dfrac{P(D^{\complement})P(S \mid D^{\complement})}{P(D)P(S\mid D) + P(D^{\complement})P(S\mid D^{\complement})} = \dfrac{(1-0,06)(1-0,9)}{0,06\times 0,8 + (1-0,06)(1-0,9)} = \dfrac{0,094}{0,142} \approx 0,662.
+                    \]
+                </span>
+            </div>
+        <span class="fim"></span></p>
+        
+        <div>
+            <a href="IE-P_PoucoComb.html">
+                <button class="button button1">Capítulo 2 - Seção 2 -  Um pouco de combinatória</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-P_VariavelAleatoria.html">
+                <button class="button button1">Capítulo 2 - Seção 4 - Variável aleatória</button>
+            </a>
+        </div>
+    </body>  
+</html>
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introdução à estatística</title>
+        
+         <!-- Carrega o arquivo de estilos customizados -->
+        <link rel="stylesheet" href="../../../../styles.css">
+        <!-- Carrega o arquivo de configuração do MathJax -->
+        <script src="../../../../mathjax-config.js"></script>
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-tikz@0.10.2/tikz.js"></script>
+        <!-- Plugin XyJax do MathJax v3 para \xymatrix (Xy-pic) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax-plugin-tex-xyjax@0.2.1/xyjax.js"></script>
+        <!-- Biblioteca MathJax v3 -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <!-- Estilos de itens -->
+        <link rel="stylesheet" type="text/css" href="../../../../itemParenteses.css" />
+        <!-- Ambiente de teorema -->
+        <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
+        <!-- Plugin TikZ do MathJax v3 -->
+        <script src="../../../../scripts.js"></script>
+        <style>
+            body{
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap 2 contSec 2;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style="text-align:center"><h1><a class="hifscor" href="../IntrodEstatistica.html">Introdução à estatística</a></h1></div> 
+        <h2><a class="hifscor" href="IE_Probabilidades.html">Capítulo 2 - Probabilidades</a></h2>
+        <h3>Seção 2 - Um pouco de combinatória</h3>
+        
+        <p>
+            Quando estamos em um experimento aleatório cujo espaço amostral é finito e é razoável assumir a hipótese de equiprobabilidade, então podemos considerar a probabilidade como sendo a função \(P: \wp(\Omega) \to \bbR\), \(P(A) = \frac{\#A}{\#\Omega}\). Nesse caso, muitos problemas são resolvidos por contagem. Assim, vamos relembrar dois princípios:
+        </p>
+        
+        <ul>
+            <li><strong>Princípio aditivo</strong>: se \(A_{1}\), \(\dots\), \(A_{n}\) são disjuntos, então
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \#\big(\bigcup_{i=1}^{n}A_{i}\big) = \sum_{i=1}^{n}\#A_{i}.
+                    \]
+                </span>
+            </div>
+            </li>
+            
+            <li><strong>Princípio multiplicativo</strong>: vale que
+            <div class="equationWrapper">
+                <span class="math">
+                    \[
+                        \#(A_{1} \times A_{2} \times \cdots \times A_{n}) = \prod_{i=1}^{n}A_{i}.
+                    \]
+                </span>
+            </div>
+            </li>
+        </ul>
+        
+        <p class="exemplo" id="ex_prinAd">
+            Suponha que tenham entrado em cartaz 3 filmes e 2 peças de teatro e que Carlos tenha dinheiro para assistir a apenas 1 evento. Quantos são os programas que Carlos pode fazer? Sejam \(A = \{x \mid x\) é filme\(\}\) e \(B = \{y \mid y\) é peça de teatro\(\}\). Note que \(\#A = 3\), \(\#B = 2\) e \(A \cap B = \varnothing\). Se Carlos só pode assistir a um evento, então ele assiste a um filme ou a uma peça de teatro, ou seja, suas possibilidades são \(A \cup B\). Pelo princípios aditivo, \(\#(A \cup B) = \#A + \#B = 5\).
+        <span class="fim"></span></p>
+        
+        <p class="exemplo" id="ex_prinMul">
+            Se, no exemplo anterior, Carlos tiver dinheiro para assistir a um filme e a uma peça, então suas possibilidades estão no conjunto \(A \times B\), que pelo princípio multiplicativo tem \(\#(A \times B) = \#A \cdot \#B = 6\) elementos.
+        <span class="fim"></span></p>
+        
+        <p>
+            Na combinatória, um valor fundamental é o número de subconjuntos com \(k\) elementos que podem ser formados a partir de um conjunto com \(n\) elementos. Esse número é denotado por \(\binom{n}{k}\) e recebe o nome de <strong>coeficiente binomial</strong>. Ao organizar todos esses números em uma tabela, obtemos o <strong>triângulo de Pascal</strong>, em que cada linha corresponde a um valor de \(n\) e cada coluna a um valor de \(k\).
+        </p>
+        
+        <p>
+            Vejamos algumas propriedades:
+        </p>
+        
+        <ol class="numerico">
+            <li>
+                Para todo \(n \in \bbN\),
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \binom{n}{0} = 1.
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li>
+                Para todo \(k > n \),
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \binom{n}{k} = 0.
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li>
+                <strong>Relação de Stiefel</strong>
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}.
+                        \]
+                    </span>
+                </div>
+                Para ver que isso é verdade, pense que dentre os \(n+1\) elementos, destacamos um, digamos \(a\). Então, os subconjuntos possuem ou não \(a\). Para contar a quantidade de subconjuntos que possuem \(a\), temos que considerar o conjunto com \(n\) elementos e formar \(k-1\) subconjuntos. Já para aqueles que não possuem \(a\), então consideramos o conjunto com \(n\) elementos e formamos \(k\) subconjuntos.
+            </li>
+        </ol>
+        
+        <p>
+            De posse dessas propriedades, podemo montar o triângulo de Pascal.
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \begin{array}{c|cccccccc}
+                         & 0 & 1 & 2 & 3 & 4 & 5 & \cdots & k \\
+                        \hline
+                        0 & 1 \\
+                        1 & 1 & 1 \\
+                        2 & 1 & 2 & 1 \\
+                        3 & 1 & 3 & 3 & 1 \\
+                        4 & 1 & 4 & 6 & 4 & 1 \\
+                        5 & 1 & 5 & 10 & 10 & 5 & 1 \\
+                        \vdots \\
+                        n & & &  & & & & & \binom{n}{k} \\
+                        \end{array}
+                        \]
+            </span>
+        </div>
+        
+        <p>
+            Vejamos outras propriedades:
+        </p>
+        
+        <ol class="numerico">
+            <li>
+                <strong>Propriedade da simetria</strong>.
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \binom{n}{k} = \binom{n}{n-k}.
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li>
+                <strong>Teorema das linhas</strong>
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \sum_{k=0}^{n}\binom{n}{k} = \text{número total de subconjuntos} = 2^{n}.
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li>
+                <strong>Teorema das colunas</strong>
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \sum_{n=0}^{m}\binom{n}{k} = \binom{m+1}{k+1}.
+                        \]
+                    </span>
+                </div>
+            </li>
+            <li>
+                <strong>Teorema das diagonais</strong>
+                <div class="equationWrapper">
+                    <span class="math">
+                        \[
+                            \sum_{k=0}^{m}\binom{n+k}{k} = \binom{n+m+1}{m}.
+                        \]
+                    </span>
+                </div>
+            </li>
+        </ol>
+         
+        <p>
+            Note que o número de sequências ordenadas de \(k\) elementos distintos de um conjunto com \(n\) elementos é
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}.
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Cada subconjunto de \(k\) elementos gerou exatamente \(k!\) dessas sequências (as diferentes ordenações dos seus elementos). Dividindo, obtemos o número de subconjuntos não ordenados de tamanho \(k\), ou seja,
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math">
+                \[
+                    \binom{n}{k}=\frac{1}{k!}\cdot\frac{n!}{(n-k)!}=\frac{n!}{k!(n-k)!}.
+                \]
+            </span>
+        </div>
+        
+        <div>
+            <a href="IE-P_DefProbabilidade.html">
+                <button class="button button1">Capítulo 2 - Seção 1 - Definição de probabilidade</button>
+            </a>
+        </div>
+        
+        <div>
+            <a href="IE-P_ProbabilidadeResul.html">
+                <button class="button button1">Capítulo 2 - Seção 3 - Alguns resultados sobre probabilidade</button>
+            </a>
+        </div>
+    </body>  
+</html>
+
