@@ -21,10 +21,10 @@
         <!-- Ambiente de teorema -->
         <link rel="stylesheet" type="text/css" href="../../../../ambTeor.css" />
         <!-- Plugin TikZ do MathJax v3 -->
-        <script type="module" src="../../../../scripts.js"></script>
+        <script src="../../../../scripts.js"></script>
         <style>
             body{
-                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCap contSec;
+                counter-reset: contTeor contProp contLema contCoro contObs contDef contExerc contExemplo contCoro contExercicio contCap contSec;
             }
         </style>
     </head>
@@ -35,6 +35,53 @@
         <a class="hifscor"  href="NA-EM-A1_FuncoesLogaritmicas.html"><h2>Funções logarítmicas</h2></a>
         
         <h3>Aula 1 - Função inversa</h3>
+        
+        <p>
+            Dadas as funções \(f: A \to B\) e \(g: B \to C\), chamamos de <strong>função composta</strong> de \(g\) por \(f\) a função 
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    \begin{array}{rcl}
+                        g \circ f:\; A & \to & C \\
+                        x & \mapsto & (g \circ f)(x) = g\big(f(x)\big)
+                    \end{array}
+                \]
+            </span>
+        </div>
+        
+        <p>
+            Veja abaixo um diagrama que ilustra como se dá a composição de \(g\) por \(f\).
+        </p>
+        
+        <br>
+        
+        <img src="Tikz_Composicao.svg" alt="Diagrama indicando a composição de g por f" style="width:600px; height:auto;">
+        
+        <p class="exemplo simples" id="exem_composicao">
+            Sejam \(f(x) = x+1\) e \(g(x) = x^{2}\). Então
+        </p>
+        
+        <div class="equationWrapper">
+            <span class="math"> 
+                \[
+                    f\big(g(x)\big) = g(x) + 1 = x^{2} + 1 \qquad \text{ e } \qquad g\big(f(x)\big) = f(x)^{2} = (x+1)^{2} = x^{2} + 2x + 1.
+                \]
+            </span><span class="fim"></span>
+        </div>
+        
+        <p>
+            Seja \(f: A \to B\) um função bijetora. Definimos a <strong>função inversa</strong> de \(f\) como sendo a função \(g: B \to A\) tal que \(g(b) = a\) se, e somente se, \(f(b) = a\). A função inversa de \(f\) é denotada por \(f^{-1}\).
+        </p>
+        
+        <p>
+            Seja \(f: A \to B\) um função bijetora e \(f^{-1}\) sua inversa. Note que, dado \(a \in A\), se \(f(a) = b\), então, por definição, \(f^{-1}(b) = a\). Assim, \(f^{-1}\big(f(a)\big) = f^{-1}(b) = a\), ou seja, \(f^{-1} \circ f\) é a função identidade. O mesmo raciocínio se aplica para mostrar que \(f \circ f^{-1}\) também é a função identidade. Isso, de certa forma, mostra que a função inversa desfaz o que a função fez e vice-versa.
+        </p>
+        
+        <br>
+        
+        <img src="Tikz_SimetriaInversa.svg" alt="Gráfico da função inversa com o gráfico da própria função" style="width:400px; height:auto;">
         
         <div><a href="NA-EM-A1_FuncoesLogaritmicas.html">
             <button class="button button1">Funções logarítmicas</button>
