@@ -39,7 +39,7 @@
         </p>
         
         <p class="def", id="def_histog">
-            Considere uma variável estatística quantitativa de uma população, descrita pelo conjunto numérico \(\{x_1, \dots, x_n\}\) ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). Divida tal conjunto em \(k\) <i>faixas de valores</i> disjuntas
+            Considere uma variável estatística quantitativa de uma população, descrita pela sequência numérico \((x_1, \dots, x_n)\) ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). Divida o conjunto \([x_{1}, x_{n}]\) em \(k\) <i>faixas de valores</i> disjuntas
             <div class="equationWrapper">
                 <span class="math">
                     \[
@@ -195,11 +195,11 @@ text(x = h$mids,
         </p>
         
         <p class="def", id="def_boxplot">
-            Considere uma variável estatística quantitativa de uma população, descrita pelo conjunto numérico \(\{x_1, \dots, x_n\}\) ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). Sejam \(\theta\), \(Q_{1}\), \(Q_{3}\) e \(\text{IQR}\), respectivamente, a mediana, o primeiro quartil, o terceiro quartil e o intervalo interquartil. Defina o <i>ponto de corte inferior</i> como sendo o valor \(Q_{1} - 1,5\text{IQR}\) e, similarmente, defina o <i>ponto de corte superior</i> como sendo o valor \(Q_{3} + 1,5\text{IQR}\). Defina também os <i>valores extremos</i> com sendo o conjunto
+            Considere uma variável estatística quantitativa de uma população, descrita pela sequência numérico \((x_1, \dots, x_n)\) ordenado de forma que \(x_{1} \le \cdots \le x_{n}\). Sejam \(\theta\), \(Q_{1}\), \(Q_{3}\) e \(\text{IQR}\), respectivamente, a mediana, o primeiro quartil, o terceiro quartil e o intervalo interquartil. Defina o <i>ponto de corte inferior</i> como sendo o valor \(CI = Q_{1} - 1,5\cdot\text{IQR}\) e, similarmente, defina o <i>ponto de corte superior</i> como sendo o valor \(CS = Q_{3} + 1,5\cdot\text{IQR}\). Defina também os <i>valores extremos</i> com sendo a sequência
             <div class="equationWrapper">
                 <span class="math">
                     \[
-                        \{x_{i} \mid x_{i} < Q_{1} - 1,5\text{IQR}\} \;\; \bigcup \;\; \{x_{i} \mid x_{i} > Q_{3} + 1,5\text{IQR}\}.
+                        (x_{i} \mid x_{i} < Q_{1} - 1,5\cdot\text{IQR} \quad \text{ ou } \quad x_{i} > Q_{3} + 1,5\cdot\text{IQR}).
                     \]
                 </span>
             </div>
@@ -209,8 +209,8 @@ text(x = h$mids,
                 <li>Dentro da caixa, traça-se uma linha na posição de \(\theta\)​;</li>
                 <li>Traçam-se dois segmentos de retas, chamados de <i>bigodes</i>:
                     <ul>
-                        <li>um parte do limite inferior da caixa (\(Q_{1}\)) e termina na linha que indica o ponto de corte inferior ou o menor valor da variável, caso esse seja maior do que o ponto de corte inferior;</li>
-                        <li>um parte do limite superior da caixa (\(Q_{3}\)) e termina na linha que indica o ponto de corte superior ou o maior valor da variável, caso esse seja menor do que o ponto de corte superior;</li>
+                        <li>um parte do limite inferior da caixa e termina na linha que indica o valor \(\text{max}(x_{1},CI)\) (onde \(x_{1}\) é o menor valor da variável);</li>
+                        <li>um parte do limite superior da caixa e termina na linha que indica o valor \(\text{min}(x_{n},CS)\) (onde \(x_{n}\) é o maior valor da variável);</li>
                     </ul>
                 </li>
                 <li>Desenha-se pontos isolados representando os valores extremos.<span class="fim"></span></li>
